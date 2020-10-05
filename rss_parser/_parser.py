@@ -4,7 +4,7 @@ from .models import RSSFeed
 
 
 class Parser:
-    def __init__(self, xml, limit=None):
+    def __init__(self, xml: str, limit=None):
         self.xml = xml
         self.limit = limit
 
@@ -28,6 +28,7 @@ class Parser:
         if self.limit is not None:
             items = items[:self.limit]
         for item in items:
+            # Using html.parser instead of lxml because lxml can't parse <link>
             description_soup = self.get_soup(item.description.text, "html.parser")
             item_dict = {
                 "title": item.title.text,
@@ -35,8 +36,11 @@ class Parser:
                 "publish_date": getattr(item.pubDate, "text", ""),
                 "category": getattr(item.category, "text", ""),
                 "description": description_soup.text,
-                "description_links": [anchor.get("href") for anchor in description_soup.findAll('a')
-                                      if anchor.get("href")],
+                "description_links": [
+                    anchor.get("href") for anchor in description_soup.findAll('a')
+                    # if statement to avoid non true values in the list
+                    if anchor.get("href")
+                ],
                 "description_images": [
                     {"alt": image.get("alt", ""), "source": image.get("src")}
                     for image in description_soup.findAll('img')

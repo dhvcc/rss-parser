@@ -27,17 +27,30 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(),
     python_requires=">=3.7",
+    install_requires=[
+        "bs4==0.0.1",
+        "pydantic==1.6.1",
+        "lxml==4.5.2",
+        "requests==2.24.0",
+    ],
     project_urls={
         "Homepage": SITE_URL,
         "Source": REPO_URL,
         "Tracker": f"{REPO_URL}/issues",
     },
-    keywords=["python", "cli", "rss", "parser"],
+    keywords=[
+        "python", "python3", "cli",
+        "rss", "parser", "scraper",
+        "mit", "mit-license",
+        "typed", "typed-python"
+    ],
     classifiers=[
         "Natural Language :: English",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Development Status :: 5 - Production/Stable",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Typing :: Typed",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
