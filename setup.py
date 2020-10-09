@@ -50,6 +50,7 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Development Status :: 5 - Production/Stable",
         "Topic :: Software Development :: Libraries :: Python Modules",
+        "Topic :: Text Processing :: Markup :: XML",
         "Typing :: Typed",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3.7",
