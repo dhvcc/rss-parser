@@ -55,7 +55,7 @@ class Parser:
                 "description_images": [
                     {"alt": image.get("alt", ""), "source": image.get("src")}
                     for image in description_soup.findAll('img')
-                ]
+                ],
                 "enclosure": {
                         'content': '',
                         'attrs': {
