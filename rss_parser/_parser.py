@@ -15,6 +15,17 @@ class Parser:
     def get_soup(xml: str, parser: str = "xml") -> BeautifulSoup:
         return BeautifulSoup(xml, parser)
 
+    @staticmethod
+    def check_none(item: object, default: str, item_dict: Optional[str] = None, default_dict: Optional[str] = None):
+        if item:
+            return item[item_dict]
+        else:
+            if default_dict:
+                return default[default_dict]
+            else:
+                return default
+
+
     def parse(self) -> RSSFeed:
         main_soup = self.get_soup(self.xml)
         self.raw_data = {
@@ -45,6 +56,25 @@ class Parser:
                     {"alt": image.get("alt", ""), "source": image.get("src")}
                     for image in description_soup.findAll('img')
                 ]
+                "enclosure": {
+                        'content': '',
+                        'attrs': {
+                             'url': item.enclosure['url'] ,
+                             'length': item.enclosure['length'] ,
+                             'type': item.enclosure['type']
+                            }
+                },
+                "itunes": {
+                    'content': '',
+                    'attrs': {
+                        'href': self.check_none(
+                            item.find("itunes:image"),
+                            main_soup.find("itunes:image"),
+                            'href',
+                            'href'
+                            )
+                    }
+                }
             }
             self.raw_data["feed"].append(item_dict)
 
