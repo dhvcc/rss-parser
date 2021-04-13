@@ -11,15 +11,14 @@ keywords = [
     "rss",
     "parser",
     "scraper",
-    "mit",
-    "mit-license",
+    "gplv3",
     "typed",
     "typed-python",
 ]
 classifiers = [
     "Natural Language :: English",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Development Status :: 5 - Production/Stable",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Text Processing :: Markup :: XML",
