@@ -2,25 +2,31 @@ from typing import List, Optional
 
 from pydantic import BaseModel
 
+
 class ItunesAttrs(BaseModel):
     href: str
+
 
 class Itunes(BaseModel):
     content: str
     attrs: Optional[ItunesAttrs]
+
 
 class EnclosureAttrs(BaseModel):
     url: str
     length: int
     type: str
 
+
 class Enclosure(BaseModel):
     content: str
     attrs: Optional[EnclosureAttrs]
 
+
 class DescriptionImage(BaseModel):
     alt: Optional[str]
     source: str
+
 
 class FeedItem(BaseModel):
     title: str
@@ -38,8 +44,9 @@ class FeedItem(BaseModel):
     def __hash__(self):
         return hash(self.title.strip())
 
-    def __eq__(self,other):
+    def __eq__(self, other):
         return self.title.strip() == other.title.strip()
+
 
 class RSSFeed(BaseModel):
     title: str
