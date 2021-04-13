@@ -39,8 +39,8 @@ class FeedItem(BaseModel):
     enclosure: Optional[Enclosure]
     itunes: Optional[Itunes]
 
-    # https://stackoverflow.com/questions/10994229/how-to-make-an-object-properly-hashable#answer-38259091
-    # added this, so you can call/use in a set() on the FeedItem's to ensure no duplicates in a list.
+    # stackoverflow.com/questions/10994229/how-to-make-an-object-properly-hashable
+    # added this, so you can call/use FeedItems in a set() to avoid duplicates
     def __hash__(self):
         return hash(self.title.strip())
 
