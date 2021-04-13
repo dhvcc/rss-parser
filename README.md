@@ -62,4 +62,4 @@ to discuss what you would like to change.
 
 # License
 
-[MIT](https://github.com/dhvcc/rss-parser/blob/master/LICENSE)
+[GPLv3](https://github.com/dhvcc/rss-parser/blob/master/LICENSE)

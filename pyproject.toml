@@ -1,9 +1,10 @@
 [tool.poetry]
 name = "rss-parser"
-version = "0.2.0"
+version = "0.2.2"
 description = "Typed pythonic RSS parser"
 authors = ["dhvcc <1337kwiz@gmail.com>"]
 license = "GPLv3"
+readme = "README.md"
 keywords = [
     "python",
     "python3",
