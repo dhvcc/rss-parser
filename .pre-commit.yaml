@@ -1,0 +1,48 @@
+repos:
+  # Use pre-commit repo, v3.4.0
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: "v3.4.0"
+    hooks:
+      # Check for files that contain merge conflict strings.
+      - id: check-merge-conflict
+        stages: [ commit, push ]
+      # Simply check whether files parse as valid python.
+      - id: check-ast
+        stages: [ commit ]
+
+    # Use locally installed hooks
+  - repo: local
+
+    hooks:
+      - id: black
+        name: black
+        entry: poetry
+        args:
+          - run
+          - black
+        language: system
+        types: [ python ]
+        stages: [ commit ]
+        # Black should use the config from the pyproject.toml file
+
+      - id: isort
+        name: isort
+        entry: poetry
+        args:
+          - run
+          - isort
+        language: system
+        types: [ python ]
+        stages: [ commit ]
+        # isort's config is also stored in pyproject.toml
+
+      - id: flake8
+        name: flake8
+        entry: poetry
+        args:
+          - run
+          - flake8
+        language: system
+        always_run: true
+        pass_filenames: false
+        stages: [ push ]

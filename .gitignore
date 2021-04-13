@@ -113,3 +113,4 @@ venv.bak/
 .mypy_cache/
 
 .rss-parser
+poetry.lock
