@@ -47,4 +47,3 @@ class RSSFeed(BaseModel):
     language: Optional[str]
     description: Optional[str]
     feed: List[FeedItem]
-
