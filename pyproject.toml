@@ -38,7 +38,7 @@ classifiers = [
 python = "^3.7"
 bs4 = ">=0.0.1"
 pydantic = ">=1.6.1"
-lxml = ">=4.5.2"
+lxml = ">=4.6.3"
 requests = ">=2.24.0"
 
 [tool.poetry.dev-dependencies]
