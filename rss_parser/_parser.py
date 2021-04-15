@@ -63,26 +63,33 @@ class Parser:
                     {"alt": image.get("alt", ""), "source": image.get("src")}
                     for image in description_soup.findAll("img")
                 ],
-                "enclosure": {
-                    "content": "",
-                    "attrs": {
-                        "url": item.enclosure["url"],
-                        "length": item.enclosure["length"],
-                        "type": item.enclosure["type"],
-                    },
-                },
-                "itunes": {
-                    "content": "",
-                    "attrs": {
-                        "href": self.check_none(
-                            item.find("itunes:image"),
-                            main_soup.find("itunes:image"),
-                            "href",
-                            "href",
-                        )
-                    },
-                },
             }
+            try:
+                item_dict.update(
+                    {
+                        "enclosure": {
+                            "content": "",
+                            "attrs": {
+                                "url": item.enclosure["url"],
+                                "length": item.enclosure["length"],
+                                "type": item.enclosure["type"],
+                            },
+                        },
+                        "itunes": {
+                            "content": "",
+                            "attrs": {
+                                "href": self.check_none(
+                                    item.find("itunes:image"),
+                                    main_soup.find("itunes:image"),
+                                    "href",
+                                    "href",
+                                )
+                            },
+                        },
+                    }
+                )
+            except (TypeError, KeyError, AttributeError):
+                pass
             self.raw_data["feed"].append(item_dict)
 
         return RSSFeed(**self.raw_data)

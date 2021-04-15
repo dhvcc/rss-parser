@@ -12,11 +12,11 @@
 
 [![Pypi publish](https://github.com/dhvcc/rss-parser/workflows/Pypi%20publish/badge.svg)](https://github.com/dhvcc/rss-parser/actions?query=workflow%3A%22Pypi+publish%22)
 
-# About
+## About
 
 `rss-parser` is typed python RSS parsing module built using `BeautifulSoup` and `pydantic`
 
-# Installation
+## Installation
 
 ```bash
 pip install rss-parser
@@ -30,7 +30,7 @@ cd rss-parser
 pip install .
 ```
 
-# Usage
+## Usage
 
 ```python
 from rss_parser import Parser
@@ -55,11 +55,19 @@ for item in feed.feed:
 
 ```
 
-# Contributing
+## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
-# License
+Install dependencies with `poetry install` (`pip install poetry`)
+
+`pre-commit` usage is highly recommended. To install hooks run
+
+```bash
+poetry run pre-commit install -t=pre-commit -t=pre-push
+```
+
+## License
 
 [GPLv3](https://github.com/dhvcc/rss-parser/blob/master/LICENSE)

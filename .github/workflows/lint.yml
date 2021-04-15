@@ -6,13 +6,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        os: [ "windows-latest", "ubuntu-latest" ]
+        python-version: [ 3.7, 3.8 ]
+
     steps:
       - uses: actions/checkout@master
 
       - name: Set up Python ${{ matrix.python-version }} on ${{ matrix.os }}
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8.1
+          python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
         run: |
