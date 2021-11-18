@@ -35,7 +35,7 @@ class Parser:
     def parse(self) -> RSSFeed:
         main_soup = self.get_soup(self.xml)
         self.raw_data = {
-            "title": getattr(main_soup.title.text, "text", ""),
+            "title": main_soup.title.text,
             "version": main_soup.rss.get("version"),
             "language": getattr(main_soup.language, "text", ""),
             "description": getattr(main_soup.description, "text", ""),
@@ -47,12 +47,12 @@ class Parser:
         for item in items:
             # Using html.parser instead of lxml because lxml can't parse <link>
             description_soup = self.get_soup(item.description.text, "html.parser")
-            if item.title is None:
+            if item.title is None:  # Makes sure to not get any AttributeError when parsing feed without title
                 title = ""
             else:
                 title = item.title.text
             item_dict = {
-                "title": getattr(title, "text", ""),
+                "title": title,
                 "link": item.link.text,
                 "publish_date": getattr(item.pubDate, "text", ""),
                 "category": getattr(item.category, "text", ""),
