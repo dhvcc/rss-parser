@@ -38,6 +38,7 @@ class FeedItem(BaseModel):
     description_images: Optional[List[DescriptionImage]]
     enclosure: Optional[Enclosure]
     itunes: Optional[Itunes]
+    other: Optional[dict]
 
     # stackoverflow.com/questions/10994229/how-to-make-an-object-properly-hashable
     # added this, so you can call/use FeedItems in a set() to avoid duplicates
