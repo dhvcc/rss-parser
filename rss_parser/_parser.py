@@ -6,6 +6,7 @@ from .models import RSSFeed
 
 import re
 
+
 class Parser:
     def __init__(self, xml: str, limit=None):
         self.xml = xml
@@ -20,10 +21,10 @@ class Parser:
 
     @staticmethod
     def check_none(
-            item: object,
-            default: str,
-            item_dict: Optional[str] = None,
-            default_dict: Optional[str] = None,
+        item: object,
+        default: str,
+        item_dict: Optional[str] = None,
+        default_dict: Optional[str] = None,
     ):
         if item:
             return item[item_dict]
@@ -32,6 +33,11 @@ class Parser:
                 return default[default_dict]
             else:
                 return default
+
+    @staticmethod
+    def get_text(item: object,
+                 attribute: str) -> str:
+        return getattr(getattr(item, attribute, ""), "text", "")
 
     def parse(self, entries: []) -> RSSFeed:
         main_soup = self.get_soup(self.xml)
@@ -54,10 +60,10 @@ class Parser:
             description_soup = self.get_soup(getattr(getattr(item, "description"), "text", ""), "html.parser")
 
             item_dict = {
-                "title": getattr(getattr(item, "title", ""), "text", ""),
-                "link": getattr(getattr(item, "link", ""), "text", ""),
-                "publish_date": getattr(getattr(item, "pubDate", ""), "text", ""),
-                "category": getattr(getattr(item, "category", ""), "text", ""),
+                "title": self.get_text(item, "title"),
+                "link": self.get_text(item, "link"),
+                "publish_date": self.get_text(item, "pubDate"),
+                "category": self.get_text(item, "category"),
                 "description": getattr(description_soup, "text", ""),
                 "description_links": [
                     anchor.get("href")
@@ -75,7 +81,7 @@ class Parser:
                 # Add user-defined entries
                 item_dict.update({"other": {}})
                 for entrie in entries:
-                    value = getattr(getattr(item, entrie, ""), "text", "")
+                    value = self.get_text(item, entrie)
                     value = re.sub(f"</?{entrie}>", "", value)
                     item_dict["other"].update({entrie: value})
 
