@@ -1,10 +1,9 @@
+import re
 from typing import Optional
 
 from bs4 import BeautifulSoup
 
 from .models import RSSFeed
-
-import re
 
 
 class Parser:
@@ -35,8 +34,7 @@ class Parser:
                 return default
 
     @staticmethod
-    def get_text(item: object,
-                 attribute: str) -> str:
+    def get_text(item: object, attribute: str) -> str:
         return getattr(getattr(item, attribute, ""), "text", "")
 
     def parse(self, entries: []) -> RSSFeed:
@@ -57,7 +55,9 @@ class Parser:
 
         for item in items:
             # Using html.parser instead of lxml because lxml can't parse <link>
-            description_soup = self.get_soup(getattr(getattr(item, "description"), "text", ""), "html.parser")
+            description_soup = self.get_soup(
+                self.get_text(item, "description"), "html.parser"
+            )
 
             item_dict = {
                 "title": self.get_text(item, "title"),
