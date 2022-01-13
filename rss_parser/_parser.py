@@ -1,3 +1,4 @@
+import re
 from typing import Optional
 
 from bs4 import BeautifulSoup
@@ -32,8 +33,13 @@ class Parser:
             else:
                 return default
 
-    def parse(self) -> RSSFeed:
+    @staticmethod
+    def get_text(item: object, attribute: str) -> str:
+        return getattr(getattr(item, attribute, ""), "text", "")
+
+    def parse(self, entries: []) -> RSSFeed:
         main_soup = self.get_soup(self.xml)
+
         self.raw_data = {
             "title": main_soup.title.text,
             "version": main_soup.rss.get("version"),
@@ -41,18 +47,24 @@ class Parser:
             "description": getattr(main_soup.description, "text", ""),
             "feed": [],
         }
+
         items = main_soup.findAll("item")
+
         if self.limit is not None:
             items = items[: self.limit]
+
         for item in items:
             # Using html.parser instead of lxml because lxml can't parse <link>
-            description_soup = self.get_soup(item.description.text, "html.parser")
+            description_soup = self.get_soup(
+                self.get_text(item, "description"), "html.parser"
+            )
+
             item_dict = {
-                "title": item.title.text,
-                "link": item.link.text,
-                "publish_date": getattr(item.pubDate, "text", ""),
-                "category": getattr(item.category, "text", ""),
-                "description": description_soup.text,
+                "title": self.get_text(item, "title"),
+                "link": self.get_text(item, "link"),
+                "publish_date": self.get_text(item, "pubDate"),
+                "category": self.get_text(item, "category"),
+                "description": getattr(description_soup, "text", ""),
                 "description_links": [
                     anchor.get("href")
                     for anchor in description_soup.findAll("a")
@@ -64,7 +76,15 @@ class Parser:
                     for image in description_soup.findAll("img")
                 ],
             }
+
             try:
+                # Add user-defined entries
+                item_dict.update({"other": {}})
+                for entrie in entries:
+                    value = self.get_text(item, entrie)
+                    value = re.sub(f"</?{entrie}>", "", value)
+                    item_dict["other"].update({entrie: value})
+
                 item_dict.update(
                     {
                         "enclosure": {
@@ -90,6 +110,7 @@ class Parser:
                 )
             except (TypeError, KeyError, AttributeError):
                 pass
+
             self.raw_data["feed"].append(item_dict)
 
         return RSSFeed(**self.raw_data)
