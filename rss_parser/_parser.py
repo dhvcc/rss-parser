@@ -1,5 +1,5 @@
 import re
-from typing import Optional
+from typing import List, Optional
 
 from bs4 import BeautifulSoup
 
@@ -15,11 +15,11 @@ class Parser:
         self.rss = None
 
     @staticmethod
-    def get_soup(xml: str, parser: str = "xml") -> BeautifulSoup:
+    def _get_soup(xml: str, parser: str = "xml") -> BeautifulSoup:
         return BeautifulSoup(xml, parser)
 
     @staticmethod
-    def check_none(
+    def _check_none(
         item: object,
         default: str,
         item_dict: Optional[str] = None,
@@ -34,11 +34,19 @@ class Parser:
                 return default
 
     @staticmethod
-    def get_text(item: object, attribute: str) -> str:
+    def _get_text(item: object, attribute: str) -> str:
         return getattr(getattr(item, attribute, ""), "text", "")
 
-    def parse(self, entries: []) -> RSSFeed:
-        main_soup = self.get_soup(self.xml)
+    def parse(self, entries: Optional[List] = List) -> RSSFeed:
+        """Parse the rss and each item of the feed. Missing attributes will be
+            replaced by an empty string. The information of the optional entries
+            are stored in a dictionary under the attribute "other" of each item.
+
+        :param entries: An optional list of additional rss tags that can be recovered
+        from each item.
+        :return: The RSSFeed which describe the rss information.
+        """
+        main_soup = self._get_soup(self.xml)
 
         self.raw_data = {
             "title": main_soup.title.text,
@@ -55,15 +63,15 @@ class Parser:
 
         for item in items:
             # Using html.parser instead of lxml because lxml can't parse <link>
-            description_soup = self.get_soup(
-                self.get_text(item, "description"), "html.parser"
+            description_soup = self._get_soup(
+                self._get_text(item, "description"), "html.parser"
             )
 
             item_dict = {
-                "title": self.get_text(item, "title"),
-                "link": self.get_text(item, "link"),
-                "publish_date": self.get_text(item, "pubDate"),
-                "category": self.get_text(item, "category"),
+                "title": self._get_text(item, "title"),
+                "link": self._get_text(item, "link"),
+                "publish_date": self._get_text(item, "pubDate"),
+                "category": self._get_text(item, "category"),
                 "description": getattr(description_soup, "text", ""),
                 "description_links": [
                     anchor.get("href")
@@ -81,7 +89,7 @@ class Parser:
                 # Add user-defined entries
                 item_dict.update({"other": {}})
                 for entrie in entries:
-                    value = self.get_text(item, entrie)
+                    value = self._get_text(item, entrie)
                     value = re.sub(f"</?{entrie}>", "", value)
                     item_dict["other"].update({entrie: value})
 
@@ -98,7 +106,7 @@ class Parser:
                         "itunes": {
                             "content": "",
                             "attrs": {
-                                "href": self.check_none(
+                                "href": self._check_none(
                                     item.find("itunes:image"),
                                     main_soup.find("itunes:image"),
                                     "href",
