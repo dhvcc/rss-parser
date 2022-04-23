@@ -38,9 +38,11 @@ class Parser:
         return getattr(getattr(item, attribute, ""), "text", "")
 
     def parse(self, entries: Optional[List] = List) -> RSSFeed:
-        """Parse the rss and each item of the feed. Missing attributes will be
-            replaced by an empty string. The information of the optional entries
-            are stored in a dictionary under the attribute "other" of each item.
+        """Parse the rss and each item of the feed.
+
+        Missing attributes will be replaced by an empty string. The
+        information of the optional entries are stored in a dictionary
+        under the attribute "other" of each item.
 
         :param entries: An optional list of additional rss tags that can be recovered
         from each item.
