@@ -27,6 +27,8 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
 ]
 
 [tool.poetry.urls]
@@ -42,7 +44,7 @@ lxml = ">=4.6.5"
 requests = ">=2.24.0"
 
 [tool.poetry.dev-dependencies]
-black = "^21.4b0"
+black = "^22.3.0"
 pre-commit = "^2.12.0"
 flake8 = "^4.0.1"
 isort = "^5.8.0"
@@ -53,7 +55,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 line-length = 88
-target-version = ['py37', 'py38']
+target-version = ['py37', 'py38', 'py39', 'py310']
 exclude = '''
 (
     \.eggs
@@ -66,6 +68,7 @@ exclude = '''
 '''
 
 [tool.isort]
+profile = "black"
 multi_line_output = 3
 include_trailing_comma = true
 force_grid_wrap = 0
