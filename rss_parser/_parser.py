@@ -30,10 +30,10 @@ class Parser:
 
     @staticmethod
     def check_none(
-            item: object,
-            default: str,
-            item_dict: Optional[str] = None,
-            default_dict: Optional[str] = None,
+        item: object,
+        default: str,
+        item_dict: Optional[str] = None,
+        default_dict: Optional[str] = None,
     ) -> Any:
         """Check if the item_dict in item is None, else returns default_dict of default.
 
@@ -92,10 +92,8 @@ class Parser:
         for item in items:
             # Using html.parser instead of lxml because lxml can't parse <link>
             description_soup = self.get_soup(
-                self.get_text(
-                    item,
-                    "description"
-                ), "html.parser")
+                self.get_text(item, "description"), "html.parser"
+            )
 
             item_dict = {
                 "title": self.get_text(item, "title"),
