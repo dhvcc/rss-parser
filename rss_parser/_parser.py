@@ -7,9 +7,7 @@ from .models import RSSFeed
 
 
 class Parser:
-    """
-    Parser for rss files
-    """
+    """Parser for rss files."""
 
     def __init__(self, xml: str, limit=None):
         self.xml = xml
@@ -20,7 +18,8 @@ class Parser:
 
     @staticmethod
     def get_soup(xml: str, parser: str = "xml") -> BeautifulSoup:
-        """Get the BeautifulSoup object with a specified parser.
+        """
+        Get the BeautifulSoup object with a specified parser.
 
         :param xml: The xml content
         :param parser: The parser type. Default is xml
@@ -35,7 +34,8 @@ class Parser:
         item_dict: Optional[str] = None,
         default_dict: Optional[str] = None,
     ) -> Any:
-        """Check if the item_dict in item is None, else returns default_dict of default.
+        """
+        Check if the item_dict in item is None, else returns default_dict of default.
 
         :param item: The first object.
         :param default: The default object.
@@ -53,9 +53,10 @@ class Parser:
 
     @staticmethod
     def get_text(item: object, attribute: str) -> str:
-        """Returns the text information about an attribute of an object.
-        If it is not present, it will return an empty string.
+        """
+        Return the text information about an attribute of an object.
 
+        If it is not present, it will return an empty string.
         :param item: The object with the attribute
         :param attribute: The attribute which has a 'text' attribute
         :return: The string of the text of the specified attribute
