@@ -17,7 +17,12 @@ class Parser:
         self.rss = None
 
     @staticmethod
-    def get_soup(xml: str, parser: str = "xml") -> BeautifulSoup:
+    def _check_atom(soup: BeautifulSoup):
+        if soup.feed:
+            raise NotImplementedError("ATOM feed is not currently supported")
+
+    @classmethod
+    def get_soup(cls, xml: str, parser: str = "xml") -> BeautifulSoup:
         """
         Get the BeautifulSoup object with a specified parser.
 
@@ -25,7 +30,9 @@ class Parser:
         :param parser: The parser type. Default is xml
         :return: The BeautifulSoup object
         """
-        return BeautifulSoup(xml, parser)
+        soup = BeautifulSoup(xml, parser)
+        cls._check_atom(soup)
+        return soup
 
     @staticmethod
     def check_none(

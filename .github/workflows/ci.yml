@@ -1,4 +1,4 @@
-name: Lint
+name: Lint and test
 
 on: [push, pull_request]
 
@@ -38,3 +38,6 @@ jobs:
 
       - name: Lint code with isort
         run: poetry run isort --check-only .
+
+      - name: Test code with pytest
+        run: poetry run pytest
