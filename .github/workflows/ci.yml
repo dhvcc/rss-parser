@@ -1,6 +1,12 @@
 name: Lint and test
 
-on: [push, pull_request]
+on:
+  push:
+    paths-ignore:
+      - '.github/**'
+      - '.gitignore'
+      - 'README.md'
+  pull_request:
 
 jobs:
   build:
