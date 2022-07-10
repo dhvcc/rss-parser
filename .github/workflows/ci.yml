@@ -4,6 +4,7 @@ on:
   push:
     paths-ignore:
       - '.github/**'
+      - '!.github/workflows/ci.yml'
       - '.gitignore'
       - 'README.md'
   pull_request:
