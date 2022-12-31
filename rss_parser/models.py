@@ -1,26 +1,7 @@
 from typing import List, Optional
 
+
 from pydantic import BaseModel
-
-
-class ItunesAttrs(BaseModel):
-    href: str
-
-
-class Itunes(BaseModel):
-    content: str
-    attrs: Optional[ItunesAttrs]
-
-
-class EnclosureAttrs(BaseModel):
-    url: str
-    length: int
-    type: str
-
-
-class Enclosure(BaseModel):
-    content: str
-    attrs: Optional[EnclosureAttrs]
 
 
 class DescriptionImage(BaseModel):
@@ -31,13 +12,13 @@ class DescriptionImage(BaseModel):
 class FeedItem(BaseModel):
     title: str
     link: str
-    publish_date: Optional[str]
-    category: Optional[str]
     description: str
+    language: str  # en-us
+    copyright: Optional[str]  # Copyright 2002, Spartanburg Herald-Journal
+    pub_date: Optional[str]
+    category: Optional[str]
     description_links: Optional[List[str]]
     description_images: Optional[List[DescriptionImage]]
-    enclosure: Optional[Enclosure]
-    itunes: Optional[Itunes]
     other: Optional[dict]
 
     # stackoverflow.com/questions/10994229/how-to-make-an-object-properly-hashable
