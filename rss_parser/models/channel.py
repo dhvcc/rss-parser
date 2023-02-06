@@ -1,14 +1,15 @@
 from typing import Optional
 
-from pydantic import validator
+from pydantic import validator, Field
 
 from rss_parser.models import RSSBaseModel
 from rss_parser.models.text_input import TextInput
 from rss_parser.models.types.date import validate_dt_or_str, DatetimeOrStr
 from rss_parser.models.image import Image
+from rss_parser.models.types.tag import Tag
 
 
-class RequiredChannelElementsMixin:
+class RequiredChannelElementsMixin(RSSBaseModel):
     """https://www.rssboard.org/rss-specification#requiredChannelElements."""
 
     title: str = None  # GoUpstate.com News Headlines
@@ -19,11 +20,11 @@ class RequiredChannelElementsMixin:
     link: str = None  # http://www.goupstate.com/
     "The URL to the HTML website corresponding to the channel."
 
-    description: str = None  # The latest news from GoUpstate.com, a Spartanburg Herald-Journal Web site.
+    description: Tag[str] = None  # The latest news from GoUpstate.com, a Spartanburg Herald-Journal Web site.
     "Phrase or sentence describing the channel."
 
 
-class OptionalChannelElementsMixin:
+class OptionalChannelElementsMixin(RSSBaseModel):
     """https://www.rssboard.org/rss-specification#optionalChannelElements."""
 
     language: Optional[str] = None  # en-us
@@ -39,7 +40,7 @@ class OptionalChannelElementsMixin:
     web_master: Optional[str] = None  # betty@herald.com (Betty Guernsey)
     "Email address for person responsible for technical issues relating to channel."
 
-    pub_date: Optional[DatetimeOrStr] = None  # Sat, 07 Sep 2002 00:00:01 GMT
+    pub_date: Optional[Tag[DatetimeOrStr]] = None  # Sat, 07 Sep 2002 00:00:01 GMT
     "The publication date for the content in the channel. For example, the New York Times publishes on a daily " \
     "basis, the publication date flips once every 24 hours. That's when the pubDate of the channel changes. All " \
     "date-times in RSS conform to the Date and Time Specification of RFC 822, with the exception that the year " \
@@ -48,7 +49,7 @@ class OptionalChannelElementsMixin:
     last_build_date: Optional[DatetimeOrStr] = None  # Sat, 07 Sep 2002 09:42:31 GMT
     "The last time the content of the channel changed."
 
-    category: Optional[str] = None  # Newspapers
+    category: Optional[Tag[str]] = None  # Newspapers
     "Specify one or more categories that the channel belongs to. Follows the same rules as the <item.py>-level " \
     "category element."  # noqa
 
@@ -94,5 +95,5 @@ class OptionalChannelElementsMixin:
     _normalize_last_build_date = validator('last_build_date', allow_reuse=True)(validate_dt_or_str)
 
 
-class Channel(RSSBaseModel, RequiredChannelElementsMixin, OptionalChannelElementsMixin):
+class Channel(RequiredChannelElementsMixin, OptionalChannelElementsMixin):
     pass

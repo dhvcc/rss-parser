@@ -7,7 +7,7 @@ from pydantic import BaseModel
 
 
 class RSSBaseModel(BaseModel):
-    # TODO: Override func to be abel to input camel
+    # TODO: Override func to be able to input camel
 
     class Config:
         allow_mutation = False

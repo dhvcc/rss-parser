@@ -1,35 +1,27 @@
 import re
 from typing import Any, List, Optional
+from xmltodict import parse
+
+from rss_parser.models.root import Channel, RSSFeed
 
 
 class Parser:
     """Parser for rss files."""
-    #
-    # def __init__(self, xml: str, limit=None):
-    #     self.xml = xml
-    #     self.limit = limit
-    #
-    #     self.raw_data = None
-    #     self.rss = None
-    #
-    # @staticmethod
-    # def _check_atom(soup: BeautifulSoup):
-    #     if soup.feed:
-    #         raise NotImplementedError("ATOM feed is not currently supported")
-    #
-    # @classmethod
-    # def get_soup(cls, xml: str, parser: str = "xml") -> BeautifulSoup:
-    #     """
-    #     Get the BeautifulSoup object with a specified parser.
-    #
-    #     :param xml: The xml content
-    #     :param parser: The parser type. Default is xml
-    #     :return: The BeautifulSoup object
-    #     """
-    #     soup = BeautifulSoup(xml, parser)
-    #     cls._check_atom(soup)
-    #     return soup
-    #
+
+    def __init__(self, xml: str, limit=None, *, root_model=RSSFeed):
+        self.xml = xml
+        self.limit = limit
+
+        self.raw_data = None
+        self.rss = None
+
+        self.root_model = root_model
+
+    @staticmethod
+    def _check_atom(root: dict):
+        if 'feed' in root:
+            raise NotImplementedError("ATOM feed is not currently supported")  #
+
     # @staticmethod
     # def check_none(
     #         item: object,
@@ -66,29 +58,24 @@ class Parser:
     #     """
     #     return getattr(getattr(item, attribute, ""), "text", "")
     #
-    # def parse(self, entries: Optional[List[str]] = List) -> RSSFeed:
-    #     """
-    #     Parse the rss and each item.py of the feed.
-    #
-    #     Missing attributes will be replaced by an empty string. The
-    #     information of the optional entries are stored in a dictionary
-    #     under the attribute "other" of each item.py.
-    #
-    #     :param entries: An optional list of additional rss tags that can be recovered
-    #     from each item.py
-    #     :return: The RSSFeed which describe the rss information
-    #     """
-    #     main_soup = self.get_soup(self.xml)
-    #
-    #     self.raw_data = {
-    #         "title": main_soup.title.text,
-    #         "version": main_soup.rss.get("version"),
-    #         "language": getattr(main_soup.language, "text", ""),
-    #         "description": getattr(main_soup.description, "text", ""),
-    #         "feed": [],
-    #     }
-    #
-    #     items = main_soup.findAll("item.py")
+    def parse(self, entries: Optional[List[str]] = List):
+        """
+        Parse the rss and each item.py of the feed.
+
+        Missing attributes will be replaced by an empty string. The
+        information of the optional entries are stored in a dictionary
+        under the attribute "other" of each item.py.
+
+        :param entries: An optional list of additional rss tags that can be recovered
+        from each item.py
+        :return: The RSSFeed which describe the rss information
+        """
+        root = parse(self.xml)
+        self._check_atom(root)
+
+        m = self.root_model.parse_obj(root['rss'])
+
+        items = []
     #
     #     if self.limit is not None:
     #         items = items[: self.limit]
