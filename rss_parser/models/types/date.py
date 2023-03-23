@@ -1,5 +1,5 @@
-from email.utils import parsedate_to_datetime
 from datetime import datetime
+from email.utils import parsedate_to_datetime
 from typing import Union
 
 DatetimeOrStr = Union[str, datetime]
