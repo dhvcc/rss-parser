@@ -38,7 +38,7 @@ jobs:
           cache: poetry
 
       - name: Install dependencies
-        if: steps.setup-python.outputs.cache-hit != "true"
+        if: steps.setup-python.outputs.cache-hit != 'true'
         run: poetry install
 
       - name: Lint code with black
