@@ -2,7 +2,7 @@ name: Lint and test
 
 on:
   schedule:
-    - cron: "1 1 0 * *"
+    - cron: "0 0 1 * *"
   push:
     paths-ignore:
       - ".github/**"
