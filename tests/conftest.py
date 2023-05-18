@@ -14,6 +14,12 @@ def rss_version_2():
 
 
 @pytest.fixture
+def rss_version_2_no_attr_category():
+    with open(sample_dir / "rss_2_category_no_attr.xml") as f:
+        return f.read()
+
+
+@pytest.fixture
 def rss_version_2_data_dict():
     return {
         "version": "2.0",

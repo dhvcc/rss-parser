@@ -12,6 +12,20 @@ def test_parses_rss_version_2(rss_version_2, rss_version_2_data_dict):
     assert rss.dict() == rss_version_2_data_dict
 
 
+def test_parses_rss_version_2_category_no_attr(rss_version_2_no_attr_category, rss_version_2_data_dict):
+    # Expect basic RSSv2 to be parsed
+    parser = Parser(xml=rss_version_2_no_attr_category)
+    rss = parser.parse()
+    expected = rss_version_2_data_dict
+    expected["channel"]["category"] = {
+        "content": "Computers/Software/Internet/Site Management/Content Management",
+        "attributes": {},
+    }
+
+    assert rss
+    assert rss.dict() == expected
+
+
 def test_fails_atom_feed(atom_feed):
     # Expect ATOM feed to fail since it's not supported
     parser = Parser(xml=atom_feed)

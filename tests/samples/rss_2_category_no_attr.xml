@@ -4,7 +4,7 @@
     <title>FeedForAll Sample Feed</title>
     <description>RSS is a fascinating technology. The uses for RSS are expanding daily. Take a closer look at how various industries are using the benefits of RSS in their businesses.</description>
     <link>http://www.feedforall.com/industry-solutions.htm</link>
-    <category domain="www.dmoz.com">Computers/Software/Internet/Site Management/Content Management</category>
+    <category>Computers/Software/Internet/Site Management/Content Management</category>
     <copyright>Copyright 2004 NotePage, Inc.</copyright>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <language>en-us</language>
