@@ -1,7 +1,5 @@
 from typing import Optional
 
-from pydantic import BaseModel
-
 from rss_parser.models import RSSBaseModel
 
 
@@ -12,7 +10,8 @@ class RequiredItemElementsMixin:
     link: str = None  # http://nytimes.com/2004/12/07FEST.html
     "The URL of the item."
 
-    description: str = None  # <description>Some of the most heated chatter at the Venice Film Festival this week was about the way that the arrival of the stars at the Palazzo del Cinema was being staged.</description>
+    description: str = None  # <description>Some of the most heated chatter at the Venice Film Festival this week was
+    # about the way that the arrival of the stars at the Palazzo del Cinema was being staged.</description>
     "The item synopsis."
 
 
@@ -32,7 +31,7 @@ class OptionalItemElementsMixin:
     guid: Optional[str] = None
     "A string that uniquely identifies the item."
 
-    pubDate: Optional[str] = None
+    pub_date: Optional[str] = None
     "Indicates when the item was published."
 
     source: Optional[str] = None

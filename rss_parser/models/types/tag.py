@@ -4,9 +4,6 @@ from typing import TYPE_CHECKING, Generic, TypeVar
 from pydantic import validator
 from pydantic.generics import GenericModel
 
-if TYPE_CHECKING:
-    from pydantic import BaseModel
-
 T = TypeVar("T")
 
 
@@ -24,7 +21,8 @@ class Tag(GenericModel, Generic[T]):
     then the value will not be '123', but {'@someAttr':'val','#text': '123'}.
     This class allows you to handle this dynamically.
 
-    >>> class Model(BaseModel):
+    >>> from rss_parser.models import RSSBaseModel
+    >>> class Model(RSSBaseModel):
     ...     number: Tag[int]
     ...     string: Tag[str]
     ...
@@ -37,6 +35,12 @@ class Tag(GenericModel, Generic[T]):
     'str tag value'
     >>> m.string.attributes
     {'@customAttr': 'v'}
+    >>> m = Model(number='not_a_number', string={'@customAttr': 'v', '#text': 'str tag value'})
+    Traceback (most recent call last):
+     ...
+    pydantic.error_wrappers.ValidationError: 1 validation error for Model
+    number -> __root__ -> content
+      value is not a valid integer (type=type_error.integer)
     """
 
     __root__: TagData[T]
@@ -61,32 +65,41 @@ class Tag(GenericModel, Generic[T]):
         except AttributeError:
             return getattr(self.__root__.content, item)
 
+    # Conversions
+
     def __str__(self):
         return str(self.content)
 
     def __int__(self):
-        v = self.content
-        if not isinstance(v, int):
-            return int(v)
-        return v
+        return int(self.content)
 
     def __float__(self):
-        v = self.content
-        if not isinstance(v, float):
-            return float(v)
-        return v
+        return float(self.content)
 
     def __bool__(self):
         return bool(self.content)
 
+    # Comparion operators
+
     def __eq__(self, other):
         return self.content == other
+
+    def __ne__(self, other) -> bool:
+        return self.content != other
+
+    def __gt__(self, other):
+        return self.content > other
+
+    def __ge__(self, other):
+        return self.content >= other
 
     def __lt__(self, other):
         return self.content < other
 
-    def __gt__(self, other):
-        return self.content < other
+    def __le__(self, other):
+        return self.content <= other
+
+    # Arithmetic  operators
 
     def __add__(self, other):
         return self.content + other

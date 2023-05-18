@@ -1,9 +1,9 @@
 [tool.poetry]
 name = "rss-parser"
-version = "0.2.4"
+version = "1.0.0"
 description = "Typed pythonic RSS parser"
 authors = ["dhvcc <1337kwiz@gmail.com>"]
-license = "GPLv3"
+license = "GPL-3.0"
 readme = "README.md"
 keywords = [
     "python",
@@ -11,7 +11,6 @@ keywords = [
     "cli",
     "rss",
     "parser",
-    "scraper",
     "gplv3",
     "typed",
     "typed-python",
@@ -29,7 +28,11 @@ classifiers = [
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
 ]
+packages = [{include = "rss_parser"}]
+
 
 [tool.poetry.urls]
 "Homepage" = "https://dhvcc.github.io/rss-parser"
@@ -37,64 +40,53 @@ classifiers = [
 "Bug Tracker" = "https://github.com/dhvcc/rss-parser/issues"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 pydantic = ">=1.6.1"
-lxml = ">=4.6.5"
-requests = ">=2.24.0"
 pytest = "^7.1.2"
 xmltodict = "^0.13.0"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 black = "^22.3.0"
 pre-commit = "^2.12.0"
-isort = "^5.8.0"
-flake8-docstrings = "^1.6.0"
-
-[tool.poetry.group.dev.dependencies]
-flakeheaven = "^3.2.1"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
-
-[tool.flakeheaven]
-max_line_length = 120
-max_annotations_complexity = 4
-exclude = [
-    ".git",
-    "build",
-    "dist",
-    "venv",
-    ".venv",
-]
+flake8 = "*"
 
 [tool.black]
 line-length = 120
-target-version = ['py37', 'py38', 'py39', 'py310', 'py311']
-exclude = '''
-(
-    \.eggs
-  | \.git
-  | build
-  | dist
-  | venv
-  | .venv
-)
-'''
+target-version = ["py38"]
 
-[tool.isort]
-profile = "black"
-line_length = 120
-multi_line_output = 3
-include_trailing_comma = true
-force_grid_wrap = 0
-use_parentheses = true
-ensure_newline_before_comments = true
-skip_gitignore = true
-skip_glob = [
-    "**/.git/**",
-    "**/build/**",
-    "**/dist/**",
-    "**/venv/**",
-    "**/.venv/**",
+[tool.ruff]
+line-length = 120
+target-version = "py38"
+respect-gitignore = true
+select = [
+    "PL",    # pylint
+    "F",     # pyflakes
+    "E",     # pycodestyle errors
+    "W",     # pycodestyle warnings
+    "I",     # isort
+    "N",     # pep8-naming
+    "S",     # flake8-bandit
+    "A",     # flake8-builtins
+    "C40",   # flake8-comprehensions
+    "T10",   # flake8-debugger
+    "EXE",   # flake8-executable
+    "T20",   # flake8-print
+    "TID",   # flake8-tidy-imports
+    "TCH",   # flake8-type-checking
+    "ARG",   # flake8-unused-arguments
+    "RUF",   # ruff
 ]
+
+[tool.ruff.per-file-ignores]
+"tests/**.py" = [
+  "S101",    # Use of assert detected
+  "ARG001",  # Unused function argument
+]
+"rss_parser/__init__.py" = [
+    "F401"
+]
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

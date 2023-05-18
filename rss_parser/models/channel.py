@@ -1,6 +1,6 @@
 from typing import Optional
 
-from pydantic import Field, validator
+from pydantic import validator
 
 from rss_parser.models import RSSBaseModel
 from rss_parser.models.image import Image
@@ -28,7 +28,7 @@ class OptionalChannelElementsMixin(RSSBaseModel):
     language: Optional[str] = None  # en-us
     "The language the channel is written in. This allows aggregators to group all Italian language sites, " "for example, on a single page."  # noqa
 
-    copyright: Optional[str] = None  # Copyright 2002, Spartanburg Herald-Journal
+    copyright: Optional[str] = None  # Copyright 2002, Spartanburg Herald-Journal  # noqa
     "Copyright notice for content in the channel."
 
     managing_editor: Optional[str] = None  # geo@herald.com (George Matesky)

@@ -1,12 +1,14 @@
 name: Lint and test
 
 on:
+  schedule:
+    - cron: "1 1 0 * *"
   push:
     paths-ignore:
-      - '.github/**'
-      - '!.github/workflows/ci.yml'
-      - '.gitignore'
-      - 'README.md'
+      - ".github/**"
+      - "!.github/workflows/ci.yml"
+      - ".gitignore"
+      - "README.md"
   pull_request:
 
 jobs:
@@ -14,8 +16,10 @@ jobs:
     strategy:
       max-parallel: 6
       matrix:
+        # TODO: Add cli to parse to json
+        # TODO: Possibly bundle as deb/rpm/exe
         os: [ "ubuntu-latest", "windows-latest", "macos-latest" ]
-        python-version: [ 3.7, 3.8, 3.9, '3.10' ]
+        python-version: [ "3.8", "3.9", "3.10", "3.11", "3.12" ]
 
     runs-on: ${{ matrix.os }}
 
@@ -34,17 +38,14 @@ jobs:
           cache: poetry
 
       - name: Install dependencies
-        if: steps.setup-python.outputs.cache-hit != 'true'
+        if: steps.setup-python.outputs.cache-hit != "true"
         run: poetry install
-
-      - name: Lint code with flake8
-        run: poetry run flake8
 
       - name: Lint code with black
         run: poetry run black --check .
 
       - name: Lint code with isort
-        run: poetry run isort --check-only .
+        run: poetry run ruff check .
 
       - name: Test code with pytest
         run: poetry run pytest

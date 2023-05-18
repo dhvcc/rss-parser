@@ -3,7 +3,8 @@ name: Publish Package to PyPI with poetry
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
+  # TODO: on CI success
 
 jobs:
   build-and-test-publish:
