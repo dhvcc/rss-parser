@@ -3,12 +3,15 @@ from xmltodict import parse
 from rss_parser.models.root import RSSFeed
 
 # >>> FUTURE
+# TODO: Feature, ignore_attributes in to_dict to allow for clean output
 # TODO: May be support generator based approach for big rss feeds
 # TODO: Add cli to parse to json
 # TODO: Possibly bundle as deb/rpm/exe
 
 # >>>> MVP
 # FIXME: doesn't parse items on https://rss.art19.com/apology-line
+# Related. Provide a way to auto populate nested models. May be a custom class, like TagList or a custom validator
+#
 # TODO: Arithmetic operators
 # TODO: class based approach, use classmethods and class attributes
 # TODO: Also add dynamic class generator with config.
@@ -46,6 +49,4 @@ class Parser:
         root = parse(self.xml)
         self._check_atom(root)
 
-        m = self.schema.parse_obj(root["rss"])
-
-        return m
+        return self.schema.parse_obj(root["rss"])

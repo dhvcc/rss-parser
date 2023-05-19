@@ -8,6 +8,12 @@ sample_dir = Path(__file__).parent.resolve() / "samples"
 
 
 @pytest.fixture
+def sample(request):
+    with open(sample_dir / request.param[0]) as f:
+        return f.read()
+
+
+@pytest.fixture
 def rss_version_2():
     with open(sample_dir / "rss_2.xml") as f:
         return f.read()

@@ -3,7 +3,7 @@ from typing import Optional
 from rss_parser.models import RSSBaseModel
 
 
-class RequiredItemElementsMixin:
+class RequiredItemElementsMixin(RSSBaseModel):
     title: str = None  # Venice Film Festival Tries to Quit Sinking
     "The title of the item."
 
@@ -15,7 +15,7 @@ class RequiredItemElementsMixin:
     "The item synopsis."
 
 
-class OptionalItemElementsMixin:
+class OptionalItemElementsMixin(RSSBaseModel):
     author: Optional[str] = None
     "Email address of the author of the item."
 
@@ -38,5 +38,5 @@ class OptionalItemElementsMixin:
     "The RSS channel that the item came from."
 
 
-class Item(RSSBaseModel, RequiredItemElementsMixin, OptionalItemElementsMixin):
+class Item(RequiredItemElementsMixin, OptionalItemElementsMixin):
     """https://www.rssboard.org/rss-specification#hrelementsOfLtitemgt."""
