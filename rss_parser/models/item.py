@@ -1,6 +1,7 @@
 from typing import Optional
 
 from rss_parser.models import RSSBaseModel
+from rss_parser.models.types.tag import Tag
 
 
 class RequiredItemElementsMixin(RSSBaseModel):
@@ -19,16 +20,17 @@ class OptionalItemElementsMixin(RSSBaseModel):
     author: Optional[str] = None
     "Email address of the author of the item."
 
-    category: Optional[str] = None
+    # FIXME: uncomment
+    # category: Optional[str] = None
     "Includes the item in one or more categories."
 
     comments: Optional[str] = None
     "URL of a page for comments relating to the item."
 
-    enclosure: Optional[str] = None
+    enclosure: Optional[Tag[str]] = None
     "Describes a media object that is attached to the item."
 
-    guid: Optional[str] = None
+    guid: Optional[Tag[str]] = None
     "A string that uniquely identifies the item."
 
     pub_date: Optional[str] = None

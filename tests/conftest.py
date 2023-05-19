@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta, timezone
+from json import loads
 from pathlib import Path
 
 import pytest
@@ -8,9 +9,10 @@ sample_dir = Path(__file__).parent.resolve() / "samples"
 
 
 @pytest.fixture
-def sample(request):
-    with open(sample_dir / request.param[0]) as f:
-        return f.read()
+def sample_and_result(request):
+    with open(sample_dir / f"{request.param[0]}.xml") as sample:
+        with open(sample_dir / f"{request.param[0]}.json") as result:
+            return sample.read(), loads(result.read())
 
 
 @pytest.fixture

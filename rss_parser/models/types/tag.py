@@ -54,7 +54,7 @@ class Tag(GenericModel, Generic[T]):
         """Used to split tag's text with other xml attributes."""
         if isinstance(v, dict):
             data = deepcopy(v)
-            return {"content": data.pop("#text", ""), "attributes": data}
+            return {"content": data.pop("#text", ""), "attributes": {k.lstrip("@"): v for k, v in data.items()}}
         return {"content": v, "attributes": {}}
 
     def __getattr__(self, item):
