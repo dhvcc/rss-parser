@@ -1,5 +1,5 @@
 from copy import deepcopy
-from typing import TYPE_CHECKING, Generic, TypeVar
+from typing import TYPE_CHECKING, Generic, TypeVar, Union
 
 from pydantic import validator
 from pydantic.generics import GenericModel
@@ -50,7 +50,7 @@ class Tag(GenericModel, Generic[T]):
         attributes: dict
 
     @validator("__root__", pre=True, always=True)
-    def validate_attributes(cls, v: T | dict, values, **kwargs):  # noqa
+    def validate_attributes(cls, v: Union[T, dict], values, **kwargs):  # noqa
         """Used to split tag's text with other xml attributes."""
         if isinstance(v, dict):
             data = deepcopy(v)
