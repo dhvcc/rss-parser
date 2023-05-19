@@ -19,7 +19,7 @@ jobs:
         # TODO: Add cli to parse to json
         # TODO: Possibly bundle as deb/rpm/exe
         os: [ "ubuntu-latest", "windows-latest", "macos-latest" ]
-        python-version: [ "3.8", "3.9", "3.10", "3.11", "3.12.0-alpha.7" ]
+        python-version: [ "3.8", "3.9", "3.10", "3.11"]
 
     runs-on: ${{ matrix.os }}
 
@@ -31,7 +31,7 @@ jobs:
 
       - name: Set up Python ${{ matrix.python-version }} on ${{ matrix.os }}
         id: setup-python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
           cache-dependency-path: pyproject.toml
