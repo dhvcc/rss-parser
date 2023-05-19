@@ -1,10 +1,10 @@
-name: Publish Package to PyPI with poetry
+name: Publish to PyPI
 
 on:
   push:
     tags:
       - "v*"
-  # TODO: on CI success
+  # TODO: Only on CI success
 
 jobs:
   build-and-test-publish:

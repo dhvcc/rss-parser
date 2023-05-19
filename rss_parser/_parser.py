@@ -2,18 +2,29 @@ from xmltodict import parse
 
 from rss_parser.models.root import RSSFeed
 
+# >>> FUTURE
+# TODO: May be support generator based approach for big rss feeds
+# TODO: Add cli to parse to json
+# TODO: Possibly bundle as deb/rpm/exe
 
+# >>>> MVP
+# FIXME: doesn't parse items on https://rss.art19.com/apology-line
+# TODO: Arithmetic operators
+# TODO: class based approach, use classmethods and class attributes
+# TODO: Also add dynamic class generator with config.
+# Parser.with_config which returns new class and also supports context managers
+# TODO: Limit, xml, schema can be set in config or in runtime
 class Parser:
     """Parser for rss files."""
 
-    def __init__(self, xml: str, limit=None, *, root_model=RSSFeed):
+    def __init__(self, xml: str, limit=None, *, schema=RSSFeed):
         self.xml = xml
         self.limit = limit
 
         self.raw_data = None
         self.rss = None
 
-        self.root_model = root_model
+        self.schema = schema
 
     @staticmethod
     def _check_atom(root: dict):
@@ -35,6 +46,6 @@ class Parser:
         root = parse(self.xml)
         self._check_atom(root)
 
-        m = self.root_model.parse_obj(root["rss"])
+        m = self.schema.parse_obj(root["rss"])
 
         return m

@@ -9,8 +9,8 @@ from rss_parser.models.utils import camel_case
 
 
 class RSSBaseModel(BaseModel):
-    # TODO: Override func to be able to input camel
-
     class Config:
-        allow_mutation = False
+        # Not really sure if we want for the schema obj to be immutable
+        # Disabling for now
+        # allow_mutation = False
         alias_generator = camel_case

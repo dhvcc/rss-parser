@@ -103,5 +103,3 @@ class Tag(GenericModel, Generic[T]):
 
     def __add__(self, other):
         return self.content + other
-
-    # TODO: add eq, lt, gt, bool, add, ...

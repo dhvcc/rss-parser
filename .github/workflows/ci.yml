@@ -12,12 +12,10 @@ on:
   pull_request:
 
 jobs:
-  build:
+  test:
     strategy:
       max-parallel: 6
       matrix:
-        # TODO: Add cli to parse to json
-        # TODO: Possibly bundle as deb/rpm/exe
         os: [ "ubuntu-latest", "windows-latest", "macos-latest" ]
         python-version: [ "3.8", "3.9", "3.10", "3.11"]
 
@@ -44,7 +42,7 @@ jobs:
       - name: Lint code with black
         run: poetry run black --check .
 
-      - name: Lint code with isort
+      - name: Lint code with ruff
         run: poetry run ruff check .
 
       - name: Test code with pytest

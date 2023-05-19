@@ -1,5 +1,5 @@
 """Unit tests in addition to doctests present."""
-from datetime import datetime
+from datetime import datetime, timedelta
 from operator import eq, ge, gt, le, lt, ne
 from random import randint
 from typing import Optional
@@ -21,7 +21,7 @@ def rand_str():
 
 
 def test_comparison_operators_number():
-    number = randint(0, 2**32)  # noqa
+    number = randint(0, 2**32)
     operator_result_list = [
         [eq, number, True],
         [eq, number + 1, False],
@@ -58,7 +58,7 @@ def test_comparison_operators_number():
 
 
 def test_comparison_operators_float():
-    number = float(randint(0, 2**32))  # noqa
+    number = float(randint(0, 2**32))
     operator_result_list = [
         [eq, number, True],
         [eq, number + 1, False],
@@ -88,7 +88,6 @@ def test_comparison_operators_float():
         [le, number - 1, False],
         [le, number + 0.1, True],
     ]
-    # TODO: Investiagte why its mandatory to use camelCase from converter
     obj = Model(floatNumber=number)
 
     for operator, b_operand, expected in operator_result_list:
@@ -137,4 +136,35 @@ def test_comparison_operators_string():
         assert operator(obj.string, b_operand) is expected
 
 
-# TODO: comparsions for datetime
+def test_comparison_operators_datetime():
+    dt = datetime(randint(1, 2023), randint(1, 12), randint(1, 31))
+    delta = timedelta(randint(1, 1000))
+    operator_result_list = [
+        [eq, dt, True],
+        [eq, dt + delta, False],
+        [eq, dt - delta, False],
+        #
+        [ne, dt, False],
+        [ne, dt + delta, True],
+        [ne, dt - delta, True],
+        #
+        [gt, dt, False],
+        [gt, dt + delta, False],
+        [gt, dt - delta, True],
+        #
+        [lt, dt, False],
+        [lt, dt + delta, True],
+        [lt, dt - delta, False],
+        #
+        [ge, dt, True],
+        [ge, dt + delta, False],
+        [ge, dt - delta, True],
+        #
+        [le, dt, True],
+        [le, dt + delta, True],
+        [le, dt - delta, False],
+    ]
+    obj = Model(datetime=dt)
+
+    for operator, b_operand, expected in operator_result_list:
+        assert operator(obj.datetime, b_operand) is expected

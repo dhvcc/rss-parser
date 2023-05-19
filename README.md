@@ -10,11 +10,12 @@
 [![License](https://img.shields.io/pypi/l/rss-parser?color=success)](https://github.com/dhvcc/rss-parser/blob/master/LICENSE)
 [![GitHub Pages](https://badgen.net/github/status/dhvcc/rss-parser/gh-pages?label=docs)](https://dhvcc.github.io/rss-parser#documentation)
 
-[![Pypi publish](https://github.com/dhvcc/rss-parser/workflows/Pypi%20publish/badge.svg)](https://github.com/dhvcc/rss-parser/actions?query=workflow%3A%22Pypi+publish%22)
+![CI](https://github.com/dhvcc/rss-parser/actions/workflows/ci.yml/badge.svg?branch=master)
+![PyPi publish](https://github.com/dhvcc/rss-parser/actions/workflows/publish_to_pypi.yml/badge.svg?branch=master)
 
 ## About
 
-`rss-parser` is typed python RSS parsing module built using `BeautifulSoup` and `pydantic`
+`rss-parser` is typed python RSS parsing module built using [pydantic](https://github.com/pydantic/pydantic) and [xmltodict](https://github.com/martinblech/xmltodict)
 
 ## Installation
 
@@ -27,10 +28,13 @@ or
 ```bash
 git clone https://github.com/dhvcc/rss-parser.git
 cd rss-parser
-pip install .
+poetry build
+pip install dist/*.whl
 ```
 
 ## Usage
+
+### Quickstart
 
 ```python
 from rss_parser import Parser
@@ -40,16 +44,15 @@ rss_url = "https://feedforall.com/sample.xml"
 xml = get(rss_url)
 
 # Limit feed output to 5 items
-# To disable limit simply do not provide the argument or use None
 parser = Parser(xml=xml.content, limit=5)
-feed = parser.parse()
+rss = parser.parse()
 
-# Print out feed meta data
-print(feed.language)
-print(feed.version)
+# Print out rss meta data
+print(rss.channel.language)
+print(rss.version)
 
 # Iteratively print feed items
-for item in feed.feed:
+for item in rss.channel.feed:
     print(item.title)
     print(item.description)
 

@@ -14,7 +14,7 @@ repos:
   - repo: local
 
     hooks:
-      - id: black
+      - id: black-format-staged
         name: black
         entry: poetry
         args:
@@ -24,7 +24,7 @@ repos:
         types: [ python ]
         stages: [ commit ]
 
-      - id: ruff
+      - id: ruff-check-global
         name: ruff
         entry: poetry
         args:
