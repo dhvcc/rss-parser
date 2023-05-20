@@ -137,7 +137,7 @@ def test_comparison_operators_string():
 
 
 def test_comparison_operators_datetime():
-    dt = datetime(randint(1, 2023), randint(1, 12), randint(1, 31))
+    dt = datetime(randint(1, 2023), randint(1, 12), randint(1, 28))
     delta = timedelta(randint(1, 1000))
     operator_result_list = [
         [eq, dt, True],
