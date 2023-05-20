@@ -10,8 +10,8 @@ sample_dir = Path(__file__).parent.resolve() / "samples"
 
 @pytest.fixture
 def sample_and_result(request):
-    with open(sample_dir / f"{request.param[0]}.xml") as sample:
-        with open(sample_dir / f"{request.param[0]}.json") as result:
+    with open(sample_dir / f"{request.param[0]}.xml", encoding="utf-8") as sample:
+        with open(sample_dir / f"{request.param[0]}.json", encoding="utf-8") as result:
             return sample.read(), loads(result.read())
 
 
