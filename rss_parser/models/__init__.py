@@ -31,7 +31,7 @@ class RSSBaseModel(BaseModel):
                 attrs[key] = (transform(value.type_), value.default)
             else:
                 attrs[key] = (value.type_, value.default)
-        return create_model(f"{cls.__name__}__extended", __base__=RSSBaseModel, **attrs)
+        return create_model(cls.__name__, __base__=RSSBaseModel, **attrs)
 
     @classmethod
     def unwrap_tags(cls, *fields: str) -> Type[Self]:
