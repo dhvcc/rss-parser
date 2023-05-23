@@ -1,6 +1,6 @@
 """Unit tests in addition to doctests present."""
 from datetime import datetime, timedelta
-from operator import eq, ge, gt, le, lt, ne
+from operator import add, eq, floordiv, ge, gt, le, lt, mod, mul, ne, pow, sub, truediv
 from random import randint
 from typing import Optional
 
@@ -18,6 +18,14 @@ class Model(RSSBaseModel):
 def rand_str():
     # FIXME: Yeah I know
     return "string"
+
+
+def rand_dt():
+    return datetime(randint(1, 2023), randint(1, 12), randint(1, 28))
+
+
+def rand_td():
+    return timedelta(randint(1, 1000))
 
 
 def test_comparison_operators_number():
@@ -137,8 +145,8 @@ def test_comparison_operators_string():
 
 
 def test_comparison_operators_datetime():
-    dt = datetime(randint(1, 2023), randint(1, 12), randint(1, 28))
-    delta = timedelta(randint(1, 1000))
+    dt = rand_dt()
+    delta = rand_td()
     operator_result_list = [
         [eq, dt, True],
         [eq, dt + delta, False],
@@ -168,3 +176,43 @@ def test_comparison_operators_datetime():
 
     for operator, b_operand, expected in operator_result_list:
         assert operator(obj.datetime, b_operand) is expected
+
+
+def test_arithmetic_operators_number():
+    number = randint(0, 2**32)
+    b_operand = randint(0, 2**16)
+    operator_list = [add, sub, mul, truediv, floordiv, mod, pow]
+    obj = Model(number=number)
+
+    for operator in operator_list:
+        assert operator(obj.number, b_operand) == operator(number, b_operand)
+
+
+def test_arithmetic_operators_float():
+    number = randint(0, 2**8) / 100
+    b_operand = randint(0, 2**8) / 100
+    operator_list = [add, sub, mul, truediv, floordiv, mod, pow]
+    obj = Model(floatNumber=number)
+
+    for operator in operator_list:
+        assert operator(obj.float_number, b_operand) == operator(number, b_operand)
+
+
+def test_arithmetic_operators_string_mul():
+    string = rand_str()
+    int_operand = randint(0, 2**16)
+    string_operand = rand_str()
+    obj = Model(string=string)
+
+    assert mul(obj.string, int_operand) == mul(string, int_operand)
+    assert add(obj.string, string_operand) == add(string, string_operand)
+
+
+def test_arithmetic_operators_datetime():
+    dt = rand_dt()
+    td_operand = rand_td()
+    operator_list = [add, sub]
+    obj = Model(datetime=dt)
+
+    for operator in operator_list:
+        assert operator(obj.datetime, td_operand) == operator(dt, td_operand)

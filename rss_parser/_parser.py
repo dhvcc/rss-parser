@@ -9,10 +9,6 @@ from rss_parser.models.root import RSSFeed
 # TODO: Possibly bundle as deb/rpm/exe
 
 # >>>> MVP
-# FIXME: doesn't parse items on https://rss.art19.com/apology-line
-# Related. Provide a way to auto populate nested models. May be a custom class, like TagList or a custom validator
-#
-# TODO: Arithmetic operators
 # TODO: class based approach, use classmethods and class attributes
 # TODO: Also add dynamic class generator with config.
 # Parser.with_config which returns new class and also supports context managers

@@ -1,7 +1,10 @@
+import warnings
 from copy import deepcopy
-from typing import TYPE_CHECKING, Generic, TypeVar, Union
+from math import ceil, floor, trunc
+from operator import add, eq, floordiv, ge, gt, index, invert, le, lt, mod, mul, ne, neg, pos, pow, sub, truediv
+from typing import TYPE_CHECKING, Generic, Type, TypeVar, Union
 
-from pydantic import validator
+from pydantic import create_model, validator
 from pydantic.generics import GenericModel
 
 T = TypeVar("T")
@@ -12,7 +15,7 @@ class TagData(GenericModel, Generic[T]):
     attributes: dict
 
 
-class Tag(GenericModel, Generic[T]):
+class TagRaw(GenericModel, Generic[T]):
     """
     Class to represent XML tag.
 
@@ -58,48 +61,61 @@ class Tag(GenericModel, Generic[T]):
         return {"content": v, "attributes": {}}
 
     def __getattr__(self, item):
-        """Forward attribute lookup to the actual element which is stored in self.__root__."""
-        # Not using super, since there's no getattr in any of the parents
-        try:
-            return getattr(self.__root__, item)
-        except AttributeError:
-            return getattr(self.__root__.content, item)
+        """Optionally forward attribute lookup to the actual element which is stored in self.__root__."""
+        return getattr(self.__root__, item)
 
-    # Conversions
 
-    def __str__(self):
-        return str(self.content)
+_OPERATOR_MAPPING = {
+    # Unary
+    "__pos__": pos,
+    "__neg__": neg,
+    "__abs__": abs,
+    "__invert__": invert,
+    "__round__": round,
+    "__floor__": floor,
+    "__ceil__": ceil,
+    # Conversion
+    "__str__": str,
+    "__int__": int,
+    "__float__": float,
+    "__bool__": bool,
+    "__complex__": complex,
+    "__oct__": oct,
+    "__hex__": hex,
+    "__index__": index,
+    "__trunc__": trunc,
+    # Comparison
+    "__lt__": lt,
+    "__gt__": gt,
+    "__le__": le,
+    "__eq__": eq,
+    "__ne__": ne,
+    "__ge__": ge,
+    # Arithmetic
+    "__add__": add,
+    "__sub__": sub,
+    "__mul__": mul,
+    "__truediv__": truediv,
+    "__floordiv__": floordiv,
+    "__mod__": mod,
+    "__pow__": pow,
+}
 
-    def __int__(self):
-        return int(self.content)
 
-    def __float__(self):
-        return float(self.content)
+def _make_proxy_operator(operator):
+    def f(self, *args):
+        return operator(self.content, *args)
 
-    def __bool__(self):
-        return bool(self.content)
+    f.__name__ = operator.__name__
 
-    # Comparion operators
+    return f
 
-    def __eq__(self, other):
-        return self.content == other
 
-    def __ne__(self, other) -> bool:
-        return self.content != other
-
-    def __gt__(self, other):
-        return self.content > other
-
-    def __ge__(self, other):
-        return self.content >= other
-
-    def __lt__(self, other):
-        return self.content < other
-
-    def __le__(self, other):
-        return self.content <= other
-
-    # Arithmetic  operators
-
-    def __add__(self, other):
-        return self.content + other
+with warnings.catch_warnings():
+    # Ignoring pydantic's warnings when inserting dunder methods (this is not a field so we don't care)
+    warnings.filterwarnings("ignore", message="fields may not start with an underscore")
+    Tag: Type[TagRaw] = create_model(
+        "Tag",
+        __base__=(TagRaw, Generic[T]),
+        **{method: _make_proxy_operator(operator) for method, operator in _OPERATOR_MAPPING.items()},
+    )

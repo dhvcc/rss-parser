@@ -31,8 +31,6 @@ repos:
           - run
           - ruff
           - check
-          - .
         language: system
-        always_run: true
-        pass_filenames: false
+        types: [ python ]
         stages: [ commit, push ]
