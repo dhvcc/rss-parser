@@ -64,6 +64,11 @@ class TagRaw(GenericModel, Generic[T]):
         """Optionally forward attribute lookup to the actual element which is stored in self.__root__."""
         return getattr(self.__root__, item)
 
+    @classmethod
+    def is_tag(cls, type_):
+        # Issubclass doesn't work with Unions and stuff, so this is the best way to compare
+        return type(type_) is type(cls) and issubclass(type_, cls)
+
 
 _OPERATOR_MAPPING = {
     # Unary

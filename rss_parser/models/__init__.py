@@ -14,29 +14,39 @@ from rss_parser.models.utils import camel_case, extract_tag_sub_type
 
 class RSSBaseModel(BaseModel):
     class Config:
-        # Not really sure if we want for the schema obj to be immutable
-        # Disabling for now
+        # Not really sure if we want for the schema obj to be immutable, disabling for now
         # allow_mutation = False
         alias_generator = camel_case
 
     @classmethod
-    def _extend_model_tags(cls, with_: bool, fields: list):
+    def _extend_model_tags(cls, wrap: bool, fields: list):
+        """Oprionally wraps/unwraps Tag type for specified fields, supports __all__."""
         attrs = {}
         for key, value in cls.__fields__.items():
             if "__all__" in fields or key in fields:
-                if with_:
-                    transform = lambda t: t if issubclass(t, Tag) else Tag[t]  # noqa
+                if wrap:
+                    transform = lambda t: t if Tag.is_tag(t) else Tag[t]  # noqa
                 else:
-                    transform = lambda t: extract_tag_sub_type(t) if issubclass(t, Tag) else t  # noqa
+                    transform = lambda t: extract_tag_sub_type(t) if Tag.is_tag(t) else t  # noqa
                 attrs[key] = (transform(value.type_), value.default)
             else:
                 attrs[key] = (value.type_, value.default)
         return create_model(f"{cls.__name__}__extended", __base__=RSSBaseModel, **attrs)
 
     @classmethod
-    def without_tags(cls, *fields) -> Type[Self]:
-        return cls._extend_model_tags(with_=False, fields=fields)
+    def unwrap_tags(cls, *fields: str) -> Type[Self]:
+        """
+        Unwraps povided fields with Tag[field].
+
+        Providing __all__ will apply this to everey model field.
+        """
+        return cls._extend_model_tags(wrap=False, fields=fields)
 
     @classmethod
-    def with_tags(cls, *fields) -> Type[Self]:
-        return cls._extend_model_tags(with_=True, fields=fields)
+    def wrap_tags(cls, *fields: str) -> Type[Self]:
+        """
+        Wraps povided fields with Tag[field] if they're not already.
+
+        Providing __all__ will apply this to everey model field.
+        """
+        return cls._extend_model_tags(wrap=True, fields=fields)
