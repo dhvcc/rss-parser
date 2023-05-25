@@ -9,7 +9,7 @@ from pydantic import create_model
 from pydantic.generics import GenericModel
 from pydantic.json import pydantic_encoder
 
-from rss_parser.models import RSSBaseModel
+from rss_parser.models import XMLBaseModel
 
 T = TypeVar("T")
 
@@ -68,7 +68,7 @@ class TagExperimental(GenericModel, Generic[T]):
     def flatten_tag_encoder(cls, v):
         """Encoder that translates Tag objects (dict) to plain .content values (T)."""
         bases = v.__class__.__bases__
-        if RSSBaseModel in bases:
+        if XMLBaseModel in bases:
             # Can't pass encoder to .dict :/
             return loads(v.json_plain())
         if cls in bases:

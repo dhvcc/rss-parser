@@ -2,7 +2,7 @@ from typing import List, Optional
 
 from pydantic import Field
 
-from rss_parser.models import RSSBaseModel
+from rss_parser.models import XMLBaseModel
 from rss_parser.models.image import Image
 from rss_parser.models.item import Item
 from rss_parser.models.text_input import TextInput
@@ -10,7 +10,7 @@ from rss_parser.models.types.date import DateTimeOrStr
 from rss_parser.models.types.tag import Tag
 
 
-class RequiredChannelElementsMixin(RSSBaseModel):
+class RequiredChannelElementsMixin(XMLBaseModel):
     """https://www.rssboard.org/rss-specification#requiredChannelElements."""
 
     title: Tag[str] = None  # GoUpstate.com News Headlines
@@ -23,7 +23,7 @@ class RequiredChannelElementsMixin(RSSBaseModel):
     "Phrase or sentence describing the channel."
 
 
-class OptionalChannelElementsMixin(RSSBaseModel):
+class OptionalChannelElementsMixin(XMLBaseModel):
     """https://www.rssboard.org/rss-specification#optionalChannelElements."""
 
     items: Optional[List[Tag[Item]]] = Field(alias="item", default=[])
@@ -55,7 +55,6 @@ class OptionalChannelElementsMixin(RSSBaseModel):
     docs: Optional[Tag[str]] = None  # https://www.rssboard.org/rss-specification
     "A URL that points to the documentation for the format used in the RSS file. It's probably a pointer to this " "page. It's for people who might stumble across an RSS file on a Web server 25 years from now and wonder what " "it is."  # noqa
 
-    # TODO: should support self-closing tags with their attributes?
     cloud: Optional[Tag[str]] = None  # <cloud domain="rpc.sys.com" protocol="soap"/>
     "Allows processes to register with a cloud to be notified of updates to the channel, implementing a lightweight " "publish-subscribe protocol for RSS feeds."  # noqa
 
@@ -78,5 +77,5 @@ class OptionalChannelElementsMixin(RSSBaseModel):
     "A hint for aggregators telling them which days they can skip. This element contains up to seven <day> " "sub-elements whose value is Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday. Aggregators " "may not read the channel during days listed in the <skipDays> element."  # noqa
 
 
-class Channel(RequiredChannelElementsMixin, OptionalChannelElementsMixin, RSSBaseModel):
+class Channel(RequiredChannelElementsMixin, OptionalChannelElementsMixin, XMLBaseModel):
     pass

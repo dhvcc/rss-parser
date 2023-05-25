@@ -4,11 +4,11 @@ from operator import add, eq, floordiv, ge, gt, le, lt, mod, mul, ne, pow, sub, 
 from random import randint
 from typing import Optional
 
-from rss_parser.models import RSSBaseModel
+from rss_parser.models import XMLBaseModel
 from rss_parser.models.types.tag import Tag
 
 
-class Model(RSSBaseModel):
+class Model(XMLBaseModel):
     number: Optional[Tag[int]]
     float_number: Optional[Tag[float]]
     string: Optional[Tag[str]]

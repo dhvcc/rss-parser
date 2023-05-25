@@ -11,7 +11,7 @@ from pydantic.json import pydantic_encoder
 from rss_parser.models.utils import camel_case
 
 
-class RSSBaseModel(BaseModel):
+class XMLBaseModel(BaseModel):
     class Config:
         # Not really sure if we want for the schema obj to be immutable, disabling for now
         # allow_mutation = False

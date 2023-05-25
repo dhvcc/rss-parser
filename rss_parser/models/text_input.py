@@ -1,8 +1,8 @@
-from rss_parser.models import RSSBaseModel
+from rss_parser.models import XMLBaseModel
 from rss_parser.models.types.tag import Tag
 
 
-class TextInput(RSSBaseModel):
+class TextInput(XMLBaseModel):
     """
     The purpose of the <textInput> element is something of a mystery. You can use it to specify a search engine box.
     Or to allow a reader to provide feedback. Most aggregators ignore it.

@@ -1,10 +1,10 @@
 from typing import Optional
 
-from rss_parser.models import RSSBaseModel
+from rss_parser.models import XMLBaseModel
 from rss_parser.models.types.tag import Tag
 
 
-class RequiredItemElementsMixin(RSSBaseModel):
+class RequiredItemElementsMixin(XMLBaseModel):
     title: Tag[str] = None  # Venice Film Festival Tries to Quit Sinking
     "The title of the item."
 
@@ -18,7 +18,7 @@ class RequiredItemElementsMixin(RSSBaseModel):
     "The item synopsis."
 
 
-class OptionalItemElementsMixin(RSSBaseModel):
+class OptionalItemElementsMixin(XMLBaseModel):
     author: Optional[Tag[str]] = None
     "Email address of the author of the item."
 
@@ -41,5 +41,5 @@ class OptionalItemElementsMixin(RSSBaseModel):
     "The RSS channel that the item came from."
 
 
-class Item(RequiredItemElementsMixin, OptionalItemElementsMixin, RSSBaseModel):
+class Item(RequiredItemElementsMixin, OptionalItemElementsMixin, XMLBaseModel):
     """https://www.rssboard.org/rss-specification#hrelementsOfLtitemgt."""

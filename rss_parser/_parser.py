@@ -1,22 +1,22 @@
 from xmltodict import parse
 
-from rss_parser.models.root import RSSFeed
+from rss_parser.models.root import RSS
 
 # >>> FUTURE
-# TODO: Feature, ignore_attributes in to_dict to allow for clean output
 # TODO: May be support generator based approach for big rss feeds
 # TODO: Add cli to parse to json
 # TODO: Possibly bundle as deb/rpm/exe
+# TODO: Atom support
+# TODO: Older RSS versions?
 
 # >>>> MVP
-# TODO: class based approach, use classmethods and class attributes
+# TODO: Parser class based approach, use classmethods and class attributes
 # TODO: Also add dynamic class generator with config.
 # Parser.with_config which returns new class and also supports context managers
-# TODO: Limit, xml, schema can be set in config or in runtime
 class Parser:
     """Parser for rss files."""
 
-    def __init__(self, xml: str, limit=None, *, schema=RSSFeed):
+    def __init__(self, xml: str, limit=None, *, schema=RSS):
         self.xml = xml
         self.limit = limit
 
@@ -28,9 +28,9 @@ class Parser:
     @staticmethod
     def _check_atom(root: dict):
         if "feed" in root:
-            raise NotImplementedError("ATOM feed is not currently supported")  #
+            raise NotImplementedError("ATOM feed is not currently supported")
 
-    def parse(self) -> RSSFeed:
+    def parse(self) -> RSS:
         """
         Parse the rss and each item.py of the feed.
 
