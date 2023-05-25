@@ -88,7 +88,7 @@ select = [
   "ARG001",  # Unused function argument
   "S311",    # Allow use of random
 ]
-"rss_parser/__init__.py" = [
+"**/__init__.py" = [
     "F401"
 ]
 

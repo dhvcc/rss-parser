@@ -1,21 +1,20 @@
 import warnings
 from copy import deepcopy
+from json import loads
 from math import ceil, floor, trunc
 from operator import add, eq, floordiv, ge, gt, index, invert, le, lt, mod, mul, ne, neg, pos, pow, sub, truediv
-from typing import TYPE_CHECKING, Generic, Type, TypeVar, Union
+from typing import Generic, Optional, Type, TypeVar, Union
 
-from pydantic import create_model, validator
+from pydantic import create_model
 from pydantic.generics import GenericModel
+from pydantic.json import pydantic_encoder
+
+from rss_parser.models import RSSBaseModel
 
 T = TypeVar("T")
 
 
-class TagData(GenericModel, Generic[T]):
-    content: T
-    attributes: dict
-
-
-class TagRaw(GenericModel, Generic[T]):
+class TagExperimental(GenericModel, Generic[T]):
     """
     Class to represent XML tag.
 
@@ -46,28 +45,36 @@ class TagRaw(GenericModel, Generic[T]):
       value is not a valid integer (type=type_error.integer)
     """
 
-    __root__: TagData[T]
+    # Optional in case of self-closing tags
+    content: Optional[T]
+    attributes: dict
 
-    if TYPE_CHECKING:
-        content: T
-        attributes: dict
+    @classmethod
+    def __get_validators__(cls):
+        yield cls.pre_convert
+        yield cls.validate
 
-    @validator("__root__", pre=True, always=True)
-    def validate_attributes(cls, v: Union[T, dict], values, **kwargs):  # noqa
+    @classmethod
+    def pre_convert(cls, v: Union[T, dict], **kwargs):  # noqa
         """Used to split tag's text with other xml attributes."""
         if isinstance(v, dict):
             data = deepcopy(v)
-            return {"content": data.pop("#text", ""), "attributes": {k.lstrip("@"): v for k, v in data.items()}}
+            attributes = {k.lstrip("@"): v for k, v in data.items() if k.startswith("@")}
+            content = data.pop("#text", data) if not len(attributes) == len(data) else None
+            return {"content": content, "attributes": attributes}
         return {"content": v, "attributes": {}}
 
-    def __getattr__(self, item):
-        """Optionally forward attribute lookup to the actual element which is stored in self.__root__."""
-        return getattr(self.__root__, item)
-
     @classmethod
-    def is_tag(cls, type_):
-        # Issubclass doesn't work with Unions and stuff, so this is the best way to compare
-        return type(type_) is type(cls) and issubclass(type_, cls)
+    def flatten_tag_encoder(cls, v):
+        """Encoder that translates Tag objects (dict) to plain .content values (T)."""
+        bases = v.__class__.__bases__
+        if RSSBaseModel in bases:
+            # Can't pass encoder to .dict :/
+            return loads(v.json_plain())
+        if cls in bases:
+            return v.content
+
+        return pydantic_encoder(v)
 
 
 _OPERATOR_MAPPING = {
@@ -119,8 +126,8 @@ def _make_proxy_operator(operator):
 with warnings.catch_warnings():
     # Ignoring pydantic's warnings when inserting dunder methods (this is not a field so we don't care)
     warnings.filterwarnings("ignore", message="fields may not start with an underscore")
-    Tag: Type[TagRaw] = create_model(
+    Tag: Type[TagExperimental] = create_model(
         "Tag",
-        __base__=(TagRaw, Generic[T]),
+        __base__=(TagExperimental, Generic[T]),
         **{method: _make_proxy_operator(operator) for method, operator in _OPERATOR_MAPPING.items()},
     )

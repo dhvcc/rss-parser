@@ -14,7 +14,24 @@ def test_parses_rss_version_2(sample_and_result):
 
     assert rss
 
-    left = dumps(rss.dict(), indent=2, sort_keys=True, default=str)
+    left = rss.json(indent=2, sort_keys=True)
+    right = dumps(result, indent=2, sort_keys=True, default=str)
+
+    assert left == right
+
+
+@pytest.mark.parametrize(
+    "sample_and_result", [["rss_2", True], ["rss_2_no_category_attr", True], ["apology_line", True]], indirect=True
+)
+def test_json_plain_ignores_attributes(sample_and_result):
+    # Expect basic RSSv2 to be parsed
+    sample, result = sample_and_result
+    parser = Parser(xml=sample)
+    rss = parser.parse()
+
+    assert rss
+
+    left = rss.json_plain(indent=2, sort_keys=True)
     right = dumps(result, indent=2, sort_keys=True, default=str)
 
     assert left == right

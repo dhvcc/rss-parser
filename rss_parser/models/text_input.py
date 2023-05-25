@@ -1,4 +1,5 @@
 from rss_parser.models import RSSBaseModel
+from rss_parser.models.types.tag import Tag
 
 
 class TextInput(RSSBaseModel):
@@ -9,14 +10,14 @@ class TextInput(RSSBaseModel):
     https://www.rssboard.org/rss-specification#lttextinputgtSubelementOfLtchannelgt
     """
 
-    title: str = None
+    title: Tag[str] = None
     "The label of the Submit button in the text input area."
 
-    description: str = None
+    description: Tag[str] = None
     "Explains the text input area."
 
-    name: str = None
+    name: Tag[str] = None
     "The name of the text object in the text input area."
 
-    link: str = None
+    link: Tag[str] = None
     "The URL of the CGI script that processes text input requests."
