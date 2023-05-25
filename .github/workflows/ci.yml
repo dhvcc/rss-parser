@@ -47,4 +47,4 @@ jobs:
         run: poetry run ruff check .
 
       - name: Test code with pytest
-        run: poetry run pytest
+        run: poetry run pytest --doctest-modules

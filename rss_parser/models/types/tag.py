@@ -23,31 +23,38 @@ class TagExperimental(GenericModel, Generic[T]):
     then the value will not be '123', but {'@someAttr':'val','#text': '123'}.
     This class allows you to handle this dynamically.
 
-    >>> from rss_parser.models import RSSBaseModel
-    >>> class Model(RSSBaseModel):
+    >>> from rss_parser.models import XMLBaseModel
+    >>> class Model(XMLBaseModel):
     ...     number: Tag[int]
     ...     string: Tag[str]
-    ...
     >>> m = Model(number=1, string={'@customAttr': 'v', '#text': 'str tag value'})
     >>> m.number.content
+    1
+    >>> m.number + 10  # forwarding operators to m.number.content for simplicity
+    11
+    >>> m.number.bit_length()  # forwarding getattr to m.number.content
     1
     >>> m.number.attributes
     {}
     >>> m.string.content
     'str tag value'
     >>> m.string.attributes
-    {'@customAttr': 'v'}
+    {'customAttr': 'v'}
     >>> m = Model(number='not_a_number', string={'@customAttr': 'v', '#text': 'str tag value'})
     Traceback (most recent call last):
      ...
     pydantic.error_wrappers.ValidationError: 1 validation error for Model
-    number -> __root__ -> content
+    number -> content
       value is not a valid integer (type=type_error.integer)
     """
 
     # Optional in case of self-closing tags
     content: Optional[T]
     attributes: dict
+
+    def __getattr__(self, item):
+        """Forward default getattr for content for simplicity."""
+        return getattr(self.content, item)
 
     @classmethod
     def __get_validators__(cls):
