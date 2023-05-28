@@ -34,6 +34,8 @@ class TagExperimental(GenericModel, Generic[T]):
     11
     >>> m.number.bit_length()  # forwarding getattr to m.number.content
     1
+    >>> type(m.number), type(m.number.content)
+    (rss_parser.models.image.Tag[int], int)  # types are NOT the same, however, the interfaces are similar
     >>> m.number.attributes
     {}
     >>> m.string.content
@@ -55,6 +57,12 @@ class TagExperimental(GenericModel, Generic[T]):
     def __getattr__(self, item):
         """Forward default getattr for content for simplicity."""
         return getattr(self.content, item)
+
+    def __getitem__(self, key):
+        return self.content[key]
+
+    def __setitem__(self, key, value):
+        self.content[key] = value
 
     @classmethod
     def __get_validators__(cls):

@@ -1,6 +1,9 @@
+from typing import ClassVar, Optional, Type
+
 from xmltodict import parse
 
-from rss_parser.models.root import RSS
+from rss_parser.models import XMLBaseModel
+from rss_parser.models.rss import RSS
 
 # >>> FUTURE
 # TODO: May be support generator based approach for big rss feeds
@@ -9,40 +12,32 @@ from rss_parser.models.root import RSS
 # TODO: Atom support
 # TODO: Older RSS versions?
 
-# >>>> MVP
-# TODO: Parser class based approach, use classmethods and class attributes
-# TODO: Also add dynamic class generator with config.
-# Parser.with_config which returns new class and also supports context managers
+
 class Parser:
     """Parser for rss files."""
 
-    def __init__(self, xml: str, limit=None, *, schema=RSS):
-        self.xml = xml
-        self.limit = limit
-
-        self.raw_data = None
-        self.rss = None
-
-        self.schema = schema
+    schema: ClassVar[Type[XMLBaseModel]] = RSS
 
     @staticmethod
     def _check_atom(root: dict):
         if "feed" in root:
             raise NotImplementedError("ATOM feed is not currently supported")
 
-    def parse(self) -> RSS:
+    @staticmethod
+    def to_xml(data: str, *args, **kwargs):
+        return parse(str(data), *args, **kwargs)
+
+    @classmethod
+    def parse(cls, data: str, *, schema: Optional[Type[XMLBaseModel]] = None) -> XMLBaseModel:
         """
-        Parse the rss and each item.py of the feed.
+        Parse XML data into schema (default: RSS 2.0).
 
-        Missing attributes will be replaced by an empty string. The
-        information of the optional entries are stored in a dictionary
-        under the attribute "other" of each item.py.
-
-        :param entries: An optional list of additional rss tags that can be recovered
-        from each item.py
-        :return: The RSSFeed which describe the rss information
+        :param data: string of XML data that needs to be parsed
+        :return: "schema" object
         """
-        root = parse(self.xml)
-        self._check_atom(root)
+        root = cls.to_xml(data)
+        cls._check_atom(root)
 
-        return self.schema.parse_obj(root["rss"])
+        schema = schema or cls.schema
+
+        return schema.parse_obj(root["rss"])
