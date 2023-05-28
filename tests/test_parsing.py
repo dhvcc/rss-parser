@@ -9,8 +9,7 @@ from rss_parser import Parser
 def test_parses_rss_version_2(sample_and_result):
     # Expect basic RSSv2 to be parsed
     sample, result = sample_and_result
-    parser = Parser(xml=sample)
-    rss = parser.parse()
+    rss = Parser.parse(sample)
 
     assert rss
 
@@ -26,8 +25,7 @@ def test_parses_rss_version_2(sample_and_result):
 def test_json_plain_ignores_attributes(sample_and_result):
     # Expect basic RSSv2 to be parsed
     sample, result = sample_and_result
-    parser = Parser(xml=sample)
-    rss = parser.parse()
+    rss = Parser.parse(sample)
 
     assert rss
 
@@ -39,7 +37,5 @@ def test_json_plain_ignores_attributes(sample_and_result):
 
 def test_fails_atom_feed(atom_feed):
     # Expect ATOM feed to fail since it's not supported
-    parser = Parser(xml=atom_feed)
-
     with pytest.raises(NotImplementedError):
-        parser.parse()
+        Parser.parse(atom_feed)

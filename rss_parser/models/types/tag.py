@@ -34,8 +34,8 @@ class TagExperimental(GenericModel, Generic[T]):
     11
     >>> m.number.bit_length()  # forwarding getattr to m.number.content
     1
-    >>> type(m.number), type(m.number.content)
-    (rss_parser.models.image.Tag[int], int)  # types are NOT the same, however, the interfaces are similar
+    >>> type(m.number), type(m.number.content)  # types are NOT the same, however, the interfaces are similar
+    (<class 'rss_parser.models.image.Tag[int]'>, <class 'int'>)
     >>> m.number.attributes
     {}
     >>> m.string.content
