@@ -1,0 +1,413 @@
+{
+  "channel": {
+    "attributes": {},
+    "content": {
+      "category": {
+        "attributes": {
+          "domain": "www.dmoz.com"
+        },
+        "content": "Computers/Software/Internet/Site Management/Content Management"
+      },
+      "cloud": null,
+      "copyright": {
+        "attributes": {},
+        "content": "Copyright 2004 NotePage, Inc."
+      },
+      "description": {
+        "attributes": {},
+        "content": "RSS is a fascinating technology. The uses for RSS are expanding daily. Take a closer look at how various industries are using the benefits of RSS in their businesses."
+      },
+      "docs": {
+        "attributes": {},
+        "content": "http://blogs.law.harvard.edu/tech/rss"
+      },
+      "generator": {
+        "attributes": {},
+        "content": "FeedForAll Beta1 (0.0.1.8)"
+      },
+      "image": {
+        "attributes": {},
+        "content": {
+          "description": {
+            "attributes": {},
+            "content": "FeedForAll Sample Feed"
+          },
+          "height": {
+            "attributes": {},
+            "content": 48
+          },
+          "link": {
+            "attributes": {},
+            "content": "http://www.feedforall.com/industry-solutions.htm"
+          },
+          "title": {
+            "attributes": {},
+            "content": "FeedForAll Sample Feed"
+          },
+          "url": {
+            "attributes": {},
+            "content": "http://www.feedforall.com/ffalogo48x48.gif"
+          },
+          "width": {
+            "attributes": {},
+            "content": 48
+          }
+        }
+      },
+      "items": [
+        {
+          "attributes": {},
+          "content": {
+            "author": null,
+            "category": {
+              "attributes": {
+                "domain": "www.dmoz.com"
+              },
+              "content": "Computers/Software/Internet/Site Management/Content Management"
+            },
+            "comments": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/forum"
+            },
+            "description": {
+              "attributes": {},
+              "content": "<b>FeedForAll </b>helps Restaurant's communicate with customers. Let your customers know the latest specials or events.<br>\n<br>\nRSS feed uses include:<br>\n<i><font color=\"#FF0000\">Daily Specials <br>\nEntertainment <br>\nCalendar of Events </i></font>"
+            },
+            "enclosure": null,
+            "guid": null,
+            "link": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/restaurant.htm"
+            },
+            "pub_date": {
+              "attributes": {},
+              "content": "Tue, 19 Oct 2004 11:09:11 -0400"
+            },
+            "source": null,
+            "title": {
+              "attributes": {},
+              "content": "RSS Solutions for Restaurants"
+            }
+          }
+        },
+        {
+          "attributes": {},
+          "content": {
+            "author": null,
+            "category": {
+              "attributes": {
+                "domain": "www.dmoz.com"
+              },
+              "content": "Computers/Software/Internet/Site Management/Content Management"
+            },
+            "comments": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/forum"
+            },
+            "description": {
+              "attributes": {},
+              "content": "FeedForAll helps Educational Institutions communicate with students about school wide activities, events, and schedules.<br>\n<br>\nRSS feed uses include:<br>\n<i><font color=\"#0000FF\">Homework Assignments <br>\nSchool Cancellations <br>\nCalendar of Events <br>\nSports Scores <br>\nClubs/Organization Meetings <br>\nLunches Menus </i></font>"
+            },
+            "enclosure": null,
+            "guid": null,
+            "link": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/schools.htm"
+            },
+            "pub_date": {
+              "attributes": {},
+              "content": "Tue, 19 Oct 2004 11:09:09 -0400"
+            },
+            "source": null,
+            "title": {
+              "attributes": {},
+              "content": "RSS Solutions for Schools and Colleges"
+            }
+          }
+        },
+        {
+          "attributes": {},
+          "content": {
+            "author": null,
+            "category": {
+              "attributes": {
+                "domain": "www.dmoz.com"
+              },
+              "content": "Computers/Software/Internet/Site Management/Content Management"
+            },
+            "comments": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/forum"
+            },
+            "description": {
+              "attributes": {},
+              "content": "FeedForAll helps Computer Service Companies communicate with clients about cyber security and related issues. <br>\n<br>\nUses include:<br>\n<i><font color=\"#0000FF\">Cyber Security Alerts <br>\nSpecials<br>\nJob Postings </i></font>"
+            },
+            "enclosure": null,
+            "guid": null,
+            "link": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/computer-service.htm"
+            },
+            "pub_date": {
+              "attributes": {},
+              "content": "Tue, 19 Oct 2004 11:09:07 -0400"
+            },
+            "source": null,
+            "title": {
+              "attributes": {},
+              "content": "RSS Solutions for Computer Service Companies"
+            }
+          }
+        },
+        {
+          "attributes": {},
+          "content": {
+            "author": null,
+            "category": {
+              "attributes": {
+                "domain": "www.dmoz.com"
+              },
+              "content": "Computers/Software/Internet/Site Management/Content Management"
+            },
+            "comments": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/forum"
+            },
+            "description": {
+              "attributes": {},
+              "content": "FeedForAll helps Governments communicate with the general public about positions on various issues, and keep the community aware of changes in important legislative issues. <b><i><br>\n</b></i><br>\nRSS uses Include:<br>\n<i><font color=\"#00FF00\">Legislative Calendar<br>\nVotes<br>\nBulletins</i></font>"
+            },
+            "enclosure": null,
+            "guid": null,
+            "link": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/government.htm"
+            },
+            "pub_date": {
+              "attributes": {},
+              "content": "Tue, 19 Oct 2004 11:09:05 -0400"
+            },
+            "source": null,
+            "title": {
+              "attributes": {},
+              "content": "RSS Solutions for Governments"
+            }
+          }
+        },
+        {
+          "attributes": {},
+          "content": {
+            "author": null,
+            "category": {
+              "attributes": {
+                "domain": "www.dmoz.com"
+              },
+              "content": "Computers/Software/Internet/Site Management/Content Management"
+            },
+            "comments": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/forum"
+            },
+            "description": {
+              "attributes": {},
+              "content": "FeedForAll helps Politicians communicate with the general public about positions on various issues, and keep the community notified of their schedule. <br>\n<br>\nUses Include:<br>\n<i><font color=\"#FF0000\">Blogs<br>\nSpeaking Engagements <br>\nStatements<br>\n </i></font>"
+            },
+            "enclosure": null,
+            "guid": null,
+            "link": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/politics.htm"
+            },
+            "pub_date": {
+              "attributes": {},
+              "content": "Tue, 19 Oct 2004 11:09:03 -0400"
+            },
+            "source": null,
+            "title": {
+              "attributes": {},
+              "content": "RSS Solutions for Politicians"
+            }
+          }
+        },
+        {
+          "attributes": {},
+          "content": {
+            "author": null,
+            "category": {
+              "attributes": {
+                "domain": "www.dmoz.com"
+              },
+              "content": "Computers/Software/Internet/Site Management/Content Management"
+            },
+            "comments": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/forum"
+            },
+            "description": {
+              "attributes": {},
+              "content": "FeedForAll helps Meteorologists communicate with the general public about storm warnings and weather alerts, in specific regions. Using RSS meteorologists are able to quickly disseminate urgent and life threatening weather warnings. <br>\n<br>\nUses Include:<br>\n<i><font color=\"#0000FF\">Weather Alerts<br>\nPlotting Storms<br>\nSchool Cancellations </i></font>"
+            },
+            "enclosure": null,
+            "guid": null,
+            "link": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/weather.htm"
+            },
+            "pub_date": {
+              "attributes": {},
+              "content": "Tue, 19 Oct 2004 11:09:01 -0400"
+            },
+            "source": null,
+            "title": {
+              "attributes": {},
+              "content": "RSS Solutions for Meteorologists"
+            }
+          }
+        },
+        {
+          "attributes": {},
+          "content": {
+            "author": null,
+            "category": {
+              "attributes": {
+                "domain": "www.dmoz.com"
+              },
+              "content": "Computers/Software/Internet/Site Management/Content Management"
+            },
+            "comments": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/forum"
+            },
+            "description": {
+              "attributes": {},
+              "content": "FeedForAll helps Realtors and Real Estate companies communicate with clients informing them of newly available properties, and open house announcements. RSS helps to reach a targeted audience and spread the word in an inexpensive, professional manner. <font color=\"#0000FF\"><br>\n</font><br>\nFeeds can be used for:<br>\n<i><font color=\"#FF0000\">Open House Dates<br>\nNew Properties For Sale<br>\nMortgage Rates</i></font>"
+            },
+            "enclosure": null,
+            "guid": null,
+            "link": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/real-estate.htm"
+            },
+            "pub_date": {
+              "attributes": {},
+              "content": "Tue, 19 Oct 2004 11:08:59 -0400"
+            },
+            "source": null,
+            "title": {
+              "attributes": {},
+              "content": "RSS Solutions for Realtors & Real Estate Firms"
+            }
+          }
+        },
+        {
+          "attributes": {},
+          "content": {
+            "author": null,
+            "category": {
+              "attributes": {
+                "domain": "www.dmoz.com"
+              },
+              "content": "Computers/Software/Internet/Site Management/Content Management"
+            },
+            "comments": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/forum"
+            },
+            "description": {
+              "attributes": {},
+              "content": "FeedForAll helps <b>Banks, Credit Unions and Mortgage companies</b> communicate with the general public about rate changes in a prompt and professional manner. <br>\n<br>\nUses include:<br>\n<i><font color=\"#0000FF\">Mortgage Rates<br>\nForeign Exchange Rates <br>\nBank Rates<br>\nSpecials</i></font>"
+            },
+            "enclosure": null,
+            "guid": null,
+            "link": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/banks.htm"
+            },
+            "pub_date": {
+              "attributes": {},
+              "content": "Tue, 19 Oct 2004 11:08:57 -0400"
+            },
+            "source": null,
+            "title": {
+              "attributes": {},
+              "content": "RSS Solutions for Banks / Mortgage Companies"
+            }
+          }
+        },
+        {
+          "attributes": {},
+          "content": {
+            "author": null,
+            "category": {
+              "attributes": {
+                "domain": "www.dmoz.com"
+              },
+              "content": "Computers/Software/Internet/Site Management/Content Management"
+            },
+            "comments": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/forum"
+            },
+            "description": {
+              "attributes": {},
+              "content": "<b>FeedForAll</b> helps Law Enforcement Professionals communicate with the general public and other agencies in a prompt and efficient manner. Using RSS police are able to quickly disseminate urgent and life threatening information. <br>\n<br>\nUses include:<br>\n<i><font color=\"#0000FF\">Amber Alerts<br>\nSex Offender Community Notification <br>\nWeather Alerts <br>\nScheduling <br>\nSecurity Alerts <br>\nPolice Report <br>\nMeetings</i></font>"
+            },
+            "enclosure": null,
+            "guid": null,
+            "link": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/law-enforcement.htm"
+            },
+            "pub_date": {
+              "attributes": {},
+              "content": "Tue, 19 Oct 2004 11:08:56 -0400"
+            },
+            "source": null,
+            "title": {
+              "attributes": {},
+              "content": "RSS Solutions for Law Enforcement"
+            }
+          }
+        }
+      ],
+      "language": {
+        "attributes": {},
+        "content": "en-us"
+      },
+      "last_build_date": {
+        "attributes": {},
+        "content": "2004-10-19T13:39:14-04:00"
+      },
+      "link": {
+        "attributes": {},
+        "content": "http://www.feedforall.com/industry-solutions.htm"
+      },
+      "managing_editor": {
+        "attributes": {},
+        "content": "marketing@feedforall.com"
+      },
+      "pub_date": {
+        "attributes": {},
+        "content": "2004-10-19T13:38:55-04:00"
+      },
+      "rating": null,
+      "skip_days": null,
+      "skip_hours": null,
+      "text_input": null,
+      "title": {
+        "attributes": {},
+        "content": "FeedForAll Sample Feed"
+      },
+      "ttl": null,
+      "web_master": {
+        "attributes": {},
+        "content": "webmaster@feedforall.com"
+      }
+    }
+  },
+  "version": {
+    "attributes": {},
+    "content": "2.0"
+  }
+}

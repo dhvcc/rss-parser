@@ -1,21 +1,22 @@
 name: Lint and test
 
 on:
+  schedule:
+    - cron: "0 0 1 * *"
+  # TODO: Uncomment after V2 is finished
   push:
     paths-ignore:
-      - '.github/**'
-      - '!.github/workflows/ci.yml'
-      - '.gitignore'
-      - 'README.md'
+      - ".gitignore"
+      - "README.md"
   pull_request:
 
 jobs:
-  build:
+  test:
     strategy:
       max-parallel: 6
       matrix:
         os: [ "ubuntu-latest", "windows-latest", "macos-latest" ]
-        python-version: [ 3.7, 3.8, 3.9, '3.10' ]
+        python-version: [ "3.8", "3.9", "3.10", "3.11"]
 
     runs-on: ${{ matrix.os }}
 
@@ -27,7 +28,7 @@ jobs:
 
       - name: Set up Python ${{ matrix.python-version }} on ${{ matrix.os }}
         id: setup-python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
           cache-dependency-path: pyproject.toml
@@ -37,14 +38,11 @@ jobs:
         if: steps.setup-python.outputs.cache-hit != 'true'
         run: poetry install
 
-      - name: Lint code with flake8
-        run: poetry run flake8
-
       - name: Lint code with black
         run: poetry run black --check .
 
-      - name: Lint code with isort
-        run: poetry run isort --check-only .
+      - name: Lint code with ruff
+        run: poetry run ruff check .
 
       - name: Test code with pytest
-        run: poetry run pytest
+        run: poetry run pytest --doctest-modules

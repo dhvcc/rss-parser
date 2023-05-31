@@ -14,7 +14,7 @@ repos:
   - repo: local
 
     hooks:
-      - id: black
+      - id: black-format-staged
         name: black
         entry: poetry
         args:
@@ -23,26 +23,14 @@ repos:
         language: system
         types: [ python ]
         stages: [ commit ]
-        # Black should use the config from the pyproject.toml file
 
-      - id: isort
-        name: isort
+      - id: ruff-check-global
+        name: ruff
         entry: poetry
         args:
           - run
-          - isort
+          - ruff
+          - check
         language: system
         types: [ python ]
-        stages: [ commit ]
-        # isort's config is also stored in pyproject.toml
-
-      - id: flake8
-        name: flake8
-        entry: poetry
-        args:
-          - run
-          - flake8
-        language: system
-        always_run: true
-        pass_filenames: false
-        stages: [ push ]
+        stages: [ commit, push ]
