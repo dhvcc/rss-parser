@@ -62,9 +62,13 @@ for item in rss.channel.items:
 # <p>If you could call a number and say you’re sorry
 ```
 
-Here we can see that description is still somehow has <p> - this is beacause it's places as CDATA
+Here we can see that description is still somehow has <p> - this is beacause it's placed as [CDATA](https://www.w3resource.com/xml/CDATA-sections.php) like so
 
-#### Overriding schema
+```xml
+<![CDATA[<p>If you could call ...</p>]]>
+```
+
+### Overriding schema
 
 If you want to customize the schema or provide a custom one - use `schema` keyword argument of the parser
 
@@ -74,8 +78,7 @@ from rss_parser.models.rss import RSS
 from rss_parser.models.types import Tag
 
 class CustomSchema(RSS, XMLBaseModel):
-    # Removing previous channel field
-    channel: None = None
+    channel: None = None # Removing previous channel field
     custom: Tag[str]
 
 with open("tests/samples/custom.xml") as f:
@@ -90,42 +93,87 @@ print("Custom", rss.custom)
 # Custom Custom tag data
 ```
 
-#### Tag field
+### xmltodict
 
-Class to represent XML tag.
+This library uses [xmltodict](https://github.com/martinblech/xmltodict) to parse XML data. You can see the detailed documentation [here](https://github.com/martinblech/xmltodict#xmltodict)
 
-For example, this tag <tag>123</tag> will result in 'tag': '123' in parent dict.
-However, if we add any attributes to it <tag someAttr="val">123</tag>,
-then the value will not be '123', but {'@someAttr':'val','#text': '123'}.
-This class allows you to handle this dynamically.
+The basic thing you should know is that your data is processed into dictionaries
+
+For example, this data
+
+```xml
+<tag>content</tag>
+```
+
+will result in the following
 
 ```python
->>> from rss_parser.models import XMLBaseModel
->>> class Model(XMLBaseModel):
-...     number: Tag[int]
-...     string: Tag[str]
->>> m = Model(number=1, string={'@customAttr': 'v', '#text': 'str tag value'})
->>> m.number.content
-1
->>> m.number + 10  # forwarding operators to m.number.content for simplicity
-11
->>> m.number.bit_length()  # forwarding getattr to m.number.content
-1
->>> type(m.number), type(m.number.content)
-(rss_parser.models.image.Tag[int], int)  # types are NOT the same, however, the interfaces are similar
->>> m.number.attributes
-{}
->>> m.string.content
-'str tag value'
->>> m.string.attributes
-{'customAttr': 'v'}
->>> m = Model(number='not_a_number', string={'@customAttr': 'v', '#text': 'str tag value'})
-Traceback (most recent call last):
-    ...
-pydantic.error_wrappers.ValidationError: 1 validation error for Model
-number -> content
-    value is not a valid integer (type=type_error.integer)
+{
+    "tag": "content"
+}
 ```
+
+*But*, when handling attributes, the content of the tag will be also a dictionary
+
+```xml
+<tag attr="1" data-value="data">data</tag>
+```
+
+Turns into
+
+```python
+{
+    "tag": {
+        "@attr": "1",
+        "@data-value": "data",
+        "#text": "content"
+    }
+}
+```
+
+### Tag field
+
+This is a generic field that handles tags as raw data or a dictonary returned with attributes
+
+*Although this is a complex class, it forwards most of the methods to it's content attribute, so you don't notice a difference if you're only after the .content value*
+
+Example
+
+```python
+from rss_parser.models import XMLBaseModel
+class Model(XMLBaseModel):
+     number: Tag[int]
+     string: Tag[str]
+
+m = Model(
+    number=1,
+    string={'@attr': '1', '#text': 'content'},
+)
+
+m.number.content == 1  # Content value is an integer, as per the generic type
+
+m.number.content + 10 == m.number + 10  # But you're still able to use the Tag itself in common operators
+
+m.number.bit_length() == 1  # As it's the case for methods/attributes not found in the Tag itself
+
+type(m.number), type(m.number.content) == (<class 'rss_parser.models.image.Tag[int]'>, <class 'int'>)  # types are NOT the same, however, the interfaces are very similar most of the time
+
+m.number.attributes == {}  # The attributes are empty by default
+
+m.string.attributes == {'attr': '1'}  # But are populated when provided. Note that the @ symbol is trimmed from the beggining, however, camelCase is not converted
+
+# Generic argument types are handled by pydantic - let's try to provide a string for a Tag[int] number
+
+m = Model(number='not_a_number', string={'@customAttr': 'v', '#text': 'str tag value'})  # This will lead in the following traceback
+
+# Traceback (most recent call last):
+#     ...
+# pydantic.error_wrappers.ValidationError: 1 validation error for Model
+# number -> content
+#     value is not a valid integer (type=type_error.integer)
+```
+
+**If you wish to avoid all of the method/attribute forwarding "magic" - you should use `rss_parser.models.types.TagRaw`**
 
 ## Contributing
 

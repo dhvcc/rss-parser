@@ -29,7 +29,7 @@ def rand_td():
 
 
 def test_comparison_operators_number():
-    number = randint(0, 2**32)
+    number = randint(1, 2**32)
     operator_result_list = [
         [eq, number, True],
         [eq, number + 1, False],
@@ -66,7 +66,7 @@ def test_comparison_operators_number():
 
 
 def test_comparison_operators_float():
-    number = float(randint(0, 2**32))
+    number = float(randint(1, 2**32))
     operator_result_list = [
         [eq, number, True],
         [eq, number + 1, False],
@@ -179,8 +179,8 @@ def test_comparison_operators_datetime():
 
 
 def test_arithmetic_operators_number():
-    number = randint(0, 2**32)
-    b_operand = randint(0, 2**16)
+    number = randint(1, 2**32)
+    b_operand = randint(1, 2**16)
     operator_list = [add, sub, mul, truediv, floordiv, mod, pow]
     obj = Model(number=number)
 
@@ -189,8 +189,8 @@ def test_arithmetic_operators_number():
 
 
 def test_arithmetic_operators_float():
-    number = randint(0, 2**8) / 100
-    b_operand = randint(0, 2**8) / 100
+    number = randint(1, 2**8) / 100
+    b_operand = randint(1, 2**8) / 100
     operator_list = [add, sub, mul, truediv, floordiv, mod, pow]
     obj = Model(floatNumber=number)
 
@@ -200,7 +200,7 @@ def test_arithmetic_operators_float():
 
 def test_arithmetic_operators_string_mul():
     string = rand_str()
-    int_operand = randint(0, 2**16)
+    int_operand = randint(1, 2**16)
     string_operand = rand_str()
     obj = Model(string=string)
 

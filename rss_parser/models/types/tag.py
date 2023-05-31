@@ -14,37 +14,39 @@ from rss_parser.models import XMLBaseModel
 T = TypeVar("T")
 
 
-class TagExperimental(GenericModel, Generic[T]):
+class TagRaw(GenericModel, Generic[T]):
     """
-    Class to represent XML tag.
-
-    For example, this tag <tag>123</tag> will result in 'tag': '123' in parent dict.
-    However, if we add any attributes to it <tag someAttr="val">123</tag>,
-    then the value will not be '123', but {'@someAttr':'val','#text': '123'}.
-    This class allows you to handle this dynamically.
-
     >>> from rss_parser.models import XMLBaseModel
     >>> class Model(XMLBaseModel):
     ...     number: Tag[int]
     ...     string: Tag[str]
-    >>> m = Model(number=1, string={'@customAttr': 'v', '#text': 'str tag value'})
+    >>> m = Model(
+    ...     number=1,
+    ...     string={'@attr': '1', '#text': 'content'},
+    ... )
+    >>> # Content value is an integer, as per the generic type
     >>> m.number.content
     1
-    >>> m.number + 10  # forwarding operators to m.number.content for simplicity
-    11
-    >>> m.number.bit_length()  # forwarding getattr to m.number.content
+    >>> # But you're still able to use the Tag itself in common operators
+    >>> m.number.content + 10  == m.number + 10
+    True
+    >>> # As it's the case for methods/attributes not found in the Tag itself
+    >>> m.number.bit_length()
     1
-    >>> type(m.number), type(m.number.content)  # types are NOT the same, however, the interfaces are similar
+    >>> # types are NOT the same, however, the interfaces are very similar most of the time
+    >>> type(m.number), type(m.number.content)
     (<class 'rss_parser.models.image.Tag[int]'>, <class 'int'>)
+    >>> # The attributes are empty by default
     >>> m.number.attributes
     {}
-    >>> m.string.content
-    'str tag value'
+    >>> # But are populated when provided.
+    >>> # Note that the @ symbol is trimmed from the beggining, however, camelCase is not converted
     >>> m.string.attributes
-    {'customAttr': 'v'}
+    {'attr': '1'}
+    >>> # Generic argument types are handled by pydantic - let's try to provide a string for a Tag[int] number
     >>> m = Model(number='not_a_number', string={'@customAttr': 'v', '#text': 'str tag value'})
     Traceback (most recent call last):
-     ...
+        ...
     pydantic.error_wrappers.ValidationError: 1 validation error for Model
     number -> content
       value is not a valid integer (type=type_error.integer)
@@ -141,8 +143,8 @@ def _make_proxy_operator(operator):
 with warnings.catch_warnings():
     # Ignoring pydantic's warnings when inserting dunder methods (this is not a field so we don't care)
     warnings.filterwarnings("ignore", message="fields may not start with an underscore")
-    Tag: Type[TagExperimental] = create_model(
+    Tag: Type[TagRaw] = create_model(
         "Tag",
-        __base__=(TagExperimental, Generic[T]),
+        __base__=(TagRaw, Generic[T]),
         **{method: _make_proxy_operator(operator) for method, operator in _OPERATOR_MAPPING.items()},
     )
