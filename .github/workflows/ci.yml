@@ -4,12 +4,10 @@ on:
   schedule:
     - cron: "0 0 1 * *"
   # TODO: Uncomment after V2 is finished
-  # push:
-  #   paths-ignore:
-  #     - ".github/**"
-  #     - "!.github/workflows/ci.yml"
-  #     - ".gitignore"
-  #     - "README.md"
+  push:
+    paths-ignore:
+      - ".gitignore"
+      - "README.md"
   pull_request:
 
 jobs:
