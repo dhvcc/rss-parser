@@ -31,7 +31,10 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
-packages = [{include = "rss_parser"}]
+packages = [
+    {include = "rss_parser"},
+    {include = "rss_parser/py.typed"},
+]
 
 
 [tool.poetry.urls]
