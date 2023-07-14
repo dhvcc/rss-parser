@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rss-parser"
-version = "1.0.0"
+version = "1.1.0"
 description = "Typed pythonic RSS parser"
 authors = ["dhvcc <1337kwiz@gmail.com>"]
 license = "GPL-3.0"
@@ -41,8 +41,7 @@ packages = [{include = "rss_parser"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-pydantic = ">=1.6.1"
-pytest = "^7.1.2"
+pydantic = "^1.10"
 xmltodict = "^0.13.0"
 
 [tool.poetry.group.dev.dependencies]
@@ -51,6 +50,7 @@ black = "^22.3.0"
 pre-commit = "^2.12.0"
 ruff = "*"
 rich = "*"
+pytest = "^7.4.0"
 
 [tool.pytest.ini_options]
 addopts = "-color=yes"
