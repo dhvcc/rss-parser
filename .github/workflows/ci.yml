@@ -3,7 +3,6 @@ name: Lint and test
 on:
   schedule:
     - cron: "0 0 1 * *"
-  # TODO: Uncomment after V2 is finished
   push:
     paths-ignore:
       - ".gitignore"

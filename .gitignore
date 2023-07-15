@@ -114,3 +114,4 @@ venv.bak/
 
 .rss-parser
 .ruff_cache
+.python-version
