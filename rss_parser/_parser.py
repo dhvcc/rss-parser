@@ -40,4 +40,10 @@ class Parser:
 
         schema = schema or cls.schema
 
-        return schema.parse_obj(root["rss"])
+        try:
+            return schema.parse_obj(root["rss"])
+        except:
+            if not isinstance(root["rss"]["channel"]["item"],list):
+                root["rss"]["channel"]["item"]=[root["rss"]["channel"]["item"]]
+                return schema.parse_obj(root["rss"])
+            return schema.parse_obj(root["rss"])
