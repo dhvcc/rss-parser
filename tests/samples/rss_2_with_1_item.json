@@ -1,0 +1,133 @@
+{
+  "channel": {
+    "attributes": {},
+    "content": {
+      "category": {
+        "attributes": {
+          "domain": "www.dmoz.com"
+        },
+        "content": "Computers/Software/Internet/Site Management/Content Management"
+      },
+      "cloud": null,
+      "copyright": {
+        "attributes": {},
+        "content": "Copyright 2004 NotePage, Inc."
+      },
+      "description": {
+        "attributes": {},
+        "content": "RSS is a fascinating technology. The uses for RSS are expanding daily. Take a closer look at how various industries are using the benefits of RSS in their businesses."
+      },
+      "docs": {
+        "attributes": {},
+        "content": "http://blogs.law.harvard.edu/tech/rss"
+      },
+      "generator": {
+        "attributes": {},
+        "content": "FeedForAll Beta1 (0.0.1.8)"
+      },
+      "image": {
+        "attributes": {},
+        "content": {
+          "description": {
+            "attributes": {},
+            "content": "FeedForAll Sample Feed"
+          },
+          "height": {
+            "attributes": {},
+            "content": 48
+          },
+          "link": {
+            "attributes": {},
+            "content": "http://www.feedforall.com/industry-solutions.htm"
+          },
+          "title": {
+            "attributes": {},
+            "content": "FeedForAll Sample Feed"
+          },
+          "url": {
+            "attributes": {},
+            "content": "http://www.feedforall.com/ffalogo48x48.gif"
+          },
+          "width": {
+            "attributes": {},
+            "content": 48
+          }
+        }
+      },
+      "items": [
+        {
+          "attributes": {},
+          "content": {
+            "author": null,
+            "category": {
+              "attributes": {
+                "domain": "www.dmoz.com"
+              },
+              "content": "Computers/Software/Internet/Site Management/Content Management"
+            },
+            "comments": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/forum"
+            },
+            "description": {
+              "attributes": {},
+              "content": "<b>FeedForAll </b>helps Restaurant's communicate with customers. Let your customers know the latest specials or events.<br>\n<br>\nRSS feed uses include:<br>\n<i><font color=\"#FF0000\">Daily Specials <br>\nEntertainment <br>\nCalendar of Events </i></font>"
+            },
+            "enclosure": null,
+            "guid": null,
+            "link": {
+              "attributes": {},
+              "content": "http://www.feedforall.com/restaurant.htm"
+            },
+            "pub_date": {
+              "attributes": {},
+              "content": "Tue, 19 Oct 2004 11:09:11 -0400"
+            },
+            "source": null,
+            "title": {
+              "attributes": {},
+              "content": "RSS Solutions for Restaurants"
+            }
+          }
+        }
+      ],
+      "language": {
+        "attributes": {},
+        "content": "en-us"
+      },
+      "last_build_date": {
+        "attributes": {},
+        "content": "2004-10-19T13:39:14-04:00"
+      },
+      "link": {
+        "attributes": {},
+        "content": "http://www.feedforall.com/industry-solutions.htm"
+      },
+      "managing_editor": {
+        "attributes": {},
+        "content": "marketing@feedforall.com"
+      },
+      "pub_date": {
+        "attributes": {},
+        "content": "2004-10-19T13:38:55-04:00"
+      },
+      "rating": null,
+      "skip_days": null,
+      "skip_hours": null,
+      "text_input": null,
+      "title": {
+        "attributes": {},
+        "content": "FeedForAll Sample Feed"
+      },
+      "ttl": null,
+      "web_master": {
+        "attributes": {},
+        "content": "webmaster@feedforall.com"
+      }
+    }
+  },
+  "version": {
+    "attributes": {},
+    "content": "2.0"
+  }
+}

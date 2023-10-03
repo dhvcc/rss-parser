@@ -5,9 +5,12 @@ import pytest
 from rss_parser import Parser
 
 
-@pytest.mark.parametrize("sample_and_result", [["rss_2"], ["rss_2_no_category_attr"], ["apology_line"]], indirect=True)
-def test_parses_rss_version_2(sample_and_result):
-    # Expect basic RSSv2 to be parsed
+@pytest.mark.parametrize(
+    "sample_and_result",
+    [["rss_2"], ["rss_2_no_category_attr"], ["apology_line"], ["rss_2_with_1_item"]],
+    indirect=True,
+)
+def test_parses_all_samples(sample_and_result):
     sample, result = sample_and_result
     rss = Parser.parse(sample)
 

@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import Optional
 
 from pydantic import Field
 
@@ -7,6 +7,7 @@ from rss_parser.models.image import Image
 from rss_parser.models.item import Item
 from rss_parser.models.text_input import TextInput
 from rss_parser.models.types.date import DateTimeOrStr
+from rss_parser.models.types.only_list import OnlyList
 from rss_parser.models.types.tag import Tag
 
 
@@ -26,7 +27,7 @@ class RequiredChannelElementsMixin(XMLBaseModel):
 class OptionalChannelElementsMixin(XMLBaseModel):
     """https://www.rssboard.org/rss-specification#optionalChannelElements."""
 
-    items: Optional[List[Tag[Item]]] = Field(alias="item", default=[])
+    items: Optional[OnlyList[Tag[Item]]] = Field(alias="item", default=[])
 
     language: Optional[Tag[str]] = None  # en-us
     "The language the channel is written in. This allows aggregators to group all Italian language sites, " "for example, on a single page."  # noqa
