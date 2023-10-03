@@ -131,6 +131,40 @@ Turns into
 }
 ```
 
+Multiple children of a tag will be put into a list
+
+```xml
+<div>
+    <tag>content</tag>
+    <tag>content2</tag>
+</div>
+```
+
+Results in a list
+
+```python
+[
+    { "tag": "content" },
+    { "tag": "content" },
+]
+```
+
+If you don't want to deal with those conditions and parse something **always** as a list - 
+please, use `rss_parser.models.types.only_list.OnlyList` like we did in `Channel`
+```python
+from typing import Optional
+from pydantic import Field
+from rss_parser.models.item import Item
+from rss_parser.models.types.only_list import OnlyList
+from rss_parser.models.types.tag import Tag
+
+...
+
+class OptionalChannelElementsMixin(...):
+    ...
+    items: Optional[OnlyList[Tag[Item]]] = Field(alias="item", default=[])
+```
+
 ### Tag field
 
 This is a generic field that handles tags as raw data or a dictonary returned with attributes
