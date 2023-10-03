@@ -1,9 +1,9 @@
-from typing import Union
+from typing import List, Union
 
 from pydantic.validators import list_validator
 
 
-class OnlyList(list):
+class OnlyList(List):
     @classmethod
     def __get_validators__(cls):
         yield cls.validate
