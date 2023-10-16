@@ -77,6 +77,12 @@ class OptionalChannelElementsMixin(XMLBaseModel):
     skip_days: Optional[Tag[str]] = None
     "A hint for aggregators telling them which days they can skip. This element contains up to seven <day> " "sub-elements whose value is Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday. Aggregators " "may not read the channel during days listed in the <skipDays> element."  # noqa
 
+    class Config:
+        arbitrary_types_allowed = True
+
 
 class Channel(RequiredChannelElementsMixin, OptionalChannelElementsMixin, XMLBaseModel):
+    class Config:
+        arbitrary_types_allowed = True
+
     pass

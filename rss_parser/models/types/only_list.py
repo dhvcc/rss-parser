@@ -1,13 +1,13 @@
-from typing import List, Union
+from typing import List, TypeVar, Union
 
-from pydantic.validators import list_validator
+T = TypeVar("T")
 
 
-class OnlyList(List):
+class OnlyList(List[T]):
     @classmethod
     def __get_validators__(cls):
         yield cls.validate
-        yield list_validator
+        # yield list_validator
 
     @classmethod
     def validate(cls, v: Union[dict, list]):

@@ -15,6 +15,8 @@ class XMLBaseModel(BaseModel):
     class Config:
         # Not really sure if we want for the schema obj to be immutable, disabling for now
         # allow_mutation = False
+        arbitrary_types_allowed = True
+
         alias_generator = camel_case
 
     def json_plain(self, **kw):
