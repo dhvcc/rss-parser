@@ -5,13 +5,13 @@ Some types and validation may be a bit custom to account for broken standards in
 """
 from json import loads
 
-from pydantic import BaseModel
-from pydantic.json import pydantic_encoder
-
 from rss_parser.models.utils import camel_case
+from rss_parser.pydantic_proxy import import_v1_pydantic
+
+pydantic = import_v1_pydantic()
 
 
-class XMLBaseModel(BaseModel):
+class XMLBaseModel(pydantic.BaseModel):
     class Config:
         # Not really sure if we want for the schema obj to be immutable, disabling for now
         # allow_mutation = False

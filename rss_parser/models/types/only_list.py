@@ -1,13 +1,15 @@
-from typing import List, Union
+from typing import Union
 
-from pydantic.validators import list_validator
+from rss_parser.pydantic_proxy import import_v1_pydantic
+
+pydantic_validators = import_v1_pydantic(".validators")
 
 
-class OnlyList(List):
+class OnlyList(list):
     @classmethod
     def __get_validators__(cls):
         yield cls.validate
-        yield list_validator
+        yield pydantic_validators.list_validator
 
     @classmethod
     def validate(cls, v: Union[dict, list]):

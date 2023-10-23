@@ -43,7 +43,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.9"
-pydantic = "^1.10"
+pydantic = ">1.10"
 xmltodict = "^0.13.0"
 
 [tool.poetry.group.dev.dependencies]

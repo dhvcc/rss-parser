@@ -1,20 +1,22 @@
 import warnings
 from copy import deepcopy
 from json import loads
-from math import ceil, floor, trunc
 from operator import add, eq, floordiv, ge, gt, index, invert, le, lt, mod, mul, ne, neg, pos, pow, sub, truediv
 from typing import Generic, Optional, Type, TypeVar, Union
 
-from pydantic import create_model
-from pydantic.generics import GenericModel
-from pydantic.json import pydantic_encoder
+from math import ceil, floor, trunc
 
 from rss_parser.models import XMLBaseModel
+from rss_parser.pydantic_proxy import import_v1_pydantic
+
+pydantic = import_v1_pydantic()
+pydantic_generics = import_v1_pydantic(".generics")
+pydantic_json = import_v1_pydantic(".json")
 
 T = TypeVar("T")
 
 
-class TagRaw(GenericModel, Generic[T]):
+class TagRaw(pydantic_generics.GenericModel, Generic[T]):
     """
     >>> from rss_parser.models import XMLBaseModel
     >>> class Model(XMLBaseModel):
@@ -91,7 +93,7 @@ class TagRaw(GenericModel, Generic[T]):
         if cls in bases:
             return v.content
 
-        return pydantic_encoder(v)
+        return pydantic_json.pydantic_encoder(v)
 
 
 _OPERATOR_MAPPING = {
@@ -143,7 +145,7 @@ def _make_proxy_operator(operator):
 with warnings.catch_warnings():
     # Ignoring pydantic's warnings when inserting dunder methods (this is not a field so we don't care)
     warnings.filterwarnings("ignore", message="fields may not start with an underscore")
-    Tag: Type[TagRaw] = create_model(
+    Tag: Type[TagRaw] = pydantic.create_model(
         "Tag",
         __base__=(TagRaw, Generic[T]),
         **{method: _make_proxy_operator(operator) for method, operator in _OPERATOR_MAPPING.items()},
