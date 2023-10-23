@@ -25,10 +25,10 @@ classifiers = [
     "Typing :: Typed",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
 ]
 packages = [
     {include = "rss_parser"},
@@ -42,7 +42,7 @@ packages = [
 "Bug Tracker" = "https://github.com/dhvcc/rss-parser/issues"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 pydantic = "^1.10"
 xmltodict = "^0.13.0"
 

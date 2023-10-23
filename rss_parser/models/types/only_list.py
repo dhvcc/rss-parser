@@ -11,9 +11,9 @@ class OnlyList(List):
 
     @classmethod
     def validate(cls, v: Union[dict, list]):
-        if isinstance(v, dict):
-            return [v]
-        return v
+        if isinstance(v, list):
+            return v
+        return [v]
 
     def __repr__(self):
         return f"OnlyList({super().__repr__()})"
