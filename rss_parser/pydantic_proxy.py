@@ -1,7 +1,5 @@
-from typing import Optional
-
-from importlib.metadata import version
 from importlib import import_module
+from importlib.metadata import version
 
 _pydantic_version = version('pydantic')
 

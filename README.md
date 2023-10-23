@@ -153,16 +153,19 @@ If you don't want to deal with those conditions and parse something **always** a
 please, use `rss_parser.models.types.only_list.OnlyList` like we did in `Channel`
 ```python
 from typing import Optional
-from pydantic import Field
+
 from rss_parser.models.item import Item
 from rss_parser.models.types.only_list import OnlyList
 from rss_parser.models.types.tag import Tag
+from rss_parser.pydantic_proxy import import_v1_pydantic
 
+pydantic = import_v1_pydantic()
 ...
+
 
 class OptionalChannelElementsMixin(...):
     ...
-    items: Optional[OnlyList[Tag[Item]]] = Field(alias="item", default=[])
+    items: Optional[OnlyList[Tag[Item]]] = pydantic.Field(alias="item", default=[])
 ```
 
 ### Tag field

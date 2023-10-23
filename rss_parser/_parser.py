@@ -5,6 +5,7 @@ from xmltodict import parse
 from rss_parser.models import XMLBaseModel
 from rss_parser.models.rss import RSS
 
+
 # >>> FUTURE
 # TODO: May be support generator based approach for big rss feeds
 # TODO: Add cli to parse to json
