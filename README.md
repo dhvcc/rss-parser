@@ -38,7 +38,7 @@ pip install dist/*.whl
 
 ```python
 from rss_parser import Parser
-from requests import get
+from requests import get  # noqa
 
 rss_url = "https://rss.art19.com/apology-line"
 response = get(rss_url)
@@ -64,7 +64,7 @@ for item in rss.channel.items:
 
 Here we can see that description is still somehow has <p> - this is beacause it's placed as [CDATA](https://www.w3resource.com/xml/CDATA-sections.php) like so
 
-```xml
+```
 <![CDATA[<p>If you could call ...</p>]]>
 ```
 
@@ -73,13 +73,16 @@ Here we can see that description is still somehow has <p> - this is beacause it'
 If you want to customize the schema or provide a custom one - use `schema` keyword argument of the parser
 
 ```python
+from rss_parser import Parser
 from rss_parser.models import XMLBaseModel
 from rss_parser.models.rss import RSS
 from rss_parser.models.types import Tag
 
+
 class CustomSchema(RSS, XMLBaseModel):
-    channel: None = None # Removing previous channel field
+    channel: None = None  # Removing previous channel field
     custom: Tag[str]
+
 
 with open("tests/samples/custom.xml") as f:
     data = f.read()
@@ -178,30 +181,35 @@ Example
 
 ```python
 from rss_parser.models import XMLBaseModel
+from rss_parser.models.types import Tag
+
+
 class Model(XMLBaseModel):
-     number: Tag[int]
-     string: Tag[str]
+    number: Tag[int]
+    string: Tag[str]
+
 
 m = Model(
     number=1,
     string={'@attr': '1', '#text': 'content'},
 )
 
-m.number.content == 1  # Content value is an integer, as per the generic type
+assert m.number.content == 1  # Content value is an integer, as per the generic type
 
-m.number.content + 10 == m.number + 10  # But you're still able to use the Tag itself in common operators
+assert m.number.content + 10 == m.number + 10  # But you're still able to use the Tag itself in common operators
 
-m.number.bit_length() == 1  # As it's the case for methods/attributes not found in the Tag itself
+assert m.number.bit_length() == 1  # As it's the case for methods/attributes not found in the Tag itself
 
-type(m.number), type(m.number.content) == (<class 'rss_parser.models.image.Tag[int]'>, <class 'int'>)  # types are NOT the same, however, the interfaces are very similar most of the time
+type(m.number), type(m.number.content) == (Tag[int], int)  # types are NOT the same, however, the interfaces are very similar most of the time
 
-m.number.attributes == {}  # The attributes are empty by default
+assert m.number.attributes == {}  # The attributes are empty by default
 
-m.string.attributes == {'attr': '1'}  # But are populated when provided. Note that the @ symbol is trimmed from the beggining, however, camelCase is not converted
+assert m.string.attributes == {'attr': '1'}  # But are populated when provided. Note that the @ symbol is trimmed from the beggining, however, camelCase is not converted
 
 # Generic argument types are handled by pydantic - let's try to provide a string for a Tag[int] number
 
-m = Model(number='not_a_number', string={'@customAttr': 'v', '#text': 'str tag value'})  # This will lead in the following traceback
+m = Model(number='not_a_number',
+          string={'@customAttr': 'v', '#text': 'str tag value'})  # This will lead in the following traceback
 
 # Traceback (most recent call last):
 #     ...
