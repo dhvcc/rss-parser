@@ -1,7 +1,7 @@
 from importlib import import_module
 from importlib.metadata import version
 
-_pydantic_version = version('pydantic')
+_pydantic_version = version("pydantic")
 
 
 def import_v1_pydantic(relative_submodule_path: str = ""):

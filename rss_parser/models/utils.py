@@ -7,4 +7,4 @@ def camel_case(s: str):
 
 
 def snake_case(s: str):
-    return sub(r'(?<!^)(?=[A-Z])', '_', s).lower()
+    return sub(r"(?<!^)(?=[A-Z])", "_", s).lower()
