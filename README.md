@@ -181,44 +181,32 @@ Example
 
 ```python
 from rss_parser.models import XMLBaseModel
-from rss_parser.models.types import Tag
+from rss_parser.models.types.tag import Tag
 
 
 class Model(XMLBaseModel):
-    number: Tag[int]
-    string: Tag[str]
+    width: Tag[int]
+    category: Tag[str]
 
 
 m = Model(
-    number=1,
-    string={'@attr': '1', '#text': 'content'},
+    width=48,
+    category={"@someAttribute": "https://example.com", "#text": "valid string"},
 )
 
-assert m.number.content == 1  # Content value is an integer, as per the generic type
+# Content value is an integer, as per the generic type
+assert m.width.content == 48
 
-assert m.number.content + 10 == m.number + 10  # But you're still able to use the Tag itself in common operators
+assert type(m.width), type(m.width.content) == (Tag[int], int)
 
-assert m.number.bit_length() == 1  # As it's the case for methods/attributes not found in the Tag itself
+# The attributes are empty by default
+assert m.width.attributes == {} # But are populated when provided.
 
-type(m.number), type(m.number.content) == (Tag[int], int)  # types are NOT the same, however, the interfaces are very similar most of the time
-
-assert m.number.attributes == {}  # The attributes are empty by default
-
-assert m.string.attributes == {'attr': '1'}  # But are populated when provided. Note that the @ symbol is trimmed from the beggining, however, camelCase is not converted
-
-# Generic argument types are handled by pydantic - let's try to provide a string for a Tag[int] number
-
-m = Model(number='not_a_number',
-          string={'@customAttr': 'v', '#text': 'str tag value'})  # This will lead in the following traceback
-
-# Traceback (most recent call last):
-#     ...
-# pydantic.error_wrappers.ValidationError: 1 validation error for Model
-# number -> content
-#     value is not a valid integer (type=type_error.integer)
+# Note that the @ symbol is trimmed from the beggining and name is convert to snake_case
+assert m.category.attributes == {'some_attribute': 'https://example.com'}
 ```
 
-**If you wish to avoid all of the method/attribute forwarding "magic" - you should use `rss_parser.models.types.TagRaw`**
+**If you wish to avoid all the method/attribute forwarding "magic" - you should use `rss_parser.models.types.TagRaw`**
 
 ## Contributing
 

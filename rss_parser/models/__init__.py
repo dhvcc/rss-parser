@@ -21,7 +21,7 @@ class XMLBaseModel(pydantic.BaseModel):
         """
         Run pydantic's json with custom encoder to encode Tags as only content.
         """
-        from rss_parser.models.types import Tag
+        from rss_parser.models.types.tag import Tag
 
         return self.json(models_as_dict=False, encoder=Tag.flatten_tag_encoder, **kw)
 

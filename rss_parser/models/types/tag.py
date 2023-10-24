@@ -1,12 +1,9 @@
-import warnings
 from copy import deepcopy
 from json import loads
-from operator import add, eq, floordiv, ge, gt, index, invert, le, lt, mod, mul, ne, neg, pos, pow, sub, truediv
-from typing import Generic, Optional, Type, TypeVar, Union
+from typing import Generic, Optional, TypeVar, Union
 
-from math import ceil, floor, trunc
-
-from rss_parser.models import XMLBaseModel, camel_case
+from rss_parser.models import XMLBaseModel
+from rss_parser.models.utils import snake_case
 from rss_parser.pydantic_proxy import import_v1_pydantic
 
 pydantic = import_v1_pydantic()
@@ -19,6 +16,7 @@ T = TypeVar("T")
 class Tag(pydantic_generics.GenericModel, Generic[T]):
     """
     >>> from rss_parser.models import XMLBaseModel
+    >>> from rss_parser.models.types.tag import Tag
     >>> class Model(XMLBaseModel):
     ...     width: Tag[int]
     ...     category: Tag[str]
@@ -30,12 +28,12 @@ class Tag(pydantic_generics.GenericModel, Generic[T]):
     >>> m.width.content
     48
     >>> type(m.width), type(m.width.content)
-    (<class 'tag.Tag[int]'>, <class 'int'>)
+    (<class 'rss_parser.models.image.Tag[int]'>, <class 'int'>)
     >>> # The attributes are empty by default
     >>> m.width.attributes
     {}
     >>> # But are populated when provided.
-    >>> # Note that the @ symbol is trimmed from the beggining, however, camelCase is not converted
+    >>> # Note that the @ symbol is trimmed from the beggining and name is convert to snake_case
     >>> m.category.attributes
     {'some_attribute': 'https://example.com'}
     >>> # Generic argument types are handled by pydantic - let's try to provide a string for a Tag[int] number
@@ -43,7 +41,7 @@ class Tag(pydantic_generics.GenericModel, Generic[T]):
     Traceback (most recent call last):
         ...
     pydantic.error_wrappers.ValidationError: 1 validation error for Model
-    number -> content
+    width -> content
       value is not a valid integer (type=type_error.integer)
     """
 
@@ -71,7 +69,7 @@ class Tag(pydantic_generics.GenericModel, Generic[T]):
         """Used to split tag's text with other xml attributes."""
         if isinstance(v, dict):
             data = deepcopy(v)
-            attributes = {camel_case(k.lstrip("@")): v for k, v in data.items() if k.startswith("@")}
+            attributes = {snake_case(k.lstrip("@")): v for k, v in data.items() if k.startswith("@")}
             content = data.pop("#text", data) if not len(attributes) == len(data) else None
             return {"content": content, "attributes": attributes}
         return {"content": v, "attributes": {}}
