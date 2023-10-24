@@ -37,10 +37,10 @@ class Tag(pydantic_generics.GenericModel, Generic[T]):
     >>> m.category.attributes
     {'some_attribute': 'https://example.com'}
     >>> # Generic argument types are handled by pydantic - let's try to provide a string for a Tag[int] number
-    >>> m = Model(width="not_a_number", category="valid_string")
+    >>> m = Model(width="not_a_number", category="valid_string")  # doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
         ...
-    pydantic.error_wrappers.ValidationError: 1 validation error for Model
+    ValidationError: 1 validation error for Model
     width -> content
       value is not a valid integer (type=type_error.integer)
     """
