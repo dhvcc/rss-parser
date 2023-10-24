@@ -6,7 +6,7 @@ from typing import Generic, Optional, Type, TypeVar, Union
 
 from math import ceil, floor, trunc
 
-from rss_parser.models import XMLBaseModel
+from rss_parser.models import XMLBaseModel, camel_case
 from rss_parser.pydantic_proxy import import_v1_pydantic
 
 pydantic = import_v1_pydantic()
@@ -16,37 +16,30 @@ pydantic_json = import_v1_pydantic(".json")
 T = TypeVar("T")
 
 
-class TagRaw(pydantic_generics.GenericModel, Generic[T]):
+class Tag(pydantic_generics.GenericModel, Generic[T]):
     """
     >>> from rss_parser.models import XMLBaseModel
     >>> class Model(XMLBaseModel):
-    ...     number: Tag[int]
-    ...     string: Tag[str]
+    ...     width: Tag[int]
+    ...     category: Tag[str]
     >>> m = Model(
-    ...     number=1,
-    ...     string={'@attr': '1', '#text': 'content'},
+    ...     width=48,
+    ...     category={"@someAttribute": "https://example.com", "#text": "valid string"},
     ... )
     >>> # Content value is an integer, as per the generic type
-    >>> m.number.content
-    1
-    >>> # But you're still able to use the Tag itself in common operators
-    >>> m.number.content + 10  == m.number + 10
-    True
-    >>> # As it's the case for methods/attributes not found in the Tag itself
-    >>> m.number.bit_length()
-    1
-    >>> # types are NOT the same, however, the interfaces are very similar most of the time
-    >>> type(m.number), type(m.number.content)
-    (<class 'rss_parser.models.image.Tag[int]'>, <class 'int'>)
+    >>> m.width.content
+    48
+    >>> type(m.width), type(m.width.content)
+    (<class 'tag.Tag[int]'>, <class 'int'>)
     >>> # The attributes are empty by default
-    >>> m.number.attributes
+    >>> m.width.attributes
     {}
     >>> # But are populated when provided.
     >>> # Note that the @ symbol is trimmed from the beggining, however, camelCase is not converted
-    >>> m.string.attributes
-    {'attr': '1'}
+    >>> m.category.attributes
+    {'some_attribute': 'https://example.com'}
     >>> # Generic argument types are handled by pydantic - let's try to provide a string for a Tag[int] number
-    >>> m = Model(number='not_a_number', string={'@customAttr': 'v', '#text': 'str tag value'})
+    >>> m = Model(width="not_a_number", category="valid_string")
     Traceback (most recent call last):
         ...
     pydantic.error_wrappers.ValidationError: 1 validation error for Model
@@ -78,7 +71,7 @@ class TagRaw(pydantic_generics.GenericModel, Generic[T]):
         """Used to split tag's text with other xml attributes."""
         if isinstance(v, dict):
             data = deepcopy(v)
-            attributes = {k.lstrip("@"): v for k, v in data.items() if k.startswith("@")}
+            attributes = {camel_case(k.lstrip("@")): v for k, v in data.items() if k.startswith("@")}
             content = data.pop("#text", data) if not len(attributes) == len(data) else None
             return {"content": content, "attributes": attributes}
         return {"content": v, "attributes": {}}
@@ -94,59 +87,3 @@ class TagRaw(pydantic_generics.GenericModel, Generic[T]):
             return v.content
 
         return pydantic_json.pydantic_encoder(v)
-
-
-_OPERATOR_MAPPING = {
-    # Unary
-    "__pos__": pos,
-    "__neg__": neg,
-    "__abs__": abs,
-    "__invert__": invert,
-    "__round__": round,
-    "__floor__": floor,
-    "__ceil__": ceil,
-    # Conversion
-    "__str__": str,
-    "__int__": int,
-    "__float__": float,
-    "__bool__": bool,
-    "__complex__": complex,
-    "__oct__": oct,
-    "__hex__": hex,
-    "__index__": index,
-    "__trunc__": trunc,
-    # Comparison
-    "__lt__": lt,
-    "__gt__": gt,
-    "__le__": le,
-    "__eq__": eq,
-    "__ne__": ne,
-    "__ge__": ge,
-    # Arithmetic
-    "__add__": add,
-    "__sub__": sub,
-    "__mul__": mul,
-    "__truediv__": truediv,
-    "__floordiv__": floordiv,
-    "__mod__": mod,
-    "__pow__": pow,
-}
-
-
-def _make_proxy_operator(operator):
-    def f(self, *args):
-        return operator(self.content, *args)
-
-    f.__name__ = operator.__name__
-
-    return f
-
-
-with warnings.catch_warnings():
-    # Ignoring pydantic's warnings when inserting dunder methods (this is not a field so we don't care)
-    warnings.filterwarnings("ignore", message="fields may not start with an underscore")
-    Tag: Type[TagRaw] = pydantic.create_model(
-        "Tag",
-        __base__=(TagRaw, Generic[T]),
-        **{method: _make_proxy_operator(operator) for method, operator in _OPERATOR_MAPPING.items()},
-    )
