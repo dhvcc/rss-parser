@@ -175,8 +175,6 @@ class OptionalChannelElementsMixin(...):
 
 This is a generic field that handles tags as raw data or a dictonary returned with attributes
 
-*Although this is a complex class, it forwards most of the methods to it's content attribute, so you don't notice a difference if you're only after the .content value*
-
 Example
 
 ```python
@@ -205,8 +203,6 @@ assert m.width.attributes == {} # But are populated when provided.
 # Note that the @ symbol is trimmed from the beggining and name is convert to snake_case
 assert m.category.attributes == {'some_attribute': 'https://example.com'}
 ```
-
-**If you wish to avoid all the method/attribute forwarding "magic" - you should use `rss_parser.models.types.TagRaw`**
 
 ## Contributing
 
