@@ -15,7 +15,7 @@ def sample_and_result(request):
             return sample.read(), loads(result.read())
 
 
-@pytest.fixture
-def atom_feed():
-    with open(sample_dir / "atom.xml") as f:
-        return f.read()
+# @pytest.fixture
+# def atom_feed():
+#     with open(sample_dir / "atom.xml") as f:
+#         return f.read()

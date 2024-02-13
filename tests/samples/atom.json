@@ -1,0 +1,134 @@
+{
+  "feed": {
+    "attributes": {},
+    "content": {
+      "author": null,
+      "category": null,
+      "contributor": null,
+      "entries": [
+        {
+          "attributes": {},
+          "content": {
+            "author": {
+              "attributes": {},
+              "content": {
+                "email": "mail@example.com",
+                "name": "John Doe",
+                "uri": "http://example.org/"
+              }
+            },
+            "category": null,
+            "content": {
+              "attributes": {
+                "type": "xhtml",
+                "xml:base": "http://diveintomark.org/",
+                "xml:lang": "en"
+              },
+              "content": {
+                "@type": "xhtml",
+                "@xml:base": "http://diveintomark.org/",
+                "@xml:lang": "en",
+                "div": {
+                  "p": {
+                    "i": "[Update: The Atom draft is finished.]"
+                  }
+                }
+              }
+            },
+            "contributor": {
+              "attributes": {},
+              "content": {
+                "name": "John Doe"
+              }
+            },
+            "entry_id": {
+              "attributes": {},
+              "content": "tag:example.org,2003:3.2397"
+            },
+            "link": {
+              "attributes": {},
+              "content": [
+                {
+                  "@href": "http://example.org/2005/04/02/atom",
+                  "@rel": "alternate",
+                  "@type": "text/html"
+                },
+                {
+                  "@href": "http://example.org/audio/ph34r_my_podcast.mp3",
+                  "@length": "1337",
+                  "@rel": "enclosure",
+                  "@type": "audio/mpeg"
+                }
+              ]
+            },
+            "published": {
+              "attributes": {},
+              "content": "2003-12-13 08:29:29-04:00"
+            },
+            "rights": null,
+            "source": null,
+            "summary": null,
+            "title": {
+              "attributes": {},
+              "content": "Atom draft-07 snapshot"
+            },
+            "updated": {
+              "attributes": {},
+              "content": "2005-07-31T12:29:29Z"
+            }
+          }
+        }
+      ],
+      "feed_id": {
+        "attributes": {},
+        "content": "tag:example.org,2003:3"
+      },
+      "generator": {
+        "attributes": {
+          "uri": "http://www.example.com/",
+          "version": "1.0"
+        },
+        "content": "Example Toolkit"
+      },
+      "icon": null,
+      "link": {
+        "attributes": {},
+        "content": [
+          {
+            "@href": "http://example.org/",
+            "@hreflang": "en",
+            "@rel": "alternate",
+            "@type": "text/html"
+          },
+          {
+            "@href": "http://example.org/feed.atom",
+            "@rel": "self",
+            "@type": "application/atom+xml"
+          }
+        ]
+      },
+      "logo": null,
+      "rights": {
+        "attributes": {},
+        "content": "Copyright (c) 2003, John Doe"
+      },
+      "subtitle": {
+        "attributes": {
+          "type": "html"
+        },
+        "content": "A <em>lot</em> of effort\n            went into making this effortless"
+      },
+      "title": {
+        "attributes": {
+          "type": "text"
+        },
+        "content": "Title"
+      },
+      "updated": {
+        "attributes": {},
+        "content": "2005-07-31 12:29:29+00:00"
+      }
+    }
+  },
+  "version": null
+}
