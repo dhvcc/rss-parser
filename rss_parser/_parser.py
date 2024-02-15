@@ -28,7 +28,7 @@ class Parser:
         return parse(str(data), *args, **kwargs)
 
     @classmethod
-    def parse(cls, data: str, *, schema: Optional[Type[XMLBaseModel]] = None) -> XMLBaseModel:
+    def parse(cls, data: str, *, schema: Optional[Type[XMLBaseModel]] = None, root_key: str = "") -> XMLBaseModel:
         """
         Parse XML data into schema (default: RSS 2.0).
 
@@ -36,6 +36,9 @@ class Parser:
         :return: "schema" object
         """
         root = cls.to_xml(data)
-        root, schema = cls.check_schema(root)
+        if not isinstance(schema, XMLBaseModel):
+            root, schema = cls.check_schema(root)
+        else:
+            root = root.get(root_key, root)
 
         return schema.parse_obj(root)
