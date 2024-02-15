@@ -1,6 +1,8 @@
 from typing import Optional
 
 from rss_parser.models import XMLBaseModel
+from rss_parser.models.atom.person import Person
+from rss_parser.models.types.only_list import OnlyList
 from rss_parser.models.types.date import DateTimeOrStr
 from rss_parser.models.types.tag import Tag
 from rss_parser.pydantic_proxy import import_v1_pydantic
@@ -9,24 +11,24 @@ pydantic = import_v1_pydantic()
 
 
 class RequiredAtomEntryMixin(XMLBaseModel):
-    entry_id: Tag[str] = pydantic.Field(alias="id")
+    id: Tag[str]
     "Identifier for the entry."
 
     title: Tag[str]
     "The title of the entry."
 
-    updated: Tag[str]
+    updated: Tag[DateTimeOrStr]
     "Indicates when the entry was updated."
 
 
 class RecommendedAtomEntryMixin(XMLBaseModel):
-    author: Optional[Tag[dict]] = None
-    "Email, name, and URI of the author of the entry."
+    authors: Optional[OnlyList[Tag[Person]]] = pydantic.Field(alias="author", default=[])
+    "Entry authors."
 
-    link: Optional[Tag[list]] = None
+    link: Optional[Tag[str]] = None
     "The URL of the entry."
 
-    content: Optional[Tag[dict]] = None
+    content: Optional[Tag[str]] = None
     "The main content of the entry."
 
     summary: Optional[Tag[str]] = None
@@ -34,11 +36,11 @@ class RecommendedAtomEntryMixin(XMLBaseModel):
 
 
 class OptionalAtomEntryMixin(XMLBaseModel):
-    category: Optional[Tag[dict]] = None
-    "Specifies a categories that the feed belongs to."
+    categories: Optional[OnlyList[Tag[dict]]] = pydantic.Field(alias="category", default=[])
+    "Specifies a categories that the entry belongs to."
 
-    contributor: Optional[Tag[dict]] = None
-    "Email, name, and URI of the contributors of the entry."
+    contributors: Optional[OnlyList[Tag[Person]]] = pydantic.Field(alias="contributor", default=[])
+    "Entry contributors."
 
     rights: Optional[Tag[str]] = None
     "The copyright of the entry."

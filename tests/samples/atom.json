@@ -41,7 +41,7 @@
                 "name": "John Doe"
               }
             },
-            "entry_id": {
+            "id": {
               "attributes": {},
               "content": "tag:example.org,2003:3.2397"
             },
@@ -79,7 +79,7 @@
           }
         }
       ],
-      "feed_id": {
+      "id": {
         "attributes": {},
         "content": "tag:example.org,2003:3"
       },
