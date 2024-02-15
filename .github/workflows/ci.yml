@@ -37,9 +37,6 @@ jobs:
         if: steps.setup-python.outputs.cache-hit != 'true'
         run: poetry install
 
-      - name: Set timezone
-        run: sudo timedatectl set-timezone UTC
-
       - name: Lint code with black
         run: poetry run black --check .
 
