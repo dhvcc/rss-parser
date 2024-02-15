@@ -9,7 +9,7 @@ pydantic = import_v1_pydantic()
 
 
 class Atom(XMLBaseModel):
-    """Atom 1.0."""
+    """Atom 1.0"""
 
     version: Optional[Tag[str]] = pydantic.Field(alias="@version")
     feed: Tag[Feed]

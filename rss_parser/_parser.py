@@ -15,7 +15,7 @@ from rss_parser.models.rss import RSS
 
 
 class Parser:
-    """Parser for rss files."""
+    """Parser for rss/atom files."""
 
     @staticmethod
     def check_schema(root: dict) -> tuple[dict, type[XMLBaseModel]]:
@@ -30,7 +30,7 @@ class Parser:
     @classmethod
     def parse(cls, data: str, *, schema: Optional[Type[XMLBaseModel]] = None, root_key: str = "") -> XMLBaseModel:
         """
-        Parse XML data into schema (default: RSS 2.0).
+        Parse XML data into schema (default: RSS 2.0 or Atom).
 
         :param data: string of XML data that needs to be parsed
         :return: "schema" object
