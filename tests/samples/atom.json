@@ -2,65 +2,77 @@
   "feed": {
     "attributes": {},
     "content": {
-      "author": null,
-      "category": null,
-      "contributor": null,
+      "authors": [],
+      "categories": [],
+      "contributors": [],
       "entries": [
         {
           "attributes": {},
           "content": {
-            "author": {
-              "attributes": {},
-              "content": {
-                "email": "mail@example.com",
-                "name": "John Doe",
-                "uri": "http://example.org/"
+            "authors": [
+              {
+                "attributes": {},
+                "content": {
+                  "email": {
+                    "attributes": {},
+                    "content": "mail@example.com"
+                  },
+                  "name": {
+                    "attributes": {},
+                    "content": "John Doe"
+                  },
+                  "uri": {
+                    "attributes": {},
+                    "content": "http://example.org/"
+                  }
+                }
               }
-            },
-            "category": null,
+            ],
+            "categories": [],
             "content": {
               "attributes": {
                 "type": "xhtml",
                 "xml:base": "http://diveintomark.org/",
                 "xml:lang": "en"
               },
-              "content": {
-                "@type": "xhtml",
-                "@xml:base": "http://diveintomark.org/",
-                "@xml:lang": "en",
-                "div": {
-                  "p": {
-                    "i": "[Update: The Atom draft is finished.]"
-                  }
+              "content": "[Update: The Atom draft is finished.]"
+            },
+            "contributors": [
+              {
+                "attributes": {},
+                "content": {
+                  "email": null,
+                  "name": {
+                    "attributes": {},
+                    "content": "John Doe"
+                  },
+                  "uri": null
                 }
               }
-            },
-            "contributor": {
-              "attributes": {},
-              "content": {
-                "name": "John Doe"
-              }
-            },
+            ],
             "id": {
               "attributes": {},
               "content": "tag:example.org,2003:3.2397"
             },
-            "link": {
-              "attributes": {},
-              "content": [
-                {
-                  "@href": "http://example.org/2005/04/02/atom",
-                  "@rel": "alternate",
-                  "@type": "text/html"
+            "links": [
+              {
+                "attributes": {
+                  "href": "http://example.org/2005/04/02/atom",
+                  "rel": "alternate",
+                  "type": "text/html"
                 },
-                {
-                  "@href": "http://example.org/audio/ph34r_my_podcast.mp3",
-                  "@length": "1337",
-                  "@rel": "enclosure",
-                  "@type": "audio/mpeg"
-                }
-              ]
-            },
+                "content": null
+              },
+              {
+                "attributes": {
+                  "href": "http://example.org/audio/ph34r_my_podcast.mp3",
+                  "length": "1337",
+                  "rel": "enclosure",
+                  "type": "audio/mpeg"
+                },
+                "content": null
+              }
+            ],
             "published": {
               "attributes": {},
               "content": "2003-12-13T08:29:29-04:00"
@@ -79,10 +91,6 @@
           }
         }
       ],
-      "id": {
-        "attributes": {},
-        "content": "tag:example.org,2003:3"
-      },
       "generator": {
         "attributes": {
           "uri": "http://www.example.com/",
@@ -91,22 +99,29 @@
         "content": "Example Toolkit"
       },
       "icon": null,
-      "link": {
+      "id": {
         "attributes": {},
-        "content": [
-          {
-            "@href": "http://example.org/",
-            "@hreflang": "en",
-            "@rel": "alternate",
-            "@type": "text/html"
-          },
-          {
-            "@href": "http://example.org/feed.atom",
-            "@rel": "self",
-            "@type": "application/atom+xml"
-          }
-        ]
+        "content": "tag:example.org,2003:3"
       },
+      "links": [
+        {
+          "attributes": {
+            "href": "http://example.org/",
+            "hreflang": "en",
+            "rel": "alternate",
+            "type": "text/html"
+          },
+          "content": null
+        },
+        {
+          "attributes": {
+            "href": "http://example.org/feed.atom",
+            "rel": "self",
+            "type": "application/atom+xml"
+          },
+          "content": null
+        }
+      ],
       "logo": null,
       "rights": {
         "attributes": {},
@@ -126,7 +141,7 @@
       },
       "updated": {
         "attributes": {},
-        "content": "2005-07-31T12:29:29+00:00"
+        "content": "2005-07-31T12:29:29Z"
       }
     }
   },

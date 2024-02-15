@@ -29,11 +29,7 @@
          <name>John Doe</name>
       </contributor>
       <content type="xhtml" xml:lang="en" xml:base="http://diveintomark.org/">
-         <div>
-            <p>
-               <i>[Update: The Atom draft is finished.]</i>
-            </p>
-         </div>
+         [Update: The Atom draft is finished.]
       </content>
    </entry>
 </feed>

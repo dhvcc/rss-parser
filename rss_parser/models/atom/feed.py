@@ -26,7 +26,7 @@ class RecommendedAtomFeedMixin(XMLBaseModel):
     authors: Optional[OnlyList[Tag[Person]]] = pydantic.Field(alias="author", default=[])
     "Names one author of the feed. A feed may have multiple author elements."
 
-    link: Optional[Tag[str]] = None
+    links: Optional[OnlyList[Tag[str]]] = pydantic.Field(alias="link", default=[])
     "The URL to the feed. A feed may have multiple link elements."
 
 

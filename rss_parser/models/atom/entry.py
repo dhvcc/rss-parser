@@ -25,7 +25,7 @@ class RecommendedAtomEntryMixin(XMLBaseModel):
     authors: Optional[OnlyList[Tag[Person]]] = pydantic.Field(alias="author", default=[])
     "Entry authors."
 
-    link: Optional[Tag[str]] = None
+    links: Optional[OnlyList[Tag[str]]] = pydantic.Field(alias="link", default=[])
     "The URL of the entry."
 
     content: Optional[Tag[str]] = None
