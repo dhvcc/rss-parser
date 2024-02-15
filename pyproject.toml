@@ -92,6 +92,9 @@ select = [
 "**/__init__.py" = [
     "F401"
 ]
+"rss_parser/models/atom/**" = [
+    "A003"
+]
 
 
 [build-system]

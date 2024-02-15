@@ -2,8 +2,8 @@ from typing import Optional
 
 from rss_parser.models import XMLBaseModel
 from rss_parser.models.atom.person import Person
-from rss_parser.models.types.only_list import OnlyList
 from rss_parser.models.types.date import DateTimeOrStr
+from rss_parser.models.types.only_list import OnlyList
 from rss_parser.models.types.tag import Tag
 from rss_parser.pydantic_proxy import import_v1_pydantic
 

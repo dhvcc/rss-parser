@@ -1,7 +1,7 @@
 from typing import Optional
 
 from rss_parser.models import XMLBaseModel
-from rss_parser.models.image import Image
+from rss_parser.models.rss.image import Image
 from rss_parser.models.rss.item import Item
 from rss_parser.models.rss.text_input import TextInput
 from rss_parser.models.types.date import DateTimeOrStr

@@ -3,7 +3,6 @@ from typing import Optional
 from rss_parser.models import XMLBaseModel
 from rss_parser.models.atom.entry import Entry
 from rss_parser.models.atom.person import Person
-from rss_parser.models.image import Image
 from rss_parser.models.types.date import DateTimeOrStr
 from rss_parser.models.types.only_list import OnlyList
 from rss_parser.models.types.tag import Tag
@@ -48,8 +47,8 @@ class OptionalAtomFeedMixin(XMLBaseModel):
     "Identifies a small image which provides iconic visual identification for the feed. Icons should be square."
 
     logo: Optional[Tag[str]] = None
-    "Identifies a larger image which provides visual identification for the feed. " \
-    "Images should be twice as wide as they are tall."
+    "Identifies a larger image which provides visual identification for the feed. \
+    Images should be twice as wide as they are tall."
 
     rights: Optional[Tag[str]] = None
     "The copyright of the feed."
