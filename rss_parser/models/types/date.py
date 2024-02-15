@@ -1,6 +1,10 @@
 from datetime import datetime
 from email.utils import parsedate_to_datetime
 
+from rss_parser.pydantic_proxy import import_v1_pydantic
+
+pydantic_validators = import_v1_pydantic(".validators")
+
 
 class DateTimeOrStr(datetime):
     @classmethod
@@ -17,6 +21,9 @@ class DateTimeOrStr(datetime):
     def validate(cls, v):
         return validate_dt_or_str(v)
 
+    def __str__(self) -> str:
+        return "qwe"
+
     def __repr__(self):
         return f"DateTimeOrStp({super().__repr__()})"
 
@@ -27,14 +34,9 @@ def validate_dt_or_str(value: str) -> datetime:
         return parsedate_to_datetime(value)
     except ValueError:
         pass
-    # Try ISO
+    # Try ISO or timestamp
     try:
-        return datetime.fromisoformat(value)
-    except ValueError:
-        pass
-    # Try timestamp
-    try:
-        return datetime.fromtimestamp(int(value))
+        return pydantic_validators.parse_datetime(value)
     except ValueError:
         pass
 
