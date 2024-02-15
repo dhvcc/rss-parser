@@ -21,9 +21,6 @@ class DateTimeOrStr(datetime):
     def validate(cls, v):
         return validate_dt_or_str(v)
 
-    def __str__(self) -> str:
-        return "qwe"
-
     def __repr__(self):
         return f"DateTimeOrStp({super().__repr__()})"
 
