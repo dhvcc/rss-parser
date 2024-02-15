@@ -32,7 +32,7 @@ def validate_dt_or_str(value: str) -> datetime:
     # Try to parse standard (RFC 822)
     try:
         return parsedate_to_datetime(value)
-    except ValueError:
+    except (ValueError, TypeError):  # https://github.com/python/cpython/issues/74866
         pass
     # Try ISO or timestamp
     try:
