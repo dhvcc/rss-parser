@@ -28,7 +28,7 @@ class Tag(pydantic_generics.GenericModel, Generic[T]):
     >>> m.width.content
     48
     >>> type(m.width), type(m.width.content)
-    (<class 'rss_parser.models.image.Tag[int]'>, <class 'int'>)
+    (<class 'rss_parser.models.rss.image.Tag[int]'>, <class 'int'>)
     >>> # The attributes are empty by default
     >>> m.width.attributes
     {}

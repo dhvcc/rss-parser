@@ -13,9 +13,3 @@ def sample_and_result(request):
         plain = len(request.param) > 1 and request.param[1]
         with open(sample_dir / f"{request.param[0]}{'_plain' if plain else ''}.json", encoding="utf-8") as result:
             return sample.read(), loads(result.read())
-
-
-@pytest.fixture
-def atom_feed():
-    with open(sample_dir / "atom.xml") as f:
-        return f.read()
