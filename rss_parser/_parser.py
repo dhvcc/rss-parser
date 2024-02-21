@@ -58,16 +58,3 @@ class AtomParser(BaseParser):
 class RSSParser(BaseParser):
     root_key = "rss"
     schema = RSS
-
-
-class Parser(RSSParser):
-    @classmethod
-    def parse(cls, data: str, *, schema: Optional[Type[XMLBaseModel]] = None) -> XMLBaseModel:
-        import warnings
-
-        warnings.warn(
-            "Class Parser was renamed to RSSParser " "and will be removed in the next major update",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return RSSParser.parse(data, schema=schema)

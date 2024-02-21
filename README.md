@@ -15,7 +15,7 @@
 
 ## About
 
-`rss-parser` is typed python RSS parsing module built using [pydantic](https://github.com/pydantic/pydantic) and [xmltodict](https://github.com/martinblech/xmltodict)
+`rss-parser` is typed python RSS/Atom parsing module built using [pydantic](https://github.com/pydantic/pydantic) and [xmltodict](https://github.com/martinblech/xmltodict)
 
 ## Installation
 
@@ -32,18 +32,25 @@ poetry build
 pip install dist/*.whl
 ```
 
+## V1 -> V2 migration
+- `Parser` class was renamed to `RSSParser`
+- Models for RSS-specific schemas were moved from `rss_parser.models` to `rss_parser.models.rss`. Generic types are not touched
+- Date parsing was changed a bit, now uses pydantic's `validator` instead of `email.utils`, so the code will produce datetimes better, where it was defaulting to `str` before
+
 ## Usage
 
 ### Quickstart
 
+**NOTE: For parsing Atom, use `AtomParser`**
+
 ```python
-from rss_parser import Parser
+from rss_parser import RSSParser
 from requests import get  # noqa
 
 rss_url = "https://rss.art19.com/apology-line"
 response = get(rss_url)
 
-rss = Parser.parse(response.text)
+rss = RSSParser.parse(response.text)
 
 # Print out rss meta data
 print("Language", rss.channel.language)
@@ -73,7 +80,7 @@ Here we can see that description is still somehow has <p> - this is beacause it'
 If you want to customize the schema or provide a custom one - use `schema` keyword argument of the parser
 
 ```python
-from rss_parser import Parser
+from rss_parser import RSSParser
 from rss_parser.models import XMLBaseModel
 from rss_parser.models.rss import RSS
 from rss_parser.models.types import Tag
@@ -87,7 +94,7 @@ class CustomSchema(RSS, XMLBaseModel):
 with open("tests/samples/custom.xml") as f:
     data = f.read()
 
-rss = Parser.parse(data, schema=CustomSchema)
+rss = RSSParser.parse(data, schema=CustomSchema)
 
 print("RSS", rss.version)
 print("Custom", rss.custom)
@@ -157,7 +164,7 @@ please, use `rss_parser.models.types.only_list.OnlyList` like we did in `Channel
 ```python
 from typing import Optional
 
-from rss_parser.models.item import Item
+from rss_parser.models.rss.item import Item
 from rss_parser.models.types.only_list import OnlyList
 from rss_parser.models.types.tag import Tag
 from rss_parser.pydantic_proxy import import_v1_pydantic

@@ -1,3 +1,3 @@
-from ._parser import AtomParser, BaseParser, Parser, RSSParser
+from ._parser import AtomParser, BaseParser, RSSParser
 
-__all__ = ("BaseParser", "Parser", "AtomParser", "RSSParser")
+__all__ = ("BaseParser", "AtomParser", "RSSParser")
