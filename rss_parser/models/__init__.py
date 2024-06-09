@@ -13,8 +13,6 @@ pydantic = import_v1_pydantic()
 
 class XMLBaseModel(pydantic.BaseModel):
     class Config:
-        # Not really sure if we want for the schema obj to be immutable, disabling for now
-        # allow_mutation = False
         alias_generator = camel_case
 
     def json_plain(self, **kw):

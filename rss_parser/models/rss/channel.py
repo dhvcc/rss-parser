@@ -36,7 +36,6 @@ class OptionalChannelElementsMixin(XMLBaseModel):
     copyright: Optional[Tag[str]] = None  # Copyright 2002, Spartanburg Herald-Journal  # noqa
     "Copyright notice for content in the channel."
 
-    managing_editor: Optional[Tag[str]] = None  # geo@herald.com (George Matesky)
     "Email address for person responsible for editorial content."
 
     web_master: Optional[Tag[str]] = None  # betty@herald.com (Betty Guernsey)

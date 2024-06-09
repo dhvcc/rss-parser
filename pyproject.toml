@@ -29,10 +29,7 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
-packages = [
-    {include = "rss_parser"},
-    {include = "rss_parser/py.typed"},
-]
+packages = [{ include = "rss_parser" }, { include = "rss_parser/py.typed" }]
 
 
 [tool.poetry.urls]
@@ -54,7 +51,11 @@ rich = "*"
 pytest = "^7.4.0"
 
 [tool.pytest.ini_options]
-addopts = "-color=yes"
+addopts = "--color=yes"
+testpaths = ["tests"]
+log_cli = true
+log_level = "INFO"
+
 
 [tool.black]
 line-length = 120
@@ -65,36 +66,33 @@ line-length = 120
 target-version = "py38"
 respect-gitignore = true
 select = [
-    "PL",    # pylint
-    "F",     # pyflakes
-    "E",     # pycodestyle errors
-    "W",     # pycodestyle warnings
-    "I",     # isort
-    "N",     # pep8-naming
-    "S",     # flake8-bandit
-    "A",     # flake8-builtins
-    "C40",   # flake8-comprehensions
-    "T10",   # flake8-debugger
-    "EXE",   # flake8-executable
-    "T20",   # flake8-print
-    "TID",   # flake8-tidy-imports
-    "TCH",   # flake8-type-checking
-    "ARG",   # flake8-unused-arguments
-    "RUF",   # ruff
+    "PL",  # pylint
+    "F",   # pyflakes
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "I",   # isort
+    "N",   # pep8-naming
+    "S",   # flake8-bandit
+    "A",   # flake8-builtins
+    "C40", # flake8-comprehensions
+    "T10", # flake8-debugger
+    "EXE", # flake8-executable
+    "T20", # flake8-print
+    "TID", # flake8-tidy-imports
+    "TCH", # flake8-type-checking
+    "ARG", # flake8-unused-arguments
+    "RUF", # ruff
 ]
 
 [tool.ruff.per-file-ignores]
 "tests/**.py" = [
-  "S101",    # Use of assert detected
-  "ARG001",  # Unused function argument
-  "S311",    # Allow use of random
+    "S101",   # Use of assert detected
+    "ARG001", # Unused function argument
+    "S311",   # Allow use of random
+    "S301",   # Allow use of pickle
 ]
-"**/__init__.py" = [
-    "F401"
-]
-"rss_parser/models/atom/**" = [
-    "A003"
-]
+"**/__init__.py" = ["F401"]
+"rss_parser/models/atom/**" = ["A003"]
 
 
 [build-system]

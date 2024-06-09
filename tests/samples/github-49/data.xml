@@ -1,0 +1,2109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:rbc_news="https://www.rbc.ru" version="2.0">
+    <channel>
+        <title>www.rbc.ru</title>
+        <link>https://www.rbc.ru</link>
+        <description />
+        <ttl>30</ttl>
+        <language>ru</language>
+        <image>
+            <url>http://pics.rbc.ru/img/fp_v4/skin/img/v6-logo.png</url>
+            <link>https://www.rbc.ru</link>
+            <title>Главные новости :: www.rbc.ru</title>
+        </image>
+        <item>
+            <title><![CDATA[Чешский футболист пропустит Евро из-за падения с велосипеда]]></title>
+            <link>https://www.rbc.ru/sport/09/06/2024/666592289a79475b6a241776</link>
+            <pubDate>Sun, 09 Jun 2024 14:42:31 +0300</pubDate>
+            <description><![CDATA[Полузащитник Садилек после матча с Мальтой тренировался по индивидуальной программе. Во время поездки на велосипеде он травмировал ногу и пропустит Евро. Тренер заявил, что эта травма ослабила сборную]]></description>
+            <category>Спорт</category>
+            <author>Анна Сатдинова</author>
+            <guid isPermaLink="false">rssexport.rbc.ru:sport:666592289a79475b6a241776</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/3/15/347179326576153.png"
+                type="image/png" length="" />
+            <rbc_news:time>14:42:31</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/sport/09/06/2024/666592289a79475b6a241776</pdalink>
+            <rbc_news:anons><![CDATA[Полузащитник Садилек после матча с Мальтой тренировался по индивидуальной программе. Во время поездки на велосипеде он травмировал ногу и пропустит Евро. Тренер заявил, что эта травма ослабила сборную]]></rbc_news:anons>
+            <rbc_news:news_id>666592289a79475b6a241776</rbc_news:news_id>
+            <rbc_news:type>article</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717933351</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 14:42:33 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>sport</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Футбол]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Евро-2024]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Чехия]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Полузащитник &laquo;Твенте&raquo; Михал Садилек не выступит на чемпионате Европы в составе сборной Чехии из-за травмы голени, которую он получил в субботу в результате падения с велосипеда. Об этом сообщила пресс-служба Футбольной ассоциации Чехии.
+
+Садилек 7 июня отыграл товарищеский матч против Мальты (7:1), во втором тайме он надел капитанскую повязку.
+
+Главный тренер сборной Чехии Иван Гашек заявил, что травма Садилека ослабила команду. Полузащитник был одним из семи игроков сборной, которые участвовали в Евро-2020.
+
+
+
+Всего на счету Садилека 24 матча и один гол за сборную.
+
+На Евро чехи сыграют в одной группе с Португалией, Турцией и Грузией.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/3/15/347179326576153.png</rbc_news:url>
+                <rbc_news:type>image/png</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Gabriele Maltinti / Getty Images]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Михал Садилек</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/sport/08/06/2024/666431ef9a794771470d8127">
+                    <rbc_news:title><![CDATA[Мбаппе и Гризманн вошли в состав сборной Франции на Евро-2024]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/0/82/347178424573820.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Mike Hewitt / Getty Images]]></source>
+                        <description><![CDATA[<p>Килиан Мбаппе</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/sport/08/06/2024/666411bf9a7947155de8d4e2">
+                    <rbc_news:title><![CDATA[Лидер сборной Польши получил травму в матче с Украиной и пропустит Евро]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/4/03/347178342040034.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Valerio Pennicino / Getty Images]]></source>
+                        <description><![CDATA[<p>Аркадиуш Милик</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/sport/08/06/2024/666406da9a7947016d187487">
+                    <rbc_news:title><![CDATA[Игроки «Реала» и «Челси» вошли в состав сборной Украины на Евро-2024]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/5/25/347178314474255.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Ryan Pierse / Getty Images]]></source>
+                        <description><![CDATA[<p>Михаил Мудрик</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[В хоккейном СКА отреагировали на пожар на домашней арене]]></title>
+            <link>https://www.rbc.ru/sport/09/06/2024/66658b889a794752eee761e9</link>
+            <pubDate>Sun, 09 Jun 2024 14:31:45 +0300</pubDate>
+            <description><![CDATA[Пожар произошел в ночь на воскресенье в чаше арены — сгорел видеобортик, пострадали трибуны и покрытие. В СКА заявили, что в межсезонье не занимаются на этом стадионе]]></description>
+            <category>Спорт</category>
+            <author>Анна Сатдинова</author>
+            <guid isPermaLink="false">rssexport.rbc.ru:sport:66658b889a794752eee761e9</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/1/67/347179310741671.png"
+                type="image/png" length="" />
+            <rbc_news:time>14:31:45</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/sport/09/06/2024/66658b889a794752eee761e9</pdalink>
+            <rbc_news:anons><![CDATA[Пожар произошел в ночь на воскресенье в чаше арены — сгорел видеобортик, пострадали трибуны и покрытие. В СКА заявили, что в межсезонье не занимаются на этом стадионе]]></rbc_news:anons>
+            <rbc_news:news_id>66658b889a794752eee761e9</rbc_news:news_id>
+            <rbc_news:type>article</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717932705</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 14:31:47 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>sport</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Хоккей]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[ХК СКА Санкт-Петербург]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Пожар, произошедший ночью на &laquo;СКА Арене&raquo; в Санкт-Петербурге, не отразился на хоккейном клубе СКА, стадион не задействован в предсезонной подготовке команды. Об этом сообщила пресс-служба СКА.
+
+Пожар в чаше арены произошел в ночь на 9 июня. ТАСС со ссылкой на оперативные службы сообщил, что на арене выгорел электронный видеобортик, оплавились и сгорели трибуны на площади 200 кв. метров, сгорело 100 кв. метров и оплавилось 300 кв. метров пластикового покрытия чаши.
+
+В СКА сообщили, что после плей-офф у клуба нет договорных отношений с ареной, на которой она проводила домашние матчи во второй половине сезона КХЛ.
+
+&laquo;Мы тренируемся в Новогорске и Сочи, домашний турнир Пучкова проводим в Ледовом, поэтому этот пожар никак не влияет на наше расписание&raquo;,&nbsp;&mdash; сообщили в клубе.
+
+
+
+В СКА назвали пожар &laquo;неприятным моментом, так как нет ничего важнее безопасности всех, кто мог находиться на арене&raquo;.
+
+В результате возгорания никто не пострадал.
+
+Арена, которая вмещает более 20 тыс. зрителей на хоккейных матчах, была введена в эксплуатацию в конце прошлого года. Гендиректор Дмитрий Сватковский в ноябре оценивал ее стоимость в 60 млрд. рублей.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/1/67/347179310741671.png</rbc_news:url>
+                <rbc_news:type>image/png</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Александр Демьянчук / ТАСС]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>&laquo;СКА Арена&raquo; в Санкт-Петербурге</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/sport/07/06/2024/6662db379a7947a929f85a7f">
+                    <rbc_news:title><![CDATA[Хельсинки обновили предложение по покупке арены у Тимченко и Ротенберга]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/1/86/347177547708861.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Tomi Hänninen / Newspix24 / Newspix24 / Global Look Press]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/sport/15/02/2024/65ccfa599a79470d49a9eb6d">
+                    <rbc_news:title><![CDATA[«Посчитали кошек и собак». Действительно ли СКА установил мировой рекорд]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/5/74/347079323125745.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Валентина Певцова / ТАСС]]></source>
+                        <description><![CDATA[<p>&laquo;СКА Арена&raquo;</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/sport/04/03/2024/65e5fcec9a794738ffd036b0">
+                    <rbc_news:title><![CDATA[РФС разрешил «Спартаку» вернуться на домашний стадион после ЧП с травой]]></rbc_news:title>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Парковки по всей Москве сделают бесплатными в День России]]></title>
+            <link>https://www.rbc.ru/rbcfreenews/66658e8b9a7947bf5129beda</link>
+            <pubDate>Sun, 09 Jun 2024 14:27:10 +0300</pubDate>
+            <description><![CDATA[В День России, 12 июня, парковка в Москве станет бесплатной на всех улицах, сообщил мэр Сергей Собянин.]]></description>
+            <category>Общество</category>
+            <guid isPermaLink="false">rssexport.rbc.ru:society:66658e8b9a7947bf5129beda</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/6/92/347179332501926.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>14:27:10</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/rbcfreenews/66658e8b9a7947bf5129beda</pdalink>
+            <rbc_news:anons><![CDATA[В День России, 12 июня, парковка в Москве станет бесплатной на всех улицах, сообщил мэр Сергей Собянин.]]></rbc_news:anons>
+            <rbc_news:news_id>66658e8b9a7947bf5129beda</rbc_news:news_id>
+            <rbc_news:type>short_news</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717932430</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 14:56:05 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>society</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Москва]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Сергей Собянин]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[парковки]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[День России]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[В День России, 12 июня, парковка в Москве станет бесплатной на всех улицах, сообщил мэр Сергей Собянин.
+
+Он уточнил, что парковки со шлагбаумом останутся платными и продолжат работать по действующим тарифам.
+
+12 мая&nbsp;&mdash; нерабочий праздничный день. В прошлом году День России выпал на понедельник, поэтому жители страны отдыхали сразу три дня. В этом россияне отдохнут в среду.
+
+
+
+Платные парковки существуют в Москве с 2012 года.&nbsp;Их&nbsp;зону после этого регулярно расширяли. В январе 2024 году появились&nbsp;еще 50 участков, среди них улицы в районах Аэропорт, Северное Измайлово, Савеловский, Зюзино и др. А в&nbsp;феврале зону парковок&nbsp;расширили еще на 31 участок.
+
+]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/6/92/347179332501926.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Екатерина Кузьмина / РБК]]></rbc_news:source>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/rbcfreenews/664607b59a794728a8232caa">
+                    <rbc_news:title><![CDATA[Прокуратура опротестовала запрет на парковку электросамокатов в Перми]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/6/26/347158669327266.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Константин Кокошкин / Global Look Press]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/662cec2e9a794756cb9fb1f4">
+                    <rbc_news:title><![CDATA[В Люберцах простились с погибшим из-за замечания о парковке]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/2/00/347142231644002.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Максим Григорьев / ТАСС]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/6629e31a9a7947daddcf1305">
+                    <rbc_news:title><![CDATA[В Москве на майские праздники парковку сделают бесплатной]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/6/65/347140246903656.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Екатерина Кузьмина / РБК]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[В Белгороде и Курской области объявили ракетную опасность]]></title>
+            <link>https://www.rbc.ru/rbcfreenews/66658f8f9a79473cc364f058</link>
+            <pubDate>Sun, 09 Jun 2024 14:24:59 +0300</pubDate>
+            <description><![CDATA[В Белгороде и Белгородском районе объявлена ракетная опасность, сообщил глава региона Вячеслав Гладков.]]></description>
+            <category>Политика</category>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:66658f8f9a79473cc364f058</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/4/76/347179329546764.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>14:24:59</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/rbcfreenews/66658f8f9a79473cc364f058</pdalink>
+            <rbc_news:anons><![CDATA[В Белгороде и Белгородском районе объявлена ракетная опасность, сообщил глава региона Вячеслав Гладков.]]></rbc_news:anons>
+            <rbc_news:news_id>66658f8f9a79473cc364f058</rbc_news:news_id>
+            <rbc_news:type>short_news</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717932299</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 14:52:11 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Белгород]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[ракетная опасность]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Вячеслав Гладков]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Курская область]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[В Белгороде и Белгородском районе объявлена ракетная опасность, сообщил глава региона Вячеслав Гладков. Он призвал жителей спуститься в подвалы и оставаться там до получения сигнала сообщений об отбое ракетной опасности. Сигнал продлился 16 минут,&nbsp;с 14:15 до 14:31 мск.
+
+Аналогичный сигнал запустили в Курской области, сообщил врио губернатора Алексей Смирнов. Он призвал укрыться в помещениях со сплошными стенами или спуститься в укрытия.
+
+
+
+Белгородская область и ее административный центр регулярно попадают под атаки. В регионе практически ежедневно запускают сигналы ракетной опасности. Сегодня такой сигнал запускают в третий раз.
+
+В Курской области также неоднократно запускали сигнал ракетной опасности. В частности, 4 июня его объявили в городе Курчатов, где находится АЭС.
+
+После начала военной операции России на Украине приграничные регионы регулярно попадают под атаки дронов и обстрелы. Ранее днем ракетную опасность объявляли в Воронежской области, а Херсонской запускали авиационную опасность.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/4/76/347179329546764.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Александр Рюмин / ТАСС]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Белгород</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/rbcfreenews/6665750c9a794710b7db959e">
+                    <rbc_news:title><![CDATA[Жителей Белгорода во второй раз за день предупредили о ракетной опасности]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/2/40/347179255944402.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Александр Рюмин / ТАСС]]></source>
+                        <description><![CDATA[<p>Белгород</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/66656bfb9a794747ceae4f91">
+                    <rbc_news:title><![CDATA[Над Белгородской областью сбили ракету «Нептун» и два дрона]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/8/74/347179234584748.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Николай Гынгазов / ТАСС]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/6665564c9a7947d363ac1ebd">
+                    <rbc_news:title><![CDATA[В Воронежской области вслед за Белгородом объявили ракетную опасность]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/5/90/347179180733905.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Сергей Бобылев / ТАСС]]></source>
+                        <description><![CDATA[<p>Воронеж</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Гладков сообщил об атаке двух дронов на село Безымено]]></title>
+            <link>https://www.rbc.ru/rbcfreenews/66658c0a9a794744d3f3efde</link>
+            <pubDate>Sun, 09 Jun 2024 14:20:11 +0300</pubDate>
+            <description><![CDATA[Вооруженные силы Украины (ВСУ) атаковали двумя дронами село Безымено Грайворонского городского округа, никто не пострадал, сообщил губернатор Вячеслав Гладков.]]></description>
+            <category>Политика</category>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:66658c0a9a794744d3f3efde</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/2/86/347179315001862.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>14:20:11</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/rbcfreenews/66658c0a9a794744d3f3efde</pdalink>
+            <rbc_news:anons><![CDATA[Вооруженные силы Украины (ВСУ) атаковали двумя дронами село Безымено Грайворонского городского округа, никто не пострадал, сообщил губернатор Вячеслав Гладков.]]></rbc_news:anons>
+            <rbc_news:news_id>66658c0a9a794744d3f3efde</rbc_news:news_id>
+            <rbc_news:type>short_news</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717932011</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 14:50:28 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Белгородская область]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[ВСУ]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Украина]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Вячеслав Гладков]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Вооруженные силы Украины (ВСУ) атаковали двумя дронами село Безымено Грайворонского городского округа, никто не пострадал, сообщил губернатор Вячеслав Гладков.
+
+Первый беспилотник&nbsp;сбросил взрывное устройство на автомобиль;&nbsp;пассажиры успели покинуть салон. Второй сбросил взрывчатку на административный объект&nbsp;&mdash; там пробило крышу.
+
+
+Грайворонский городской округ расположен в считанных километрах от границы с Украиной. В 2021 году в городе жили 6179 человек. Округ&nbsp;регулярно попадает под обстрелы.
+
+
+
+
+Белгородская область в последние месяцы подвергается интенсивным обстрелам, в регионе периодически объявляют ракетную опасность, сбивают украинские ракеты и дроны. Ранее днем ВСУ атаковали Шебекинский и Новооскольский городские&nbsp;округа, никто не пострадал.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/2/86/347179315001862.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[сервис «Яндекс.Карты»]]></rbc_news:source>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/rbcfreenews/6665750c9a794710b7db959e">
+                    <rbc_news:title><![CDATA[Жителей Белгорода во второй раз за день предупредили о ракетной опасности]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/2/40/347179255944402.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Александр Рюмин / ТАСС]]></source>
+                        <description><![CDATA[<p>Белгород</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/66656bfb9a794747ceae4f91">
+                    <rbc_news:title><![CDATA[Над Белгородской областью сбили ракету «Нептун» и два дрона]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/8/74/347179234584748.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Николай Гынгазов / ТАСС]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/6665564c9a7947d363ac1ebd">
+                    <rbc_news:title><![CDATA[В Воронежской области вслед за Белгородом объявили ракетную опасность]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/5/90/347179180733905.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Сергей Бобылев / ТАСС]]></source>
+                        <description><![CDATA[<p>Воронеж</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Минздрав Газы сообщил о 274 погибших в ходе операции ЦАХАЛ в Нусейрате]]></title>
+            <link>https://www.rbc.ru/politics/09/06/2024/6665872f9a794708d5a2ffe4</link>
+            <pubDate>Sun, 09 Jun 2024 14:12:05 +0300</pubDate>
+            <description><![CDATA[Накануне израильский спецназ провел спецоперацию по освобождению четырех заложников, включая одного россиянина, в лагере беженцев Нусейрат. По данным минздрава анклава, в результате погибли как минимум 274 человека]]></description>
+            <category>Политика</category>
+            <author>Илья Пламенев</author>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:6665872f9a794708d5a2ffe4</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/8/62/347179305621628.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>14:12:05</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/politics/09/06/2024/6665872f9a794708d5a2ffe4</pdalink>
+            <rbc_news:anons><![CDATA[Накануне израильский спецназ провел спецоперацию по освобождению четырех заложников, включая одного россиянина, в лагере беженцев Нусейрат. По данным минздрава анклава, в результате погибли как минимум 274 человека]]></rbc_news:anons>
+            <rbc_news:news_id>6665872f9a794708d5a2ffe4</rbc_news:news_id>
+            <rbc_news:type>article</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717931525</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 14:18:40 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Израиль]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[ХАМАС]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[заложники]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[сектор Газа]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[По меньшей мере 274 палестинца погибли и 698 получили ранения в результате израильской операции по освобождению четырех заложников, проводившейся в центре лагеря палестинских беженцев Нусейрат в центральной части сектора Газа. Об этом сообщило в своем телеграм-канале министерство здравоохранения анклава, находящегося под контролем ХАМАС.
+
+&laquo;Многие пострадавшие по-прежнему находятся под завалами и на дорогах, бригады скорой помощи и гражданской обороны не могут добраться до них&raquo;,&nbsp;&mdash; уточнили в министерстве.
+
+Всего, по данным минздрава, число жертв среди палестинцев с 7 октября превысило 37 тыс., еще свыше 84 тыс. получили ранения.
+
+
+
+Израильский спецназ провел операцию по освобождению заложников, захваченных боевиками на музыкальном фестивале &laquo;Нова&raquo;, накануне, 8 июня. В результате удалось освободить четырех человек, включая 27-летнего Андрея Козлова, гражданина&nbsp;России и Израиля. Операцию проводили при поддержке армии, разведки и ВВС. Во время рейда погиб один спецназовец.
+
+Источники The New York Times (NYT) уточняли, что саму операцию согласовали за несколько минут до начала. Израильские военные решили действовать днем, поскольку в ХАМАС предполагали, что подобная операция пройдет ночью. Один заложник находился в первом здании, трое, в том числе Козлов, &mdash; в другом, и для их освобождения спецназ вступил в перестрелку. После освобождения из плена россиянин&nbsp;встретился с премьер-министром Израиля Биньямином Нетаньяху и поблагодарил его по-русски: &laquo;Спасибо вам&raquo;.
+
+]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/8/62/347179305621628.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Emad Abu Shawiesh / Reuters]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Нейсурат, сектор Газа</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/politics/09/06/2024/66650aea9a7947565c7a22f9">
+                    <rbc_news:title><![CDATA[WSJ узнала об угрозах Египта и Катара лидерам ХАМАС по требованию США]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/1/14/347179010398141.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Ramadan Abed / Reuters]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/politics/09/06/2024/6664e6f39a794775ba2f384b">
+                    <rbc_news:title><![CDATA[NYT узнала подробности освобождения захваченного ХАМАС россиянина]]></rbc_news:title>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/66649b959a794720085861e8">
+                    <rbc_news:title><![CDATA[Освобожденный из плена ХАМАС петербуржец встретился с Нетаньяху]]></rbc_news:title>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[На греческом острове нашли тело британского телеведущего Мосли]]></title>
+            <link>https://www.rbc.ru/rbcfreenews/666581469a79474b50b4c902</link>
+            <pubDate>Sun, 09 Jun 2024 14:03:23 +0300</pubDate>
+            <description><![CDATA[Тело ведущего Би-би-си Майкла Мосли, пропавшего во время отдыха на острове Сими в Греции, нашли, сообщает Associated Press со ссылкой на представителя полиции.]]></description>
+            <category>Политика</category>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:666581469a79474b50b4c902</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/7/85/347179291561857.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>14:03:23</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/rbcfreenews/666581469a79474b50b4c902</pdalink>
+            <rbc_news:anons><![CDATA[Тело ведущего Би-би-си Майкла Мосли, пропавшего во время отдыха на острове Сими в Греции, нашли, сообщает Associated Press со ссылкой на представителя полиции.]]></rbc_news:anons>
+            <rbc_news:news_id>666581469a79474b50b4c902</rbc_news:news_id>
+            <rbc_news:type>short_news</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717931003</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 14:07:45 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[смерть]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Греция]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Би-би-си]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[журналист]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Тело ведущего Би-би-си Майкла Мосли, пропавшего во время отдыха на острове Сими в Греции, нашли, сообщает Associated Press со ссылкой на представителя полиции. Информацию подтвердил источник Би-би-си.
+
+По словам мэра Лефтериса Папакалодукаса, тело упало с крутого склона, в&nbsp;одной руке у погибшего была кожаная сумка. По данным Би-би-си, его обнаружили при осмотре береговой линии с помощью камер. Тело вскоре пройдет официальное опознание.
+
+67-летний журналист пропал 5 июня. В поисковой операции участвовали полиция, береговая охрана, волонтеры и другие силы. У Мосли остались жена и четверо детей.
+
+
+
+Журналист получил медицинское образование, после работал в кадре почти 20 лет:, вел шоу о диете, физических упражнениях и медицине. Мосли знаком британским зрителям по выступлениям в утреннем эфире Би-би-си и на шоу &laquo;Один на один&raquo;. Кроме того, он популяризировал периодическое&nbsp;голодание&nbsp;и низкоуглеводное&nbsp;питание. Мосли также был обозревателем Daily Mail.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/7/85/347179291561857.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Panormitis Chatzigiannakis / Reuters]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Обстановка на месте происшествия&nbsp;на острове Сими, Греция</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/rbcfreenews/666354ac9a79470ba0cd9f5b">
+                    <rbc_news:title><![CDATA[Британский телеведущий Мосли пропал во время отдыха на греческом острове]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/9/47/347177862568479.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Fernvall Lotte / Aftonbladet / Zuma / Global Look Press]]></source>
+                        <description><![CDATA[<p>Майкл Мосли</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Marca узнала о планах «Реала» купить самого дорогого немецкого футболиста]]></title>
+            <link>https://www.rbc.ru/sport/09/06/2024/6665858a9a7947709634d767</link>
+            <pubDate>Sun, 09 Jun 2024 13:59:14 +0300</pubDate>
+            <description><![CDATA[Газета узнала, что Флориан Вирц договорился провести еще один сезон за «Байер», а потом перейти в «Реал». Леверкузенский клуб ранее заявил, что планирует получить за футболиста, признанного лучшим в бундеслиге, €150 млн]]></description>
+            <category>Спорт</category>
+            <author>Анна Сатдинова</author>
+            <guid isPermaLink="false">rssexport.rbc.ru:sport:6665858a9a7947709634d767</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/7/94/347179307185947.png"
+                type="image/png" length="" />
+            <rbc_news:time>13:59:14</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/sport/09/06/2024/6665858a9a7947709634d767</pdalink>
+            <rbc_news:anons><![CDATA[Газета узнала, что Флориан Вирц договорился провести еще один сезон за «Байер», а потом перейти в «Реал». Леверкузенский клуб ранее заявил, что планирует получить за футболиста, признанного лучшим в бундеслиге, €150 млн]]></rbc_news:anons>
+            <rbc_news:news_id>6665858a9a7947709634d767</rbc_news:news_id>
+            <rbc_news:type>article</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717930754</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 14:16:13 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>sport</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Футбол]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[ФК Байер Леверкузен]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Реал Мадрид]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Полузащитник леверкузенского &laquo;Байера&raquo; Флориан Вирц стал целью мадридского &laquo;Реала&raquo; на лето 2025 года, пишет Marca.
+
+По данным издания, 21-летний футболист договорился с &laquo;Байером&raquo;, что отыграет за него еще один сезон, а с &laquo;Реалом&raquo;&nbsp;&mdash; о переходе в 2025-м.
+
+При этом контракт футболиста с леверкузенским клубом рассчитан до лета 2027 года, а в &laquo;Байере&raquo; в апреле заявили, что хотят получить за игрока не меньше &euro;150 млн.
+
+Портал Transfermarkt оценивает стоимость Вирца в &euro;130 млн&nbsp;&mdash; он самый дорогой игрок бундеслиги и седьмой по стоимости в мире.
+
+
+
+Вирц был признан лучшим игроком бундеслиги в минувшем сезоне, он выиграл с &laquo;Байером&raquo; чемпионат и Кубок Германии.
+
+В сборной Германии полузащитник провел 18 матчей и забил один гол.
+
+Вирц вошел в состав сборной на Евро-2024, который стартует 14 июня.
+
+Самым дорогим трансфером немецкого игрока в истории является переход Кая Хаверца из &laquo;Леверкузена&raquo; в &laquo;Челси&raquo; за &euro;80 млн в 2020 году.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/7/94/347179307185947.png</rbc_news:url>
+                <rbc_news:type>image/png</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Alex Grimm / Getty Images]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Флориан Вирц</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/sport/06/06/2024/664b07c09a79473d73c1b76c">
+                    <rbc_news:title><![CDATA[Украинский бомбардир и чудо «Байера». Главные сенсации топ-5 чемпионатов]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/7/79/347175838185797.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Aitor Alcalde / Getty Images]]></source>
+                        <description><![CDATA[<p>Футболисты ФК &laquo;Жирона&raquo;</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/sport/18/05/2024/6648c0079a7947192b894493">
+                    <rbc_news:title><![CDATA[«Байер» завершил сезон в чемпионате Германии без поражений]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/9/75/347160438326759.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Stuart Franklin / Getty Images]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/sport/22/05/2024/664e000f9a794740e8fd15b2">
+                    <rbc_news:title><![CDATA[«Аталанта» Миранчука выиграла Лигу Европы, разгромив «Байер»]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/5/26/347163878988265.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Joern Pollex / Bongarts / Getty Images]]></source>
+                        <description><![CDATA[<p>Трофей Лиги Европы</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Большинство немцев выступили за возвращение обязательного призыва в армию]]></title>
+            <link>https://www.rbc.ru/politics/09/06/2024/66657daf9a7947174df08354</link>
+            <pubDate>Sun, 09 Jun 2024 13:53:29 +0300</pubDate>
+            <description><![CDATA[60% немцев выступили за возвращение обязательного призыва, еще 32% инициативу не поддержали, свидетельствуют результаты опроса YouGov. С марта число сторонников всеобщей воинской повинности увеличилось на 8%]]></description>
+            <category>Политика</category>
+            <author>Илья Пламенев</author>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:66657daf9a7947174df08354</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/3/58/347179281459583.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>13:53:29</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/politics/09/06/2024/66657daf9a7947174df08354</pdalink>
+            <rbc_news:anons><![CDATA[60% немцев выступили за возвращение обязательного призыва, еще 32% инициативу не поддержали, свидетельствуют результаты опроса YouGov. С марта число сторонников всеобщей воинской повинности увеличилось на 8%]]></rbc_news:anons>
+            <rbc_news:news_id>66657daf9a7947174df08354</rbc_news:news_id>
+            <rbc_news:type>article</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717930409</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 14:00:14 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Германия]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[призыв в армию]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Военная операция на Украине]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Бундесвер]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Большинство жителей Германии выступают за возвращение обязательного воинского призыва, свидетельствуют результаты опроса, проведенного институтом изучения общественного мнения YouGov по заказу газеты Welt am Sonntag.
+
+Так, возврат всеобщей воинской повинности в целом поддержали 60% опрошенных, при этом 28% выбрали вариант &laquo;полностью поддерживаю&raquo;, а 32%&nbsp;&mdash; &laquo;отчасти поддерживаю&raquo;. Против инициативы выступили 32%, в том числе 18%&nbsp;&mdash; &laquo;отчасти против&raquo; и 14%&nbsp;&mdash; &laquo;полностью&raquo;. Оставшиеся 8% не смогли четко ответить на вопрос.
+
+Опрос также показал, что почти половина граждан Германии (49%) в настоящее время полагают, что ФРГ угрожают иностранные вооруженные силы. Несколько меньше (40%), напротив, не видят угрозы безопасности страны. Еще 11% не стали высказывать свою точку зрения по этому поводу.
+
+Опрос YouGo проводился с 31 мая по 5 июня. В нем приняли участие 2295 человек. В марте институт Forsa проводил аналогичный опрос. Тогда за возвращение призыва высказались 52% немцев, против&nbsp;&mdash; 43%.
+
+
+
+Призыв на военную службу в Германии был приостановлен в 2011 году. С тех пор численность бундесвера неуклонно сокращалась и сегодня составляет 181,5 тыс. солдат. Глава Минобороны Германии Борис Писториус в прошлом декабре называл ошибкой отмену обязательной службы и говорил, что получил порядка 65 предложений о реорганизации бундесвера. Spiegel в марте писал, что министр поручил подготовить предложения о модели набора на военную службу с элементами призыва.
+
+На заседании исполкома партии СДПГ в мае Писториус представил новую модель службы, которая основана на добровольном привлечении молодых людей в армию, в том числе при помощи разных стимулов&nbsp;&mdash; бесплатного получения водительских прав, погашения части кредитов на обучение, языковых курсов. Уже в июне он заявил, что бундесвер должен быть готов к войне к 2029 году. &laquo;Мы не должны думать, что [президент России Владимир] Путин остановится у границ Украины&raquo;,&nbsp;&mdash; отмечал министр.
+
+Сам Путин неоднократно говорил о нежелании столкновения с альянсом. &laquo;Напридумывали, что Россия хочет напасть на НАТО. Вы сбрендили совсем, что&nbsp;ли? Тупые вообще, как этот стол?&raquo;&nbsp;&mdash; заявил он на встрече с иностранными корреспондентами 5 июня.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/3/58/347179281459583.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Alexander Koerner / Getty Images]]></rbc_news:source>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/politics/09/06/2024/666570559a794747ceae4f9c">
+                    <rbc_news:title><![CDATA[В Германии решили увеличить число резервистов]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/0/59/347179263271590.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Sean Gallup / Getty Images]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/politics/05/06/2024/66607dd99a7947c0e4e5476e">
+                    <rbc_news:title><![CDATA[Писториус заявил о необходимости подготовить Германию к войне к 2029 году]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/2/90/347176011297902.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Christoph Soeder / dpa / Global Look Press]]></source>
+                        <description><![CDATA[<p>Борис Писториус</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/politics/17/02/2024/65d0da9d9a794700f7029c48">
+                    <rbc_news:title><![CDATA[Писториус предупредил о разделительных линиях между Россией и Западом]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/3/87/347081866152873.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Johannes Simon / Getty Images]]></source>
+                        <description><![CDATA[<p>Борис Писториус</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[В Херсонской области объявили авиационную опасность]]></title>
+            <link>https://www.rbc.ru/rbcfreenews/666586ee9a7947ce6ee276fb</link>
+            <pubDate>Sun, 09 Jun 2024 13:45:37 +0300</pubDate>
+            <description><![CDATA[В Херсонской области объявлена авиационная опасность, сообщил губернатор Владимир Сальдо в телеграм-канале.]]></description>
+            <category>Политика</category>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:666586ee9a7947ce6ee276fb</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/9/51/347179303402519.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>13:45:37</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/rbcfreenews/666586ee9a7947ce6ee276fb</pdalink>
+            <rbc_news:anons><![CDATA[В Херсонской области объявлена авиационная опасность, сообщил губернатор Владимир Сальдо в телеграм-канале.]]></rbc_news:anons>
+            <rbc_news:news_id>666586ee9a7947ce6ee276fb</rbc_news:news_id>
+            <rbc_news:type>short_news</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717929937</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 14:03:15 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Херсонская область]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Владимир Сальдо]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[В Херсонской области объявлена авиационная опасность, сообщил губернатор Владимир Сальдо в телеграм-канале.
+
+Он призвал местных жителей быть внимательными и сохранять спокойствие.
+
+Херсонская область вошла в состав России по итогам референдума в сентябре 2022-го. В ноябре того&nbsp;же года российские войска отошли из Херсона на левый берег Днепра. Украина контролирует правый берег Днепра.
+
+
+
+ВСУ 7 июня дважды обстреляли село Садовое в Херсонской области. Оба раза удар пришелся по местному магазину. В результате погибли 22 человека, еще 15 пострадали. В регионе объявили двухдневный траур,&nbsp;9 и 10 июня. СК завел дело о теракте&nbsp;по&nbsp;ст. 205 УК. Российский МИД пообещал наказать причастных к обеим атакам.
+
+]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/9/51/347179303402519.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[РИА Новости]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Херсон</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/rbcfreenews/6664ba919a7947271a169b46">
+                    <rbc_news:title><![CDATA[Москалькова назвала бесчеловечными удары по ЛНР и Херсонской области]]></rbc_news:title>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/6664582a9a79477626726f35">
+                    <rbc_news:title><![CDATA[В Херсонской области объявили траур по погибшим при обстреле села]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/6/87/347178532990876.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[SALDO_VGA / Telegram]]></source>
+                        <description><![CDATA[<p>Обстановка в селе Садовое, 7 июля 2024 г.</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/6664154a9a79475c87a40140">
+                    <rbc_news:title><![CDATA[СК возбудил дело о теракте после обстрела села в Херсонской области]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/4/46/347178355570464.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[SALDO_VGA / Telegram]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Минобороны сообщило о сбитом украинском вертолете Ми-8]]></title>
+            <link>https://www.rbc.ru/rbcfreenews/666584719a79473e002ab642</link>
+            <pubDate>Sun, 09 Jun 2024 13:36:12 +0300</pubDate>
+            <description><![CDATA[Средства противовоздушной обороны сбили украинский вертолет Ми-8, сообщило Минобороны в ежедневной сводке.]]></description>
+            <category>Политика</category>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:666584719a79473e002ab642</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/1/98/347179300588981.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>13:36:12</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/rbcfreenews/666584719a79473e002ab642</pdalink>
+            <rbc_news:anons><![CDATA[Средства противовоздушной обороны сбили украинский вертолет Ми-8, сообщило Минобороны в ежедневной сводке.]]></rbc_news:anons>
+            <rbc_news:news_id>666584719a79473e002ab642</rbc_news:news_id>
+            <rbc_news:type>short_news</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717929372</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 13:55:01 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Минобороны]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Вертолет Ми-8]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[ПВО]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[беспилотники]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[РСЗО HIMARS]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Средства противовоздушной обороны сбили украинский вертолет Ми-8, сообщило Минобороны в ежедневной сводке.
+
+В ведомстве не уточнили, где он был сбит. По оценке Минобороны, с начала военной операции России на Украине было уничтожено 276 вертолетов ВСУ. Кроме того, за сутки военные перехватили 66 беспилотников и 13 реактивных снарядов HIMARS американского производства.
+
+Помимо этого&nbsp;ВСУ потеряли боевые машины пехоты Marder немецкого производства,&nbsp;американские&nbsp;Bradley, а также два автомобиля, заявили в российском военном ведомстве.
+
+
+
+Минобороны регулярно сообщает о ходе военной операции. Накануне, 8 июня, ведомство отчиталось об уничтожении вертолета Ми-8, пяти безэкипажных катеров в Черном море, четырех ракет ATACMS, снарядов HIMARS и &laquo;Ольха&raquo;, одной ракеты&nbsp;&laquo;Нептун&raquo; и 71 дрона.
+
+]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/1/98/347179300588981.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Alex Babenko / Getty Images]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Вертолёт Ми-8</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/politics/09/06/2024/6665736d9a7947fffe234918">
+                    <rbc_news:title><![CDATA[В Минобороны Украины назвали число женщин в рядах ВСУ]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/8/78/347179254085788.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Leon Neal / Getty Images]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/666437aa9a7947362b7792e4">
+                    <rbc_news:title><![CDATA[Минобороны сообщило о сбитом украинском вертолете Ми-8]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/4/36/347178457849364.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Alex Babenko / Getty Images]]></source>
+                        <description><![CDATA[<p>Вертолёт Ми-8</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/66641c549a794769a05c58c4">
+                    <rbc_news:title><![CDATA[Минобороны сообщило о трех сбитых беспилотниках над Белгородской областью]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/6/29/347178376874296.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Николай Гынгазов / ТАСС]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Будущий игрок «Реала» Эндрик повторил достижение Пеле в сборной Бразилии]]></title>
+            <link>https://www.rbc.ru/sport/09/06/2024/66657dcc9a794797be6910e8</link>
+            <pubDate>Sun, 09 Jun 2024 13:29:42 +0300</pubDate>
+            <description><![CDATA[Бразильцы победили мексиканцев со счетом 3:2. Победный гол забил 17-летний Эндрик, который отличился за сборную в третьем матче подряд. Ранее такую результативность до 18 лет в сборной Бразилии показывал только Пеле]]></description>
+            <category>Спорт</category>
+            <author>Анна Сатдинова</author>
+            <guid isPermaLink="false">rssexport.rbc.ru:sport:66657dcc9a794797be6910e8</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/8/69/347179274026698.png"
+                type="image/png" length="" />
+            <enclosure url="https://img.youtube.com/vi/d89n5rTI-q4/0.jpg" type="image/jpeg"
+                length="" />
+            <rbc_news:time>13:29:42</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/sport/09/06/2024/66657dcc9a794797be6910e8</pdalink>
+            <rbc_news:anons><![CDATA[Бразильцы победили мексиканцев со счетом 3:2. Победный гол забил 17-летний Эндрик, который отличился за сборную в третьем матче подряд. Ранее такую результативность до 18 лет в сборной Бразилии показывал только Пеле]]></rbc_news:anons>
+            <rbc_news:news_id>66657dcc9a794797be6910e8</rbc_news:news_id>
+            <rbc_news:type>article</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717928982</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 13:36:59 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>sport</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Футбол]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Сборная Бразилии по футболу]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Пеле]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Нападающий &laquo;Палмейрас&raquo; Эндрик принес сборной Бразилии победу в товарищеском матче с мексиканцами, став вторым в истории национальной команды футболистом, который забил в трех матчах подряд до 18-летия.
+
+Бразильцы победили мексиканцев со счетом 3:2 в матче, который прошел в городе Колледж-Стейшен в Техасе (США).
+
+17-летний Эндрик отличился на 96-й минуте с передачи Винисиуса Жуниора.
+
+
+
+Эндрик в июле, после достижения 18-летия, станет игроком мадридского &laquo;Реала&raquo;.
+
+Гол в ворота Мексики стал для Эндрика третьим в трех матчах за сборную подряд:&nbsp;в марте он забил Англии (1:0) и Испании (3:3, а всего провел пять встреч за основную сборную.
+
+В сборной Бразилии ранее только Пеле удавалось забить в трех матчах подряд в возрасте младше 18 лет. Впервые он забил три мяча в двух товарищеских матчах с аргентинцами и встрече со сборной Парагвая. А позднее&nbsp;на чемпионате мира 1958 года&nbsp;отличился в четвертьфинале, полуфинале и финале.
+
+Пеле умер в возрасте 82 лет в декабре 2022 года.
+
+Сборная Бразилии примет участие в Кубке Америки, который пройдет в США с 20 июня по 14 июля. Бразильцы сыграют в одной группе с Колумбией, Парагваем и Коста-Рикой.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/8/69/347179274026698.png</rbc_news:url>
+                <rbc_news:type>image/png</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Tim Warner / Getty Images]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Эндрик (в центре)</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:image>
+                <rbc_news:url>https://img.youtube.com/vi/d89n5rTI-q4/0.jpg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/sport/27/03/2024/6603e7729a794714afebf60b">
+                    <rbc_news:title><![CDATA[Эндрик в 17 лет улучшил достижение Пеле в сборной Бразилии]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/9/81/347115319717819.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Juan Medina / Reuters]]></source>
+                        <description><![CDATA[<p>Эндрик</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/sport/07/12/2023/65715f959a7947118d485006">
+                    <rbc_news:title><![CDATA[Клуб Пеле впервые вылетел из элитной лиги и вызвал беспорядки в Бразилии]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/3/38/347019316692383.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[ФК «Форталезе»]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/sport/15/05/2024/6644827e9a7947592842bfbd">
+                    <rbc_news:title><![CDATA[В Бразилии узнали о желании «Краснодара» купить Джона Кеннеди]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/7/17/347157660389177.png</url>
+                        <type>image/png</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[ Alexandre Neto / Keystone Press Agency / Global Look Press]]></source>
+                        <description><![CDATA[<p>Джон Кеннеди</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Орбан рассказал, от чего зависит мир на Украине]]></title>
+            <link>https://www.rbc.ru/rbcfreenews/66657b489a794731ffe7280a</link>
+            <pubDate>Sun, 09 Jun 2024 13:19:30 +0300</pubDate>
+            <description><![CDATA[Урегулировать конфликт на Украине можно будет в случае победы миролюбивых сил на выборах в Европарламент и США, считает премьер-министр Венгрии Виктор Орбан, передает H&iacute;rad&oacute;.]]></description>
+            <category>Политика</category>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:66657b489a794731ffe7280a</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/2/36/347179274146362.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>13:19:30</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/rbcfreenews/66657b489a794731ffe7280a</pdalink>
+            <rbc_news:anons><![CDATA[Урегулировать конфликт на Украине можно будет в случае победы миролюбивых сил на выборах в Европарламент и США, считает премьер-министр Венгрии Виктор Орбан, передает H&iacute;rad&oacute;.]]></rbc_news:anons>
+            <rbc_news:news_id>66657b489a794731ffe7280a</rbc_news:news_id>
+            <rbc_news:type>short_news</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717928370</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 13:27:05 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Виктор Орбан]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Евросоюз]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[США]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Украина]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Военная операция на Украине]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Урегулировать конфликт на Украине можно будет в случае победы миролюбивых сил на выборах в Европарламент и США, считает премьер-министр Венгрии Виктор Орбан, передает H&iacute;rad&oacute;.
+
+По его мнению, главной темой проходящих сейчас выборов в Европарламент во Франции, Германии, Италии, других странах ЕС стал &laquo;вопрос о войне и мире&raquo;. &laquo;Это половина работы, другую половину должен будет сделать американский народ на президентских выборах. И тогда может быть мир&raquo;,&nbsp;&mdash; добавил Орбан.
+
+
+
+Голосование на выборах в Европарламент в большинстве стран, в том числе в Венгрии, проходит 9 июня, в так называемое большое воскресенье&nbsp;&mdash; финальный день выборов.
+
+Выборы президента США запланированы на 5 ноября. Основные кандидаты&nbsp;&mdash; бывший глава государства&nbsp;Дональд Трамп и действующий &mdash; Джо Байден.
+
+Москва для урегулирования украинского конфликта требует признания &laquo;новых территориальных реалий&raquo;&nbsp;&mdash; Донецкой&nbsp;и Луганской народных&nbsp;республик, Запорожской&nbsp;и Херсонской&nbsp;областей&nbsp;в составе России. Президент Украины Владимир Зеленский называл одним из условий начала переговоров возвращение к границам страны 1991 года.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/2/36/347179274146362.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Bernadett Szabo / Reuters]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Виктор Орбан</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/politics/09/06/2024/6664f7cb9a7947bc1553f868">
+                    <rbc_news:title><![CDATA[Орбан заявил, что Запад хочет победить Россию ради денег]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/5/15/347178955131155.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Bernadett Szabo / Reuters]]></source>
+                        <description><![CDATA[<p>Виктор Орбан</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/6462028e9a79477803bdaffd">
+                    <rbc_news:title><![CDATA[В Польше посчитали преждевременными мирные переговоры России и Украины]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/2/27/346841457775272.jpg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[president.pl]]></source>
+                        <description><![CDATA[<p>Марчин Пшидач</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/6664c3929a794733d9d0f120">
+                    <rbc_news:title><![CDATA[На Украине захотели собрать коалицию для информационных атак на Россию]]></rbc_news:title>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[В Минобороны Украины назвали число женщин в рядах ВСУ]]></title>
+            <link>https://www.rbc.ru/politics/09/06/2024/6665736d9a7947fffe234918</link>
+            <pubDate>Sun, 09 Jun 2024 13:09:35 +0300</pubDate>
+            <description><![CDATA[В ВСУ служат свыше 67 тыс. женщин, из них 19 тыс. — гражданские сотрудницы, заявила замминистра обороны Украины. В 2014 году, по оценкам ведомства, этот показатель составлял почти 50 тыс.]]></description>
+            <category>Политика</category>
+            <author>Юлия Овчинникова</author>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:6665736d9a7947fffe234918</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/8/78/347179254085788.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>13:09:35</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/politics/09/06/2024/6665736d9a7947fffe234918</pdalink>
+            <rbc_news:anons><![CDATA[В ВСУ служат свыше 67 тыс. женщин, из них 19 тыс. — гражданские сотрудницы, заявила замминистра обороны Украины. В 2014 году, по оценкам ведомства, этот показатель составлял почти 50 тыс.]]></rbc_news:anons>
+            <rbc_news:news_id>6665736d9a7947fffe234918</rbc_news:news_id>
+            <rbc_news:type>article</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717927775</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 13:21:15 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Россия]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Украина]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Минобороны Украины]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[женщины]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[В Вооруженных силах Украины (ВСУ) сейчас служат более 67 тыс. женщин, из которых 19 тыс.&nbsp;&mdash; гражданские сотрудницы, заявила заместитель министра обороны Украины Наталия Калмыкова. Ее интервью опубликовано в YouTube-канале украинского Минобороны.
+
+&laquo;Мобилизация у нас не предусматривает призыв женщин, но это не является препятствием, и их число в армии постоянно увеличивается. Сейчас у нас в ВСУ 67 тыс. женщин, из которых 19 тыс.&nbsp;&mdash; это гражданские сотрудницы, остальные&nbsp;&mdash; военнослужащие&raquo;,&nbsp;&mdash; сказала она.
+
+По ее словам, росту числа женщин в рядах ВСУ способствовало начало военной операции на Украине, однако они получили право занимать любые должности в армии еще в 2018 году за счет изменения законодательства. В частности, сейчас они могут управлять артиллерией и дронами, отметила Калмыкова.
+
+Согласно данным Минобороны Украины, в октябре 2023 года численность женщин в ВСУ составляла 62 тыс. по сравнению с почти 50 тыс. в 2014-м. Этот показатель Калмыкова называла рекордным в новейшей истории страны.
+
+24 февраля 2022 года на Украине объявили всеобщую мобилизацию и военное положение, действие которых в дальнейшем неоднократно продлевалось.
+
+Президент Украины Владимир Зеленский 16 апреля 2024 года ужесточил условия мобилизации.&nbsp;В частности, возраст призыва был снижен с 27 до 25 лет, а также отменена категория ограниченно годных. Всех украинских мужчин в возрасте 18&ndash;60 лет обязали носить с собой военный билет вне зависимости от их годности к службе и права на отсрочку, а военнообязанных&nbsp;&mdash; обновить данные в территориальных центрах комплектования (аналог военкомата) в течение 60 дней.
+
+В конце 2023 года Зеленский рассказал о просьбе Генштаба и главкома ВСУ дополнительно призвать на службу 450&ndash;500 тыс. человек. Он оценил затраты на проведение дополнительной мобилизации в 500 млрд грн (около $13 млрд).]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/8/78/347179254085788.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Leon Neal / Getty Images]]></rbc_news:source>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/society/06/01/2024/659939099a79471312811618">
+                    <rbc_news:title><![CDATA[«Мобилизация» стала словом года на Украине]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/3/45/347045423790453.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[John Moore / Getty Images]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/politics/24/12/2023/65883af19a7947b205a3791c">
+                    <rbc_news:title><![CDATA[В Киеве рассказали, когда начнется демобилизация на Украине]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/6/01/347034285362016.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[John Moore / Getty Images]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/politics/01/06/2024/665b40459a7947332d980272">
+                    <rbc_news:title><![CDATA[Депутат Рады заявил, что мобилизация затронет спасателей и пожарных]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/7/97/347172567331977.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[dsns_telegram / Telegram]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[В Миргороде прогремели взрывы]]></title>
+            <link>https://www.rbc.ru/politics/09/06/2024/666579f39a79471a2aa3bb18</link>
+            <pubDate>Sun, 09 Jun 2024 13:04:35 +0300</pubDate>
+            <description><![CDATA[Взрывы прогремели в украинском Миргороде, где расположен крупный военный аэродром. Воздушная тревога в настоящее время объявлена в четырех областях Украины]]></description>
+            <category>Политика</category>
+            <author>Илья Пламенев</author>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:666579f39a79471a2aa3bb18</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/0/23/347179272525230.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>13:04:35</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/politics/09/06/2024/666579f39a79471a2aa3bb18</pdalink>
+            <rbc_news:anons><![CDATA[Взрывы прогремели в украинском Миргороде, где расположен крупный военный аэродром. Воздушная тревога в настоящее время объявлена в четырех областях Украины]]></rbc_news:anons>
+            <rbc_news:news_id>666579f39a79471a2aa3bb18</rbc_news:news_id>
+            <rbc_news:type>article</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717927475</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 13:54:10 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Полтавская область]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[взрывы]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Военная операция на Украине]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[военные аэродромы]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Взрывы прозвучали в Миргороде Полтавской области, сообщают &laquo;Зеркало недели&raquo; и &laquo;Страна.ua&raquo;. Воздушная тревога объявлена в Черниговской, Полтавской, Сумской и Николаевской областях Украины.
+
+В черте Миргорода находится военный аэродром, об ударах по которому ранее неоднократно отчитывалось Минобороны России. По данным ведомства, с начала спецоперации российскими силами были уничтожены 610 самолетов и 275 вертолетов ВВС Украины.
+
+
+
+Ранее этой ночью украинские СМИ сообщали о взрывах в Николаеве и Одессе. Минобороны России подчеркивает, что удары наносятся только по военным и энергетическим объектам Украины и связанной с ними инфраструктуре.
+
+]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/0/23/347179272525230.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[сервис «Яндекс.Карты»]]></rbc_news:source>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/rbcfreenews/66652a3f9a7947ecba74c931">
+                    <rbc_news:title><![CDATA[В Одессе прогремел взрыв]]></rbc_news:title>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/6664d21e9a79478069098562">
+                    <rbc_news:title><![CDATA[В Николаеве прогремел взрыв]]></rbc_news:title>
+                </link>
+                <link url="https://www.rbc.ru/politics/09/06/2024/66653d869a79474ab771afb5">
+                    <rbc_news:title><![CDATA[МЧС сообщило о спасении семи человек из-под завалов в Луганске]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/3/48/347179117697483.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Александр Река / ТАСС]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Уроженец Дагестана Имавов победил американца в главном бою турнира UFC]]></title>
+            <link>https://www.rbc.ru/sport/09/06/2024/666576bf9a794710b7db95ad</link>
+            <pubDate>Sun, 09 Jun 2024 12:58:17 +0300</pubDate>
+            <description><![CDATA[Судья остановил бой в четвертом раунде, когда Каннонье еще был на ногах и в сознании после серии ударов Имавова, что вызвало недовольство болельщиков. Имавов одержал 14-ю победу в ММА]]></description>
+            <category>Спорт</category>
+            <author>Анна Сатдинова</author>
+            <guid isPermaLink="false">rssexport.rbc.ru:sport:666576bf9a794710b7db95ad</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/6/78/347179267448786.png"
+                type="image/png" length="" />
+            <rbc_news:time>12:58:17</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/sport/09/06/2024/666576bf9a794710b7db95ad</pdalink>
+            <rbc_news:anons><![CDATA[Судья остановил бой в четвертом раунде, когда Каннонье еще был на ногах и в сознании после серии ударов Имавова, что вызвало недовольство болельщиков. Имавов одержал 14-ю победу в ММА]]></rbc_news:anons>
+            <rbc_news:news_id>666576bf9a794710b7db95ad</rbc_news:news_id>
+            <rbc_news:type>article</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717927097</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 13:07:13 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>sport</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[смешанные единоборства (ММА)]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[UFC]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Родившийся в Дагестане французский боец Нассурдин Имавов одержал победу техническим нокаутом над американцем Джаредом Каннонье в главном поединке турнира UFC в Луисвилле (штат Кентукки, США).
+
+Поединок в среднем весе (до 84 кг) завершился в четвертом раунде.
+
+Судья остановил бой на второй минуте раунда, когда американец после серии ударов Имавова еще был в сознании и на ногах, однако болельщики посчитали, что он поторопился, и выразили недовольство.
+
+Имавов после боя заявил, что готов был продолжать поединок, если&nbsp;бы рефери позволил, но при этом считает, что решение судьи было правильным, пишет MMA Fighting.
+
+
+
+Имавов одержал 14-ю победу в ММА при четырех поражениях (еще один бой был признан несостоявшимся).
+
+Каннонье потерпел седьмое поражение при 17 победах.
+
+Имавов родился в Хасавюрте, в юности переехал во Францию и представляет эту страну. Выступает в UFC с 2020 года, одержал в промоушене шесть побед, два боя проиграл. В рейтинге UFC занимает седьмое место.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/6/78/347179267448786.png</rbc_news:url>
+                <rbc_news:type>image/png</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[ Jeff Bottari / Zuffa LLC via Getty Images]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Нассурдин Имавов</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/sport/05/06/2024/66601b2f9a79478709a80270">
+                    <rbc_news:title><![CDATA[Российский бизнесмен купил за $95 тыс. тренировку c экс-чемпионом UFC]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/0/60/347175745717600.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Global Look Press]]></source>
+                        <description><![CDATA[<p>Чарльз Оливейра</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/sport/06/06/2024/666163649a7947ae5601212a">
+                    <rbc_news:title><![CDATA[Порье рассказал о полученных в чемпионском бою UFC с Махачевым переломах]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/7/27/347176585073277.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Luke Hales / Getty Images]]></source>
+                        <description><![CDATA[<p>Дастин Порье и Ислам Махачев</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/sport/02/06/2024/665c39189a7947c2f637e0ac">
+                    <rbc_news:title><![CDATA[Хабиб Нурмагомедов встретился с Трампом на турнире UFC]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/5/88/347173202481885.png</url>
+                        <type>image/png</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[ Luke Hales / Getty Images]]></source>
+                        <description><![CDATA[<p>Дональд Трамп</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Захарова заявила о «кознях Запада» перед ПМЭФ]]></title>
+            <link>https://www.rbc.ru/rbcfreenews/6665767e9a794710b7db95a8</link>
+            <pubDate>Sun, 09 Jun 2024 12:55:00 +0300</pubDate>
+            <description><![CDATA[Запад строил козни перед Петербургским международным экономическим форумом (ПМЭФ), но Россия выстраивает отношения с мировым большинством.]]></description>
+            <category>Политика</category>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:6665767e9a794710b7db95a8</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/2/68/347179269365682.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>12:55:00</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/rbcfreenews/6665767e9a794710b7db95a8</pdalink>
+            <rbc_news:anons><![CDATA[Запад строил козни перед Петербургским международным экономическим форумом (ПМЭФ), но Россия выстраивает отношения с мировым большинством.]]></rbc_news:anons>
+            <rbc_news:news_id>6665767e9a794710b7db95a8</rbc_news:news_id>
+            <rbc_news:type>short_news</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717926900</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 13:03:51 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Мария Захарова]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[МИД]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[аккредитация]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[ПМЭФ]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Запад строил козни перед Петербургским международным экономическим форумом (ПМЭФ), но Россия выстраивает отношения с мировым большинством. Об этом на полях мероприятия заявила ТАСС официальный представитель МИДа Мария Захарова.
+
+&laquo;Да, западники всегда будут строить козни. И здесь, [на форуме], и когда мы едем куда-то&raquo;,&nbsp;&mdash; сказала она. По словам Захаровой, российским дипломатам не дают визы, пролетные документы, аккредитации, угрожают не разрешать посадку самолета.
+
+Россия, в свою очередь, занимается конструктивной повесткой и выстраиванием отношений с мировым большинством, отметила представитель МИДа. В пример она привела африканское турне министра иностранных дел Сергея Лаврова. &laquo;Вот там как раз и развивается то, что мы называем многополярностью, причем об этом говорят все&raquo;,&nbsp;&mdash; заключила она.
+
+
+
+МИД считает &laquo;дискриминацией по национальному признаку&raquo; отказ в аккредитациях на международные мероприятия, которые участились после начала Россией военной операции на Украине. В частности, в середине мая Россия получила отказ от властей Нидерландов в аккредитации на международную конференцию ЮНЕСКО, которая должна была пройти в Гааге.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/2/68/347179269365682.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Александр Демьянчук / ТАСС]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Мария Захарова</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/business/08/06/2024/6664337e9a7947f093d718c8">
+                    <rbc_news:title><![CDATA[Организаторы ПМЭФ раскрыли общую сумму заключенных контрактов]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/2/13/347178455295132.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Михаил Гребенщиков / РБК]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/6662f7189a7947eeb386f2c3">
+                    <rbc_news:title><![CDATA[Путин встретился с Бегловым перед пленарным заседанием ПМЭФ]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/5/68/347177650436685.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Александр Казаков / РИА Новости]]></source>
+                        <description><![CDATA[<p>Владимир Путин и&nbsp;Александр Беглов</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/politics/07/06/2024/6662b0509a7947a447d4c3d0">
+                    <rbc_news:title><![CDATA[Выступление Путина на пленарном заседании ПМЭФ. Видео]]></rbc_news:title>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[В Германии решили увеличить число резервистов]]></title>
+            <link>https://www.rbc.ru/politics/09/06/2024/666570559a794747ceae4f9c</link>
+            <pubDate>Sun, 09 Jun 2024 12:52:02 +0300</pubDate>
+            <description><![CDATA[Власти Германии на фоне «вызовов в сфере безопасности» планируют довести количество военных резервистов до 60 тыс., сообщили в бундесвере. Там уточнили, что в рамках военного закона могут быть призваны 800 тыс. немцев]]></description>
+            <category>Политика</category>
+            <author>Илья Пламенев</author>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:666570559a794747ceae4f9c</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/0/59/347179263271590.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>12:52:02</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/politics/09/06/2024/666570559a794747ceae4f9c</pdalink>
+            <rbc_news:anons><![CDATA[Власти Германии на фоне «вызовов в сфере безопасности» планируют довести количество военных резервистов до 60 тыс., сообщили в бундесвере. Там уточнили, что в рамках военного закона могут быть призваны 800 тыс. немцев]]></rbc_news:anons>
+            <rbc_news:news_id>666570559a794747ceae4f9c</rbc_news:news_id>
+            <rbc_news:type>article</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717926722</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 13:03:56 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Германия]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Бундесвер]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[резервисты]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Военная операция на Украине]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[перевооружение]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Министерство обороны Германии разрабатывает планы по созданию усиленного резерва бундесвера (ВС ФРГ), в котором будут состоять как минимум 60 тыс. человек, заявил генерал-лейтенант, заместитель генерального инспектора бундесвера Александр Хоппе, передает Zeit.
+
+По словам немецкого генерала, новые резервисты, в числе которых будут и мужчины, и женщины, должны обучаться как во времена холодной войны, чтобы могли усиливать или заменять действующие войска в бою. &laquo;Я убежден, что мы должны адаптировать резерв к текущим вызовам политики безопасности, чтобы тот мог должным образом поддерживать бундесвер в выполнении задач национальной обороны и обороны альянса&raquo;,&nbsp;&mdash; сказал Хоппе.
+
+Целью военных служит наличие в будущем до 60 тыс. резервистов так называемого базового назначения, то есть квалифицированных и способных выполнять постоянные задачи в этом статусе. Минобороны также изучает, насколько велико число граждан, которые вообще могут быть призваны и пригодны к службе в случае обороны. &laquo;Там разные цифры. Мы предполагаем, что есть около 800 тыс., которые также могут быть призваны по военному закону&raquo;,&nbsp;&mdash; отметил генерал.
+
+Призыв на военную службу в Германии был приостановлен в 2011 году, а численность бундесвера с тех пор неуклонно сокращалась и сегодня составляет 181,5 тыс. солдат. По данным Welt, Минобороны ФРГ при этом располагает лишь 44 тыс. резервистами, получившими базовую квалификацию. Как отмечает Spiegel, планы НАТО подразумевают увеличение численности личного состава вооруженных сил Германии до 272 тыс. мужчин и женщин.
+
+
+
+В начале июня глава комитета бундестага по обороне Мари-Агнес Штрак-Циммерман призвала поставить на учет 900 тыс. резервистов на фоне &laquo;российской угрозы&raquo;. Министр обороны Германии Борис Писториус при этом заявлял, что бундесвер должен быть готов к войне к 2029 году. &laquo;Мы не должны думать, что Путин остановится у границ Украины&raquo;,&nbsp;&mdash; отмечал он.
+
+Bild в начале июня опубликовал документ с планом властей Германии на случай войны. Из него в том числе следует, что в стране в случае конфликта возобновится обязательная военная служба. Служба занятости при этом сможет обязать граждан старше 18 лет работать на определенной работе, к примеру на почте и в пекарнях. Одновременно власти начнут массовую эвакуацию, а через страну пойдут эшелоны войск НАТО.
+
+Российская сторона не раз отвергала планы войны с НАТО. Президент Владимир Путин говорил о нежелании столкновения с альянсом. При этом он отмечал, что конфликт на Украине связан с &laquo;созданием угроз безопасности России со стороны США и НАТО&raquo;, которые при этом отказываются от переговоров.
+
+]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/0/59/347179263271590.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Sean Gallup / Getty Images]]></rbc_news:source>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/rbcfreenews/6663607a9a79478abd18be45">
+                    <rbc_news:title><![CDATA[Bloomberg узнал, что Германия готова поставить Украине еще один Patriot]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/4/47/347177893251474.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Karl-Josef Hildenbrand / dpa / Global Look Press]]></source>
+                        <description><![CDATA[<p>Пусковая установка зенитно-ракетного комплекса&nbsp;Patriot</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/politics/06/06/2024/6661a1a29a7947062c42ce1a">
+                    <rbc_news:title><![CDATA[Шольц пообещал не допустить войну в Германии]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/0/17/347176779986170.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[ Henning Schacht / Keystone Press Agency / Global Look Press]]></source>
+                        <description><![CDATA[<p>Олаф Шольц</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/politics/05/06/2024/66607dd99a7947c0e4e5476e">
+                    <rbc_news:title><![CDATA[Писториус заявил о необходимости подготовить Германию к войне к 2029 году]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/2/90/347176011297902.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Christoph Soeder / dpa / Global Look Press]]></source>
+                        <description><![CDATA[<p>Борис Писториус</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Гладков рассказал о последствиях атаки на Шебекино]]></title>
+            <link>https://www.rbc.ru/rbcfreenews/666574689a7947fc21cd7a6a</link>
+            <pubDate>Sun, 09 Jun 2024 12:30:57 +0300</pubDate>
+            <description><![CDATA[Под обстрел со стороны Украины попал Шебекинский городской округ, никто не пострадал, сообщил губернатор Белгородской области Вячеслав Гладков.]]></description>
+            <category>Политика</category>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:666574689a7947fc21cd7a6a</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/3/26/347179258202263.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>12:30:57</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/rbcfreenews/666574689a7947fc21cd7a6a</pdalink>
+            <rbc_news:anons><![CDATA[Под обстрел со стороны Украины попал Шебекинский городской округ, никто не пострадал, сообщил губернатор Белгородской области Вячеслав Гладков.]]></rbc_news:anons>
+            <rbc_news:news_id>666574689a7947fc21cd7a6a</rbc_news:news_id>
+            <rbc_news:type>short_news</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717925457</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 12:37:07 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Шебекино]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Белгородская область]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Вячеслав Гладков]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[обстрел]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Под обстрел со стороны Украины попал Шебекинский городской округ, никто не пострадал, сообщил губернатор Белгородской области Вячеслав Гладков.
+
+Об обстреле Шебекино и округа региональное управление МЧС предупредило в 9:40 мск.
+
+В городе повреждены два автобуса и один автомобиль, сообщил глава региона. В селе Муром дрон сбросил взрывное устройство&nbsp;&mdash; в двух частных домах выбило окна, повредило фасады, заборы и кровли. Кроме того, пострадал автомобиль.
+
+
+Шебекино расположен менее чем в 5&nbsp;км от границы с Харьковской областью Украины, это ближайший к российско-украинской границе город Белгородской области. Он регулярно попадает под обстрелы.
+
+
+
+
+Белгородская область в последние месяцы подвергается интенсивным обстрелам, в регионе периодически объявляют ракетную опасность, сбивают украинские ракеты и дроны.
+
+Ранее Гладков сообщил об уничтожении воздушных целей над Новооскольским городским округом. По его словам, никто не пострадал. В нескольких частных и многоквартирных домах выбило окна, пострадали несколько автомобилей.
+
+]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/3/26/347179258202263.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Алексей Гавриш / ТАСС]]></rbc_news:source>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/rbcfreenews/66656bfb9a794747ceae4f91">
+                    <rbc_news:title><![CDATA[Над Белгородской областью сбили ракету «Нептун» и два дрона]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/8/74/347179234584748.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Николай Гынгазов / ТАСС]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/6665564c9a7947d363ac1ebd">
+                    <rbc_news:title><![CDATA[В Воронежской области вслед за Белгородом объявили ракетную опасность]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/5/90/347179180733905.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Сергей Бобылев / ТАСС]]></source>
+                        <description><![CDATA[<p>Воронеж</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/666551a39a7947eab562cb15">
+                    <rbc_news:title><![CDATA[В Белгороде объявили ракетную опасность]]></rbc_news:title>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Жителей Белгорода во второй раз за день предупредили о ракетной опасности]]></title>
+            <link>https://www.rbc.ru/rbcfreenews/6665750c9a794710b7db959e</link>
+            <pubDate>Sun, 09 Jun 2024 12:29:05 +0300</pubDate>
+            <description><![CDATA[В Белгороде и Белгородском районе вновь ввели режим ракетной опасности, сообщил губернатор региона Вячеслав Гладков в телеграм-канале.]]></description>
+            <category>Политика</category>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:6665750c9a794710b7db959e</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/2/40/347179255944402.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>12:29:05</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/rbcfreenews/6665750c9a794710b7db959e</pdalink>
+            <rbc_news:anons><![CDATA[В Белгороде и Белгородском районе вновь ввели режим ракетной опасности, сообщил губернатор региона Вячеслав Гладков в телеграм-канале.]]></rbc_news:anons>
+            <rbc_news:news_id>6665750c9a794710b7db959e</rbc_news:news_id>
+            <rbc_news:type>short_news</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717925345</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 12:33:36 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Белгород]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[ракетная опасность]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Вячеслав Гладков]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[В Белгороде и Белгородском районе вновь ввели режим ракетной опасности, сообщил губернатор региона Вячеслав Гладков в телеграм-канале.
+
+Он призвал местных жителей спуститься в подвалы и оставаться там до получения сигнала &laquo;отбой ракетной опасности&raquo;.
+
+Такой сигнал в Белгороде и Белгородском районе запускают во второй раз за день. Ранее он действовал с 9:50 по 10:15 мск. В это время силы ПВО сбили украинскую ракету &laquo;Нептун&raquo;.
+
+
+
+Белгородская область в последние месяцы подвергается интенсивным обстрелам, в регионе периодически объявляют ракетную опасность, сбивают украинские ракеты и дроны. В Белгороде продолжают устанавливать бетонные автобусные остановки и модульные железобетонные укрытия.
+
+]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/2/40/347179255944402.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Александр Рюмин / ТАСС]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Белгород</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/rbcfreenews/66656bfb9a794747ceae4f91">
+                    <rbc_news:title><![CDATA[Над Белгородской областью сбили ракету «Нептун» и два дрона]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/8/74/347179234584748.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Николай Гынгазов / ТАСС]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/6665564c9a7947d363ac1ebd">
+                    <rbc_news:title><![CDATA[В Воронежской области вслед за Белгородом объявили ракетную опасность]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/5/90/347179180733905.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Сергей Бобылев / ТАСС]]></source>
+                        <description><![CDATA[<p>Воронеж</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/666551a39a7947eab562cb15">
+                    <rbc_news:title><![CDATA[В Белгороде объявили ракетную опасность]]></rbc_news:title>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[На петербургской «СКА Арене» за ₽60 млрд произошел пожар]]></title>
+            <link>https://www.rbc.ru/sport/09/06/2024/66656e3c9a794764ba47759b</link>
+            <pubDate>Sun, 09 Jun 2024 12:24:07 +0300</pubDate>
+            <description><![CDATA[Арену ввели в эксплуатацию в конце прошлого года, на ней проводит домашние матчи хоккейный клуб СКА. Ночью в чаше стадиона произошел пожар, пострадали трибуны и рекламные щиты]]></description>
+            <category>Спорт</category>
+            <author>Анна Сатдинова</author>
+            <guid isPermaLink="false">rssexport.rbc.ru:sport:66656e3c9a794764ba47759b</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/0/96/347179243148960.png"
+                type="image/png" length="" />
+            <rbc_news:time>12:24:07</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/sport/09/06/2024/66656e3c9a794764ba47759b</pdalink>
+            <rbc_news:anons><![CDATA[Арену ввели в эксплуатацию в конце прошлого года, на ней проводит домашние матчи хоккейный клуб СКА. Ночью в чаше стадиона произошел пожар, пострадали трибуны и рекламные щиты]]></rbc_news:anons>
+            <rbc_news:news_id>66656e3c9a794764ba47759b</rbc_news:news_id>
+            <rbc_news:type>article</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717925047</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 12:29:00 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>sport</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Хоккей]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[ХК СКА Санкт-Петербург]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Пожар произошел в ночь на 9 июня в чаше спортивного комплекса &laquo;СКА Арена&raquo; в Санкт-Петербурге, которая была введена в эксплуатацию в конце прошлого года, сообщают «Фонтанка» и 78.ru.
+
+Площадь возгорания составила 225&nbsp;кв.&nbsp;м, после вызова пожарных в 1:46 мск его ликвидировали менее чем за полчаса.
+
+От огня пострадали&nbsp;часть трибун и рекламные щиты. По предварительной информации, причиной пожара стала неисправность проводки.
+
+РБК обратился за комментарием в пресс-службу управления&nbsp;МЧС по&nbsp;Санкт-Петербургу и &laquo;СКА Арену&raquo;.
+
+
+
+Гендиректор стадиона Дмитрий Сватковский в ноябре заявил, что стоимость арены составляет около 60 млрд руб.
+
+На арене проводит домашние матчи хоккейный клуб СКА, на играх которого был установлен рекорд посещаемости для крытых стадионов (почти 24 тыс. зрителей). В декабре там также&nbsp;прошел Матч звезд КХЛ.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/0/96/347179243148960.png</rbc_news:url>
+                <rbc_news:type>image/png</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Валентина Певцова / ТАСС]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Матч звезд КХЛ на &laquo;СКА Арене&raquo;</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/sport/07/05/2024/663a66f99a7947cf3edb9942">
+                    <rbc_news:title><![CDATA[Экс-футболист «Челси» помог спасти 100 человек от наводнения в Бразилии]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/3/38/347151035455383.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Wagner Meier / Getty Images]]></source>
+                        <description><![CDATA[<p>Диего Коста</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/sport/26/02/2024/65dc708f9a7947312c275fd6">
+                    <rbc_news:title><![CDATA[Рудковская опровергла информацию об обвалившейся крыше академии Плющенко]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/7/37/347089463952377.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[ Вячеслав Прокофьев / ТАСС]]></source>
+                        <description><![CDATA[<p>Евгений Плющенко</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/sport/04/03/2024/65e5fcec9a794738ffd036b0">
+                    <rbc_news:title><![CDATA[РФС разрешил «Спартаку» вернуться на домашний стадион после ЧП с травой]]></rbc_news:title>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Россияне получили восемь медалей на Азиатской олимпиаде по физике]]></title>
+            <link>https://www.rbc.ru/rbcfreenews/66656f199a794764ba4775a1</link>
+            <pubDate>Sun, 09 Jun 2024 12:18:46 +0300</pubDate>
+            <description><![CDATA[Российские школьники завоевали пять золотых и три серебряные медали на 24-й Азиатской физической олимпиаде, сообщили РБК в пресс-службе Минпросвещения.]]></description>
+            <category>Общество</category>
+            <guid isPermaLink="false">rssexport.rbc.ru:society:66656f199a794764ba4775a1</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/5/98/347179249039985.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>12:18:46</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/rbcfreenews/66656f199a794764ba4775a1</pdalink>
+            <rbc_news:anons><![CDATA[Российские школьники завоевали пять золотых и три серебряные медали на 24-й Азиатской физической олимпиаде, сообщили РБК в пресс-службе Минпросвещения.]]></rbc_news:anons>
+            <rbc_news:news_id>66656f199a794764ba4775a1</rbc_news:news_id>
+            <rbc_news:type>short_news</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717924726</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 12:25:40 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>society</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[физика]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[школьная олимпиада]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[школьники]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[россияне]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Минпросвещения]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Российские школьники завоевали пять золотых и три серебряные медали на 24-й Азиатской физической олимпиаде, сообщили РБК в пресс-службе Минпросвещения.
+
+Азиатская физическая олимпиада (Asian Physics Olympiad, APhO)&nbsp;&mdash; ежегодное соревнование, состоящее из теоретического и практического тура. В этом году она&nbsp;прошла в Малайзии и включала&nbsp;28 команд старшеклассников из 27 стран.
+
+
+
+В прошлом году российские школьники получили восемь золотых медалей на APhO, которая проходила в Монголии. По ее итогам формировали российскую сборную для участия на 53-й Международной физической олимпиаде школьников в Токио, где россияне получили пять золотых медалей.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/5/98/347179249039985.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[пресс-служба Минпросвещения России]]></rbc_news:source>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/sport/07/06/2024/6661a38d9a79475bdcea5fe2">
+                    <rbc_news:title><![CDATA[Как российская школьница привела в восторг звезд тенниса]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/1/95/347177360462951.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Reuters]]></source>
+                        <description><![CDATA[<p>Мирра Андреева</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/society/06/06/2024/666199fb9a79472fbec7ee60">
+                    <rbc_news:title><![CDATA[На ЕГЭ по литературе 100 баллов получили более 1700 школьников]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/6/67/347176799049676.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Кирилл Кухмарь / ТАСС]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/society/03/06/2024/665db0999a7947d3cf3631b4">
+                    <rbc_news:title><![CDATA[Прокуратура проверит чувашскую школу из-за раздевания школьниц перед ЕГЭ]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/5/76/347174196322765.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Александр Щербак / ТАСС]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Times узнала, что легенда велоспорта может потерять трофеи из-за долгов]]></title>
+            <link>https://www.rbc.ru/sport/09/06/2024/666564dc9a794773c50876ab</link>
+            <pubDate>Sun, 09 Jun 2024 12:12:11 +0300</pubDate>
+            <description><![CDATA[Лучшего велогонщика в истории Великобритании признали банкротом в начале июня из-за долга его компании, который превысил £1 млн. У Брэдли Уиггинса могут изъять даже награды и кубки, как это произошло с Борисом Беккером]]></description>
+            <category>Спорт</category>
+            <author>Анна Сатдинова</author>
+            <guid isPermaLink="false">rssexport.rbc.ru:sport:666564dc9a794773c50876ab</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/7/65/347179210481657.png"
+                type="image/png" length="" />
+            <rbc_news:time>12:12:11</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/sport/09/06/2024/666564dc9a794773c50876ab</pdalink>
+            <rbc_news:anons><![CDATA[Лучшего велогонщика в истории Великобритании признали банкротом в начале июня из-за долга его компании, который превысил £1 млн. У Брэдли Уиггинса могут изъять даже награды и кубки, как это произошло с Борисом Беккером]]></rbc_news:anons>
+            <rbc_news:news_id>666564dc9a794773c50876ab</rbc_news:news_id>
+            <rbc_news:type>article</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717924331</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 12:23:17 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>sport</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[велоспорт]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Великобритания]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[банкротства]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Пятикратный олимпийский чемпион по велоспорту британец Брэдли Уиггинс после признания банкротом может лишиться своих наград, как это произошло в 2022 году с теннисистом Борисом Беккером, пишет The Times.
+
+Уиггинс&nbsp;&mdash; первый велогонщик, выигравший золото Олимпиад и чемпионатов мира и на треке, и на шоссе, а также победивший на &laquo;Тур де Франс&raquo; (в 2012-м). Он завершил карьеру в 2016 году.
+
+В 2020 году компания Wiggins Rights Limited, которой экс-велогонщик владел вместе с матерью и бывшей женой, объявила о ликвидации с долгами в размере &pound;650 тыс. ($825 тыс.).&nbsp;Причем одним из кредиторов было Управление по налоговым и таможенным сборам Великобритании, которое в прошлом году заявило, что компания должна ему более &pound;300 тыс.
+
+В 2022 году Уиггинс заключил соглашение, которое должно было помочь расплатиться, но к 2023-му долг вырос почти до &pound;1 млн.
+
+3 июня Уиггинса объявили банкротом, специальный управляющий будет изымать его активы, в том числе, возможно, медали и кубки, как в деле Беккера в 2022-м, которому пришлось отдать свои трофеи Уимблдона.
+
+
+
+Всего на счету Уиггинса&nbsp;&mdash; восемь медалей Игр в Сиднее, Афинах, Пекине, Лондоне и Рио-де-Жанейро и восемь побед на чемпионатах мира в 2000&ndash;2016 годах.
+
+Велогонщик&nbsp;в 2013 году был посвящен в рыцари после победы на домашней Олимпиаде и в &laquo;Тур де Франс&raquo;.
+
+Бывший немецкий теннисист Беккер был признан банкротом в 2017 году из-за невыплаченного кредита в размере более &euro;3,6 млн за недвижимость на Майорке. В апреле 2022-го его приговорили к двум с половиной годам заключения&nbsp;за нарушение закона о банкротстве, но уже в декабре выпустили из британской тюрьмы с целью депортации на родину.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/7/65/347179210481657.png</rbc_news:url>
+                <rbc_news:type>image/png</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Doug Pensinger / Getty Images]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Брэдли Уиггинс</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/sport/06/06/2024/66618b149a79477a208934f0">
+                    <rbc_news:title><![CDATA[Российские велогонщики завоевали три лицензии для участия в Олимпиаде]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/2/03/347176686995032.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Tim de Waele / Getty Images]]></source>
+                        <description><![CDATA[<p>Александр Власов</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/sport/16/03/2024/65f5697d9a7947f0228d8aff">
+                    <rbc_news:title><![CDATA[Велогонщика отстранили после перепроверки допинг-пробы с Олимпиады-2016]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/8/08/347105822152088.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Justin Setterfield / Getty Images]]></source>
+                        <description><![CDATA[<p>Христос Воликакис (в белом)</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/5b26b8089a7947547b4137c6">
+                    <rbc_news:title><![CDATA[В Бельгии 20 велогонщиков пострадали из-за нарушившей ПДД автомобилистки]]></rbc_news:title>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Ефимов рассказал о редевелопменте почти 2 тыс. га бывших промзон в Москве]]></title>
+            <link>https://www.rbc.ru/rbcfreenews/66633e709a7947818686c01f</link>
+            <pubDate>Sun, 09 Jun 2024 12:08:02 +0300</pubDate>
+            <description><![CDATA[Заместитель мэра Москвы по вопросам градостроительной политики и строительства Владимир Ефимов в своем выступлении на ПМЭФ-2024 рассказал, что по программе комплексного развития территорий (КРТ) на разных стадиях проработки и реализации в столице находятся 236 проектов, больше половины из них расположены на участках бывших промзон.]]></description>
+            <category>Экономика</category>
+            <guid isPermaLink="false">rssexport.rbc.ru:economics:66633e709a7947818686c01f</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/3/38/347177801323383.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>12:08:02</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/rbcfreenews/66633e709a7947818686c01f</pdalink>
+            <rbc_news:anons><![CDATA[Заместитель мэра Москвы по вопросам градостроительной политики и строительства Владимир Ефимов в своем выступлении на ПМЭФ-2024 рассказал, что по программе комплексного развития территорий (КРТ) на разных стадиях проработки и реализации в столице находятся 236 проектов, больше половины из них расположены на участках бывших промзон.]]></rbc_news:anons>
+            <rbc_news:news_id>66633e709a7947818686c01f</rbc_news:news_id>
+            <rbc_news:type>short_news</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717924082</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 13:27:09 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>economics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[редевелопмент]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Владимир Ефимов]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Москва]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[промзоны]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Заместитель мэра Москвы по вопросам градостроительной политики и строительства Владимир Ефимов в своем выступлении на ПМЭФ-2024 рассказал, что по программе комплексного развития территорий (КРТ) на разных стадиях проработки и реализации в столице находятся 236 проектов, больше половины из них расположены на участках бывших промзон.
+
+&laquo;Сегодня в программу вовлечено свыше 3,1 тыс. га земли, из которых 1,8 тыс. расположены на территории бывших промзон,&nbsp;&mdash; сообщил Ефимов.&nbsp;&mdash; Остальные площади приходятся на неэффективно используемые и незастроенные территории с высоким потенциалом для комплексного развития&raquo;. Так, по его словам, в рамках реализации 120 проектов на месте бывших промзон планируется создать современные городские пространства со сбалансированной застройкой и рабочими местами.
+
+Столичная программа КРТ подразумевает создание многофункциональных городских кластеров, где на месте бывших промзон и неэффективно используемых участков возводится современная недвижимость разного назначения с развитой инфраструктурой. Реализация проектов КРТ возможна тремя способами&nbsp;&mdash; нынешним собственником участка, городским оператором либо&nbsp;же сторонним девелопером, привлеченным по итогу открытого аукциона.
+
+Как удачный пример редевелопмента&nbsp;вице-мэр привел комплексное развитие части бывшей промзоны &laquo;Южный порт&raquo;. Там в активной стадии реализации находится в совокупности уже четыре проекта КРТ общей площадью более 114 га, на которых построят около 2,5 млн кв. м&nbsp;недвижимости&nbsp;&mdash; жилой (в том числе по реновации), промышленной, офисно-деловой и так далее.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/3/38/347177801323383.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[пресс-служба Градостроительного комплекса Москвы]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Владимир Ефимов</p>]]></rbc_news:description>
+            </rbc_news:image>
+        </item>
+        <item>
+            <title><![CDATA[Умер бывший директор ЗИЛа Валерий Сайкин]]></title>
+            <link>https://www.rbc.ru/politics/09/06/2024/666569c99a79473c35ec8aa4</link>
+            <pubDate>Sun, 09 Jun 2024 12:06:35 +0300</pubDate>
+            <description><![CDATA[Валерий Сайкин занимал должность зампредседателя Совета министров РСФСР с апреля по август 1990 года. В 1991-м он баллотировался в мэры Москвы и занял второе место с 16,3%, уступив победу Гавриилу Попову]]></description>
+            <category>Политика</category>
+            <author>Илья Пламенев</author>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:666569c99a79473c35ec8aa4</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/3/67/347179238466673.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>12:06:35</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/politics/09/06/2024/666569c99a79473c35ec8aa4</pdalink>
+            <rbc_news:anons><![CDATA[Валерий Сайкин занимал должность зампредседателя Совета министров РСФСР с апреля по август 1990 года. В 1991-м он баллотировался в мэры Москвы и занял второе место с 16,3%, уступив победу Гавриилу Попову]]></rbc_news:anons>
+            <rbc_news:news_id>666569c99a79473c35ec8aa4</rbc_news:news_id>
+            <rbc_news:type>article</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717923995</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 12:14:39 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[политик]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Госдума]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[РСФСР]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[КПРФ]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[ЗИЛ]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Заместитель председателя Совета министров РСФСР, депутат Госдумы третьего созыва и двукратный победитель первенств СССР по классической борьбе Валерий Сайкин умер на 87-м году жизни, сообщила Федерация спортивной борьбы России (ФСБР) на своей странице во &laquo;ВКонтакте&raquo;.
+
+&laquo;Федерация спортивной борьбы России, спортсмены и тренеры сборных команд России по вольной, женской и греко-римской борьбе искренне соболезнуют родным и близким Валерия Тимофеевича&raquo;,&nbsp;&mdash; говорится в сообщении.
+
+
+Сайкин родился в 1937 году в Москве. Состоял в КПСС с 1966-го. Двукратный чемпион СССР по классической борьбе (среди юношей). С 1981 года&nbsp;&mdash; первый заместитель генерального директора, а в 1982&ndash;1986-м&nbsp;&mdash; генеральный директор ПО &laquo;ЗИЛ&raquo;. По инициативе первого секретаря МГК КПСС Бориса Ельцина в январе 1986 года был избран председателем Мосгорисполкома. В 1990-м стал заместителем председателя Совета министров РСФСР (высший исполнительный и распорядительный и распорядительный орган союзной республики).
+
+В 1991 году баллотировался в мэры Москвы, занял второе место (16,3%), уступив победу Гавриилу Попову (65,3%). Той&nbsp;же осенью вернулся на ЗИЛ в качестве главного&nbsp;инженера. Депутат Государственной думы третьего созыва от КПРФ в 1999&ndash;2003 годах. В последние годы жизни был членом бюро московского городского комитета КПРФ.
+]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/3/67/347179238466673.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Виталий Созинов / ТАСС]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Валерий Сайкин,&nbsp;1987 г.</p>]]></rbc_news:description>
+            </rbc_news:image>
+        </item>
+        <item>
+            <title><![CDATA[Сеул возобновит трансляции на границе с КНДР в ответ на «мусорную войну»]]></title>
+            <link>https://www.rbc.ru/rbcfreenews/666566869a7947faaadbf0be</link>
+            <pubDate>Sun, 09 Jun 2024 11:54:35 +0300</pubDate>
+            <description><![CDATA[Южная Корея возобновит вещание пропагандистских трансляций из громкоговорителей&nbsp;на границе с Северной Кореей, сообщает агентство Yonhap со ссылкой на решение Совета национальной безопасности (СНБ).]]></description>
+            <category>Политика</category>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:666566869a7947faaadbf0be</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/4/78/347179231116784.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>11:54:35</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/rbcfreenews/666566869a7947faaadbf0be</pdalink>
+            <rbc_news:anons><![CDATA[Южная Корея возобновит вещание пропагандистских трансляций из громкоговорителей&nbsp;на границе с Северной Кореей, сообщает агентство Yonhap со ссылкой на решение Совета национальной безопасности (СНБ).]]></rbc_news:anons>
+            <rbc_news:news_id>666566869a7947faaadbf0be</rbc_news:news_id>
+            <rbc_news:type>short_news</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717923275</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 12:01:05 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Южная Корея]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Северная Корея]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[КНДР]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[воздушные шары]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Южная Корея возобновит вещание пропагандистских трансляций из громкоговорителей&nbsp;на границе с Северной Кореей, сообщает агентство Yonhap со ссылкой на решение Совета национальной безопасности (СНБ).
+
+Теперь жители приграничных районов КНДР смогут услышать K-pop, новости и другие южнокорейские передачи.
+
+С конца мая Пхеньян отправил в сторону Южной Кореи около тысячи воздушных шаров с мусором и навозом. В ответ группа северокорейских беженцев направила с территории Южной Кореи в КНДР воздушные шары с листовками, осуждающими действия соседа.
+
+Участники заседания СНБ пришли к выводу, что действия КНДР &laquo;неприемлемы&raquo;, и решили принять &laquo;соответствующие меры&raquo;. &laquo;Правительство будет сохранять твердую и полную готовность противостоять любым провокациям со стороны Северной Кореи, чтобы обеспечить общественную и национальную безопасность&raquo;,&nbsp;&mdash; подчеркнули в совете.
+
+Решению предшествовала&nbsp;очередная партия воздушных шаров с отходами: накануне Северная Корея запустила около 330 шаров, порядка 80 из них приземлились, пишет агентство.
+
+
+
+Южная Корея и КНДР начали пропагандистские трансляции с использованием громкоговорителей в 1963 году. Обе стороны приостановили их в 2015-м, накануне переговоров на высшем уровне руководства. Однако в январе 2016 года Сеул возобновил трансляции в ответ на ядерные испытания КНДР. Через громкоговорители транслировались&nbsp;сообщения с критикой коммунистической политической системы Северной Кореи. Это&nbsp;прекратилось&nbsp;в 2018 году.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/4/78/347179231116784.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Korea Pool-Donga Daily / Getty Images]]></rbc_news:source>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/rbcfreenews/6664d6c19a79472f66d34c9c">
+                    <rbc_news:title><![CDATA[КНДР снова отправила воздушные шары с мусором и навозом в Южную Корею]]></rbc_news:title>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/666132c39a79478450a147d7">
+                    <rbc_news:title><![CDATA[Южная Корея направила в КНДР воздушные шары с листовками]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/8/99/347176563805998.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Chung Sung-Jun / Getty Images]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/politics/03/06/2024/665d51ec9a7947526f91d930">
+                    <rbc_news:title><![CDATA[Южная Корея определилась с ответом на шары с навозом из КНДР]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/1/36/347173988907361.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Yonhap / Reuters]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Над Белгородской областью сбили ракету «Нептун» и два дрона]]></title>
+            <link>https://www.rbc.ru/rbcfreenews/66656bfb9a794747ceae4f91</link>
+            <pubDate>Sun, 09 Jun 2024 11:52:22 +0300</pubDate>
+            <description><![CDATA[Средства противовоздушной обороны сбили управляемую ракету &laquo;Нептун-МД&raquo; и два беспилотника самолетного типа над Белгородской областью, сообщает Минобороны России.]]></description>
+            <category>Политика</category>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:66656bfb9a794747ceae4f91</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/8/74/347179234584748.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>11:52:22</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/rbcfreenews/66656bfb9a794747ceae4f91</pdalink>
+            <rbc_news:anons><![CDATA[Средства противовоздушной обороны сбили управляемую ракету &laquo;Нептун-МД&raquo; и два беспилотника самолетного типа над Белгородской областью, сообщает Минобороны России.]]></rbc_news:anons>
+            <rbc_news:news_id>66656bfb9a794747ceae4f91</rbc_news:news_id>
+            <rbc_news:type>short_news</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717923142</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 11:57:46 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Белгородская область]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[ракета]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[беспилотники]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Вячеслав Гладков]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Средства противовоздушной обороны сбили управляемую ракету &laquo;Нептун-МД&raquo; и два беспилотника самолетного типа над Белгородской областью, сообщает Минобороны России.
+
+Атаки пресекли с 9:30 до 10:30 мск, уточнили в ведомстве.
+
+В Белгороде и Белгородском районе с 9:50 по 10:15 мск действовал сигнал ракетной опасности.
+
+
+
+Белгородский губернатор Вячеслав Гладков&nbsp;сообщил об уничтожении нескольких воздушных целей над Новооскольским городским округом. По его словам, никто не пострадал. В селе Песчанка выбило окна в частном жилом доме и коммерческом объекте, повреждены два автомобиля. В поселке Прибрежный повреждены окна в подъездах двух многоквартирных домов.
+
+Белгородская область в последние месяцы подвергается интенсивным обстрелам, в регионе периодически объявляют ракетную опасность, сбивают украинские ракеты и дроны.
+
+]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/8/74/347179234584748.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Николай Гынгазов / ТАСС]]></rbc_news:source>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/rbcfreenews/6665564c9a7947d363ac1ebd">
+                    <rbc_news:title><![CDATA[В Воронежской области вслед за Белгородом объявили ракетную опасность]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/5/90/347179180733905.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Сергей Бобылев / ТАСС]]></source>
+                        <description><![CDATA[<p>Воронеж</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/666551a39a7947eab562cb15">
+                    <rbc_news:title><![CDATA[В Белгороде объявили ракетную опасность]]></rbc_news:title>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/66652f6b9a7947f9e7a4c4fe">
+                    <rbc_news:title><![CDATA[Гладков назвал количество установленных в Белгородской области убежищ]]></rbc_news:title>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[«Вкусно — и точка» передумала открывать рестораны в Абхазии]]></title>
+            <link>https://www.rbc.ru/business/09/06/2024/666563739a7947752bc72774</link>
+            <pubDate>Sun, 09 Jun 2024 11:45:13 +0300</pubDate>
+            <description><![CDATA[Абхазия на международной арене считается территорией, принадлежащей Грузии, а там работает франшиза McDonald's, с которой «Вкусно — и точка» не хочет конкурировать, объяснил отказ от планов экспансии гендиректор сети Пароев]]></description>
+            <category>Бизнес</category>
+            <author>Илья Пламенев</author>
+            <guid isPermaLink="false">rssexport.rbc.ru:business:666563739a7947752bc72774</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/7/78/347179220201787.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>11:45:13</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/business/09/06/2024/666563739a7947752bc72774</pdalink>
+            <rbc_news:anons><![CDATA[Абхазия на международной арене считается территорией, принадлежащей Грузии, а там работает франшиза McDonald's, с которой «Вкусно — и точка» не хочет конкурировать, объяснил отказ от планов экспансии гендиректор сети Пароев]]></rbc_news:anons>
+            <rbc_news:news_id>666563739a7947752bc72774</rbc_news:news_id>
+            <rbc_news:type>article</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717922713</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 11:54:26 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>business</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Абхазия]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[рестораны]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Вкусно – и точка]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Макдоналдс]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Грузия]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[ПМЭФ]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Сеть ресторанов быстрого питания &laquo;Вкусно&nbsp;&mdash; и точка&raquo; больше не планирует выходить на рынок Абхазии, рассказал в интервью &laquo;РИА Новости&raquo; на ПМЭФ-2024 генеральный директор сети Олег Пароев.
+
+&laquo;Мы внимательно изучили рынок Абхазии и пришли к выводу, что не будем там открываться. Причин этому несколько: с одной стороны, Абхазия на международной арене считается территорией, принадлежащей Грузии, а там работает франшиза McDonald&#39;s&nbsp;и мы&nbsp;бы не хотели создавать конфликт&raquo;,&nbsp;&mdash; сказал он.
+
+Тем не менее, по словам Пароева, вскоре ресторан &laquo;Вкусно&nbsp;&mdash; и точка&raquo; может открыться возле Абхазии&nbsp;&mdash; в Сочи или Адлере, что будет &laquo;логистически гораздо проще&raquo; с точки зрения управления и набора персонала.
+
+
+Россия признала независимость Абхазии и Южной Осетии в 2008 году.
+
+
+Пароев также не стал исключать выход сети &laquo;Вкусно&nbsp;&mdash; и точка&raquo; в другие страны. &laquo;На данный момент я не хотел&nbsp;бы говорить про конкретные страны, хотя могу сказать, что конкретные планы уже рассматриваются&raquo;,&nbsp;&mdash; отметил он.
+
+
+
+Владелец &laquo;Вкусно&nbsp;&mdash; и точка&raquo; Александр Говор заявил о планах сети выйти на новые рынки, в том числе в Абхазию, в декабре 2022 года. &laquo;Непризнанные республики к нам тоже обращаются. Мы все делаем, чтобы туда зайти, например в Абхазию. Но от нас это не зависит. Новые территории мы пока не рассматриваем, в том числе Крым&raquo;,&nbsp;&mdash; сказал он тогда.
+
+О том, что сеть не планирует выходить в новые регионы, Пароев говорил в начале июня. &laquo;Сейчас мы не видим возможности, как мы можем обеспечить стабильность поставок и безопасность наших гостей. Это самая большая проблема&raquo;,&nbsp;&mdash; объяснял он. При этом во всех остальных российских регионах сеть уже присутствует, добавил гендиректор.
+
+
+
+
+&laquo;Вкусно&nbsp;&mdash; и точка&raquo; пришла на смену &laquo;Макдоналдсу&raquo;, который в марте 2022 года приостановил работу в России, а в мае объявил об уходе из страны. Бизнес приобрел сооснователь компании &laquo;НефтеХимСервис&raquo; Александр Говор, чья компания &laquo;Гид&raquo; управляла 25 ресторанами американской сети в Сибири. Бизнесмен заявлял, что приобрел бизнес &laquo;за символическую плату&raquo;, но точную сумму разглашать отказался. В соглашении предусмотрен опцион на обратный выкуп в течение 10&ndash;15 лет при условии, если Говор будет мастер-франчайзи.
+]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/7/78/347179220201787.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Михаил Гребенщиков / РБК]]></rbc_news:source>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/business/07/06/2024/6662de8b9a7947accdbf99a1">
+                    <rbc_news:title><![CDATA[Попова назвала «Вкусно — и точка» новым «флагманом здорового питания»]]></rbc_news:title>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/6662db419a7947a929f85a81">
+                    <rbc_news:title><![CDATA[Попова назвала сеть «Вкусно — и точка» флагманом здорового питания. Видео]]></rbc_news:title>
+                </link>
+                <link url="https://www.rbc.ru/business/06/06/2024/666189739a79475330035f26">
+                    <rbc_news:title><![CDATA[Во «Вкусно — и точка» пока не стали планировать выход в Донбасс]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/0/37/347176711656370.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Михаил Гребенщиков / РБК]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[На юге Азербайджана двух пограничников убило ударом молнии]]></title>
+            <link>https://www.rbc.ru/rbcfreenews/666563279a7947752bc7276f</link>
+            <pubDate>Sun, 09 Jun 2024 11:21:46 +0300</pubDate>
+            <description><![CDATA[Два пограничника погибли от удара молнии на юге Азербайджана, сообщила государственная пограничная служба страны.]]></description>
+            <category>Общество</category>
+            <guid isPermaLink="false">rssexport.rbc.ru:society:666563279a7947752bc7276f</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/6/64/347179215340646.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>11:21:46</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/rbcfreenews/666563279a7947752bc7276f</pdalink>
+            <rbc_news:anons><![CDATA[Два пограничника погибли от удара молнии на юге Азербайджана, сообщила государственная пограничная служба страны.]]></rbc_news:anons>
+            <rbc_news:news_id>666563279a7947752bc7276f</rbc_news:news_id>
+            <rbc_news:type>short_news</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717921306</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 11:42:59 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>society</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Азербайджан]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[молния]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[пограничники]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Два пограничника погибли от удара молнии на юге Азербайджана, сообщила государственная пограничная служба страны. Инцидент произошел утром 9 июня.
+
+&laquo;Руководство выражает глубокие соболезнования семьям и близким погибших военнослужащих, желает им терпения&raquo;,&nbsp;&mdash; говорится в публикации. Погибли&nbsp;майор Бахышлы Бахыш Эльшан-оглу и солдат Нагиев Али Эльшан-оглу. Ведомство начало&nbsp;расследование.
+
+
+
+В конце мая в подмосковной Балашихе также в результате удара молнии погиб мужчина.&nbsp;Телеграм-каналы &laquo;112&raquo; и Mash сообщили, что ему было&nbsp;63 года.]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/6/64/347179215340646.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Алексей Куденко / РИА Новости]]></rbc_news:source>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/society/06/06/2024/6661b4fa9a79473aff3b6c8f">
+                    <rbc_news:title><![CDATA[Молния ударила в «Детское посольство» в Москве]]></rbc_news:title>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/665a1af79a794702df7b7d41">
+                    <rbc_news:title><![CDATA[В Балашихе молния убила мужчину]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/5/44/347171816956445.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Никита Попов / РБК]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/665a09cb9a794788276d017c">
+                    <rbc_news:title><![CDATA[В Ростовской области после удара молнии загорелись десятки гектаров леса]]></rbc_news:title>
+                </link>
+            </rbc_news:related_links>
+        </item>
+        <item>
+            <title><![CDATA[Welt узнала о поиске Макроном союзников для отправки военных на Украину]]></title>
+            <link>https://www.rbc.ru/politics/09/06/2024/6665590d9a794782e847f34c</link>
+            <pubDate>Sun, 09 Jun 2024 11:13:25 +0300</pubDate>
+            <description><![CDATA[Франция направила десяткам западных стран предложение присоединиться к коалиции по отправке военных инструкторов на Украину, но ФРГ выступила против, выяснила Welt. Москва предупреждала, что такие военные будут «законной целью»]]></description>
+            <category>Политика</category>
+            <author>Илья Пламенев</author>
+            <guid isPermaLink="false">rssexport.rbc.ru:politics:6665590d9a794782e847f34c</guid>
+            <enclosure url="https://s0.rbk.ru/v6_top_pics/media/img/6/06/347179195427066.jpeg"
+                type="image/jpeg" length="" />
+            <rbc_news:time>11:13:25</rbc_news:time>
+            <rbc_news:date>09.06.2024</rbc_news:date>
+            <pdalink>https://www.rbc.ru/politics/09/06/2024/6665590d9a794782e847f34c</pdalink>
+            <rbc_news:anons><![CDATA[Франция направила десяткам западных стран предложение присоединиться к коалиции по отправке военных инструкторов на Украину, но ФРГ выступила против, выяснила Welt. Москва предупреждала, что такие военные будут «законной целью»]]></rbc_news:anons>
+            <rbc_news:news_id>6665590d9a794782e847f34c</rbc_news:news_id>
+            <rbc_news:type>article</rbc_news:type>
+            <rbc_news:newsDate_timestamp>1717920805</rbc_news:newsDate_timestamp>
+            <rbc_news:newsModifDate>Sun, 09 Jun 2024 11:49:58 +0300</rbc_news:newsModifDate>
+            <rbc_news:newsline>politics</rbc_news:newsline>
+            <rbc_news:tag><![CDATA[Эмманюэль Макрон]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[военные инструкторы]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Военная операция на Украине]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[коалиция]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Германия]]></rbc_news:tag>
+            <rbc_news:tag><![CDATA[Франция]]></rbc_news:tag>
+            <rbc_news:full-text><![CDATA[Французский президент Эмманюэль Макрон пытается создать коалицию западных стран для совместной отправки военных инструкторов на Украину, сообщает немецкая Welt am Sonntag со ссылкой на дипломатические источники.
+
+По данным газеты, на прошлой неделе начальник Главного штаба ВС Франции Тьерри Буркхард направил письмо десяткам западных стран, в том числе США, Великобритании, Польше, Нидерландам, Дании и Швеции, в котором пригласил их принять участие в учебной миссии на Украине в рамках многонациональной &laquo;коалиции желающих&raquo;. В то&nbsp;же время в ФРГ оно направлено не было: источники Welt уточнили, что это связано с демонстративным нежеланием правительства Германии направлять свои войска на Украину в любом виде.
+
+Собеседники газеты также рассказали, что миссия на Украине с участием военных инструкторов, по плану Макрона, может быть реализована под эгидой уже существующей учебной миссии ЕС в Украине EUMAM. Однако, чтобы это произошло, необходимо изменить мандат миссии, напоминает Welt. В то&nbsp;же время, отмечает газета, такое вполне возможно: летом параметры EUMAM должны быть пересмотрены, а в ноябре ее необходимо будет продлить.
+
+Источники отмечают, что пока инициатива Парижа сталкивается с сопротивлением в большинстве стран. Так, правительства Германии, Италии и Испании выразили опасения, что отправка военных инструкторов может создать значительный риск эскалации и &laquo;еще глубже&raquo; втянуть Запад в конфликт. Венгрия, в свою очередь, еще в конце мая заявила, что у Украины нет никаких шансов одержать верх над Россией.
+
+
+
+Дискуссия о возможном вводе войск западных стран на Украину началась в конце февраля, когда такой вариант впервые не исключил&nbsp;Макрон. В марте он допустил и проведение наземной операции против российской армии. Условиями отправки западных войск на Украину будут соответствующий запрос Киева и прорыв фронта, уточнял&nbsp;французский лидер&nbsp;в начале мая.
+
+В конце мая главком ВСУ Александр Сырский подписал документы, &laquo;которые позволят первым французским инструкторам вскоре посетить украинские учебные центры и ознакомиться с их инфраструктурой и персоналом&raquo;. А спустя еще несколько дней депутат Верховной рады Алексей Гончаренко со ссылкой на собственный источники заявил, что первая группа инструкторов уже направилась в страну.
+
+Российский президент Владимир Путин на встрече с представителями международных информагентств 5 июня заявил, что западные военные инструкторы и советники уже присутствуют на Украине&nbsp;и, &laquo;к сожалению для них, несут потери&raquo;. В Кремле предупреждали, что иностранные военные, которые тренируют ВСУ на территории страны, не защищены от ударов, у них &laquo;нет никаких иммунитетов&raquo;.
+
+]]></rbc_news:full-text>
+            <rbc_news:image>
+                <rbc_news:url>https://s0.rbk.ru/v6_top_pics/media/img/6/06/347179195427066.jpeg</rbc_news:url>
+                <rbc_news:type>image/jpeg</rbc_news:type>
+                <rbc_news:size_nick>original</rbc_news:size_nick>
+                <rbc_news:copyright>copyright</rbc_news:copyright>
+                <rbc_news:source><![CDATA[Clemens Bilan / Getty Images]]></rbc_news:source>
+                <rbc_news:description><![CDATA[<p>Эмманюэль Макрон</p>]]></rbc_news:description>
+            </rbc_news:image>
+            <rbc_news:related_links>
+                <link url="https://www.rbc.ru/rbcfreenews/666352519a79470b2983ae9b">
+                    <rbc_news:title><![CDATA[Макрон заявил о начале обучения Францией украинских пилотов]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/6/11/347177862057116.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Joe Raedle / Getty Images]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/rbcfreenews/666198cf9a79475d8b128eec">
+                    <rbc_news:title><![CDATA[Зеленский прибыл во Францию на юбилей высадки в Нормандии]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/5/34/347176768866345.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Piroschka van de Wouw / File Photo / Reuters]]></source>
+                        <description><![CDATA[<p>Владимир Зеленский</p>]]></description>
+                    </rbc_news:thumbnail>
+                </link>
+                <link url="https://www.rbc.ru/politics/09/06/2024/6664dbda9a7947fc7b6e8869">
+                    <rbc_news:title><![CDATA[В Чехии исключили отправку своих инструкторов на Украину]]></rbc_news:title>
+                    <rbc_news:thumbnail>
+                        <url>https://s0.rbk.ru/v6_top_pics/media/img/5/09/347178878144095.jpeg</url>
+                        <type>image/jpeg</type>
+                        <size_nick>original</size_nick>
+                        <copyright>limited</copyright>
+                        <source><![CDATA[Oleksandr Ratushniak / Reuters]]></source>
+                    </rbc_news:thumbnail>
+                </link>
+            </rbc_news:related_links>
+        </item>
+    </channel>
+</rss>

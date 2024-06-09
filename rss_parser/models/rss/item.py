@@ -1,14 +1,18 @@
 from typing import Optional
 
 from rss_parser.models import XMLBaseModel
+from rss_parser.models.types.only_list import OnlyList
 from rss_parser.models.types.tag import Tag
+from rss_parser.pydantic_proxy import import_v1_pydantic
+
+pydantic = import_v1_pydantic()
 
 
 class RequiredItemElementsMixin(XMLBaseModel):
     title: Tag[str] = None  # Venice Film Festival Tries to Quit Sinking
     "The title of the item."
 
-    link: Tag[str] = None  # http://nytimes.com/2004/12/07FEST.html
+    links: OnlyList[Tag[str]] = pydantic.Field(alias="link")  # http://nytimes.com/2004/12/07FEST.html
     "The URL of the item."
 
     description: Tag[
@@ -28,8 +32,9 @@ class OptionalItemElementsMixin(XMLBaseModel):
     comments: Optional[Tag[str]] = None
     "URL of a page for comments relating to the item."
 
-    enclosure: Optional[Tag[str]] = None
-    "Describes a media object that is attached to the item."
+    enclosures: Optional[OnlyList[Tag[str]]] = pydantic.Field(alias="enclosure", default=[])
+    # enclosure: Optional[OnlyList[Tag[str]]] = None
+    "Describes a media object that is attached to the item.\n" "Can be a list -> https://validator.w3.org/feed/docs/warning/DuplicateEnclosure.html"
 
     guid: Optional[Tag[str]] = None
     "A string that uniquely identifies the item."
