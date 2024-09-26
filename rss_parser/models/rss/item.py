@@ -26,7 +26,7 @@ class OptionalItemElementsMixin(XMLBaseModel):
     author: Optional[Tag[str]] = None
     "Email address of the author of the item."
 
-    category: Optional[Tag[str]] = None
+    categories: Optional[OnlyList[Tag[str]]] = pydantic.Field(alias="category", default=[])
     "Includes the item in one or more categories."
 
     comments: Optional[Tag[str]] = None

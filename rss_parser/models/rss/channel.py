@@ -47,7 +47,7 @@ class OptionalChannelElementsMixin(XMLBaseModel):
     last_build_date: Optional[Tag[DateTimeOrStr]] = None  # Sat, 07 Sep 2002 09:42:31 GMT
     "The last time the content of the channel changed."
 
-    category: Optional[Tag[str]] = None  # Newspapers
+    categories: Optional[OnlyList[Tag[str]]] = pydantic.Field(alias="category", default=[])
     "Specify one or more categories that the channel belongs to. Follows the same rules as the <item.py>-level " "category element."  # noqa
 
     generator: Optional[Tag[str]] = None  # MightyInHouse Content System v2.3
