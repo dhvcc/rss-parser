@@ -1,14 +1,18 @@
 from copy import deepcopy
 from json import loads
-from typing import Generic, Optional, TypeVar, Union
+from typing import TYPE_CHECKING, Generic, Optional, TypeVar, Union
 
 from rss_parser.models import XMLBaseModel
 from rss_parser.models.utils import snake_case
 from rss_parser.pydantic_proxy import import_v1_pydantic
 
-pydantic = import_v1_pydantic()
-pydantic_generics = import_v1_pydantic(".generics")
-pydantic_json = import_v1_pydantic(".json")
+if TYPE_CHECKING:
+    from pydantic.v1 import generics as pydantic_generics
+    from pydantic.v1 import json as pydantic_json
+else:
+    pydantic = import_v1_pydantic()
+    pydantic_generics = import_v1_pydantic(".generics")
+    pydantic_json = import_v1_pydantic(".json")
 
 T = TypeVar("T")
 

@@ -7,13 +7,13 @@ from rss_parser.models.types.tag import Tag
 class Image(XMLBaseModel):
     """https://www.rssboard.org/rss-specification#ltimagegtSubelementOfLtchannelgt."""
 
-    url: Tag[str] = None
+    url: Tag[str]
     "The URL of a GIF, JPEG or PNG image that represents the channel."
 
-    title: Tag[str] = None
+    title: Tag[str]
     "Describes the image, it's used in the ALT attribute of the HTML <img> tag when the channel is rendered in HTML."
 
-    link: Tag[str] = None
+    link: Tag[str]
     "The URL of the site, when the channel is rendered, the image is a link to the site. (Note, in practice the " "image <title> and <link> should have the same value as the channel's <title> and <link>."  # noqa
 
     width: Optional[Tag[int]] = None

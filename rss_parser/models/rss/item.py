@@ -9,15 +9,13 @@ pydantic = import_v1_pydantic()
 
 
 class RequiredItemElementsMixin(XMLBaseModel):
-    title: Tag[str] = None  # Venice Film Festival Tries to Quit Sinking
+    title: Tag[str]  # Venice Film Festival Tries to Quit Sinking
     "The title of the item."
 
     links: OnlyList[Tag[str]] = pydantic.Field(alias="link")  # http://nytimes.com/2004/12/07FEST.html
     "The URL of the item."
 
-    description: Tag[
-        str
-    ] = None  # <description>Some of the most heated chatter at the Venice Film Festival this week was
+    description: Tag[str]  # <description>Some of the most heated chatter at the Venice Film Festival this week was
     # about the way that the arrival of the stars at the Palazzo del Cinema was being staged.</description>
     "The item synopsis."
 

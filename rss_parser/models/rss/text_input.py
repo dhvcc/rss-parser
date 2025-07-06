@@ -10,14 +10,14 @@ class TextInput(XMLBaseModel):
     https://www.rssboard.org/rss-specification#lttextinputgtSubelementOfLtchannelgt
     """
 
-    title: Tag[str] = None
+    title: Tag[str]
     "The label of the Submit button in the text input area."
 
-    description: Tag[str] = None
+    description: Tag[str]
     "Explains the text input area."
 
-    name: Tag[str] = None
+    name: Tag[str]
     "The name of the text object in the text input area."
 
-    link: Tag[str] = None
+    link: Tag[str]
     "The URL of the CGI script that processes text input requests."

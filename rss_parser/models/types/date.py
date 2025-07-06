@@ -1,5 +1,6 @@
 from datetime import datetime
 from email.utils import parsedate_to_datetime
+from typing import Union
 
 from rss_parser.pydantic_proxy import import_v1_pydantic
 
@@ -25,7 +26,7 @@ class DateTimeOrStr(datetime):
         return f"DateTimeOrStp({super().__repr__()})"
 
 
-def validate_dt_or_str(value: str) -> datetime:
+def validate_dt_or_str(value: str) -> Union[datetime, str]:
     # Try to parse standard (RFC 822)
     try:
         return parsedate_to_datetime(value)

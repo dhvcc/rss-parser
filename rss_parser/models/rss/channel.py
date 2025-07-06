@@ -15,13 +15,13 @@ pydantic = import_v1_pydantic()
 class RequiredChannelElementsMixin(XMLBaseModel):
     """https://www.rssboard.org/rss-specification#requiredChannelElements."""
 
-    title: Tag[str] = None  # GoUpstate.com News Headlines
+    title: Tag[str]  # GoUpstate.com News Headlines
     "The name of the channel. It's how people refer to your service. If you have an HTML website that contains " "the same information as your RSS file, the title of your channel should be the same as the title of your " "website."  # noqa
 
-    link: Tag[str] = None  # http://www.goupstate.com/
+    link: Tag[str]  # http://www.goupstate.com/
     "The URL to the HTML website corresponding to the channel."
 
-    description: Tag[str] = None  # The latest news from GoUpstate.com, a Spartanburg Herald-Journal Web site.
+    description: Tag[str]  # The latest news from GoUpstate.com, a Spartanburg Herald-Journal Web site.
     "Phrase or sentence describing the channel."
 
 
@@ -33,7 +33,7 @@ class OptionalChannelElementsMixin(XMLBaseModel):
     language: Optional[Tag[str]] = None  # en-us
     "The language the channel is written in. This allows aggregators to group all Italian language sites, " "for example, on a single page."  # noqa
 
-    copyright: Optional[Tag[str]] = None  # Copyright 2002, Spartanburg Herald-Journal  # noqa
+    copyright: Optional[Tag[str]] = None  # Copyright 2002, Spartanburg Herald-Journal
     "Copyright notice for content in the channel."
 
     "Email address for person responsible for editorial content."

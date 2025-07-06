@@ -3,7 +3,7 @@
     <channel>
         <title>www.rbc.ru</title>
         <link>https://www.rbc.ru</link>
-        <description />
+        <description>stub description</description>
         <ttl>30</ttl>
         <language>ru</language>
         <image>

@@ -43,5 +43,8 @@ jobs:
       - name: Lint code with ruff
         run: poetry run ruff check .
 
+      - name: Lint code with mypy
+        run: poetry run mypy rss_parser
+
       - name: Test code with pytest
         run: poetry run pytest --doctest-modules

@@ -24,6 +24,16 @@ repos:
         types: [ python ]
         stages: [ commit ]
 
+      - id: mypy-check-staged
+        name: mypy
+        entry: poetry
+        args:
+          - run
+          - mypy
+          - rss_parser
+        language: system
+        stages: [ push ]
+
       - id: ruff-check-global
         name: ruff
         entry: poetry
