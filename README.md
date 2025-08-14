@@ -1,4 +1,4 @@
-# Rss parser
+# RSS Parser
 
 [![Downloads](https://pepy.tech/badge/rss-parser)](https://pepy.tech/project/rss-parser)
 [![Downloads](https://pepy.tech/badge/rss-parser/month)](https://pepy.tech/project/rss-parser)
@@ -15,7 +15,7 @@
 
 ## About
 
-`rss-parser` is typed python RSS/Atom parsing module built using [pydantic](https://github.com/pydantic/pydantic) and [xmltodict](https://github.com/martinblech/xmltodict)
+`rss-parser` is a type-safe Python RSS/Atom parsing module built using [pydantic](https://github.com/pydantic/pydantic) and [xmltodict](https://github.com/martinblech/xmltodict).
 
 ## Installation
 
@@ -32,10 +32,10 @@ poetry build
 pip install dist/*.whl
 ```
 
-## V1 -> V2 migration
-- `Parser` class was renamed to `RSSParser`
-- Models for RSS-specific schemas were moved from `rss_parser.models` to `rss_parser.models.rss`. Generic types are not touched
-- Date parsing was changed a bit, now uses pydantic's `validator` instead of `email.utils`, so the code will produce datetimes better, where it was defaulting to `str` before
+## V1 -> V2 Migration
+- The `Parser` class has been renamed to `RSSParser`
+- Models for RSS-specific schemas have been moved from `rss_parser.models` to `rss_parser.models.rss`. Generic types remain unchanged
+- Date parsing has been improved and now uses pydantic's `validator` instead of `email.utils`, producing better datetime objects where it previously defaulted to `str`
 
 ## Usage
 
@@ -69,15 +69,15 @@ for item in rss.channel.items:
 # <p>If you could call a number and say you’re sorry
 ```
 
-Here we can see that description is still somehow has <p> - this is beacause it's placed as [CDATA](https://www.w3resource.com/xml/CDATA-sections.php) like so
+Here we can see that the description still contains `<p>` tags - this is because it's wrapped in [CDATA](https://www.w3resource.com/xml/CDATA-sections.php) like so:
 
 ```
 <![CDATA[<p>If you could call ...</p>]]>
 ```
 
-### Overriding schema
+### Overriding Schema
 
-If you want to customize the schema or provide a custom one - use `schema` keyword argument of the parser
+If you want to customize the schema or provide a custom one, use the `schema` keyword argument of the parser:
 
 ```python
 from rss_parser import RSSParser
@@ -105,17 +105,17 @@ print("Custom", rss.custom)
 
 ### xmltodict
 
-This library uses [xmltodict](https://github.com/martinblech/xmltodict) to parse XML data. You can see the detailed documentation [here](https://github.com/martinblech/xmltodict#xmltodict)
+This library uses [xmltodict](https://github.com/martinblech/xmltodict) to parse XML data. You can find the detailed documentation [here](https://github.com/martinblech/xmltodict#xmltodict).
 
-The basic thing you should know is that your data is processed into dictionaries
+The key thing to understand is that your data is processed into dictionaries.
 
-For example, this data
+For example, this XML:
 
 ```xml
 <tag>content</tag>
 ```
 
-will result in the following
+will result in the following dictionary:
 
 ```python
 {
@@ -123,13 +123,13 @@ will result in the following
 }
 ```
 
-*But*, when handling attributes, the content of the tag will be also a dictionary
+*However*, when handling attributes, the content of the tag will also be a dictionary:
 
 ```xml
 <tag attr="1" data-value="data">data</tag>
 ```
 
-Turns into
+This becomes:
 
 ```python
 {
@@ -141,7 +141,7 @@ Turns into
 }
 ```
 
-Multiple children of a tag will be put into a list
+Multiple children of a tag will be placed into a list:
 
 ```xml
 <div>
@@ -150,7 +150,7 @@ Multiple children of a tag will be put into a list
 </div>
 ```
 
-Results in a list
+This results in a list:
 
 ```python
 [
@@ -159,8 +159,7 @@ Results in a list
 ]
 ```
 
-If you don't want to deal with those conditions and parse something **always** as a list - 
-please, use `rss_parser.models.types.only_list.OnlyList` like we did in `Channel`
+If you don't want to deal with these conditions and want to parse something **always** as a list, please use `rss_parser.models.types.only_list.OnlyList` like we did in `Channel`:
 ```python
 from typing import Optional
 
@@ -178,11 +177,11 @@ class OptionalChannelElementsMixin(...):
     items: Optional[OnlyList[Tag[Item]]] = pydantic.Field(alias="item", default=[])
 ```
 
-### Tag field
+### Tag Field
 
-This is a generic field that handles tags as raw data or a dictonary returned with attributes
+This is a generic field that handles tags as raw data or as a dictionary returned with attributes.
 
-Example
+Example:
 
 ```python
 from rss_parser.models import XMLBaseModel
@@ -207,18 +206,17 @@ assert type(m.width), type(m.width.content) == (Tag[int], int)
 # The attributes are empty by default
 assert m.width.attributes == {} # But are populated when provided.
 
-# Note that the @ symbol is trimmed from the beggining and name is convert to snake_case
+# Note that the @ symbol is trimmed from the beginning and the name is converted to snake_case
 assert m.category.attributes == {'some_attribute': 'https://example.com'}
 ```
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Install dependencies with `poetry install` (`pip install poetry`)
+Install dependencies with `poetry install` (`pip install poetry`).
 
-`pre-commit` usage is highly recommended. To install hooks run
+Using `pre-commit` is highly recommended. To install hooks, run:
 
 ```bash
 poetry run pre-commit install -t=pre-commit -t=pre-push
