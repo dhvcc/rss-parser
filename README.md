@@ -37,6 +37,20 @@ pip install dist/*.whl
 - Models for RSS-specific schemas have been moved from `rss_parser.models` to `rss_parser.models.rss`. Generic types remain unchanged
 - Date parsing has been improved and now uses pydantic's `validator` instead of `email.utils`, producing better datetime objects where it previously defaulted to `str`
 
+## Legacy Models
+
+Pydantic v1-based models are still available under `rss_parser.models.legacy`. They retain the previous behaviour and re-export the `import_v1_pydantic` helper as `rss_parser.models.legacy.pydantic_proxy.import_v1_pydantic`. You can continue to use them by pointing your parser at the legacy schema:
+
+```python
+from rss_parser import RSSParser
+from rss_parser.models.legacy.rss import RSS as LegacyRSS
+
+class LegacyRSSParser(RSSParser):
+    schema = LegacyRSS
+```
+
+Tests in this repository run against both the v2 and legacy models to ensure parity.
+
 ## Usage
 
 ### Quickstart
@@ -163,18 +177,17 @@ If you don't want to deal with these conditions and want to parse something **al
 ```python
 from typing import Optional
 
+from pydantic import Field
+
 from rss_parser.models.rss.item import Item
 from rss_parser.models.types.only_list import OnlyList
 from rss_parser.models.types.tag import Tag
-from rss_parser.pydantic_proxy import import_v1_pydantic
-
-pydantic = import_v1_pydantic()
 ...
 
 
 class OptionalChannelElementsMixin(...):
     ...
-    items: Optional[OnlyList[Tag[Item]]] = pydantic.Field(alias="item", default=[])
+    items: Optional[OnlyList[Tag[Item]]] = Field(alias="item", default_factory=list)
 ```
 
 ### Tag Field

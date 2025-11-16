@@ -1,11 +1,18 @@
-import logging
 from typing import Type
 
 import pytest
 
 from rss_parser import AtomParser, BaseParser, RSSParser
+from rss_parser.models.legacy.atom import Atom as LegacyAtom
+from rss_parser.models.legacy.rss import RSS as LegacyRSS
 
-logger = logging.getLogger(__name__)
+
+class LegacyRSSParser(RSSParser):
+    schema = LegacyRSS
+
+
+class LegacyAtomParser(AtomParser):
+    schema = LegacyAtom
 
 
 class DataHelper:
@@ -16,8 +23,24 @@ class DataHelper:
 
         assert rss
 
-        parsed = rss.dict()
+        if hasattr(rss, "model_dump"):
+            parsed = rss.model_dump()
+        else:
+            parsed = rss.dict()
         assert parsed == result
+
+
+RSS_PARSERS = pytest.mark.parametrize(
+    "parser_cls",
+    [RSSParser, LegacyRSSParser],
+    ids=["rss-v2", "rss-legacy"],
+)
+
+ATOM_PARSERS = pytest.mark.parametrize(
+    "parser_cls",
+    [AtomParser, LegacyAtomParser],
+    ids=["atom-v2", "atom-legacy"],
+)
 
 
 @pytest.mark.usefixtures("sample_and_result")
@@ -33,8 +56,9 @@ class TestRSS:
         ],
         indirect=True,
     )
-    def test_parses_all_rss_samples(self, sample_and_result):
-        DataHelper.compare_parsing(sample_and_result, parser=RSSParser)
+    @RSS_PARSERS
+    def test_parses_all_rss_samples(self, sample_and_result, parser_cls):
+        DataHelper.compare_parsing(sample_and_result, parser=parser_cls)
 
 
 @pytest.mark.usefixtures("sample_and_result")
@@ -47,5 +71,6 @@ class TestAtom:
         ],
         indirect=True,
     )
-    def test_parses_all_atom_samples(self, sample_and_result):
-        DataHelper.compare_parsing(sample_and_result, parser=AtomParser)
+    @ATOM_PARSERS
+    def test_parses_all_atom_samples(self, sample_and_result, parser_cls):
+        DataHelper.compare_parsing(sample_and_result, parser=parser_cls)

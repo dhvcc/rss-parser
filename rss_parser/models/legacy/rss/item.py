@@ -1,17 +1,18 @@
 from typing import Optional
 
-from pydantic import Field
+from rss_parser.models.legacy import XMLBaseModel
+from rss_parser.models.legacy.pydantic_proxy import import_v1_pydantic
+from rss_parser.models.legacy.types.only_list import OnlyList
+from rss_parser.models.legacy.types.tag import Tag
 
-from rss_parser.models import XMLBaseModel
-from rss_parser.models.types.only_list import OnlyList
-from rss_parser.models.types.tag import Tag
+pydantic = import_v1_pydantic()
 
 
 class RequiredItemElementsMixin(XMLBaseModel):
     title: Tag[str]  # Venice Film Festival Tries to Quit Sinking
     "The title of the item."
 
-    links: OnlyList[Tag[str]] = Field(alias="link")  # http://nytimes.com/2004/12/07FEST.html
+    links: OnlyList[Tag[str]] = pydantic.Field(alias="link")  # http://nytimes.com/2004/12/07FEST.html
     "The URL of the item."
 
     description: Tag[str]  # <description>Some of the most heated chatter at the Venice Film Festival this week was
@@ -23,13 +24,13 @@ class OptionalItemElementsMixin(XMLBaseModel):
     author: Optional[Tag[str]] = None
     "Email address of the author of the item."
 
-    categories: Optional[OnlyList[Tag[str]]] = Field(alias="category", default_factory=list)
+    categories: Optional[OnlyList[Tag[str]]] = pydantic.Field(alias="category", default=[])
     "Includes the item in one or more categories."
 
     comments: Optional[Tag[str]] = None
     "URL of a page for comments relating to the item."
 
-    enclosures: Optional[OnlyList[Tag[str]]] = Field(alias="enclosure", default_factory=list)
+    enclosures: Optional[OnlyList[Tag[str]]] = pydantic.Field(alias="enclosure", default=[])
     # enclosure: Optional[OnlyList[Tag[str]]] = None
     "Describes a media object that is attached to the item.\nCan be a list -> https://validator.w3.org/feed/docs/warning/DuplicateEnclosure.html"
 

@@ -1,13 +1,14 @@
 from typing import Optional
 
-from pydantic import Field
+from rss_parser.models.legacy import XMLBaseModel
+from rss_parser.models.legacy.atom.entry import Entry
+from rss_parser.models.legacy.atom.person import Person
+from rss_parser.models.legacy.pydantic_proxy import import_v1_pydantic
+from rss_parser.models.legacy.types.date import DateTimeOrStr
+from rss_parser.models.legacy.types.only_list import OnlyList
+from rss_parser.models.legacy.types.tag import Tag
 
-from rss_parser.models import XMLBaseModel
-from rss_parser.models.atom.entry import Entry
-from rss_parser.models.atom.person import Person
-from rss_parser.models.types.date import DateTimeOrStr
-from rss_parser.models.types.only_list import OnlyList
-from rss_parser.models.types.tag import Tag
+pydantic = import_v1_pydantic()
 
 
 class RequiredAtomFeedMixin(XMLBaseModel):
@@ -22,21 +23,21 @@ class RequiredAtomFeedMixin(XMLBaseModel):
 
 
 class RecommendedAtomFeedMixin(XMLBaseModel):
-    authors: Optional[OnlyList[Tag[Person]]] = Field(alias="author", default_factory=list)
+    authors: Optional[OnlyList[Tag[Person]]] = pydantic.Field(alias="author", default=[])
     "Names one author of the feed. A feed may have multiple author elements."
 
-    links: Optional[OnlyList[Tag[str]]] = Field(alias="link", default_factory=list)
+    links: Optional[OnlyList[Tag[str]]] = pydantic.Field(alias="link", default=[])
     "The URL to the feed. A feed may have multiple link elements."
 
 
 class OptionalAtomFeedMixin(XMLBaseModel):
-    entries: Optional[OnlyList[Tag[Entry]]] = Field(alias="entry", default_factory=list)
+    entries: Optional[OnlyList[Tag[Entry]]] = pydantic.Field(alias="entry", default=[])
     "The entries in the feed. A feed may have multiple entry elements."
 
-    categories: Optional[OnlyList[Tag[dict]]] = Field(alias="category", default_factory=list)
+    categories: Optional[OnlyList[Tag[dict]]] = pydantic.Field(alias="category", default=[])
     "Specifies a categories that the feed belongs to. The feed may have multiple categories elements."
 
-    contributors: Optional[OnlyList[Tag[Person]]] = Field(alias="contributor", default_factory=list)
+    contributors: Optional[OnlyList[Tag[Person]]] = pydantic.Field(alias="contributor", default=[])
     "Feed contributors."
 
     generator: Optional[Tag[str]] = None

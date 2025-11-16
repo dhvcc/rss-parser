@@ -1,16 +1,19 @@
+from __future__ import annotations
+
 from datetime import datetime
 from email.utils import parsedate_to_datetime
 from typing import Union
 
-from rss_parser.pydantic_proxy import import_v1_pydantic
+from pydantic import GetCoreSchemaHandler, TypeAdapter, ValidationError
+from pydantic_core import core_schema
 
-pydantic_validators = import_v1_pydantic(".validators")
+datetime_adapter = TypeAdapter(datetime)
 
 
 class DateTimeOrStr(datetime):
     @classmethod
-    def __get_validators__(cls):
-        yield validate_dt_or_str
+    def __get_pydantic_core_schema__(cls, _source_type, _handler: GetCoreSchemaHandler):
+        return core_schema.no_info_plain_validator_function(cls.validate)
 
     @classmethod
     def __get_pydantic_json_schema__(cls, field_schema):
@@ -19,14 +22,16 @@ class DateTimeOrStr(datetime):
         )
 
     @classmethod
-    def validate(cls, v):
-        return validate_dt_or_str(v)
+    def validate(cls, value):
+        return validate_dt_or_str(value)
 
     def __repr__(self):
-        return f"DateTimeOrStp({super().__repr__()})"
+        return f"DateTimeOrStr({super().__repr__()})"
 
 
-def validate_dt_or_str(value: str) -> Union[datetime, str]:
+def validate_dt_or_str(value: Union[str, datetime], _info=None):
+    if isinstance(value, datetime):
+        return value
     # Try to parse standard (RFC 822)
     try:
         return parsedate_to_datetime(value)
@@ -34,8 +39,8 @@ def validate_dt_or_str(value: str) -> Union[datetime, str]:
         pass
     # Try ISO or timestamp
     try:
-        return pydantic_validators.parse_datetime(value)
-    except ValueError:
+        return datetime_adapter.validate_python(value)
+    except ValidationError:
         pass
 
     return value

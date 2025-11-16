@@ -1,21 +1,26 @@
-from __future__ import annotations
-
 from copy import deepcopy
-from typing import Any, Dict, Generic, Optional, TypeVar, Union
+from json import loads
+from typing import TYPE_CHECKING, Generic, Optional, TypeVar, Union
 
-from pydantic import BaseModel, Field, model_validator
-from pydantic.json import pydantic_encoder
+from rss_parser.models.legacy import XMLBaseModel
+from rss_parser.models.legacy.pydantic_proxy import import_v1_pydantic
+from rss_parser.models.legacy.utils import snake_case
 
-from rss_parser.models import XMLBaseModel
-from rss_parser.models.utils import snake_case
+if TYPE_CHECKING:
+    from pydantic.v1 import generics as pydantic_generics
+    from pydantic.v1 import json as pydantic_json
+else:
+    pydantic = import_v1_pydantic()
+    pydantic_generics = import_v1_pydantic(".generics")
+    pydantic_json = import_v1_pydantic(".json")
 
 T = TypeVar("T")
 
 
-class Tag(BaseModel, Generic[T]):
+class Tag(pydantic_generics.GenericModel, Generic[T]):
     """
-    >>> from rss_parser.models import XMLBaseModel
-    >>> from rss_parser.models.types.tag import Tag
+    >>> from rss_parser.models.legacy import XMLBaseModel
+    >>> from rss_parser.models.legacy.types.tag import Tag
     >>> class Model(XMLBaseModel):
     ...     width: Tag[int]
     ...     category: Tag[str]
@@ -27,7 +32,7 @@ class Tag(BaseModel, Generic[T]):
     >>> m.width.content
     48
     >>> type(m.width), type(m.width.content)
-    (<class 'rss_parser.models.rss.image.Tag[int]'>, <class 'int'>)
+    (<class 'rss_parser.models.legacy.rss.image.Tag[int]'>, <class 'int'>)
     >>> # The attributes are empty by default
     >>> m.width.attributes
     {}
@@ -45,8 +50,8 @@ class Tag(BaseModel, Generic[T]):
     """
 
     # Optional in case of self-closing tags
-    content: Optional[T] = None
-    attributes: Dict[str, Any] = Field(default_factory=dict)
+    content: Optional[T]
+    attributes: dict
 
     def __getattr__(self, item):
         """Forward default getattr for content for simplicity."""
@@ -58,27 +63,29 @@ class Tag(BaseModel, Generic[T]):
     def __setitem__(self, key, value):
         self.content[key] = value
 
-    @model_validator(mode="before")
     @classmethod
-    def pre_convert(cls, value: Union[T, dict, "Tag[T]"]) -> Union["Tag[T]", Dict[str, Any]]:
+    def __get_validators__(cls):
+        yield cls.pre_convert
+        yield cls.validate
+
+    @classmethod
+    def pre_convert(cls, v: Union[T, dict], **kwargs):  # noqa
         """Used to split tag's text with other xml attributes."""
-        if isinstance(value, cls):
-            return value
-
-        if isinstance(value, dict):
-            data = deepcopy(value)
+        if isinstance(v, dict):
+            data = deepcopy(v)
             attributes = {snake_case(k.lstrip("@")): v for k, v in data.items() if k.startswith("@")}
-            content = data.pop("#text", data) if len(attributes) != len(data) else None
+            content = data.pop("#text", data) if not len(attributes) == len(data) else None
             return {"content": content, "attributes": attributes}
-
-        return {"content": value, "attributes": {}}
+        return {"content": v, "attributes": {}}
 
     @classmethod
-    def flatten_tag_encoder(cls, value):
+    def flatten_tag_encoder(cls, v):
         """Encoder that translates Tag objects (dict) to plain .content values (T)."""
-        if isinstance(value, XMLBaseModel):
-            return value.dict_plain()
-        if isinstance(value, Tag):
-            return value.content
+        bases = v.__class__.__bases__
+        if XMLBaseModel in bases:
+            # Can't pass encoder to .dict :/
+            return loads(v.json_plain())
+        if cls in bases:
+            return v.content
 
-        return pydantic_encoder(value)
+        return pydantic_json.pydantic_encoder(v)
