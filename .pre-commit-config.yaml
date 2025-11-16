@@ -31,6 +31,7 @@ repos:
           - run
           - mypy
           - rss_parser
+        pass_filenames: false
         language: system
         stages: [ push ]
 

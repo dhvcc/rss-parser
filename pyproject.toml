@@ -100,9 +100,6 @@ ignore-names = ["LegacyRSS"]
 "**/__init__.py" = ["F401"]
 "rss_parser/models/atom/**" = ["A003"]
 
-[tool.mypy]
-explicit_package_bases = true
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
