@@ -23,13 +23,13 @@ class OptionalItemElementsMixin(XMLBaseModel):
     author: Optional[Tag[str]] = None
     "Email address of the author of the item."
 
-    categories: Optional[OnlyList[Tag[str]]] = Field(alias="category", default_factory=list)
+    categories: OnlyList[Tag[str]] = Field(alias="category", default_factory=OnlyList)
     "Includes the item in one or more categories."
 
     comments: Optional[Tag[str]] = None
     "URL of a page for comments relating to the item."
 
-    enclosures: Optional[OnlyList[Tag[str]]] = Field(alias="enclosure", default_factory=list)
+    enclosures: OnlyList[Tag[str]] = Field(alias="enclosure", default_factory=OnlyList)
     # enclosure: Optional[OnlyList[Tag[str]]] = None
     "Describes a media object that is attached to the item.\nCan be a list -> https://validator.w3.org/feed/docs/warning/DuplicateEnclosure.html"
 

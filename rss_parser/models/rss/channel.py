@@ -27,7 +27,7 @@ class RequiredChannelElementsMixin(XMLBaseModel):
 class OptionalChannelElementsMixin(XMLBaseModel):
     """https://www.rssboard.org/rss-specification#optionalChannelElements."""
 
-    items: Optional[OnlyList[Tag[Item]]] = Field(alias="item", default_factory=list)
+    items: OnlyList[Tag[Item]] = Field(alias="item", default_factory=OnlyList)
 
     language: Optional[Tag[str]] = None  # en-us
     "The language the channel is written in. This allows aggregators to group all Italian language sites, for example, on a single page."  # noqa
@@ -46,7 +46,7 @@ class OptionalChannelElementsMixin(XMLBaseModel):
     last_build_date: Optional[Tag[DateTimeOrStr]] = None  # Sat, 07 Sep 2002 09:42:31 GMT
     "The last time the content of the channel changed."
 
-    categories: Optional[OnlyList[Tag[str]]] = Field(alias="category", default_factory=list)
+    categories: OnlyList[Tag[str]] = Field(alias="category", default_factory=OnlyList)
     "Specify one or more categories that the channel belongs to. Follows the same rules as the <item.py>-level category element."  # noqa
 
     generator: Optional[Tag[str]] = None  # MightyInHouse Content System v2.3

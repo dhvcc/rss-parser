@@ -21,10 +21,10 @@ class RequiredAtomEntryMixin(XMLBaseModel):
 
 
 class RecommendedAtomEntryMixin(XMLBaseModel):
-    authors: Optional[OnlyList[Tag[Person]]] = Field(alias="author", default_factory=list)
+    authors: OnlyList[Tag[Person]] = Field(alias="author", default_factory=OnlyList)
     "Entry authors."
 
-    links: Optional[OnlyList[Tag[str]]] = Field(alias="link", default_factory=list)
+    links: OnlyList[Tag[str]] = Field(alias="link", default_factory=OnlyList)
     "The URL of the entry."
 
     content: Optional[Tag[str]] = None
@@ -35,10 +35,10 @@ class RecommendedAtomEntryMixin(XMLBaseModel):
 
 
 class OptionalAtomEntryMixin(XMLBaseModel):
-    categories: Optional[OnlyList[Tag[dict]]] = Field(alias="category", default_factory=list)
+    categories: OnlyList[Tag[dict]] = Field(alias="category", default_factory=OnlyList)
     "Specifies a categories that the entry belongs to."
 
-    contributors: Optional[OnlyList[Tag[Person]]] = Field(alias="contributor", default_factory=list)
+    contributors: OnlyList[Tag[Person]] = Field(alias="contributor", default_factory=OnlyList)
     "Entry contributors."
 
     rights: Optional[Tag[str]] = None

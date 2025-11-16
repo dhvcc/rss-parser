@@ -22,21 +22,21 @@ class RequiredAtomFeedMixin(XMLBaseModel):
 
 
 class RecommendedAtomFeedMixin(XMLBaseModel):
-    authors: Optional[OnlyList[Tag[Person]]] = Field(alias="author", default_factory=list)
+    authors: OnlyList[Tag[Person]] = Field(alias="author", default_factory=OnlyList)
     "Names one author of the feed. A feed may have multiple author elements."
 
-    links: Optional[OnlyList[Tag[str]]] = Field(alias="link", default_factory=list)
+    links: OnlyList[Tag[str]] = Field(alias="link", default_factory=OnlyList)
     "The URL to the feed. A feed may have multiple link elements."
 
 
 class OptionalAtomFeedMixin(XMLBaseModel):
-    entries: Optional[OnlyList[Tag[Entry]]] = Field(alias="entry", default_factory=list)
+    entries: OnlyList[Tag[Entry]] = Field(alias="entry", default_factory=OnlyList)
     "The entries in the feed. A feed may have multiple entry elements."
 
-    categories: Optional[OnlyList[Tag[dict]]] = Field(alias="category", default_factory=list)
+    categories: OnlyList[Tag[dict]] = Field(alias="category", default_factory=OnlyList)
     "Specifies a categories that the feed belongs to. The feed may have multiple categories elements."
 
-    contributors: Optional[OnlyList[Tag[Person]]] = Field(alias="contributor", default_factory=list)
+    contributors: OnlyList[Tag[Person]] = Field(alias="contributor", default_factory=OnlyList)
     "Feed contributors."
 
     generator: Optional[Tag[str]] = None
