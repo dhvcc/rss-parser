@@ -9,7 +9,6 @@ on:
       - "README.md"
       - "pre-commit-config.yaml"
       - "LICENSE"
-  pull_request:
 
 jobs:
   test:
