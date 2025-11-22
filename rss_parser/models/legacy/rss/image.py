@@ -1,7 +1,7 @@
 from typing import Optional
 
-from rss_parser.models import XMLBaseModel
-from rss_parser.models.types.tag import Tag
+from rss_parser.models.legacy import XMLBaseModel
+from rss_parser.models.legacy.types.tag import Tag
 
 
 class Image(XMLBaseModel):

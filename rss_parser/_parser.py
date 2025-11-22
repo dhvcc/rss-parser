@@ -48,6 +48,10 @@ class BaseParser:
         if root_key:
             root = root.get(root_key, root)
 
+        if hasattr(schema, "model_validate"):
+            return schema.model_validate(root)
+
+        # Pydantic v1 only
         return schema.parse_obj(root)
 
 

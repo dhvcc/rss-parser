@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rss-parser"
-version = "2.1.1"
+version = "3.0.0a2"
 description = "Typed pythonic RSS/Atom parser"
 authors = ["dhvcc <1337kwiz@gmail.com>"]
 license = "GPL-3.0"
@@ -28,6 +28,8 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
 packages = [{ include = "rss_parser" }, { include = "rss_parser/py.typed" }]
 
@@ -39,7 +41,7 @@ packages = [{ include = "rss_parser" }, { include = "rss_parser/py.typed" }]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-pydantic = ">1.9"
+pydantic = "<3.0"
 xmltodict = "^0.13.0"
 types-xmltodict = "^0.14.0.20241009"
 
@@ -85,6 +87,9 @@ select = [
     "RUF", # ruff
 ]
 
+[tool.ruff.lint.pep8-naming]
+ignore-names = ["LegacyRSS"]
+
 [tool.ruff.per-file-ignores]
 "tests/**.py" = [
     "S101",   # Use of assert detected
@@ -94,7 +99,6 @@ select = [
 ]
 "**/__init__.py" = ["F401"]
 "rss_parser/models/atom/**" = ["A003"]
-
 
 [build-system]
 requires = ["poetry-core"]

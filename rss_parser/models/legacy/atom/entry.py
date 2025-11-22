@@ -1,12 +1,13 @@
 from typing import Optional
 
-from pydantic import Field
+from rss_parser.models.legacy import XMLBaseModel
+from rss_parser.models.legacy.atom.person import Person
+from rss_parser.models.legacy.pydantic_proxy import import_v1_pydantic
+from rss_parser.models.legacy.types.date import DateTimeOrStr
+from rss_parser.models.legacy.types.only_list import OnlyList
+from rss_parser.models.legacy.types.tag import Tag
 
-from rss_parser.models import XMLBaseModel
-from rss_parser.models.atom.person import Person
-from rss_parser.models.types.date import DateTimeOrStr
-from rss_parser.models.types.only_list import OnlyList
-from rss_parser.models.types.tag import Tag
+pydantic = import_v1_pydantic()
 
 
 class RequiredAtomEntryMixin(XMLBaseModel):
@@ -21,10 +22,10 @@ class RequiredAtomEntryMixin(XMLBaseModel):
 
 
 class RecommendedAtomEntryMixin(XMLBaseModel):
-    authors: OnlyList[Tag[Person]] = Field(alias="author", default_factory=OnlyList)
+    authors: Optional[OnlyList[Tag[Person]]] = pydantic.Field(alias="author", default=[])
     "Entry authors."
 
-    links: OnlyList[Tag[str]] = Field(alias="link", default_factory=OnlyList)
+    links: Optional[OnlyList[Tag[str]]] = pydantic.Field(alias="link", default=[])
     "The URL of the entry."
 
     content: Optional[Tag[str]] = None
@@ -35,10 +36,10 @@ class RecommendedAtomEntryMixin(XMLBaseModel):
 
 
 class OptionalAtomEntryMixin(XMLBaseModel):
-    categories: OnlyList[Tag[dict]] = Field(alias="category", default_factory=OnlyList)
+    categories: Optional[OnlyList[Tag[dict]]] = pydantic.Field(alias="category", default=[])
     "Specifies a categories that the entry belongs to."
 
-    contributors: OnlyList[Tag[Person]] = Field(alias="contributor", default_factory=OnlyList)
+    contributors: Optional[OnlyList[Tag[Person]]] = pydantic.Field(alias="contributor", default=[])
     "Entry contributors."
 
     rights: Optional[Tag[str]] = None

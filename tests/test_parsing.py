@@ -1,11 +1,29 @@
-import logging
+import sys
 from typing import Type
 
 import pytest
 
 from rss_parser import AtomParser, BaseParser, RSSParser
 
-logger = logging.getLogger(__name__)
+if sys.version_info < (3, 14):
+    from rss_parser.models.legacy.atom import Atom as LegacyAtom
+    from rss_parser.models.legacy.rss import RSS as LegacyRSS
+
+    class LegacyRSSParser(RSSParser):
+        schema = LegacyRSS
+
+    class LegacyAtomParser(AtomParser):
+        schema = LegacyAtom
+
+    rss_parser_list = [RSSParser, LegacyRSSParser]
+    rss_ids = ["rss-v2", "rss-legacy"]
+    atom_parser_list = [AtomParser, LegacyAtomParser]
+    atom_ids = ["atom-v2", "atom-legacy"]
+else:
+    rss_parser_list = [RSSParser]
+    rss_ids = ["rss-v2"]
+    atom_parser_list = [AtomParser]
+    atom_ids = ["atom-v2"]
 
 
 class DataHelper:
@@ -16,8 +34,24 @@ class DataHelper:
 
         assert rss
 
-        parsed = rss.dict()
+        if hasattr(rss, "model_dump"):
+            parsed = rss.model_dump()
+        else:
+            parsed = rss.dict()
         assert parsed == result
+
+
+RSS_PARSERS = pytest.mark.parametrize(
+    "parser_cls",
+    rss_parser_list,
+    ids=rss_ids,
+)
+
+ATOM_PARSERS = pytest.mark.parametrize(
+    "parser_cls",
+    atom_parser_list,
+    ids=atom_ids,
+)
 
 
 @pytest.mark.usefixtures("sample_and_result")
@@ -33,8 +67,9 @@ class TestRSS:
         ],
         indirect=True,
     )
-    def test_parses_all_rss_samples(self, sample_and_result):
-        DataHelper.compare_parsing(sample_and_result, parser=RSSParser)
+    @RSS_PARSERS
+    def test_parses_all_rss_samples(self, sample_and_result, parser_cls):
+        DataHelper.compare_parsing(sample_and_result, parser=parser_cls)
 
 
 @pytest.mark.usefixtures("sample_and_result")
@@ -47,5 +82,13 @@ class TestAtom:
         ],
         indirect=True,
     )
-    def test_parses_all_atom_samples(self, sample_and_result):
-        DataHelper.compare_parsing(sample_and_result, parser=AtomParser)
+    @ATOM_PARSERS
+    def test_parses_all_atom_samples(self, sample_and_result, parser_cls):
+        DataHelper.compare_parsing(sample_and_result, parser=parser_cls)
+
+
+class TestLegacyImportError:
+    @pytest.mark.skipif(sys.version_info < (3, 14), reason="Legacy models still work in Python 3.13 and below")
+    def test_legacy_import_error(self):
+        with pytest.raises(ImportError):
+            from rss_parser.models.legacy import XMLBaseModel  # noqa: F401, PLC0415

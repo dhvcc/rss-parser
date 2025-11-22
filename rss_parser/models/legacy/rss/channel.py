@@ -1,14 +1,15 @@
 from typing import Optional
 
-from pydantic import Field
+from rss_parser.models.legacy import XMLBaseModel
+from rss_parser.models.legacy.pydantic_proxy import import_v1_pydantic
+from rss_parser.models.legacy.rss.image import Image
+from rss_parser.models.legacy.rss.item import Item
+from rss_parser.models.legacy.rss.text_input import TextInput
+from rss_parser.models.legacy.types.date import DateTimeOrStr
+from rss_parser.models.legacy.types.only_list import OnlyList
+from rss_parser.models.legacy.types.tag import Tag
 
-from rss_parser.models import XMLBaseModel
-from rss_parser.models.rss.image import Image
-from rss_parser.models.rss.item import Item
-from rss_parser.models.rss.text_input import TextInput
-from rss_parser.models.types.date import DateTimeOrStr
-from rss_parser.models.types.only_list import OnlyList
-from rss_parser.models.types.tag import Tag
+pydantic = import_v1_pydantic()
 
 
 class RequiredChannelElementsMixin(XMLBaseModel):
@@ -27,7 +28,7 @@ class RequiredChannelElementsMixin(XMLBaseModel):
 class OptionalChannelElementsMixin(XMLBaseModel):
     """https://www.rssboard.org/rss-specification#optionalChannelElements."""
 
-    items: OnlyList[Tag[Item]] = Field(alias="item", default_factory=OnlyList)
+    items: Optional[OnlyList[Tag[Item]]] = pydantic.Field(alias="item", default=[])
 
     language: Optional[Tag[str]] = None  # en-us
     "The language the channel is written in. This allows aggregators to group all Italian language sites, for example, on a single page."  # noqa
@@ -46,7 +47,7 @@ class OptionalChannelElementsMixin(XMLBaseModel):
     last_build_date: Optional[Tag[DateTimeOrStr]] = None  # Sat, 07 Sep 2002 09:42:31 GMT
     "The last time the content of the channel changed."
 
-    categories: OnlyList[Tag[str]] = Field(alias="category", default_factory=OnlyList)
+    categories: Optional[OnlyList[Tag[str]]] = pydantic.Field(alias="category", default=[])
     "Specify one or more categories that the channel belongs to. Follows the same rules as the <item.py>-level category element."  # noqa
 
     generator: Optional[Tag[str]] = None  # MightyInHouse Content System v2.3

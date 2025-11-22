@@ -1,32 +1,25 @@
-"""
-Models created according to https://www.rssboard.org/rss-specification.
+from __future__ import annotations
 
-Some types and validation may be a bit custom to account for broken standards in some RSS feeds.
-"""
-
-from json import loads
-from typing import TYPE_CHECKING
+from pydantic import BaseModel, ConfigDict
 
 from rss_parser.models.utils import camel_case
-from rss_parser.pydantic_proxy import import_v1_pydantic
-
-if TYPE_CHECKING:
-    from pydantic import v1 as pydantic
-else:
-    pydantic = import_v1_pydantic()
 
 
-class XMLBaseModel(pydantic.BaseModel):
-    class Config:
-        alias_generator = camel_case
+class XMLBaseModel(BaseModel):
+    model_config = ConfigDict(alias_generator=camel_case)
 
-    def json_plain(self, **kw):
+    def json_plain(self, **kwargs) -> str:
         """
-        Run pydantic's json with custom encoder to encode Tags as only content.
+        Serialize the model while flattening Tag instances into their content.
         """
         from rss_parser.models.types.tag import Tag  # noqa: PLC0415
 
-        return self.json(models_as_dict=False, encoder=Tag.flatten_tag_encoder, **kw)
+        return self.model_dump_json(fallback=Tag.flatten_tag_encoder, **kwargs)
 
-    def dict_plain(self, **kw):
-        return loads(self.json_plain(**kw))
+    def dict_plain(self, **kwargs):
+        from rss_parser.models.types.tag import Tag  # noqa: PLC0415
+
+        return self.model_dump(mode="json", fallback=Tag.flatten_tag_encoder, **kwargs)
+
+
+__all__ = ("XMLBaseModel",)

@@ -1,23 +1,33 @@
-from typing import Generic, TypeVar, Union
+from __future__ import annotations
 
-from rss_parser.pydantic_proxy import import_v1_pydantic
+from typing import Annotated, Generic, TypeVar
 
-pydantic_validators = import_v1_pydantic(".validators")
+from pydantic.functional_validators import AfterValidator, BeforeValidator
 
 T = TypeVar("T")
 
 
 class OnlyList(list, Generic[T]):
-    @classmethod
-    def __get_validators__(cls):
-        yield cls.validate
-        yield pydantic_validators.list_validator
+    @staticmethod
+    def _ensure_list(value):
+        if isinstance(value, list):
+            return value
+        if value is None:
+            return []
+        return [value]
 
     @classmethod
-    def validate(cls, v: Union[dict, list]):
-        if isinstance(v, list):
-            return cls(v)
-        return cls([v])
+    def _as_only_list(cls, value):
+        if isinstance(value, cls):
+            return value
+        return cls(value)
 
     def __repr__(self):
         return f"OnlyList({super().__repr__()})"
+
+    def __class_getitem__(cls, item):
+        return Annotated[
+            list[item],
+            BeforeValidator(cls._ensure_list),
+            AfterValidator(cls._as_only_list),
+        ]
