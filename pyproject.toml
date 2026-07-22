@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rss-parser"
-version = "3.0.0"
+version = "4.0.0"
 description = "Typed pythonic RSS/Atom parser"
 authors = ["dhvcc <1337kwiz@gmail.com>"]
 license = "GPL-3.0"
@@ -41,9 +41,9 @@ packages = [{ include = "rss_parser" }, { include = "rss_parser/py.typed" }]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-pydantic = "<3.0"
-xmltodict = "^0.13.0"
-types-xmltodict = "^0.14.0.20241009"
+pydantic = ">=2.7,<3.0"
+xmltodict = ">=0.13.0"
+typing-extensions = ">=4.6"
 
 [tool.poetry.group.dev.dependencies]
 ipython = "*"
@@ -53,6 +53,13 @@ ruff = "*"
 rich = "*"
 pytest = "^7.4.0"
 mypy = "*"
+types-xmltodict = "^0.14.0.20241009"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+mkdocs-material = "^9.5"
 
 [tool.pytest.ini_options]
 addopts = "--color=yes"
@@ -63,12 +70,14 @@ log_level = "INFO"
 
 [tool.black]
 line-length = 120
-target-version = ["py38"]
+target-version = ["py39"]
 
 [tool.ruff]
 line-length = 120
-target-version = "py38"
+target-version = "py39"
 respect-gitignore = true
+
+[tool.ruff.lint]
 select = [
     "PL",  # pylint
     "F",   # pyflakes
@@ -87,15 +96,14 @@ select = [
     "RUF", # ruff
 ]
 
-[tool.ruff.lint.pep8-naming]
-ignore-names = ["LegacyRSS"]
-
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.per-file-ignores]
 "tests/**.py" = [
-    "S101",   # Use of assert detected
-    "ARG001", # Unused function argument
-    "S311",   # Allow use of random
-    "S301",   # Allow use of pickle
+    "S101",    # Use of assert detected
+    "ARG001",  # Unused function argument
+    "PLR2004", # Magic values in assertions are fine
+]
+"scripts/**.py" = [
+    "E402", # sys.path setup before imports
 ]
 "**/__init__.py" = ["F401"]
 "rss_parser/models/atom/**" = ["A003"]
