@@ -31,6 +31,16 @@ the fields live directly on `Channel`, `Item`, `Feed`, `Entry`. Subclass those i
 
 **`atom.Entry.source`** is now a typed `Tag[Source]` instead of `Tag[str]`.
 
+**Atom `updated` is optional.** The spec requires it, but major real-world publishers omit it
+(YouTube feeds have no feed-level `<updated>`), so `Feed.updated` and `Entry.updated` can be `None`.
+
+**Malformed XML raises `InvalidXMLError`** (a `ValueError` subclass) instead of leaking
+xmltodict's `ExpatError`. The original error is available as `__cause__`.
+
+**`Tag.flatten_tag_encoder` was removed.** It was the implementation detail behind
+`json_plain()`/`dict_plain()`, which are now implemented properly (in 3.x they silently
+returned the *unflattened* structure - this is also fixed).
+
 **Unknown tags are kept.** Models now use pydantic's `extra="allow"`, so undeclared tags
 (e.g. `itunes:*` on the plain RSS schema) show up in `model_dump()` output and in `model_extra`
 instead of being dropped.

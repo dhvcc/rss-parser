@@ -102,6 +102,31 @@ rdf.channel.content.model_extra["dc:publisher"]
 
 ## Strictness and errors
 
+The full error contract:
+
+| Problem | Raised |
+| --- | --- |
+| Data is not well-formed XML | `InvalidXMLError` (the original `ExpatError` is `__cause__`) |
+| Well-formed XML, but not a known feed root | `UnknownFeedTypeError` (only from `parse()`/`detect_feed_type()`) |
+| Valid feed XML that violates the schema | pydantic `ValidationError` |
+
+Both rss-parser errors subclass `ValueError`, so `except ValueError` catches everything
+except schema violations.
+
+```python
+from rss_parser import parse, InvalidXMLError, UnknownFeedTypeError
+from pydantic import ValidationError
+
+try:
+    feed = parse(data)
+except InvalidXMLError:
+    ...  # not XML
+except UnknownFeedTypeError:
+    ...  # XML, but not a feed
+except ValidationError:
+    ...  # a feed, but breaks the schema rules
+```
+
 Validation errors are raised as pydantic `ValidationError` with a precise path to the problem:
 
 ```
@@ -110,6 +135,8 @@ channel.content.item.0.content
   Value error, either <title> or <description> must be present in an <item> [type=value_error, ...]
 ```
 
-Required fields follow the specs: an RSS channel must have `title`, `link` and `description`;
-an item must have at least one of `title`/`description`; an Atom feed/entry must have
-`id`, `title` and `updated`.
+Required fields follow the specs with one deliberate exception: an RSS channel must have
+`title`, `link` and `description`; an item must have at least one of `title`/`description`;
+an Atom feed/entry must have `id` and `title`. Atom's `updated` is required by the spec but
+optional here, because major real-world publishers omit it (YouTube's feeds have no
+feed-level `<updated>`).
