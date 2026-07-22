@@ -1,20 +1,40 @@
-import pickle
+import json
 from pathlib import Path
+from typing import Dict, Iterator, Tuple, Type
 
-import pytest
+from rss_parser import AtomParser, BaseParser, PodcastParser, RDFParser, RSSParser
 
 # Get relative path to samples dir no matter the working dir
-sample_dir = Path(__file__).parent.resolve() / "samples"
+SAMPLES_DIR = Path(__file__).parent.resolve() / "samples"
+
+# Samples are grouped by feed kind: tests/samples/<kind>/<name>/data.xml + result.json.
+# Adding a new sample dir is enough for it to be picked up by the snapshot tests.
+PARSERS_BY_KIND: Dict[str, Type[BaseParser]] = {
+    "rss": RSSParser,
+    "atom": AtomParser,
+    "rdf": RDFParser,
+    "podcast": PodcastParser,
+}
 
 
-@pytest.fixture
-def sample_and_result(request):
-    sample_name = request.param[0]
+def iter_samples() -> Iterator[Tuple[str, Path]]:
+    """Yield (kind, sample_dir) for every sample that has a data.xml."""
+    for kind_dir in sorted(SAMPLES_DIR.iterdir()):
+        if not kind_dir.is_dir():
+            continue
+        for sample_dir in sorted(kind_dir.iterdir()):
+            if (sample_dir / "data.xml").is_file():
+                yield kind_dir.name, sample_dir
 
-    with open(sample_dir / sample_name / "data.xml", encoding="utf-8") as sample_file:
-        sample = sample_file.read()
 
-    with open(sample_dir / sample_name / "result.pkl", "rb") as result_file:
-        result = pickle.load(result_file)
+def read_sample(sample_dir: Path) -> str:
+    return (sample_dir / "data.xml").read_text(encoding="utf-8")
 
-    return sample, result
+
+def read_snapshot(sample_dir: Path) -> dict:
+    return json.loads((sample_dir / "result.json").read_text(encoding="utf-8"))
+
+
+def dump_for_snapshot(model) -> dict:
+    # mode="json" so that datetimes and other rich types compare as their JSON form
+    return model.model_dump(mode="json", by_alias=True)

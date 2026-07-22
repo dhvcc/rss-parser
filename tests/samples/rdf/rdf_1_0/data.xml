@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:syn="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns="http://purl.org/rss/1.0/">
+
+  <channel rdf:about="http://meerkat.example.com/?_fl=rss1.0">
+    <title>Meerkat</title>
+    <link>http://meerkat.example.com</link>
+    <description>Meerkat: An Open Wire Service</description>
+    <dc:publisher>The Example Network</dc:publisher>
+    <dc:creator>Rael Example (rael@example.com)</dc:creator>
+    <dc:rights>Copyright 2000 The Example Network</dc:rights>
+    <dc:date>2000-01-01T12:00+00:00</dc:date>
+    <syn:updatePeriod>hourly</syn:updatePeriod>
+    <syn:updateFrequency>2</syn:updateFrequency>
+    <syn:updateBase>2000-01-01T12:00+00:00</syn:updateBase>
+
+    <image rdf:resource="http://meerkat.example.com/icons/meerkat-powered.jpg" />
+
+    <items>
+      <rdf:Seq>
+        <rdf:li rdf:resource="http://c.example.com/rcs_id=1234" />
+        <rdf:li rdf:resource="http://c.example.com/rcs_id=1235" />
+      </rdf:Seq>
+    </items>
+
+    <textinput rdf:resource="http://meerkat.example.com" />
+  </channel>
+
+  <image rdf:about="http://meerkat.example.com/icons/meerkat-powered.jpg">
+    <title>Meerkat Powered!</title>
+    <url>http://meerkat.example.com/icons/meerkat-powered.jpg</url>
+    <link>http://meerkat.example.com</link>
+  </image>
+
+  <item rdf:about="http://c.example.com/rcs_id=1234">
+    <title>XML: A Disruptive Technology</title>
+    <link>http://c.example.com/rcs_id=1234</link>
+    <description>XML is placing increasingly heavy loads on the existing technical infrastructure of the Internet.</description>
+    <dc:creator>Simon St.Example</dc:creator>
+  </item>
+
+  <item rdf:about="http://c.example.com/rcs_id=1235">
+    <title>A Second Item Without A Description</title>
+    <link>http://c.example.com/rcs_id=1235</link>
+  </item>
+
+  <textinput rdf:about="http://meerkat.example.com">
+    <title>Search Meerkat</title>
+    <description>Search Meerkat's RSS Database...</description>
+    <name>s</name>
+    <link>http://meerkat.example.com/</link>
+  </textinput>
+</rdf:RDF>
