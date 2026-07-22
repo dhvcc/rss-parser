@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns="http://purl.org/rss/1.0/"
+ xmlns:admin="http://webns.net/mvcb/"
+ xmlns:content="http://purl.org/rss/1.0/modules/content/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+ xmlns:syn="http://purl.org/rss/1.0/modules/syndication/"
+ xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+>
+
+<channel rdf:about="https://slashdot.org/">
+<title>Slashdot</title>
+<link>https://slashdot.org/</link>
+<description>News for nerds, stuff that matters</description>
+<dc:language>en-us</dc:language>
+<dc:rights>Copyright Slashdot Media. All Rights Reserved.</dc:rights>
+<dc:date>2026-07-22T23:08:52+00:00</dc:date>
+<dc:publisher>Slashdot Media</dc:publisher>
+<dc:creator>feedback@slashdot.org</dc:creator>
+<dc:subject>Technology</dc:subject>
+<syn:updateBase>1970-01-01T00:00+00:00</syn:updateBase>
+<syn:updateFrequency>1</syn:updateFrequency>
+<syn:updatePeriod>hourly</syn:updatePeriod>
+<items>
+ <rdf:Seq>
+  <rdf:li rdf:resource="https://tech.slashdot.org/story/26/07/22/2010225/gm-is-quietly-becoming-a-subscriptions-company?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="https://apple.slashdot.org/story/26/07/22/2050240/ios-27-code-suggests-apple-could-restrict-leased-devices-after-missed-payments?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="https://linux.slashdot.org/story/26/07/22/2033256/linux-kernel-team-publishes-432-cves-in-two-days?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="https://hardware.slashdot.org/story/26/07/22/1958256/apple-partners-with-klarna-to-offer-iphones-macs-on-a-subscription-basis?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="https://tech.slashdot.org/story/26/07/22/179241/the-army-is-burning-through-its-ai-tokens?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="https://games.slashdot.org/story/26/07/22/1659215/microsoft-announces-xbox-backward-compatibility-for-pc?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="https://mobile.slashdot.org/story/26/07/22/1652232/samsung-galaxy-z-fold-8-announced-to-compete-with-future-iphone-fold?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="https://entertainment.slashdot.org/story/26/07/22/0426218/lg-to-ban-residential-proxies-from-smart-tv-apps?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="https://news.slashdot.org/story/26/07/22/040209/jack-dorsey-takes-on-slack-and-github-with-new-ai-workplace-platform-buzz?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="https://news.slashdot.org/story/26/07/22/049248/long-presumed-dead-a-thriving-coral-reef-is-discovered-in-west-africa?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="https://it.slashdot.org/story/26/07/22/0348206/openai-says-its-ai-models-acted-on-its-own-in-an-unprecedented-hack?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="https://tech.slashdot.org/story/26/07/21/216206/france-becomes-first-european-country-to-ban-social-media-access-for-under-15s?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="https://slashdot.org/story/26/07/21/2050242/airbus-migrating-70-critical-apps-from-aws-to-frances-scaleway?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="https://tech.slashdot.org/story/26/07/21/2037254/tesla-robotaxis-go-to-florida?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="https://news.slashdot.org/story/26/07/21/2022247/firefox-153-released?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+ </rdf:Seq>
+</items>
+<image rdf:resource="https://a.fsdn.com/sd/topics/topicslashdot.gif" />
+<textinput rdf:resource="https://slashdot.org/search.pl" />
+</channel>
+<image rdf:about="https://a.fsdn.com/sd/topics/topicslashdot.gif">
+<title>Slashdot</title>
+<url>https://a.fsdn.com/sd/topics/topicslashdot.gif</url>
+<link>https://slashdot.org/</link>
+</image>
+<item rdf:about="https://tech.slashdot.org/story/26/07/22/2010225/gm-is-quietly-becoming-a-subscriptions-company?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>GM Is Quietly Becoming a Subscriptions Company</title>
+<link>https://tech.slashdot.org/story/26/07/22/2010225/gm-is-quietly-becoming-a-subscriptions-company?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</link>
+<description>"General Motors has been pulling a Tim Cook and boosting its software and subscription business," reports Business Insider. During the automaker's Tuesday earnings call, executives said they're increasingly leaning on software subscriptions like OnStar and Super Cruise to generate high-margin recurring revenue long after customers buy their vehicles. GM says OnStar brought in about $800 million in the second quarter, while Super Cruise revenue grew about 70% year over year. From the report: GM says its software business keeps roughly 70 cents of every dollar it brings in. That's a rare level of profitability in the auto industry, as many car sales generate just four to 10 cents per sales dollar. [...] GM expects to add about 1 million OnStar subscribers this year, bringing the total close to 13 million. Super Cruise, GM's hands-free, eyes-on driving system, is growing even faster. GM added about 70,000 subscribers during the quarter and expects to end the year with more than 850,000. Revenue from the service increased about 70% from a year earlier.
+ 
+And a lot of drivers are sticking around after the free period ends. GM said between 30% and 40% of eligible owners continue paying after their included three-year Super Cruise subscription expires. [..] "We do think we have tremendous levers, multiple levers of growth," Barra said on the call. "We definitely think there's a lot of opportunity at GM to grow, improve margins, and become less cyclical."
+ 
+"Software and services are becoming increasingly important to how customers experience GM vehicles and how we deliver value beyond the initial purchase," a spokesperson previously told Business Insider. "As vehicles become more software-defined, we can introduce new digital experiences through updates and optional services rather than hardware changes."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=GM+Is+Quietly+Becoming+a+Subscriptions+Company%3A+https%3A%2F%2Ftech.slashdot.org%2Fstory%2F26%2F07%2F22%2F2010225%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Ftech.slashdot.org%2Fstory%2F26%2F07%2F22%2F2010225%2Fgm-is-quietly-becoming-a-subscriptions-company%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://tech.slashdot.org/story/26/07/22/2010225/gm-is-quietly-becoming-a-subscriptions-company?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="https://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=24050328&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;</description>
+<dc:creator>BeauHD</dc:creator>
+<dc:date>2026-07-22T23:00:00+00:00</dc:date>
+<dc:subject>transportation</dc:subject>
+<slash:department>subscribe-to-drive</slash:department>
+<slash:section>technology</slash:section>
+<slash:comments>1</slash:comments>
+<slash:hit_parade>1,1,1,1,0,0,0</slash:hit_parade>
+</item>
+<item rdf:about="https://apple.slashdot.org/story/26/07/22/2050240/ios-27-code-suggests-apple-could-restrict-leased-devices-after-missed-payments?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>iOS 27 Code Suggests Apple Could Restrict Leased Devices After Missed Payments</title>
+<link>https://apple.slashdot.org/story/26/07/22/2050240/ios-27-code-suggests-apple-could-restrict-leased-devices-after-missed-payments?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</link>
+<description>Code found in the iOS 27 beta suggests Apple is developing a system that could restrict leased iPhones when customers fall behind on payments. The discovery follows a recent Bloomberg report that Apple may soon launch a new "Apple Upgrade" leasing program, allowing customers to pay for hardware through monthly installments. 9to5Mac reports: The code describes a system called App Managed Features, which allows an authorized financing or provider app to enroll an iPhone and perform ongoing status checks. If the contract is no longer in good standing, Apple's system services can place the iPhone in "Restricted Mode," which blocks access to most apps until the payment or contract issue is resolved, while keeping a small set of apps available. The fixed allowlist currently found in the iOS 27 beta includes: Accessibility Reader, App Store, Health, Magnifier, Phone, Clock, Settings, Wallet, Passwords, and the Restricted Mode interface itself.
+ 
+Apps that can send critical alerts, such as Messages, Home, and certain medication or safety apps, may also remain accessible. However, the provider appears to have some control over those exceptions. The code does not appear to cancel, suspend, or otherwise modify App Store subscriptions associated with blocked apps. As a result, a subscription could continue billing even while access to its app is restricted.
+ 
+Additionally, there isn't a fixed number of missed payments that automatically triggers the restrictions. The financing provider's app decides when to lock the device based on its own policies. Finally, the new framework also introduces a new type of activation lock called "Partner Finance Lock," which is meant to prevent users from erasing, reselling, or stripping a restricted device for parts.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=iOS+27+Code+Suggests+Apple+Could+Restrict+Leased+Devices+After+Missed+Payments%3A+https%3A%2F%2Fapple.slashdot.org%2Fstory%2F26%2F07%2F22%2F2050240%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fapple.slashdot.org%2Fstory%2F26%2F07%2F22%2F2050240%2Fios-27-code-suggests-apple-could-restrict-leased-devices-after-missed-payments%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://apple.slashdot.org/story/26/07/22/2050240/ios-27-code-suggests-apple-could-restrict-leased-devices-after-missed-payments?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="https://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=24050348&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;</description>
+<dc:creator>BeauHD</dc:creator>
+<dc:date>2026-07-22T22:00:00+00:00</dc:date>
+<dc:subject>ios</dc:subject>
+<slash:department>lease-different</slash:department>
+<slash:section>apple</slash:section>
+<slash:comments>11</slash:comments>
+<slash:hit_parade>11,11,10,10,3,0,0</slash:hit_parade>
+</item>
+<item rdf:about="https://linux.slashdot.org/story/26/07/22/2033256/linux-kernel-team-publishes-432-cves-in-two-days?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Linux Kernel Team Publishes 432 CVEs In Two Days</title>
+<link>https://linux.slashdot.org/story/26/07/22/2033256/linux-kernel-team-publishes-432-cves-in-two-days?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</link>
+<description>Ancient Slashdot reader alanw shares a post from the OSS Security mailing list, where sysadmin Jan Schaumann wonders what to do after the Linux kernel cranked out 432 CVEs in a little over 24 hours: "I understand the position that CVEs were always a flawed way to track or prioritize security changes... But this onslaught really shows it's not feasible to attempt to prioritize individual kernel changes. I'm not sure what to do here going forward." The Register reports: The nixCraft team speculated on social media that AI bug reports are a likely reason for all those kernel CVEs, which wouldn't be without precedent - Linus Torvalds himself said in May that the Linux kernel security mailing list had become "almost entirely unmanageable" due to AI-assisted bug hunting. Nonetheless, Torvalds has described AI as a useful tool for Linux development while still noting it can be a drag for maintainers, both from a workload standpoint and the fact "it keeps finding embarrassing bugs." [...]
+ 
+Unfortunately for Linux sysadmins, the position in which they find themselves in this current mess isn't one that's readily solved. CVEs might be a messy way to track and prioritize security updates, especially when hundreds of them are published over a short period, but without something better, it falls to IT and security teams to determine which vulnerabilities affect their systems and which kernel updates they need to deploy. Senior kernel maintainer Greg Kroah-Hartman replied to Jan's post, pushing back on the idea that the kernel's CVE volume is uniquely unmanageable. The kernel isn't special, he argues -- companies everywhere are finally realizing they need to re-evaluate how they update all of their systems and devices, something that's traditionally been "woefully ignored."
+ 
+On the "just always update" approach, Greg says that's precisely what the kernel community endorses: "This is what the kernel developer community recommends and supports. If you want support from us, do this." Can't manage it yourself? Pay a company for support, or "just use Debian or Yocto as their security practices are amazing." He points to Android as proof the approach scales, calling it "the largest deployment of software in the world" -- billions of devices kept updated "with one very-overworked developer guiding it all."
+ 
+As for reviewing every CVE individually, he notes this can be largely automated by intersecting the files a CVE touches with the files you actually build, which typically trims the relevant set "down to about 10% of the overall total" -- the approach enterprise distros already take for their customers. Panic-mode selective patching gets a blunt "Good luck with that!" -- regulations like the EU's Cyber Resilience Act are set to legislate that habit away ("rightfully so," in his view), and "your insurance company might wish to have a talk with you as well."
+ 
+Greg also warns the flood isn't over: "The number of llm-found issues is only on the rise right now, it's going to be a very long 18 months at the least to dig ourselves out of this mess, and people had BETTER be updating their systems all along the way if they expect to be secure in any way." As for the 432-CVE burst itself, he explains it was simply him catching up on a weeks-old, publicly visible review queue over the weekend -- delayed by "a perfect storm of 6 weeks straight of conferences and vacations" -- so it shouldn't have come as a surprise to anyone watching the public git repo.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Linux+Kernel+Team+Publishes+432+CVEs+In+Two+Days%3A+https%3A%2F%2Flinux.slashdot.org%2Fstory%2F26%2F07%2F22%2F2033256%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Flinux.slashdot.org%2Fstory%2F26%2F07%2F22%2F2033256%2Flinux-kernel-team-publishes-432-cves-in-two-days%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://linux.slashdot.org/story/26/07/22/2033256/linux-kernel-team-publishes-432-cves-in-two-days?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="https://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=24050346&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;</description>
+<dc:creator>BeauHD</dc:creator>
+<dc:date>2026-07-22T21:00:00+00:00</dc:date>
+<dc:subject>ai</dc:subject>
+<slash:department>CVE-avalanche</slash:department>
+<slash:section>linux</slash:section>
+<slash:comments>20</slash:comments>
+<slash:hit_parade>20,20,19,19,0,0,0</slash:hit_parade>
+</item>
+<item rdf:about="https://hardware.slashdot.org/story/26/07/22/1958256/apple-partners-with-klarna-to-offer-iphones-macs-on-a-subscription-basis?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Apple Partners With Klarna To Offer iPhones, Macs On a Subscription Basis</title>
+<link>https://hardware.slashdot.org/story/26/07/22/1958256/apple-partners-with-klarna-to-offer-iphones-macs-on-a-subscription-basis?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</link>
+<description>Apple is reportedly launching a Klarna financing deal that will let U.S. customers spread the cost of devices over up to three years, pushing the company closer to a hardware-as-a-service model. "The only thing you don't get under the new arrangement is AppleCare, for which you'll allegedly need to pay extra," notes Computerworld. From the report: The introduction of the scheme gives consumers a way to purchase the company's popular high-end devices when they are introduced -- no doubt,at higher cost -- this fall. [...] A combination of changed customer habits and external threat means the stars are now aligned for hardware-as-a-service models. "Reframing a device as a low monthly payment protects that [upgrade] cadence and allows Apple to start marketing their products as device-as-a-service to consumers, which no other vendor was ever able to do," [IDC analyst Francisco Jeronimo] wrote to me.
+ 
+There is a one-more-thing aspect to this: the products are effectively being leased, a new approach that will give Apple a stronger grip on EOL devices, helping it grab more of them for refurbishment, resale, and recycling. Over time, this will give the company a much stronger grip on the lucrative second-user market that exists around Apple equipment, even while for almost every consumer product we find the life we want is something we can rent, but probably can't afford to own.
+ 
+The other solid reason to take a partnership approach is risk management. Apple had intended to develop its own buy-now, pay-later scheme via Apple Pay Later, but abandoned that plan as it became riskier with rising bank rates. "Also, by backing the program with Klarna rather than reviving the in-house subscription plan it shelved in 2024, Apple captures the demand upside without taking the credit risk onto its own balance sheet," Jeronimo said. 
+"Apple Upgrade lands at precisely the moment Apple needs it," Jeronimo wrote in a note seen by Computerworld. "Having just pushed Mac and iPad prices up on the back of the memory shortage, with iPhone increases widely expected in September -- as well as the new iPhone foldable expected at $2,500 -- Apple's real risk is that rising prices even further can impact the upgrade cycle."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Apple+Partners+With+Klarna+To+Offer+iPhones%2C+Macs+On+a+Subscription+Basis%3A+https%3A%2F%2Fhardware.slashdot.org%2Fstory%2F26%2F07%2F22%2F1958256%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fhardware.slashdot.org%2Fstory%2F26%2F07%2F22%2F1958256%2Fapple-partners-with-klarna-to-offer-iphones-macs-on-a-subscription-basis%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://hardware.slashdot.org/story/26/07/22/1958256/apple-partners-with-klarna-to-offer-iphones-macs-on-a-subscription-basis?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="https://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=24050326&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;</description>
+<dc:creator>BeauHD</dc:creator>
+<dc:date>2026-07-22T20:00:00+00:00</dc:date>
+<dc:subject>money</dc:subject>
+<slash:department>own-nothing-upgrade-everything</slash:department>
+<slash:section>hardware</slash:section>
+<slash:comments>36</slash:comments>
+<slash:hit_parade>36,36,34,31,8,2,2</slash:hit_parade>
+</item>
+<item rdf:about="https://tech.slashdot.org/story/26/07/22/179241/the-army-is-burning-through-its-ai-tokens?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>The Army Is Burning Through Its AI Tokens</title>
+<link>https://tech.slashdot.org/story/26/07/22/179241/the-army-is-burning-through-its-ai-tokens?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</link>
+<description>An anonymous reader quotes a report from Wired: A little over a month after the Department of Defense (DOD) bragged that nearly half of its 3.5 million employees were using AI at work, members of the Army's Combat Capabilities Development Command (DEVCOM) received an email informing them that they were burning through tokens, and needed to limit use. "Although the Army CIO announced in May 2026 that they were offering unlimited tokens, by mid-June the Army CIO pool was exhausted of tokens and had to re-establish limits," the email reads. The email goes on to say that although the Army has chosen to renew token usage at "its current levels," it's unclear "if the Army CIO pool will be renewed after 1 Oct."
+ 
+The Army uses Ask Sage, a multimodal generative AI platform where users can run different large language models (LLMs), including Alphabet's Gemini, Meta's Llama, and OpenAI's ChatGPT. "Apparently the whole Army burned through the whole year of tokens for just one service," says an Army employee who spoke to WIRED [...]. The Army employee says that the Army has been pushing its workers to lean into using generative AI. Employees were given an allotment of at least 200,000 tokens per month, according to emails viewed by WIRED, and were automatically allocated more if they burned through their initial allotment. Employees who had signed up for Ask Sage but were not regularly using it would receive emails encouraging them to use more of their allocated tokens.
+ 
+In order to use Ask Sage, the Army had access to 100,000,000 tokens as part of an annual subscription to an "enterprise pack." Tokens represent a unit of output, either in text or image, from an LLM. For the Ask Sage tool, a single token equates to about 3.7 characters, according to documents viewed by WIRED. The Defense Department burned through some 20 billion tokens per day during the 38-day Operation Epic Fury in Iran, according to Breaking Defense. It's unclear if the tokens used by regular DOD employees are drawn from the same pool as those who might be using AI tools on classified or secret information.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=The+Army+Is+Burning+Through+Its+AI+Tokens%3A+https%3A%2F%2Ftech.slashdot.org%2Fstory%2F26%2F07%2F22%2F179241%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Ftech.slashdot.org%2Fstory%2F26%2F07%2F22%2F179241%2Fthe-army-is-burning-through-its-ai-tokens%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://tech.slashdot.org/story/26/07/22/179241/the-army-is-burning-through-its-ai-tokens?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="https://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=24050180&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;</description>
+<dc:creator>BeauHD</dc:creator>
+<dc:date>2026-07-22T19:00:00+00:00</dc:date>
+<dc:subject>military</dc:subject>
+<slash:department>supply-and-demand</slash:department>
+<slash:section>technology</slash:section>
+<slash:comments>45</slash:comments>
+<slash:hit_parade>45,45,41,37,12,10,4</slash:hit_parade>
+</item>
+<item rdf:about="https://games.slashdot.org/story/26/07/22/1659215/microsoft-announces-xbox-backward-compatibility-for-pc?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Microsoft Announces Xbox Backward Compatibility For PC</title>
+<link>https://games.slashdot.org/story/26/07/22/1659215/microsoft-announces-xbox-backward-compatibility-for-pc?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</link>
+<description>Microsoft has announced Xbox Backward Compatibility for PC, a new preservation program that will let players run select classic Xbox games on Windows PCs and handhelds like the ROG Xbox Ally. Tom's Hardware reports: "This marks the beginning of a broader effort to preserve XBOX games from the past and bring them to PC over time," the company said in a blog post authored by Xbox "VP next generation" Jason Ronald. Alongside backward compatibility, the company says games will also include new features. The four titles in the announcement are: BLiNX: The Time Sweeper; Conker: Live and Reloaded; Crimson Skies: High Road to Revenge; and Fuzion Frenzy.
+ 
+You can now buy all of these games on PC, and they're also included in all Xbox Game Pass plans. Anyone who already owns these titles digitally on console can also now play them on PC or handheld, with support for Xbox Play Anywhere and Xbox Cloud Gaming. Crucially, this appears to be a digital-only preservation effort, so it won't help anyone who only owns physical copies of these games. Xbox has reportedly been testing a way to digitize physical games as far back as Xbox One, but that hasn't yet materialized yet.
+ 
+Alongside the preserved original gameplay, Xbox claims these games will let users customize graphics settings, with up to 4x resolution scaling, VSync support, Fullscreen and Windowed modes, anisotropic filtering, and enhanced anti-aliasing, with more features to come in the future. Notably, Xbox will add achievements to select original Xbox games on console and PC.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Microsoft+Announces+Xbox+Backward+Compatibility+For+PC%3A+https%3A%2F%2Fgames.slashdot.org%2Fstory%2F26%2F07%2F22%2F1659215%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fgames.slashdot.org%2Fstory%2F26%2F07%2F22%2F1659215%2Fmicrosoft-announces-xbox-backward-compatibility-for-pc%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://games.slashdot.org/story/26/07/22/1659215/microsoft-announces-xbox-backward-compatibility-for-pc?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="https://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=24050176&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;</description>
+<dc:creator>BeauHD</dc:creator>
+<dc:date>2026-07-22T18:00:00+00:00</dc:date>
+<dc:subject>xbox</dc:subject>
+<slash:department>forward-looking</slash:department>
+<slash:section>games</slash:section>
+<slash:comments>27</slash:comments>
+<slash:hit_parade>27,27,25,24,3,1,1</slash:hit_parade>
+</item>
+<item rdf:about="https://mobile.slashdot.org/story/26/07/22/1652232/samsung-galaxy-z-fold-8-announced-to-compete-with-future-iphone-fold?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Samsung Galaxy Z Fold 8 Announced to Compete With Future iPhone Fold</title>
+<link>https://mobile.slashdot.org/story/26/07/22/1652232/samsung-galaxy-z-fold-8-announced-to-compete-with-future-iphone-fold?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</link>
+<description>At a Galaxy Unpacked event in London today, Samsung unveiled a new foldable smartphone designed to compete with the still-unannounced iPhone Fold. Called the Galaxy Z Fold 8, it features a wider 4:3 form factor with a 7.6-inch inner AMOLED display, Snapdragon 8 Elite Gen 5 for Galaxy chip, up to 16GB of RAM and 1TB of storage. "The inner display has enough extra real estate for multi-tasking and entertainment," reports Mashable, which got a chance to try the new foldable ahead of the event. "And if you're worried about a crease in the middle of the display, don't be. We got up close with the device, and the crease fully disappears when the display is activated." From the report: As stated above, the main distinguishing factor of the new Z Fold 8 is its wider 4:3 proportions compared to the Z Fold 8 Ultra. If the latter is a book-style foldable, the former can almost be called a tablet-style foldable, instead. We think the wide screen will serve even better for reading books or multi-tasking with several apps open at once.
+ 
+Also, at 201g, Samsung is really emphasizing how light the device is. The company is calling it the "world's lightest fold ever." And while the device may be light, its no lightweight. Samsung's newest foldable features Flex Titanium technology, which makes the Galaxy Z Fold 8 more durable. Speaking of durability, it also boasts Samsung's advantage hinge technology, Armor Flexhinge.
+ 
+The Z Fold 8 feels like a solid middle point between the premium Z Fold 8 Ultra and the comparatively affordable Z Flip 8. All three phones use the same chip, but the Z Fold 8's 4,800mAh battery is smaller than that of the Z Fold 8 Ultra. However, the Z Fold 8 does have an option for 16GB RAM and 1TB of storage, similar to the Ultra.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Samsung+Galaxy+Z+Fold+8+Announced+to+Compete+With+Future+iPhone+Fold%3A+https%3A%2F%2Fmobile.slashdot.org%2Fstory%2F26%2F07%2F22%2F1652232%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fmobile.slashdot.org%2Fstory%2F26%2F07%2F22%2F1652232%2Fsamsung-galaxy-z-fold-8-announced-to-compete-with-future-iphone-fold%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://mobile.slashdot.org/story/26/07/22/1652232/samsung-galaxy-z-fold-8-announced-to-compete-with-future-iphone-fold?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="https://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=24050166&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;</description>
+<dc:creator>BeauHD</dc:creator>
+<dc:date>2026-07-22T17:00:00+00:00</dc:date>
+<dc:subject>cellphones</dc:subject>
+<slash:department>new-and-shiny</slash:department>
+<slash:section>mobile</slash:section>
+<slash:comments>13</slash:comments>
+<slash:hit_parade>13,13,13,11,2,0,0</slash:hit_parade>
+</item>
+<item rdf:about="https://entertainment.slashdot.org/story/26/07/22/0426218/lg-to-ban-residential-proxies-from-smart-tv-apps?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>LG To Ban Residential Proxies From Smart TV Apps</title>
+<link>https://entertainment.slashdot.org/story/26/07/22/0426218/lg-to-ban-residential-proxies-from-smart-tv-apps?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</link>
+<description>An anonymous reader quotes a report from KrebsOnSecurity: The home appliance giant LG Electronics USA said this week it plans to suspend any apps built for its smart TVs that turn one's television into an always-on residential proxy node. The move comes less than a month after researchers found that more than 42 percent of games and other apps available for download on LG's webOS store allow unknown third-parties to route their Internet traffic through a user's TV. On July 2, [KrebsOnSecurity] featured research by the security firm Spur that examined the prevalence of residential proxy software development kits (SDKs) in smart TV apps. Spur found more than 42 percent of apps available for download on LG smart TVs include SDKs that turn one's television in a proxy node indefinitely, and that more than a quarter of the apps made for Samsung's Tizen operating system had similar residential proxy components.
+ 
+Responding to questions about Spur's research, LG Senior Vice President John Taylor told KrebsOnSecurity the company was working with app developers to remove the residential proxy option from their apps on the webOS platform. Developers that fail to comply, he said, will find their apps suspended. "A residential proxy network is not an intended use for LG smart TVs, and LG Electronics is working with developers to remove the residential proxy option from their apps on the webOS platform," Taylor said. "If this option is not removed, these apps will be suspended." Taylor said LG is committed to keeping residential proxy networks out of its smart TV apps going forward, and that the company's review of those apps is "well underway now."
+ 
+"As part of our ongoing efforts to enhance platform quality and the user experience, LG will continue to strengthen our evaluation process for developer-submitted apps, including those that incorporate residential proxy SDKs," Taylor wrote in an emailed statement. [...] "A one-time consent prompt buried in a TV app is not a substitute for meaningful transparency, ongoing control, and platform oversight," Spur's Trevor Sutter wrote. "The risk is amplified when consent comes from individuals within the household who use the device but shouldn't give consent, such as minors." LG is also facing criticism for monitors that automatically install software promoting paid McAfee subscriptions through Windows Update without user approval.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=LG+To+Ban+Residential+Proxies+From+Smart+TV+Apps%3A+https%3A%2F%2Fentertainment.slashdot.org%2Fstory%2F26%2F07%2F22%2F0426218%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fentertainment.slashdot.org%2Fstory%2F26%2F07%2F22%2F0426218%2Flg-to-ban-residential-proxies-from-smart-tv-apps%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://entertainment.slashdot.org/story/26/07/22/0426218/lg-to-ban-residential-proxies-from-smart-tv-apps?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="https://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=24049684&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;</description>
+<dc:creator>BeauHD</dc:creator>
+<dc:date>2026-07-22T16:00:00+00:00</dc:date>
+<dc:subject>tv</dc:subject>
+<slash:department>cease-and-desist</slash:department>
+<slash:section>entertainment</slash:section>
+<slash:comments>33</slash:comments>
+<slash:hit_parade>33,33,29,28,10,3,2</slash:hit_parade>
+</item>
+<item rdf:about="https://news.slashdot.org/story/26/07/22/040209/jack-dorsey-takes-on-slack-and-github-with-new-ai-workplace-platform-buzz?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Jack Dorsey Takes On Slack and GitHub With New AI Workplace Platform 'Buzz'</title>
+<link>https://news.slashdot.org/story/26/07/22/040209/jack-dorsey-takes-on-slack-and-github-with-new-ai-workplace-platform-buzz?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</link>
+<description>Jack Dorsey's Block has launched Buzz, an open-source workplace collaboration platform that combines messaging, project management, and software development workflows for teams of both humans and AI agents. Dorsey described Buzz as "a new groupchat platform for teams of people and agents of all sizes" that is "model-agnostic, decentralized, self-sovereign and open source." SmartCompany reports: According to the Buzz website, users can invite specialized AI agents into team chats, allowing them to collaborate with employees and even other AI agents. From there, they can reportedly move directly from discussions into planning, coding, pull requests and project management without switching between multiple applications.
+ 
+Buzz also aims to replace parts of GitHub by bringing software development workflows directly into the platform. Teams can plan work, write code, review pull requests and manage Git projects without jumping between separate collaboration and development tools. [...] In practice, that means businesses aren't locked into a single AI provider. Organisations can self-host Buzz, customize it to suit their own workflows and choose whichever AI models best fit their needs.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Jack+Dorsey+Takes+On+Slack+and+GitHub+With+New+AI+Workplace+Platform+'Buzz'%3A+https%3A%2F%2Fnews.slashdot.org%2Fstory%2F26%2F07%2F22%2F040209%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fnews.slashdot.org%2Fstory%2F26%2F07%2F22%2F040209%2Fjack-dorsey-takes-on-slack-and-github-with-new-ai-workplace-platform-buzz%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://news.slashdot.org/story/26/07/22/040209/jack-dorsey-takes-on-slack-and-github-with-new-ai-workplace-platform-buzz?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="https://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=24049668&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;</description>
+<dc:creator>BeauHD</dc:creator>
+<dc:date>2026-07-22T15:00:00+00:00</dc:date>
+<dc:subject>opensource</dc:subject>
+<slash:department>jack-of-all-workflows</slash:department>
+<slash:section>news</slash:section>
+<slash:comments>15</slash:comments>
+<slash:hit_parade>15,15,14,11,4,1,0</slash:hit_parade>
+</item>
+<item rdf:about="https://news.slashdot.org/story/26/07/22/049248/long-presumed-dead-a-thriving-coral-reef-is-discovered-in-west-africa?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Long Presumed Dead, a Thriving Coral Reef Is Discovered in West Africa</title>
+<link>https://news.slashdot.org/story/26/07/22/049248/long-presumed-dead-a-thriving-coral-reef-is-discovered-in-west-africa?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</link>
+<description>Scientists have rediscovered a healthy coral reef off the coast of Benin more than 60 years after surveyors first hinted at its existence. "At least eight coral types and eight fish species have formed a thriving ecosystem on this long-forgotten site," reports Inside Climate News. "What they had captured was a wealth of marine life: six types of soft coral; two black corals; and eight species of sheltering fish, from golden African snappers to the Monrovia doctorfish." From the report: While no coral samples have yet been extracted, researchers have classified the site as a mesophotic coral ecosystem (MCE). Such systems are light-dependent communities existing at the lower limits of reef-building corals. At more than 175 feet below the surface, the coral garden they discovered appears patchily scattered on a rocky substrate. Bridging the gap between shallow reefs and deeper benthic habitats, MCEs are home to distinct species and unique environmental conditions. While scientists are increasingly recognizing their ecological and climatic importance, they remain among the least explored elements of tropical and subtropical marine biodiversity. And this one has real potential to unlock new information about coral history.
+ 
+"Since it's an undisturbed marine ecosystem, it can help through carbon dating or paleoclimatic study to tell us which kind of climate system has occurred here in the past," said [Gerard Zinzindohoue, the project lead for Coral Reefs Rediscovering &amp;amp; Exploration in Benin]. "It's better to know the past to help explain the present, and help know which kind of direction we can take in the future." In addition to the blackbar soldierfish, West African goatfish, and Guinean angelfish filmed darting through the reef, the discovery presents potential conservation claims for other marine life. "We will be advocating for its full protection, perhaps by setting up a marine protected area around it," said [Houangninan Midinoudewa, an oceanographic researcher at the Benin Marine Conservation Club], who specializes in elasmobranchs -- the study of sharks, rays, and skates.
+ 
+Midinoudewa is currently submitting an application to designate the area as an Important Shark and Ray Area with the International Union for Conservation of Nature. Based on the knowledge of local fishermen, Midinoudewa is confident the reef is home to sawback angel sharks, silky sharks, brown skates, and marbled stingrays. The team behind the discovery hopes this will spark a wave of similar discoveries in the waters off West Africa, an area of the world underserved by scientific research projects. "I hope the Gulf of Guinea will be a hub for research because we know our resources are being exploited and people [need to] know exactly what we have and why we should care," said Midinoudewa. Zinzindohoue agrees: "We don't need to wait for others to come to our country to show us what is under our sea. We are the ones who must take responsibility."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Long+Presumed+Dead%2C+a+Thriving+Coral+Reef+Is+Discovered+in+West+Africa%3A+https%3A%2F%2Fnews.slashdot.org%2Fstory%2F26%2F07%2F22%2F049248%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fnews.slashdot.org%2Fstory%2F26%2F07%2F22%2F049248%2Flong-presumed-dead-a-thriving-coral-reef-is-discovered-in-west-africa%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://news.slashdot.org/story/26/07/22/049248/long-presumed-dead-a-thriving-coral-reef-is-discovered-in-west-africa?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="https://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=24049670&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;</description>
+<dc:creator>BeauHD</dc:creator>
+<dc:date>2026-07-22T11:00:00+00:00</dc:date>
+<dc:subject>earth</dc:subject>
+<slash:department>hide-and-seek</slash:department>
+<slash:section>news</slash:section>
+<slash:comments>16</slash:comments>
+<slash:hit_parade>16,16,15,15,2,1,1</slash:hit_parade>
+</item>
+<item rdf:about="https://it.slashdot.org/story/26/07/22/0348206/openai-says-its-ai-models-acted-on-its-own-in-an-unprecedented-hack?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>OpenAI Says Its AI Models Acted On Its Own In An 'Unprecedented' Hack</title>
+<link>https://it.slashdot.org/story/26/07/22/0348206/openai-says-its-ai-models-acted-on-its-own-in-an-unprecedented-hack?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</link>
+<description>"GPT-5.6 Sol and an 'even more capable' model used stolen credentials and exploited vulnerabilities in the Hugging Face API to obtain secret information used to cheat on evaluations," writes longtime Slashdot reader Dr. Bombay. The Associated Press reports: "We had a significant security incident during evaluation of our models," OpenAI CEO Sam Altman said in a statement posted on social media. AI startup Hugging Face said last week that it had detected an intrusion into its data processing systems that it suspected was caused by an AI agent autonomously acting on its own. "We suspected last week's cyberattack might have come from a frontier lab, given the sophistication of the agent," Hugging Face co-founder and CEO Clement Delangue said in a statement. "Turns out it did!"
+ 
+[...] "AI is accelerating the discovery and exploitation of vulnerabilities," OpenAI said in its statement Tuesday. "The primary lesson from this incident is that model security and safety must keep pace with rapidly advancing capabilities." Delangue said he spent the past 24 hours working with OpenAI, "and we strongly believe there was no malicious intent on their part. It's quite mind-blowing that all of this happened autonomously!" Delangue added that it "might be the first incident of its kind."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=OpenAI+Says+Its+AI+Models+Acted+On+Its+Own+In+An+'Unprecedented'+Hack%3A+https%3A%2F%2Fit.slashdot.org%2Fstory%2F26%2F07%2F22%2F0348206%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fit.slashdot.org%2Fstory%2F26%2F07%2F22%2F0348206%2Fopenai-says-its-ai-models-acted-on-its-own-in-an-unprecedented-hack%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://it.slashdot.org/story/26/07/22/0348206/openai-says-its-ai-models-acted-on-its-own-in-an-unprecedented-hack?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="https://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=24049658&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;</description>
+<dc:creator>BeauHD</dc:creator>
+<dc:date>2026-07-22T07:00:00+00:00</dc:date>
+<dc:subject>security</dc:subject>
+<slash:department>that's-a-first</slash:department>
+<slash:section>it</slash:section>
+<slash:comments>142</slash:comments>
+<slash:hit_parade>142,141,125,115,36,20,12</slash:hit_parade>
+</item>
+<item rdf:about="https://tech.slashdot.org/story/26/07/21/216206/france-becomes-first-european-country-to-ban-social-media-access-for-under-15s?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>France Becomes First European Country To Ban Social Media Access For Under-15s</title>
+<link>https://tech.slashdot.org/story/26/07/21/216206/france-becomes-first-european-country-to-ban-social-media-access-for-under-15s?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</link>
+<description>An anonymous reader quotes a report from The Guardian: France's parliament has approved a bill banning social media access for children under 15, making it the first European country to bar children from apps such as TikTok. The president, Emmanuel Macron, has championed the ban as a key reform of his final term in office and pledged to enforce it by September. "France is leading the way in Europe when it comes to protecting our children and teenagers," Macron said in a video posted on social media, hailing "a major step forward."
+ 
+He thanked members of parliament for backing the legislation on Tuesday. "The Constitutional Council must now rule on it, and then it will be time to take action to make this measure a reality and protect our children online," he added on X. After approval by the Senate earlier on Tuesday, members of the National Assembly passed the bill by 279 votes to 81. A growing number of countries are taking steps to restrict social media access amid multiplying warnings over its harmful effects on children.
+ 
+The ban was to be introduced in two stages, with under-15s blocked from creating new accounts from September 1. The ban would apply to existing accounts from January 2027, according to the legislation. The digital minister, Anne Le Henanff, said before the vote that the timeline was realistic, "because age-verification tools already exist" and others are still in the works, and the onus was on the platforms to impose the rule. "For four months, all of us in France will have to prove our age," she told journalists. "If someone is under 15, the account will be closed." The minister also gave assurances that users' personal data would be protected.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=France+Becomes+First+European+Country+To+Ban+Social+Media+Access+For+Under-15s%3A+https%3A%2F%2Ftech.slashdot.org%2Fstory%2F26%2F07%2F21%2F216206%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Ftech.slashdot.org%2Fstory%2F26%2F07%2F21%2F216206%2Ffrance-becomes-first-european-country-to-ban-social-media-access-for-under-15s%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://tech.slashdot.org/story/26/07/21/216206/france-becomes-first-european-country-to-ban-social-media-access-for-under-15s?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="https://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=24049408&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;</description>
+<dc:creator>BeauHD</dc:creator>
+<dc:date>2026-07-22T03:30:00+00:00</dc:date>
+<dc:subject>eu</dc:subject>
+<slash:department>leading-the-way</slash:department>
+<slash:section>technology</slash:section>
+<slash:comments>120</slash:comments>
+<slash:hit_parade>120,115,102,87,15,7,3</slash:hit_parade>
+</item>
+<item rdf:about="https://slashdot.org/story/26/07/21/2050242/airbus-migrating-70-critical-apps-from-aws-to-frances-scaleway?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Airbus Migrating 70 Critical Apps From AWS to France's Scaleway</title>
+<link>https://slashdot.org/story/26/07/21/2050242/airbus-migrating-70-critical-apps-from-aws-to-frances-scaleway?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</link>
+<description>Airbus is moving 70 critical applications from AWS to French cloud provider Scaleway as part of a broader digital sovereignty push to keep sensitive data "under European control." Eventually, the migration will cover 900 applications, including ERP, CRM, manufacturing execution, and product lifecycle management systems. Airbus says it will, however, continue using U.S. providers for less sensitive workloads. "We do not intend to move away from all non European solutions; we balance our choices based on the criticality of the data," the company said. The Register reports: Catherine Jestin, head of digital at Airbus, told us on Thursday: "The selection of Scaleway is a combination of a very strong technical answer and a very strong commercial offer making it competitive compared to hyperscalers' public cloud offerings. In addition, Scaleway is committed to involving Airbus in the definition of its future product roadmap." "The objective is to host Airbus's most critical applications (those required for the Minimum Viable Company). This represents 900 applications and we will start with 70 of them today hosted on AWS."
+ 
+Applications being sent to Scaleway include ERP, manufacturing execution systems, CRM, and product lifecycle management. Finding a cloud provider to host its most sensitive applications for defense and industrial workloads was not a certainty when the process began, Airbus told us last year, because European cloud providers do not have the scale of their US rivals.
+ 
+Jestin said Airbus will continue to work with AWS. Skywise, a platform that aggregates and analyzes aviation data, and Case Management Assistant for customers' technical queries will continue to be hosted by AWS. In a statement, she said: "By integrating a trusted, high performance, cloud environment that keeps our critical data assets shielded from foreign extraterritorial laws, we are ensuring that our digital infrastructure keeps pace with our aerospace innovation, while maintaining control and resilience of our industrial operations."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Airbus+Migrating+70+Critical+Apps+From+AWS+to+France's+Scaleway%3A+https%3A%2F%2Fslashdot.org%2Fstory%2F26%2F07%2F21%2F2050242%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fslashdot.org%2Fstory%2F26%2F07%2F21%2F2050242%2Fairbus-migrating-70-critical-apps-from-aws-to-frances-scaleway%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://slashdot.org/story/26/07/21/2050242/airbus-migrating-70-critical-apps-from-aws-to-frances-scaleway?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="https://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=24049394&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;</description>
+<dc:creator>BeauHD</dc:creator>
+<dc:date>2026-07-21T23:00:00+00:00</dc:date>
+<dc:subject>cloud</dc:subject>
+<slash:department>digital-sovereignty-push</slash:department>
+<slash:section>slashdot</slash:section>
+<slash:comments>87</slash:comments>
+<slash:hit_parade>87,84,73,68,22,15,11</slash:hit_parade>
+</item>
+<item rdf:about="https://tech.slashdot.org/story/26/07/21/2037254/tesla-robotaxis-go-to-florida?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Tesla Robotaxis Go To Florida</title>
+<link>https://tech.slashdot.org/story/26/07/21/2037254/tesla-robotaxis-go-to-florida?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</link>
+<description>Tesla says it is launching its Robotaxi service in Orlando and Tampa, though it has not shared fleet sizes or whether customers can immediately hail rides. The Verge notes the announcement lands on Tesla earnings day and comes as the company's robotaxi rollout remains far smaller than Elon Musk previously projected, with tracker data showing only a small number of unsupervised vehicles operating in existing cities. From the report: [B]ack in May, Tesla had five unsupervised robotaxis in Dallas, six in Houston, and 29 in Austin. As of today, there are only 17 unsupervised vehicles in Austin, four in Dallas, and zero in Houston, according to the Robotaxi Tracker. By comparison, Waymo is estimated to have over 3,500 fully driverless vehicles in operation across over 10 cities.
+ 
+Like Waymo, Tesla typically introduces robotaxis to a new city with a safety driver behind the wheel. Unlike Waymo, sometimes Tesla moves that person over to the passenger seat with access to a kill switch should anything go wrong. The company has been inconsistent in how it rolls out its robotaxis to new markets. The numbers go up and down, with zero explanation from the company as to why.
+ 
+[...] By adding new cities, Tesla is clearly trying to sell investors on the idea that its robotaxi project is growing. But the fluctuating fleet size, inconsistency in supervised vs unsupervised vehicles, and long wait times tell a very different story.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Tesla+Robotaxis+Go+To+Florida%3A+https%3A%2F%2Ftech.slashdot.org%2Fstory%2F26%2F07%2F21%2F2037254%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Ftech.slashdot.org%2Fstory%2F26%2F07%2F21%2F2037254%2Ftesla-robotaxis-go-to-florida%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://tech.slashdot.org/story/26/07/21/2037254/tesla-robotaxis-go-to-florida?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="https://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=24049392&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;</description>
+<dc:creator>BeauHD</dc:creator>
+<dc:date>2026-07-21T22:00:00+00:00</dc:date>
+<dc:subject>transportation</dc:subject>
+<slash:department>rolling-out</slash:department>
+<slash:section>technology</slash:section>
+<slash:comments>53</slash:comments>
+<slash:hit_parade>53,52,46,37,7,3,2</slash:hit_parade>
+</item>
+<item rdf:about="https://news.slashdot.org/story/26/07/21/2022247/firefox-153-released?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Firefox 153 Released</title>
+<link>https://news.slashdot.org/story/26/07/21/2022247/firefox-153-released?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</link>
+<description>Longtime Slashdot reader williamyf writes: FireFox 153 was released today. The most important user-facing changes are improvements to PDF handling (you can now merge PDFs and add images to them), and HDR video playback (on Windows, provided HDR is active systemwide). Other under-the-hood changes include browser-wide containers and QWAC support. The full list is in the change notes.
+
+ But the most important feature is that this version is an ESR and, therefore, defines the ESR feature set for the next year. Why is being an ESR so important, you ask?
+
+ 1.) ESR, rather than "normal" (a.k.a. Rapid Release), Firefox is the out-of-the-box browser for many important distros, including Debian, RHEL, Kali, Tails, SUSE Linux Enterprise, Slackware, and others.
+
+ 2.) Many organizations, large and small, standardize on Firefox ESR as their default browser, regardless of the default browser included with their OS.
+
+ 3.) Firefox ESR is the basis for many downstream projects, such as Waterfox and KaiOS. All these projects will inherit, for a year, whatever ESR brings to the table today.
+
+ 4.) Many ISVs and SaaS providers, if they certify their wares for Firefox at all, certify for the ESR version only.
+
+ Please note that ESR 153 will not be offered as an automatic update until two months from now (ESR 140 will still be supported). If you want it now, you will need to download and install it manually.
+
+ Also of note, ESR 115 will be supported until March 2027. If you use an unsupported version of macOS or Windows (like Windows 7 or 8.x), this is the version to get. However, even Mozilla cautions against running a supported browser on an unsupported OS: "Note that Microsoft ended official support for Windows 7, 8, and 8.1 in January 2023. Unsupported operating systems receive no security updates and have known vulnerabilities. Without official support from Microsoft, maintaining Firefox for outdated operating systems becomes costly for Mozilla and risky for users."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Firefox+153+Released%3A+https%3A%2F%2Fnews.slashdot.org%2Fstory%2F26%2F07%2F21%2F2022247%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fnews.slashdot.org%2Fstory%2F26%2F07%2F21%2F2022247%2Ffirefox-153-released%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://news.slashdot.org/story/26/07/21/2022247/firefox-153-released?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="https://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=24049378&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;</description>
+<dc:creator>BeauHD</dc:creator>
+<dc:date>2026-07-21T21:00:00+00:00</dc:date>
+<dc:subject>firefox</dc:subject>
+<slash:department>new-and-improved</slash:department>
+<slash:section>news</slash:section>
+<slash:comments>47</slash:comments>
+<slash:hit_parade>47,44,38,34,9,4,3</slash:hit_parade>
+</item>
+<textinput rdf:about="https://slashdot.org/search.pl">
+<title>Search Slashdot</title>
+<description>Search Slashdot stories</description>
+<name>query</name>
+<link>https://slashdot.org/search.pl</link>
+</textinput>
+</rdf:RDF>

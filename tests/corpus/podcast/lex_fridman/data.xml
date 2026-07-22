@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+xmlns:podcast="https://podcastindex.org/namespace/1.0"
+xmlns:rawvoice="https://blubrry.com/developer/rawvoice-rss/"
+>
+<channel>
+	<title>Lex Fridman Podcast</title>
+	<atom:link href="https://lexfridman.com/feed/podcast/" rel="self" type="application/rss+xml" />
+	<link>https://lexfridman.com/</link>
+	<description>Conversations that explore technology, history, philosophy, physics, mathematics, biology, chemistry, engineering, AI, robotics, programming, music, film, art, sports, psychology, neuroscience, geopolitics, business, economics, religion, astronomy, and the human condition with people from all walks of life.</description>
+	<lastBuildDate>Tue, 30 Jun 2026 21:33:40 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>Blubrry PowerPress/11.16.10</generator>
+		<atom:link rel="hub" href="https://pubsubhubbub.appspot.com/" />
+	<itunes:new-feed-url>https://lexfridman.com/feed/podcast/</itunes:new-feed-url>
+	<itunes:author>Lex Fridman</itunes:author>
+	<itunes:explicit>false</itunes:explicit>
+	<itunes:image href="https://lexfridman.com/wordpress/wp-content/uploads/powerpress/artwork_3000-230.png" />
+	<itunes:owner>
+		<itunes:name>Lex Fridman</itunes:name>
+		<itunes:email>lexfridman@gmail.com</itunes:email>
+	</itunes:owner>
+	<podcast:medium>podcast</podcast:medium>
+	<image>
+		<title>Lex Fridman Podcast</title>
+		<url>https://lexfridman.com/wordpress/wp-content/uploads/powerpress/artwork_3000-230.png</url>
+		<link>https://lexfridman.com/podcast</link>
+	</image>
+	<itunes:category text="Technology" />
+	<itunes:category text="Science" />
+	<itunes:category text="Society &amp; Culture">
+		<itunes:category text="Philosophy" />
+	</itunes:category>
+	<podcast:podping usesPodping="true" />
+	<podcast:guid>7eeae9d1-141e-5133-9e8f-6c1da695e40c</podcast:guid>
+	<rawvoice:subscribe feed="https://lexfridman.com/feed/podcast/" itunes="https://podcasts.apple.com/us/podcast/lex-fridman-podcast/id1434243584" tunein="https://tunein.com/podcasts/Technology-Podcasts/Artificial-Intelligence-p1153019/" spotify="https://open.spotify.com/show/2MAi0BvDc6GTFvKFPXnkCL"></rawvoice:subscribe>
+	<item>
+		<title>#498 – Anthony Kaldellis: Roman Empire, Byzantine Empire, Rise &#038; Fall of Empires</title>
+		<link>https://lexfridman.com/anthony-kaldellis/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=anthony-kaldellis</link>
+		<pubDate>Tue, 30 Jun 2026 21:33:40 +0000</pubDate>
+		<guid isPermaLink="false">https://lexfridman.com/?p=6466</guid>
+		<comments>https://lexfridman.com/anthony-kaldellis/#respond</comments>
+		<wfw:commentRss>https://lexfridman.com/anthony-kaldellis/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<category><![CDATA[ai]]></category>
+		<description><![CDATA[<p>Anthony Kaldellis is a historian of the Roman Empire and author of &#8220;The New Roman Empire&#8221;, a comprehensive history of the Byzantine Empire (Eastern Roman Empire).<br />
+Thank you for listening ❤ Check out our sponsors: <a href="https://lexfridman.com/sponsors/ep498-sc">https://lexfridman.com/sponsors/ep498-sc</a><br />
+See below for timestamps, transcript, and to give feedback, submit questions, contact Lex, etc.</p>
+<p><b>Transcript:</b><br />
+<a href="https://lexfridman.com/anthony-kaldellis-transcript">https://lexfridman.com/anthony-kaldellis-transcript</a></p>
+<p><b>CONTACT LEX:</b><br />
+<b>Feedback</b> &#8211; give feedback to Lex: <a href="https://lexfridman.com/survey">https://lexfridman.com/survey</a><br />
+<b>AMA</b> &#8211; submit questions, videos or call-in: <a href="https://lexfridman.com/ama">https://lexfridman.com/ama</a><br />
+<b>Hiring</b> &#8211; join our team: <a href="https://lexfridman.com/hiring">https://lexfridman.com/hiring</a><br />
+<b>Other</b> &#8211; other ways to get in touch: <a href="https://lexfridman.com/contact">https://lexfridman.com/contact</a></p>
+<p><b>EPISODE LINKS:</b><br />
+Anthony&#8217;s Books: <a href="https://amzn.to/49AX7Q1">https://amzn.to/49AX7Q1</a><br />
+Anthony&#8217;s Publications: <a href="https://kaldellispublications.weebly.com">https://kaldellispublications.weebly.com</a><br />
+Anthony&#8217;s University of Chicago page: <a href="https://classics.uchicago.edu/people/anthony-kaldellis">https://classics.uchicago.edu/people/anthony-kaldellis</a><br />
+The New Roman Empire (book): <a href="https://amzn.to/3PTFTqk">https://amzn.to/3PTFTqk</a><br />
+Streams of Gold (book): <a href="https://amzn.to/4fgRMRq">https://amzn.to/4fgRMRq</a><br />
+Byzantium &#38; Friends Podcast: <a href="https://byzantiumandfriends.podbean.com/">https://byzantiumandfriends.podbean.com/</a><br />
+The History of Byzantium Podcast: <a href="https://thehistoryofbyzantium.com/">https://thehistoryofbyzantium.com/</a></p>
+<p><b>SPONSORS:</b><br />
+To support this podcast, check out our sponsors &#38; get discounts:<br />
+<b>Upwork:</b> Platform for hiring freelancers.<br />
+Go to <a href="https://lexfridman.com/s/upwork-ep498-sc">https://upwork.com/lex</a><br />
+<b>Fin:</b> AI agent for customer service.<br />
+Go to <a href="https://lexfridman.com/s/fin-ep498-sc">https://fin.ai/lex</a><br />
+<b>BetterHelp:</b> Online therapy and counseling.<br />
+Go to <a href="https://lexfridman.com/s/betterhelp-ep498-sc">https://betterhelp.com/lex</a><br />
+<b>LMNT:</b> Zero-sugar electrolyte drink mix.<br />
+Go to <a href="https://lexfridman.com/s/lmnt-ep498-sc">https://drinkLMNT.com/lex</a><br />
+<b>Shopify:</b> Sell stuff online.<br />
+Go to <a href="https://lexfridman.com/s/shopify-ep498-sc">https://shopify.com/lex</a><br />
+<b>Perplexity:</b> AI-powered answer engine.<br />
+Go to <a href="https://lexfridman.com/s/perplexity-ep498-sc">https://perplexity.ai/</a></p>
+<p><b>OUTLINE:</b><br />
+(00:00) &#8211; Introduction<br />
+(00:11) &#8211; Sponsors, Comments, and Reflections<br />
+(08:45) &#8211; The Roman Empire and the Byzantine Empire<br />
+(12:42) &#8211; 2,200 Years of Roman History<br />
+(33:06) &#8211; Power, violence, and civil war<br />
+(54:20) &#8211; Edict of Caracalla<br />
+(1:07:17) &#8211; Crisis of the Third Century<br />
+(1:21:45) &#8211; Constantine and the new Roman Empire<br />
+(1:33:46) &#8211; Christianity in the Roman Empire<br />
+(1:59:14) &#8211; Fall of the Western Roman Empire<br />
+(2:12:11) &#8211; Eunuchs, Taxes, and Power<br />
+(2:37:17) &#8211; Emperor Justinian and wars of conquest<br />
+(2:54:19) &#8211; The Arab conquests<br />
+(3:13:55) &#8211; Why the Roman empire survived so long<br />
+(3:40:01) &#8211; Lessons from history</p>
+<p><b>PODCAST LINKS:</b><br />
+&#8211; Podcast Website: <a href="https://lexfridman.com/podcast">https://lexfridman.com/podcast</a><br />
+&#8211; Apple Podcasts: <a href="https://apple.co/2lwqZIr">https://apple.co/2lwqZIr</a><br />
+&#8211; Spotify: <a href="https://spoti.fi/2nEwCF8">https://spoti.fi/2nEwCF8</a><br />
+&#8211; RSS: <a href="https://lexfridman.com/feed/podcast/">https://lexfridman.com/feed/podcast/</a><br />
+&#8211; Podcast Playlist: <a href="https://www.youtube.com/playlist?list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4">https://www.youtube.com/playlist?list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4</a><br />
+&#8211; Clips Channel: <a href="https://www.youtube.com/lexclips">https://www.youtube.com/lexclips</a></p>]]></description>
+		<enclosure url="https://media.blubrry.com/takeituneasy/ins.blubrry.com/takeituneasy/lex_ai_anthony_kaldellis.mp3" length="191739073" type="audio/mpeg" />
+		<itunes:episodeType>full</itunes:episodeType>
+		<rawvoice:pid>154171889</rawvoice:pid>
+	</item>
+	<item>
+		<title>#497 – Biggest Mysteries in Physics: Antimatter, Dark Energy &#038; ToE &#8211; Don Lincoln</title>
+		<link>https://lexfridman.com/don-lincoln/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=don-lincoln</link>
+		<pubDate>Fri, 29 May 2026 16:22:02 +0000</pubDate>
+		<guid isPermaLink="false">https://lexfridman.com/?p=6457</guid>
+		<comments>https://lexfridman.com/don-lincoln/#respond</comments>
+		<wfw:commentRss>https://lexfridman.com/don-lincoln/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<category><![CDATA[ai]]></category>
+		<description><![CDATA[<p>Don Lincoln is a particle physicist at Fermilab who has spent decades working at the frontiers of high energy physics.<br />
+Thank you for listening ❤ Check out our sponsors: <a href="https://lexfridman.com/sponsors/ep497-sc">https://lexfridman.com/sponsors/ep497-sc</a><br />
+See below for timestamps, and to give feedback, submit questions, contact Lex, etc.</p>
+<p><b>CONTACT LEX:</b><br />
+<b>Feedback</b> &#8211; give feedback to Lex: <a href="https://lexfridman.com/survey">https://lexfridman.com/survey</a><br />
+<b>AMA</b> &#8211; submit questions, videos or call-in: <a href="https://lexfridman.com/ama">https://lexfridman.com/ama</a><br />
+<b>Hiring</b> &#8211; join our team: <a href="https://lexfridman.com/hiring">https://lexfridman.com/hiring</a><br />
+<b>Other</b> &#8211; other ways to get in touch: <a href="https://lexfridman.com/contact">https://lexfridman.com/contact</a></p>
+<p><b>EPISODE LINKS:</b><br />
+Don&#8217;s Facebook: <a href="https://facebook.com/Dr.Don.Lincoln/">https://facebook.com/Dr.Don.Lincoln/</a><br />
+Don&#8217;s Website: <a href="https://drdonlincoln.com/">https://drdonlincoln.com/</a><br />
+Don&#8217;s LinkedIn: <a href="https://bit.ly/4nHeNiF">https://bit.ly/4nHeNiF</a><br />
+Don&#8217;s YouTube Playlist: <a href="https://bit.ly/3PCIW67">https://bit.ly/3PCIW67</a><br />
+Don&#8217;s X: <a href="https://x.com/DrDonLincoln">https://x.com/DrDonLincoln</a><br />
+Don&#8217;s Books: <a href="https://amzn.to/4uYbkOZ">https://amzn.to/4uYbkOZ</a><br />
+Don&#8217;s Great Courses: <a href="https://shop.thegreatcourses.com/don-lincoln">https://shop.thegreatcourses.com/don-lincoln</a><br />
+Don&#8217;s Audible: <a href="https://adbl.co/4wGioRV">https://adbl.co/4wGioRV</a><br />
+Fermilab&#8217;s YouTube: <a href="https://www.youtube.com/fermilab">https://www.youtube.com/fermilab</a><br />
+Fermilab&#8217;s Website: <a href="https://www.fnal.gov/">https://www.fnal.gov/</a><br />
+Fermilab&#8217;s X: <a href="https://x.com/fermilab">https://x.com/fermilab</a></p>
+<p><b>SPONSORS:</b><br />
+To support this podcast, check out our sponsors &#38; get discounts:<br />
+<b>Upwork:</b> Platform for hiring freelancers.<br />
+Go to <a href="https://lexfridman.com/s/upwork-ep497-sc">https://upwork.com/lex</a><br />
+<b>Larridin:</b> Measure AI adoption in your business.<br />
+Go to <a href="https://lexfridman.com/s/larridin-ep497-sc">https://larridin.com</a><br />
+<b>Fin:</b> AI agent for customer service.<br />
+Go to <a href="https://lexfridman.com/s/fin-ep497-sc">https://fin.ai/lex</a><br />
+<b>LMNT:</b> Zero-sugar electrolyte drink mix.<br />
+Go to <a href="https://lexfridman.com/s/lmnt-ep497-sc">https://drinkLMNT.com/lex</a><br />
+<b>Shopify:</b> Sell stuff online.<br />
+Go to <a href="https://lexfridman.com/s/shopify-ep497-sc">https://shopify.com/lex</a><br />
+<b>Perplexity:</b> AI-powered answer engine.<br />
+Go to <a href="https://lexfridman.com/s/perplexity-ep497-sc">https://perplexity.ai/</a></p>
+<p><b>OUTLINE:</b><br />
+(00:00) &#8211; Introduction<br />
+(00:34) &#8211; Sponsors, Comments, and Reflections<br />
+(08:52) &#8211; Unifying the laws of nature<br />
+(23:23) &#8211; Einstein, special relativity, and general relativity<br />
+(40:31) &#8211; Electroweak force<br />
+(52:13) &#8211; How particle colliders work<br />
+(1:10:16) &#8211; Higgs boson discovery<br />
+(1:20:35) &#8211; Theory of everything<br />
+(1:50:20) &#8211; Physics of empty space<br />
+(1:57:45) &#8211; Antimatter<br />
+(2:18:35) &#8211; Dark energy<br />
+(2:22:23) &#8211; Dark matter<br />
+(2:50:59) &#8211; Future of physics</p>
+<p><b>PODCAST LINKS:</b><br />
+&#8211; Podcast Website: <a href="https://lexfridman.com/podcast">https://lexfridman.com/podcast</a><br />
+&#8211; Apple Podcasts: <a href="https://apple.co/2lwqZIr">https://apple.co/2lwqZIr</a><br />
+&#8211; Spotify: <a href="https://spoti.fi/2nEwCF8">https://spoti.fi/2nEwCF8</a><br />
+&#8211; RSS: <a href="https://lexfridman.com/feed/podcast/">https://lexfridman.com/feed/podcast/</a><br />
+&#8211; Podcast Playlist: <a href="https://www.youtube.com/playlist?list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4">https://www.youtube.com/playlist?list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4</a><br />
+&#8211; Clips Channel: <a href="https://www.youtube.com/lexclips">https://www.youtube.com/lexclips</a></p>]]></description>
+		<enclosure url="https://media.blubrry.com/takeituneasy/ins.blubrry.com/takeituneasy/lex_ai_don_lincoln.mp3" length="130943841" type="audio/mpeg" />
+		<itunes:episodeType>full</itunes:episodeType>
+		<itunes:duration>3:01:52</itunes:duration>
+		<rawvoice:pid>153917424</rawvoice:pid>
+	</item>
+	<item>
+		<title>#496 – FFmpeg: The Incredible Technology Behind Video on the Internet</title>
+		<link>https://lexfridman.com/ffmpeg/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=ffmpeg</link>
+		<pubDate>Wed, 06 May 2026 22:06:47 +0000</pubDate>
+		<guid isPermaLink="false">https://lexfridman.com/?p=6450</guid>
+		<comments>https://lexfridman.com/ffmpeg/#respond</comments>
+		<wfw:commentRss>https://lexfridman.com/ffmpeg/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<category><![CDATA[ai]]></category>
+		<description><![CDATA[<p>Jean-Baptiste Kempf is lead developer of VLC and president of VideoLAN. Kieran Kunhya is a longtime FFmpeg contributor, codec engineer, and the person behind the now-infamous FFmpeg account on X.<br />
+Thank you for listening ❤ Check out our sponsors: <a href="https://lexfridman.com/sponsors/ep496-sc">https://lexfridman.com/sponsors/ep496-sc</a><br />
+See below for timestamps, transcript, and to give feedback, submit questions, contact Lex, etc.</p>
+<p><b>Transcript:</b><br />
+<a href="https://lexfridman.com/ffmpeg-transcript">https://lexfridman.com/ffmpeg-transcript</a></p>
+<p><b>CONTACT LEX:</b><br />
+<b>Feedback</b> &#8211; give feedback to Lex: <a href="https://lexfridman.com/survey">https://lexfridman.com/survey</a><br />
+<b>AMA</b> &#8211; submit questions, videos or call-in: <a href="https://lexfridman.com/ama">https://lexfridman.com/ama</a><br />
+<b>Hiring</b> &#8211; join our team: <a href="https://lexfridman.com/hiring">https://lexfridman.com/hiring</a><br />
+<b>Other</b> &#8211; other ways to get in touch: <a href="https://lexfridman.com/contact">https://lexfridman.com/contact</a></p>
+<p><b>EPISODE LINKS:</b><br />
+FFmpeg on X: <a href="https://x.com/FFmpeg">https://x.com/FFmpeg</a><br />
+FFmpeg: <a href="https://ffmpeg.org/">https://ffmpeg.org/</a><br />
+VideoLAN (VLC): <a href="https://www.videolan.org/">https://www.videolan.org/</a><br />
+VideoLAN on X: <a href="https://x.com/videolan">https://x.com/videolan</a><br />
+Jean-Baptiste&#8217;s Website: <a href="https://jbkempf.com/">https://jbkempf.com/</a><br />
+Jean-Baptiste&#8217;s LinkedIn: <a href="https://www.linkedin.com/in/jbkempf/">https://www.linkedin.com/in/jbkempf/</a><br />
+Jean-Baptiste&#8217;s GitHub: <a href="https://github.com/jbkempf">https://github.com/jbkempf</a><br />
+Kieran&#8217;s X: <a href="https://x.com/kierank_">https://x.com/kierank_</a><br />
+Kieran&#8217;s LinkedIn: <a href="https://bit.ly/3OORhmC">https://bit.ly/3OORhmC</a><br />
+Kieran&#8217;s GitHub: <a href="https://github.com/kierank">https://github.com/kierank</a></p>
+<p><b>SPONSORS:</b><br />
+To support this podcast, check out our sponsors &#38; get discounts:<br />
+<b>Larridin:</b> Measure AI adoption in your business.<br />
+Go to <a href="https://lexfridman.com/s/larridin-ep496-sc">https://larridin.com</a><br />
+<b>Blitzy:</b> AI agent for large enterprise codebases.<br />
+Go to <a href="https://lexfridman.com/s/blitzy-ep496-sc">https://blitzy.com/lex</a><br />
+<b>BetterHelp:</b> Online therapy and counseling.<br />
+Go to <a href="https://lexfridman.com/s/betterhelp-ep496-sc">https://betterhelp.com/lex</a><br />
+<b>Fin:</b> AI agent for customer service.<br />
+Go to <a href="https://lexfridman.com/s/fin-ep496-sc">https://fin.ai/lex</a><br />
+<b>LMNT:</b> Zero-sugar electrolyte drink mix.<br />
+Go to <a href="https://lexfridman.com/s/lmnt-ep496-sc">https://drinkLMNT.com/lex</a><br />
+<b>Perplexity:</b> AI-powered answer engine.<br />
+Go to <a href="https://lexfridman.com/s/perplexity-ep496-sc">https://perplexity.ai/</a></p>
+<p><b>OUTLINE:</b><br />
+(00:00) &#8211; Introduction<br />
+(03:00) &#8211; Sponsors, Comments, and Reflections<br />
+(10:48) &#8211; Weirdest things VLC opens<br />
+(15:12) &#8211; How video playback works<br />
+(24:33) &#8211; Video codecs and containers<br />
+(35:20) &#8211; FFmpeg explained<br />
+(56:20) &#8211; Linus Torvalds<br />
+(1:00:59) &#8211; Turning down millions to keep VLC ad-free<br />
+(1:15:17) &#8211; FFmpeg &#38; Google drama<br />
+(1:34:31) &#8211; FFmpeg developers<br />
+(1:41:08) &#8211; VLC and FFmpeg<br />
+(1:45:42) &#8211; History of FFmpeg<br />
+(1:48:59) &#8211; Reverse engineering codecs<br />
+(2:02:14) &#8211; FFmpeg testing<br />
+(2:06:21) &#8211; Assembly code (handwritten)<br />
+(2:30:39) &#8211; Rust programming language<br />
+(2:39:55) &#8211; FFmpeg and Libav fork<br />
+(2:48:17) &#8211; Open source burnout<br />
+(2:56:04) &#8211; x264 and internet video<br />
+(3:09:20) &#8211; Video compression basics<br />
+(3:16:17) &#8211; CIA and fake VLC<br />
+(3:26:52) &#8211; Ultra low latency streaming<br />
+(3:44:20) &#8211; AV2 codec and video patents<br />
+(3:54:12) &#8211; VLC backdoors<br />
+(4:04:27) &#8211; Video archiving<br />
+(4:11:04) &#8211; Future of FFmpeg and VLC</p>]]></description>
+		<enclosure url="https://media.blubrry.com/takeituneasy/ins.blubrry.com/takeituneasy/lex_ai_ffmpeg.mp3" length="189853118" type="audio/mpeg" />
+		<itunes:episodeType>full</itunes:episodeType>
+		<itunes:duration>4:23:41</itunes:duration>
+		<rawvoice:pid>153865024</rawvoice:pid>
+	</item>
+	<item>
+		<title>#495 – Vikings, Ragnar, Berserkers, Valhalla &#038; the Warriors of the Viking Age</title>
+		<link>https://lexfridman.com/lars-brownworth/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=lars-brownworth</link>
+		<pubDate>Thu, 09 Apr 2026 17:43:17 +0000</pubDate>
+		<guid isPermaLink="false">https://lexfridman.com/?p=6441</guid>
+		<comments>https://lexfridman.com/lars-brownworth/#respond</comments>
+		<wfw:commentRss>https://lexfridman.com/lars-brownworth/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<category><![CDATA[ai]]></category>
+		<description><![CDATA[<p>Lars Brownworth is a historian, teacher, podcaster, and author specializing in Viking history, medieval Europe, and the Byzantine Empire.<br />
+Thank you for listening ❤ Check out our sponsors: <a href="https://lexfridman.com/sponsors/ep495-sc">https://lexfridman.com/sponsors/ep495-sc</a><br />
+See below for timestamps, transcript, and to give feedback, submit questions, contact Lex, etc.</p>
+<p><b>Transcript:</b><br />
+<a href="https://lexfridman.com/lars-brownworth-transcript">https://lexfridman.com/lars-brownworth-transcript</a></p>
+<p><b>CONTACT LEX:</b><br />
+<b>Feedback</b> &#8211; give feedback to Lex: <a href="https://lexfridman.com/survey">https://lexfridman.com/survey</a><br />
+<b>AMA</b> &#8211; submit questions, videos or call-in: <a href="https://lexfridman.com/ama">https://lexfridman.com/ama</a><br />
+<b>Hiring</b> &#8211; join our team: <a href="https://lexfridman.com/hiring">https://lexfridman.com/hiring</a><br />
+<b>Other</b> &#8211; other ways to get in touch: <a href="https://lexfridman.com/contact">https://lexfridman.com/contact</a></p>
+<p><b>EPISODE LINKS:</b><br />
+Lars&#8217;s Website: <a href="https://larsbrownworth.com/">https://larsbrownworth.com/</a><br />
+The Sea Wolves (book): <a href="https://www.amazon.com/Sea-Wolves-History-Vikings/dp/1909979120">https://www.amazon.com/Sea-Wolves-History-Vikings/dp/1909979120</a><br />
+Lars&#8217;s Books: <a href="https://amzn.to/4sHY0xw">https://amzn.to/4sHY0xw</a><br />
+12 Byzantine Rulers Podcast : <a href="https://12byzantinerulers.com/">https://12byzantinerulers.com/</a><br />
+Norman Centuries Podcast: <a href="https://apple.co/4sgSxNi">https://apple.co/4sgSxNi</a></p>
+<p><b>SPONSORS:</b><br />
+To support this podcast, check out our sponsors &#38; get discounts:<br />
+<b>Larridin:</b> Measure AI adoption in your business.<br />
+Go to <a href="https://lexfridman.com/s/larridin-ep495-sc">https://larridin.com</a><br />
+<b>BetterHelp:</b> Online therapy and counseling.<br />
+Go to <a href="https://lexfridman.com/s/betterhelp-ep495-sc">https://betterhelp.com/lex</a><br />
+<b>LMNT:</b> Zero-sugar electrolyte drink mix.<br />
+Go to <a href="https://lexfridman.com/s/lmnt-ep495-sc">https://drinkLMNT.com/lex</a><br />
+<b>Fin:</b> AI agent for customer service.<br />
+Go to <a href="https://lexfridman.com/s/fin-ep495-sc">https://fin.ai/lex</a><br />
+<b>Shopify:</b> Sell stuff online.<br />
+Go to <a href="https://lexfridman.com/s/shopify-ep495-sc">https://shopify.com/lex</a><br />
+<b>Perplexity:</b> AI-powered answer engine.<br />
+Go to <a href="https://lexfridman.com/s/perplexity-ep495-sc">https://perplexity.ai/</a></p>
+<p><b>OUTLINE:</b><br />
+(00:00) &#8211; Introduction<br />
+(01:03) &#8211; Sponsors, Comments, and Reflections<br />
+(08:57) &#8211; The start of the Viking Age<br />
+(18:50) &#8211; Viking military strategy, tactics &#38; technology<br />
+(32:33) &#8211; Ragnar Lothbrok<br />
+(42:00) &#8211; The Great Heathen Army<br />
+(46:42) &#8211; Rollo and Normandy<br />
+(56:54) &#8211; Viking religion and Valhalla<br />
+(1:07:25) &#8211; Viking explorers<br />
+(1:12:33) &#8211; Vikings in North America<br />
+(1:25:55) &#8211; Vikings in the East<br />
+(1:45:33) &#8211; Byzantine Empire<br />
+(1:54:17) &#8211; History and human nature</p>
+<p><b>PODCAST LINKS:</b><br />
+&#8211; Podcast Website: <a href="https://lexfridman.com/podcast">https://lexfridman.com/podcast</a><br />
+&#8211; Apple Podcasts: <a href="https://apple.co/2lwqZIr">https://apple.co/2lwqZIr</a><br />
+&#8211; Spotify: <a href="https://spoti.fi/2nEwCF8">https://spoti.fi/2nEwCF8</a><br />
+&#8211; RSS: <a href="https://lexfridman.com/feed/podcast/">https://lexfridman.com/feed/podcast/</a><br />
+&#8211; Podcast Playlist: <a href="https://www.youtube.com/playlist?list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4">https://www.youtube.com/playlist?list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4</a><br />
+&#8211; Clips Channel: <a href="https://www.youtube.com/lexclips">https://www.youtube.com/lexclips</a></p>]]></description>
+		<enclosure url="https://media.blubrry.com/takeituneasy/ins.blubrry.com/takeituneasy/lex_ai_lars_brownworth.mp3" length="93553684" type="audio/mpeg" />
+		<itunes:episodeType>full</itunes:episodeType>
+		<itunes:duration>2:09:56</itunes:duration>
+		<rawvoice:pid>153798039</rawvoice:pid>
+	</item>
+	<item>
+		<title>#494 – Jensen Huang: NVIDIA &#8211; The $4 Trillion Company &#038; the AI Revolution</title>
+		<link>https://lexfridman.com/jensen-huang/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=jensen-huang</link>
+		<pubDate>Mon, 23 Mar 2026 16:28:42 +0000</pubDate>
+		<guid isPermaLink="false">https://lexfridman.com/?p=6434</guid>
+		<comments>https://lexfridman.com/jensen-huang/#respond</comments>
+		<wfw:commentRss>https://lexfridman.com/jensen-huang/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<category><![CDATA[ai]]></category>
+		<description><![CDATA[<p>Jensen Huang is the co-founder and CEO of NVIDIA, the world&#8217;s most valuable company and the engine powering the AI computing revolution.<br />
+Thank you for listening ❤ Check out our sponsors: <a href="https://lexfridman.com/sponsors/ep494-sc">https://lexfridman.com/sponsors/ep494-sc</a><br />
+See below for timestamps, transcript, and to give feedback, submit questions, contact Lex, etc.</p>
+<p><b>Transcript:</b><br />
+<a href="https://lexfridman.com/jensen-huang-transcript">https://lexfridman.com/jensen-huang-transcript</a></p>
+<p><b>CONTACT LEX:</b><br />
+<b>Feedback</b> &#8211; give feedback to Lex: <a href="https://lexfridman.com/survey">https://lexfridman.com/survey</a><br />
+<b>AMA</b> &#8211; submit questions, videos or call-in: <a href="https://lexfridman.com/ama">https://lexfridman.com/ama</a><br />
+<b>Hiring</b> &#8211; join our team: <a href="https://lexfridman.com/hiring">https://lexfridman.com/hiring</a><br />
+<b>Other</b> &#8211; other ways to get in touch: <a href="https://lexfridman.com/contact">https://lexfridman.com/contact</a></p>
+<p><b>EPISODE LINKS:</b><br />
+NVIDIA: <a href="https://nvidia.com">https://nvidia.com</a><br />
+NVIDIA on X: <a href="https://x.com/nvidia">https://x.com/nvidia</a><br />
+NVIDIA AI on X: <a href="https://x.com/NVIDIAAI">https://x.com/NVIDIAAI</a><br />
+NVIDIA on YouTube: <a href="https://youtube.com/@nvidia">https://youtube.com/@nvidia</a><br />
+NVIDIA on Instagram: <a href="https://www.instagram.com/nvidia/">https://www.instagram.com/nvidia/</a><br />
+NVIDIA on LinkedIn: <a href="https://www.linkedin.com/company/nvidia/">https://www.linkedin.com/company/nvidia/</a><br />
+NVIDIA on Facebook: <a href="https://www.facebook.com/NVIDIA/">https://www.facebook.com/NVIDIA/</a><br />
+NVIDIA on GitHub: <a href="https://github.com/NVIDIA">https://github.com/NVIDIA</a><br />
+Nemotron: <a href="https://developer.nvidia.com/nemotron">https://developer.nvidia.com/nemotron</a></p>
+<p><b>SPONSORS:</b><br />
+To support this podcast, check out our sponsors &#38; get discounts:<br />
+<b>Perplexity:</b> AI-powered answer engine.<br />
+Go to <a href="https://lexfridman.com/s/perplexity-ep494-sc">https://perplexity.ai/</a><br />
+<b>Shopify:</b> Sell stuff online.<br />
+Go to <a href="https://lexfridman.com/s/shopify-ep494-sc">https://shopify.com/lex</a><br />
+<b>LMNT:</b> Zero-sugar electrolyte drink mix.<br />
+Go to <a href="https://lexfridman.com/s/lmnt-ep494-sc">https://drinkLMNT.com/lex</a><br />
+<b>Fin:</b> AI agent for customer service.<br />
+Go to <a href="https://lexfridman.com/s/fin-ep494-sc">https://fin.ai/lex</a><br />
+<b>Quo:</b> Phone system (calls, texts, contacts) for businesses.<br />
+Go to <a href="https://lexfridman.com/s/quo-ep494-sc">https://quo.com/lex</a></p>
+<p><b>OUTLINE:</b><br />
+(00:00) &#8211; Introduction<br />
+(00:26) &#8211; Sponsors, Comments, and Reflections<br />
+(06:34) &#8211; Extreme co-design and rack-scale engineering<br />
+(09:20) &#8211; How Jensen runs NVIDIA<br />
+(28:41) &#8211; AI scaling laws<br />
+(43:41) &#8211; Biggest blockers to AI scaling laws<br />
+(45:25) &#8211; Supply chain<br />
+(47:20) &#8211; Memory<br />
+(53:25) &#8211; Power<br />
+(58:45) &#8211; Elon and Colossus<br />
+(1:02:13) &#8211; Jensen&#8217;s approach to engineering and leadership<br />
+(1:07:38) &#8211; China<br />
+(1:15:51) &#8211; TSMC and Taiwan<br />
+(1:21:06) &#8211; NVIDIA&#8217;s moat<br />
+(1:26:43) &#8211; AI data centers in space<br />
+(1:30:31) &#8211; Will NVIDIA be worth $10 trillion?<br />
+(1:40:40) &#8211; Leadership under pressure<br />
+(1:54:26) &#8211; Video games<br />
+(2:01:18) &#8211; AGI timeline<br />
+(2:03:31) &#8211; Future of programming<br />
+(2:17:02) &#8211; Consciousness<br />
+(2:23:23) &#8211; Mortality</p>
+<p><b>PODCAST LINKS:</b><br />
+&#8211; Podcast Website: <a href="https://lexfridman.com/podcast">https://lexfridman.com/podcast</a><br />
+&#8211; Apple Podcasts: <a href="https://apple.co/2lwqZIr">https://apple.co/2lwqZIr</a><br />
+&#8211; Spotify: <a href="https://spoti.fi/2nEwCF8">https://spoti.fi/2nEwCF8</a><br />
+&#8211; RSS: <a href="https://lexfridman.com/feed/podcast/">https://lexfridman.com/feed/podcast/</a><br />
+&#8211; Podcast Playlist: <a href="https://www.youtube.com/playlist?list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4">https://www.youtube.com/playlist?list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4</a><br />
+&#8211; Clips Channel: <a href="https://www.youtube.com/lexclips">https://www.youtube.com/lexclips</a></p>]]></description>
+		<enclosure url="https://media.blubrry.com/takeituneasy/ins.blubrry.com/takeituneasy/lex_ai_jensen_huang.mp3" length="116997396" type="audio/mpeg" />
+		<itunes:episodeType>full</itunes:episodeType>
+		<rawvoice:pid>153756299</rawvoice:pid>
+	</item>
+</channel>
+</rss>

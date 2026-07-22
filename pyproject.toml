@@ -53,6 +53,8 @@ dev = [
     "pytest>=7.4.0",
     "mypy",
     "types-xmltodict>=0.14.0.20241009",
+    "hypothesis>=6.141.1",
+    "pytest-cov>=7.1.0",
 ]
 docs = [
     "mkdocs-material>=9.5",
@@ -69,6 +71,10 @@ addopts = "--color=yes"
 testpaths = ["tests"]
 log_cli = true
 log_level = "INFO"
+
+[tool.coverage.report]
+fail_under = 98
+show_missing = true
 
 
 [tool.black]

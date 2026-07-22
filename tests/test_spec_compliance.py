@@ -74,6 +74,11 @@ class TestChannelElements:
 
         assert channel.rating.content.startswith("(PICS-1.1")
 
+    def test_self_closing_list_tag_is_an_empty_list(self):
+        channel = parse_channel("<category/>")
+
+        assert channel.categories == []
+
     def test_ttl_is_an_int(self):
         channel = parse_channel("<ttl>60</ttl>")
 

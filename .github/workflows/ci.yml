@@ -45,4 +45,4 @@ jobs:
         run: uv run mypy rss_parser
 
       - name: Test code with pytest
-        run: uv run pytest --doctest-modules rss_parser tests
+        run: uv run pytest --doctest-modules rss_parser tests --cov=rss_parser
