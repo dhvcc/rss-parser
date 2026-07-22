@@ -6,7 +6,21 @@ from rss_parser.models.utils import camel_case
 
 
 class XMLBaseModel(BaseModel):
-    model_config = ConfigDict(alias_generator=camel_case)
+    """
+    Base model for all XML-backed schemas.
+
+    - Aliases are generated in camelCase to match common XML tag naming (``pub_date`` -> ``pubDate``).
+    - Fields can also be populated by their python names, which is handy in tests and fixtures.
+    - Unknown tags are *kept*, not discarded: anything that is not declared on the schema
+      (e.g. ``itunes:keywords`` on a bare RSS schema) is stored on the model and is accessible
+      via ``model_extra``.
+    """
+
+    model_config = ConfigDict(
+        alias_generator=camel_case,
+        populate_by_name=True,
+        extra="allow",
+    )
 
     def json_plain(self, **kwargs) -> str:
         """

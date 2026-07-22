@@ -1,14 +1,21 @@
-from typing import Optional
+from typing import Generic, Optional
 
 from pydantic import Field
+from typing_extensions import TypeVar
 
 from rss_parser.models import XMLBaseModel
 from rss_parser.models.rss.channel import Channel
 from rss_parser.models.types.tag import Tag
 
+ChannelT = TypeVar("ChannelT", bound=XMLBaseModel, default=Channel)
 
-class RSS(XMLBaseModel):
-    """RSS 2.0."""
+
+class RSS(XMLBaseModel, Generic[ChannelT]):
+    """
+    RSS 0.9x / 2.0 (https://www.rssboard.org/rss-specification).
+
+    Generic over the channel type: ``RSS[Channel[MyItem]]`` or ``RSS[MyChannel]``.
+    """
 
     version: Optional[Tag[str]] = Field(alias="@version", default=None)
-    channel: Tag[Channel]
+    channel: Tag[ChannelT]

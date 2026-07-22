@@ -1,6 +1,7 @@
-from typing import Optional
+from typing import Generic, Optional
 
 from pydantic import Field
+from typing_extensions import TypeVar
 
 from rss_parser.models import XMLBaseModel
 from rss_parser.models.atom.entry import Entry
@@ -9,8 +10,19 @@ from rss_parser.models.types.date import DateTimeOrStr
 from rss_parser.models.types.only_list import OnlyList
 from rss_parser.models.types.tag import Tag
 
+EntryT = TypeVar("EntryT", bound=XMLBaseModel, default=Entry)
 
-class RequiredAtomFeedMixin(XMLBaseModel):
+
+class Feed(XMLBaseModel, Generic[EntryT]):
+    """
+    https://validator.w3.org/feed/docs/atom.html
+
+    Generic over the entry type, so a custom entry schema is one parametrization away:
+    ``Feed[MyEntry]``.
+    """
+
+    # Required feed elements
+
     id: Tag[str]
     "Identifies the feed using a universally unique and permanent URI."
 
@@ -20,17 +32,17 @@ class RequiredAtomFeedMixin(XMLBaseModel):
     updated: Tag[DateTimeOrStr]
     "Indicates the last time the feed was modified in a significant way."
 
+    # Recommended feed elements
 
-class RecommendedAtomFeedMixin(XMLBaseModel):
     authors: OnlyList[Tag[Person]] = Field(alias="author", default_factory=OnlyList)
     "Names one author of the feed. A feed may have multiple author elements."
 
     links: OnlyList[Tag[str]] = Field(alias="link", default_factory=OnlyList)
     "The URL to the feed. A feed may have multiple link elements."
 
+    # Optional feed elements
 
-class OptionalAtomFeedMixin(XMLBaseModel):
-    entries: OnlyList[Tag[Entry]] = Field(alias="entry", default_factory=OnlyList)
+    entries: OnlyList[Tag[EntryT]] = Field(alias="entry", default_factory=OnlyList)
     "The entries in the feed. A feed may have multiple entry elements."
 
     categories: OnlyList[Tag[dict]] = Field(alias="category", default_factory=OnlyList)
@@ -54,7 +66,3 @@ class OptionalAtomFeedMixin(XMLBaseModel):
 
     subtitle: Optional[Tag[str]] = None
     "Contains a human readable description or subtitle for the feed."
-
-
-class Feed(RequiredAtomFeedMixin, RecommendedAtomFeedMixin, OptionalAtomFeedMixin, XMLBaseModel):
-    """https://validator.w3.org/feed/docs/atom.html"""
