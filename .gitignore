@@ -119,3 +119,6 @@ venv.bak/
 
 # mkdocs build output
 site/
+
+# uv lockfile must be committed (overrides global ignore)
+!uv.lock

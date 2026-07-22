@@ -5,10 +5,10 @@ repos:
     hooks:
       # Check for files that contain merge conflict strings.
       - id: check-merge-conflict
-        stages: [ commit, push ]
+        stages: [ pre-commit, pre-push ]
       # Simply check whether files parse as valid python.
       - id: check-ast
-        stages: [ commit ]
+        stages: [ pre-commit ]
 
     # Use locally installed hooks
   - repo: local
@@ -22,7 +22,7 @@ repos:
           - black
         language: system
         types: [ python ]
-        stages: [ commit ]
+        stages: [ pre-commit ]
 
       - id: mypy-check-staged
         name: mypy
@@ -33,7 +33,7 @@ repos:
           - rss_parser
         pass_filenames: false
         language: system
-        stages: [ push ]
+        stages: [ pre-push ]
 
       - id: ruff-check-global
         name: ruff
@@ -44,4 +44,4 @@ repos:
           - check
         language: system
         types: [ python ]
-        stages: [ commit, push ]
+        stages: [ pre-commit, pre-push ]
