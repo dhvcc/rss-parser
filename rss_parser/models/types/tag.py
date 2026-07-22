@@ -14,6 +14,9 @@ T = TypeVar("T")
 
 class Tag(BaseModel, Generic[T]):
     """
+    Generic wrapper around a single XML tag, splitting its text into ``content``
+    and its XML attributes into ``attributes``.
+
     >>> from rss_parser.models import XMLBaseModel
     >>> from rss_parser.models.types.tag import Tag
     >>> class Model(XMLBaseModel):
@@ -26,15 +29,19 @@ class Tag(BaseModel, Generic[T]):
     >>> # Content value is an integer, as per the generic type
     >>> m.width.content
     48
-    >>> type(m.width), type(m.width.content)
-    (<class 'rss_parser.models.rss.image.Tag[int]'>, <class 'int'>)
+    >>> # Tags stringify to their content, so print() shows what you expect
+    >>> str(m.width)
+    '48'
     >>> # The attributes are empty by default
     >>> m.width.attributes
     {}
     >>> # But are populated when provided.
-    >>> # Note that the @ symbol is trimmed from the beggining and name is convert to snake_case
+    >>> # Note that the @ symbol is trimmed from the beginning and the name is converted to snake_case
     >>> m.category.attributes
     {'some_attribute': 'https://example.com'}
+    >>> # Attribute access is forwarded to the content for convenience
+    >>> m.category.upper()
+    'VALID STRING'
     >>> # Generic argument types are handled by pydantic - let's try to provide a string for a Tag[int] number
     >>> m = Model(width="not_a_number", category="valid_string")  # doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
@@ -49,14 +56,28 @@ class Tag(BaseModel, Generic[T]):
     attributes: Dict[str, Any] = Field(default_factory=dict)
 
     def __getattr__(self, item):
-        """Forward default getattr for content for simplicity."""
-        return getattr(self.content, item)
+        """Forward attribute access to the tag's content for simplicity."""
+        if item.startswith("__"):  # Don't break copy/pickle/inspection protocols
+            raise AttributeError(item)
+        content = self.__dict__.get("content")
+        if content is None:
+            raise AttributeError(
+                f"{type(self).__name__} has no attribute {item!r} and its content is empty "
+                f"(self-closing tag?). XML attributes, if any, are in `.attributes`: {self.attributes!r}"
+            )
+        return getattr(content, item)
 
     def __getitem__(self, key):
         return self.content[key]
 
     def __setitem__(self, key, value):
         self.content[key] = value
+
+    def __str__(self):
+        return "" if self.content is None else str(self.content)
+
+    def __bool__(self):
+        return self.content is not None or bool(self.attributes)
 
     @model_validator(mode="before")
     @classmethod
