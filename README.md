@@ -115,12 +115,12 @@ models generic and lossless. See the
 Pull requests are welcome. For major changes, please open an issue first to discuss what you
 would like to change.
 
-Install dependencies with `poetry install` (`pip install poetry`).
+Install dependencies with `uv sync` ([install uv](https://docs.astral.sh/uv/getting-started/installation/)).
 
 Using `pre-commit` is highly recommended. To install hooks, run:
 
 ```bash
-poetry run pre-commit install -t=pre-commit -t=pre-push
+uv run pre-commit install -t=pre-commit -t=pre-push
 ```
 
 See [Contributing](https://dhvcc.github.io/rss-parser/contributing/) for tests, snapshots, and docs.

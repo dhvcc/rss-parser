@@ -19,18 +19,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
 
-      - name: Install poetry
-        run: pipx install poetry
-
-      - name: Set up Python
-        uses: actions/setup-python@v5.6.0
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
         with:
+          enable-cache: true
           python-version: "3.12"
-          cache-dependency-path: pyproject.toml
-          cache: poetry
 
       - name: Install dependencies
-        run: poetry install --with docs
+        run: uv sync --locked --group docs
 
       - name: Deploy to gh-pages
-        run: poetry run mkdocs gh-deploy --force
+        run: uv run mkdocs gh-deploy --force

@@ -7,11 +7,16 @@ on:
   # TODO: Only on CI success
 
 jobs:
-  build-and-test-publish:
+  build-and-publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Build and publish to pypi
-        uses: JRubics/poetry-publish@v1.9
-        with:
-          pypi_token: ${{ secrets.pypi_password }}
+      - uses: actions/checkout@v4.2.2
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Build sdist and wheel
+        run: uv build
+
+      - name: Publish to PyPI
+        run: uv publish --token ${{ secrets.pypi_password }}

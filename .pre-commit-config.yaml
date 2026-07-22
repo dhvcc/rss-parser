@@ -16,7 +16,7 @@ repos:
     hooks:
       - id: black-format-staged
         name: black
-        entry: poetry
+        entry: uv
         args:
           - run
           - black
@@ -26,7 +26,7 @@ repos:
 
       - id: mypy-check-staged
         name: mypy
-        entry: poetry
+        entry: uv
         args:
           - run
           - mypy
@@ -37,7 +37,7 @@ repos:
 
       - id: ruff-check-global
         name: ruff
-        entry: poetry
+        entry: uv
         args:
           - run
           - ruff
