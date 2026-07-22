@@ -21,8 +21,8 @@ class Entry(XMLBaseModel):
     title: Tag[str]
     "The title of the entry."
 
-    updated: Tag[DateTimeOrStr]
-    "Indicates when the entry was updated."
+    updated: Optional[Tag[DateTimeOrStr]] = None
+    "Indicates when the entry was updated. Required by the spec, but omitted often enough in the wild that it's optional here."  # noqa: E501
 
     # Recommended entry elements
 

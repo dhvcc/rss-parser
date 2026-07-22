@@ -29,8 +29,8 @@ class Feed(XMLBaseModel, Generic[EntryT]):
     title: Tag[str]
     "Contains a human readable title for the feed."
 
-    updated: Tag[DateTimeOrStr]
-    "Indicates the last time the feed was modified in a significant way."
+    updated: Optional[Tag[DateTimeOrStr]] = None
+    "Indicates the last time the feed was modified in a significant way. Required by the spec, but omitted by major real-world publishers (e.g. YouTube), so it's optional here."  # noqa: E501
 
     # Recommended feed elements
 
