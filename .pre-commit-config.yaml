@@ -1,7 +1,7 @@
 repos:
   # Use pre-commit repo, v3.4.0
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: "v3.4.0"
+    rev: "v6.0.0"
     hooks:
       # Check for files that contain merge conflict strings.
       - id: check-merge-conflict
