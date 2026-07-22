@@ -1,5 +1,6 @@
 from enum import Enum
 from typing import Any, ClassVar, Dict, Mapping, Optional, Type
+from xml.parsers.expat import ExpatError
 
 from xmltodict import parse as _xml_to_dict
 
@@ -31,6 +32,10 @@ class UnknownFeedTypeError(ValueError):
     """Raised when the feed type cannot be detected from the XML root element."""
 
 
+class InvalidXMLError(ValueError):
+    """Raised when the data is not well-formed XML. The original ExpatError is available as __cause__."""
+
+
 @abstract_class_attributes("schema")
 class BaseParser:
     """Parser for rss/atom/rdf files."""
@@ -40,7 +45,10 @@ class BaseParser:
 
     @staticmethod
     def to_xml(data: str, *args, **kwargs) -> Dict[str, Any]:
-        return _xml_to_dict(str(data), *args, **kwargs)
+        try:
+            return _xml_to_dict(str(data), *args, **kwargs)
+        except ExpatError as e:
+            raise InvalidXMLError(f"data is not well-formed XML: {e}") from e
 
     @classmethod
     def parse(
