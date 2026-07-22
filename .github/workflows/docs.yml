@@ -1,0 +1,36 @@
+name: Deploy docs
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - ".github/workflows/docs.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.2.2
+
+      - name: Install poetry
+        run: pipx install poetry
+
+      - name: Set up Python
+        uses: actions/setup-python@v5.6.0
+        with:
+          python-version: "3.12"
+          cache-dependency-path: pyproject.toml
+          cache: poetry
+
+      - name: Install dependencies
+        run: poetry install --with docs
+
+      - name: Deploy to gh-pages
+        run: poetry run mkdocs gh-deploy --force

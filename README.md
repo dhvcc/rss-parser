@@ -1,21 +1,21 @@
-# RSS Parser
+# rss-parser
 
-[![Downloads](https://pepy.tech/badge/rss-parser)](https://pepy.tech/project/rss-parser)
-[![Downloads](https://pepy.tech/badge/rss-parser/month)](https://pepy.tech/project/rss-parser)
-[![Downloads](https://pepy.tech/badge/rss-parser/week)](https://pepy.tech/project/rss-parser)
+**Typed, pydantic-powered RSS/Atom parsing for Python.**
 
 [![PyPI version](https://img.shields.io/pypi/v/rss-parser)](https://pypi.org/project/rss-parser)
 [![Python versions](https://img.shields.io/pypi/pyversions/rss-parser)](https://pypi.org/project/rss-parser)
+[![Downloads](https://pepy.tech/badge/rss-parser)](https://pepy.tech/project/rss-parser)
 [![Wheel status](https://img.shields.io/pypi/wheel/rss-parser)](https://pypi.org/project/rss-parser)
 [![License](https://img.shields.io/pypi/l/rss-parser?color=success)](https://github.com/dhvcc/rss-parser/blob/master/LICENSE)
 
-![Docs](https://github.com/dhvcc/rss-parser/actions/workflows/pages/pages-build-deployment/badge.svg)
 ![CI](https://github.com/dhvcc/rss-parser/actions/workflows/ci.yml/badge.svg?branch=master)
+![Docs](https://github.com/dhvcc/rss-parser/actions/workflows/docs.yml/badge.svg)
 ![PyPi publish](https://github.com/dhvcc/rss-parser/actions/workflows/publish_to_pypi.yml/badge.svg)
 
-## About
+`rss-parser` turns RSS/Atom XML into typed [pydantic](https://docs.pydantic.dev) models —
+autocomplete, validation, and clear errors instead of digging through nested dicts.
 
-`rss-parser` is a type-safe Python RSS/Atom parsing module built using [pydantic](https://github.com/pydantic/pydantic) and [xmltodict](https://github.com/martinblech/xmltodict).
+**[Documentation](https://dhvcc.github.io/rss-parser)**
 
 ## Installation
 
@@ -23,68 +23,23 @@
 pip install rss-parser
 ```
 
-or
-
-```bash
-git clone https://github.com/dhvcc/rss-parser.git
-cd rss-parser
-poetry build
-pip install dist/*.whl
-```
-
-## V1 -> V2 Migration
-- The `Parser` class has been renamed to `RSSParser`
-- Models for RSS-specific schemas have been moved from `rss_parser.models` to `rss_parser.models.rss`. Generic types remain unchanged
-- Date parsing has been improved and now uses pydantic's `validator` instead of `email.utils`, producing better datetime objects where it previously defaulted to `str`
-
-## V2 -> V3 Migration
-
-`rss-parser` 3.x upgrades the runtime models to [Pydantic v2](https://docs.pydantic.dev/latest/migration/). Highlights:
-
-- **New default models** now inherit from `pydantic.BaseModel` v2 and use `model_validate`/`model_dump`. If you extend our classes, switch from `dict()`/`json()` to `model_dump()`/`model_dump_json()`.
-- **Legacy compatibility** lives under `rss_parser.models.legacy`. Point your custom parser at the legacy schema if you must stay on the v1 API surface.
-- **Collections**: list-like XML fields now use `OnlyList[...]` directly with an automatic `default_factory` so that attributes are always lists (no more `Optional[OnlyList[T]] = Field(..., default=[])`). Update custom schemas accordingly.
-- **Custom hooks**: if you relied on `rss_parser.pydantic_proxy`, import it from `rss_parser.models.legacy.pydantic_proxy`. The top-level module only re-exports it for backwards compatibility.
-
-See the “Legacy Models” section below for sample snippets showing how to stay on the older types. Tests in this repo cover both tracks to guarantee matching output.
-
-## Legacy Models
-
-Pydantic v1-based models are still available under `rss_parser.models.legacy`. They retain the previous behaviour and re-export the `import_v1_pydantic` helper as `rss_parser.models.legacy.pydantic_proxy.import_v1_pydantic`. You can continue to use them by pointing your parser at the legacy schema:
+## Quickstart
 
 ```python
-from rss_parser import RSSParser
-from rss_parser.models.legacy.rss import RSS as LegacyRSS
-
-class LegacyRSSParser(RSSParser):
-    schema = LegacyRSS
-```
-
-Tests in this repository run against both the v2 and legacy models to ensure parity.
-
-## Usage
-
-### Quickstart
-
-**NOTE: For parsing Atom, use `AtomParser`**
-
-```python
-from rss_parser import RSSParser
+from rss_parser import parse
 from requests import get  # noqa
 
 rss_url = "https://rss.art19.com/apology-line"
 response = get(rss_url)
 
-rss = RSSParser.parse(response.text)
+feed = parse(response.text)  # detects RSS 2.0 / 0.9x, Atom 1.0 or RSS 1.0 (RDF)
 
-# Print out rss meta data
-print("Language", rss.channel.language)
-print("RSS", rss.version)
+print("Language", feed.channel.language)
+print("RSS", feed.version)
 
-# Iteratively print feed items
-for item in rss.channel.items:
+for item in feed.channel.items:
     print(item.title)
-    print(item.description[:50])
+    print(str(item.description)[:50])
 
 # Language en
 # RSS 2.0
@@ -94,149 +49,71 @@ for item in rss.channel.items:
 # <p>If you could call a number and say you’re sorry
 ```
 
-Here we can see that the description still contains `<p>` tags - this is because it's wrapped in [CDATA](https://www.w3resource.com/xml/CDATA-sections.php) like so:
+`parse()` picks the right parser from the XML root element and raises `UnknownFeedTypeError`
+if the document is not a feed. If you already know the feed type, use the explicit parsers:
+`RSSParser`, `AtomParser`, `RDFParser`, `PodcastParser`.
 
-```
-<![CDATA[<p>If you could call ...</p>]]>
-```
+## Podcasts
 
-### Overriding Schema
-
-If you want to customize the schema or provide a custom one, use the `schema` keyword argument of the parser:
+`itunes:*` tags are supported out of the box, fully typed:
 
 ```python
+from rss_parser import PodcastParser
+
+podcast = PodcastParser.parse(feed_xml)
+channel = podcast.channel.content
+
+channel.itunes_author                    # 'Wondery'
+channel.itunes_owner.content.email       # 'iwonder@wondery.com'
+channel.itunes_image.attributes["href"]  # artwork url
+
+episode = channel.items[0].content
+episode.itunes_duration                  # '00:05:01'
+episode.itunes_episode_type              # 'trailer'
+```
+
+## Custom fields: one subclass away
+
+The models are generic, so extending the schema doesn't require re-declaring the whole tree:
+
+```python
+from typing import Optional
+from pydantic import Field
+
 from rss_parser import RSSParser
-from rss_parser.models import XMLBaseModel
-from rss_parser.models.rss import RSS
+from rss_parser.models.rss import RSS, Channel, Item
 from rss_parser.models.types import Tag
 
 
-class CustomSchema(RSS, XMLBaseModel):
-    channel: None = None  # Removing previous channel field
-    custom: Tag[str]
+class MyItem(Item):
+    dc_creator: Optional[Tag[str]] = Field(alias="dc:creator", default=None)
 
 
-with open("tests/samples/custom.xml") as f:
-    data = f.read()
+rss = RSSParser.parse(data, schema=RSS[Channel[MyItem]])
 
-rss = RSSParser.parse(data, schema=CustomSchema)
-
-print("RSS", rss.version)
-print("Custom", rss.custom)
-
-# RSS 2.0
-# Custom Custom tag data
+rss.channel.items[0].content.dc_creator
 ```
 
-### xmltodict
-
-This library uses [xmltodict](https://github.com/martinblech/xmltodict) to parse XML data. You can find the detailed documentation [here](https://github.com/martinblech/xmltodict#xmltodict).
-
-The key thing to understand is that your data is processed into dictionaries.
-
-For example, this XML:
-
-```xml
-<tag>content</tag>
-```
-
-will result in the following dictionary:
+And even without a custom schema, unknown tags are never dropped — they're kept in `model_extra`:
 
 ```python
-{
-    "tag": "content"
-}
+rss = RSSParser.parse(podcast_xml)
+rss.channel.content.model_extra["itunes:author"]  # 'Wondery'
 ```
 
-*However*, when handling attributes, the content of the tag will also be a dictionary:
+See [Customizing the schema](https://dhvcc.github.io/rss-parser/extending/) for mixins,
+repeatable tags, and the field types cheat sheet.
 
-```xml
-<tag attr="1" data-value="data">data</tag>
-```
+## Migrating from 3.x
 
-This becomes:
-
-```python
-{
-    "tag": {
-        "@attr": "1",
-        "@data-value": "data",
-        "#text": "content"
-    }
-}
-```
-
-Multiple children of a tag will be placed into a list:
-
-```xml
-<div>
-    <tag>content</tag>
-    <tag>content2</tag>
-</div>
-```
-
-This results in a list:
-
-```python
-[
-    { "tag": "content" },
-    { "tag": "content" },
-]
-```
-
-If you don't want to deal with these conditions and want to parse something **always** as a list, please use `rss_parser.models.types.only_list.OnlyList` like we did in `Channel`:
-```python
-from typing import Optional
-
-from pydantic import Field
-
-from rss_parser.models.rss.item import Item
-from rss_parser.models.types.only_list import OnlyList
-from rss_parser.models.types.tag import Tag
-...
-
-
-class OptionalChannelElementsMixin(...):
-    ...
-    items: Optional[OnlyList[Tag[Item]]] = Field(alias="item", default_factory=list)
-```
-
-### Tag Field
-
-This is a generic field that handles tags as raw data or as a dictionary returned with attributes.
-
-Example:
-
-```python
-from rss_parser.models import XMLBaseModel
-from rss_parser.models.types.tag import Tag
-
-
-class Model(XMLBaseModel):
-    width: Tag[int]
-    category: Tag[str]
-
-
-m = Model(
-    width=48,
-    category={"@someAttribute": "https://example.com", "#text": "valid string"},
-)
-
-# Content value is an integer, as per the generic type
-assert m.width.content == 48
-
-assert type(m.width), type(m.width.content) == (Tag[int], int)
-
-# The attributes are empty by default
-assert m.width.attributes == {} # But are populated when provided.
-
-# Note that the @ symbol is trimmed from the beginning and the name is converted to snake_case
-assert m.category.attributes == {'some_attribute': 'https://example.com'}
-```
+4.0 removes the legacy pydantic v1 models, fixes several RSS 2.0 spec violations, and makes the
+models generic and lossless. See the
+[migration guide](https://dhvcc.github.io/rss-parser/migration/) for the full list.
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you
+would like to change.
 
 Install dependencies with `poetry install` (`pip install poetry`).
 
@@ -245,6 +122,8 @@ Using `pre-commit` is highly recommended. To install hooks, run:
 ```bash
 poetry run pre-commit install -t=pre-commit -t=pre-push
 ```
+
+See [Contributing](https://dhvcc.github.io/rss-parser/contributing/) for tests, snapshots, and docs.
 
 ## License
 
