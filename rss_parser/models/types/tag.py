@@ -4,9 +4,7 @@ from copy import deepcopy
 from typing import Any, Dict, Generic, Optional, TypeVar, Union
 
 from pydantic import BaseModel, Field, model_validator
-from pydantic.json import pydantic_encoder
 
-from rss_parser.models import XMLBaseModel
 from rss_parser.models.utils import snake_case
 
 T = TypeVar("T")
@@ -87,19 +85,14 @@ class Tag(BaseModel, Generic[T]):
             return value
 
         if isinstance(value, dict):
+            if set(value) == {"content", "attributes"}:
+                # Already in Tag shape (e.g. re-validating a model_dump) - keep as is,
+                # so that model_validate(model_dump()) round-trips
+                return value
+
             data = deepcopy(value)
             attributes = {snake_case(k.lstrip("@")): v for k, v in data.items() if k.startswith("@")}
             content = data.pop("#text", data) if len(attributes) != len(data) else None
             return {"content": content, "attributes": attributes}
 
         return {"content": value, "attributes": {}}
-
-    @classmethod
-    def flatten_tag_encoder(cls, value):
-        """Encoder that translates Tag objects (dict) to plain .content values (T)."""
-        if isinstance(value, XMLBaseModel):
-            return value.dict_plain()
-        if isinstance(value, Tag):
-            return value.content
-
-        return pydantic_encoder(value)

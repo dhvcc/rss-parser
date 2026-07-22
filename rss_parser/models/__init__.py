@@ -1,8 +1,33 @@
 from __future__ import annotations
 
+import json
+from typing import Any
+
 from pydantic import BaseModel, ConfigDict
 
 from rss_parser.models.utils import camel_case
+
+
+def _plainify(value: Any, dumped: Any) -> Any:
+    """Walk the model and its dump in parallel, flattening every Tag into its content."""
+    from rss_parser.models.types.tag import Tag  # noqa: PLC0415
+
+    if isinstance(value, Tag):
+        if isinstance(dumped, dict) and set(dumped) == {"content", "attributes"}:
+            dumped = dumped["content"]
+        return _plainify(value.content, dumped)
+    if isinstance(value, BaseModel):
+        result = {}
+        for name in type(value).model_fields:
+            if name in dumped:  # respects include/exclude kwargs
+                result[name] = _plainify(getattr(value, name), dumped[name])
+        for name in value.model_extra or {}:
+            if name in dumped:
+                result[name] = dumped[name]
+        return result
+    if isinstance(value, (list, tuple)):
+        return [_plainify(item, dumped_item) for item, dumped_item in zip(value, dumped)]
+    return dumped
 
 
 class XMLBaseModel(BaseModel):
@@ -22,18 +47,18 @@ class XMLBaseModel(BaseModel):
         extra="allow",
     )
 
+    def dict_plain(self, **kwargs) -> dict:
+        """
+        Like ``model_dump(mode="json")``, but every Tag is flattened into its plain
+        content value, dropping the content/attributes structure.
+        """
+        return _plainify(self, self.model_dump(mode="json", **kwargs))
+
     def json_plain(self, **kwargs) -> str:
         """
-        Serialize the model while flattening Tag instances into their content.
+        Serialize the model to JSON while flattening Tag instances into their content.
         """
-        from rss_parser.models.types.tag import Tag  # noqa: PLC0415
-
-        return self.model_dump_json(fallback=Tag.flatten_tag_encoder, **kwargs)
-
-    def dict_plain(self, **kwargs):
-        from rss_parser.models.types.tag import Tag  # noqa: PLC0415
-
-        return self.model_dump(mode="json", fallback=Tag.flatten_tag_encoder, **kwargs)
+        return json.dumps(self.dict_plain(**kwargs), ensure_ascii=False)
 
 
 __all__ = ("XMLBaseModel",)
