@@ -92,10 +92,44 @@ class RSSParser(BaseParser):
     schema = RSS
 
 
+def _strip_key_prefix(value: Any, prefix: str) -> Any:
+    """Recursively strip a namespace prefix (e.g. ``atom:``) from mapping keys."""
+    if isinstance(value, Mapping):
+        return {
+            (key[len(prefix) :] if key.startswith(prefix) else key): _strip_key_prefix(item, prefix)
+            for key, item in value.items()
+        }
+    if isinstance(value, list):
+        return [_strip_key_prefix(item, prefix) for item in value]
+    return value
+
+
 class AtomParser(BaseParser):
     """Atom 1.0 parser."""
 
     schema = Atom
+
+    @classmethod
+    def parse_dict(
+        cls,
+        root: Mapping[str, Any],
+        *,
+        schema: Optional[Type[XMLBaseModel]] = None,
+        root_key: Optional[str] = None,
+    ) -> XMLBaseModel:
+        if root_key is None:
+            # The Atom namespace may be bound to a prefix (e.g. <atom:feed>) - in that case
+            # every Atom element carries the prefix, so normalize it away to match the schema
+            feed_key = next((key for key in root if key.lower().endswith(":feed")), None)
+            if feed_key is not None:
+                prefix = feed_key[: -len("feed")]
+                root = {
+                    ("feed" if key == feed_key else key): (
+                        _strip_key_prefix(value, prefix) if key == feed_key else value
+                    )
+                    for key, value in root.items()
+                }
+        return super().parse_dict(root, schema=schema, root_key=root_key)
 
 
 class RDFParser(BaseParser):
@@ -139,7 +173,7 @@ def _detect_feed_type_from_root(root: Mapping[str, Any]) -> FeedType:
         lowered = key.lower()
         if lowered == "rss":
             return FeedType.RSS
-        if lowered == "feed":
+        if lowered == "feed" or lowered.endswith(":feed"):
             return FeedType.ATOM
         if lowered == "rdf" or lowered.endswith(":rdf"):
             return FeedType.RDF

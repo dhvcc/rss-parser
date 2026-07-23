@@ -100,3 +100,48 @@ class TestEntryElements:
 
         assert isinstance(source, Source)
         assert source.title.content == "Original feed"
+
+
+class TestNamespacePrefixedRoot:
+    """A valid Atom document may bind the Atom namespace to a prefix instead of the default one."""
+
+    PREFIXED = """<?xml version="1.0" encoding="utf-8"?>
+<atom:feed xmlns:atom="http://www.w3.org/2005/Atom">
+  <atom:id>urn:uuid:60a76c80-d399-11d9-b93C-0003939e0af6</atom:id>
+  <atom:title>Example Feed</atom:title>
+  <atom:updated>2003-12-13T18:30:02Z</atom:updated>
+  <atom:link href="http://example.org/"/>
+  <atom:entry>
+    <atom:id>urn:entry:1</atom:id>
+    <atom:title>Atom-Powered Robots Run Amok</atom:title>
+  </atom:entry>
+  <atom:entry>
+    <atom:id>urn:entry:2</atom:id>
+    <atom:title>Second Entry</atom:title>
+  </atom:entry>
+</atom:feed>"""
+
+    def test_prefixed_root_is_unwrapped_and_normalized(self):
+        feed = AtomParser.parse(self.PREFIXED).feed.content
+
+        assert feed.id.content == "urn:uuid:60a76c80-d399-11d9-b93C-0003939e0af6"
+        assert feed.title.content == "Example Feed"
+        assert isinstance(feed.updated.content, datetime)
+        assert feed.links[0].attributes["href"] == "http://example.org/"
+
+    def test_prefixed_entries_are_normalized(self):
+        feed = AtomParser.parse(self.PREFIXED).feed.content
+
+        assert len(feed.entries) == 2
+        assert isinstance(feed.entries[0].content, Entry)
+        assert feed.entries[0].content.title.content == "Atom-Powered Robots Run Amok"
+        assert feed.entries[1].content.title.content == "Second Entry"
+
+    def test_foreign_namespaces_keep_their_prefix(self):
+        data = self.PREFIXED.replace(
+            "<atom:entry>",
+            '<atom:entry xmlns:media="http://search.yahoo.com/mrss/"><media:thumbnail url="u"/>',
+        )
+        feed = AtomParser.parse(data).feed.content
+
+        assert feed.entries[0].content.model_extra["media:thumbnail"] == {"@url": "u"}
