@@ -71,3 +71,33 @@ class TestErgonomics:
         m = make_model()
 
         assert m.category[:5] == "valid"
+
+
+class TestDumpRoundTrip:
+    def test_full_dump_round_trips(self):
+        m = make_model()
+
+        assert Model.model_validate(m.model_dump()) == m
+
+    def test_exclude_defaults_dump_round_trips(self):
+        m = make_model()
+        again = Model.model_validate(m.model_dump(exclude_defaults=True))
+
+        assert again.width.content == 48
+        assert again.width.attributes == {}
+        assert again.category.content == "valid string"
+        assert again.category.attributes == {"some_attribute": "https://example.com"}
+
+    def test_content_only_dict_is_kept_as_tag_shape(self):
+        tag = Tag[int].model_validate({"content": 5})
+
+        assert tag.content == 5
+        assert tag.attributes == {}
+
+    def test_attributes_must_be_a_dict_to_count_as_tag_shape(self):
+        # An XML element literally named <content> with a sibling <attributes> text node
+        # is not a dumped Tag - it still goes through the attribute-splitting path
+        tag = Tag[dict].model_validate({"content": "x", "attributes": "y"})
+
+        assert tag.content == {"content": "x", "attributes": "y"}
+        assert tag.attributes == {}

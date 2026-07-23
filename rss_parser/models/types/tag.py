@@ -5,6 +5,7 @@ from typing import Any, Dict, Generic, Optional, TypeVar, Union
 
 from pydantic import BaseModel, Field, model_validator
 
+from rss_parser.models import TAG_SHAPE_KEYS
 from rss_parser.models.utils import snake_case
 
 T = TypeVar("T")
@@ -85,9 +86,10 @@ class Tag(BaseModel, Generic[T]):
             return value
 
         if isinstance(value, dict):
-            if set(value) == {"content", "attributes"}:
+            if set(value) <= TAG_SHAPE_KEYS and isinstance(value.get("attributes", {}), dict):
                 # Already in Tag shape (e.g. re-validating a model_dump) - keep as is,
-                # so that model_validate(model_dump()) round-trips
+                # so that model_validate(model_dump()) round-trips. Subset match, because
+                # dump options such as exclude_defaults may drop the default "attributes"
                 return value
 
             data = deepcopy(value)
