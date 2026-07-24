@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:yt="http://www.youtube.com/xml/schemas/2015" xmlns:media="http://search.yahoo.com/mrss/" xmlns="http://www.w3.org/2005/Atom">
+ <link rel="self" href="http://www.youtube.com/feeds/videos.xml?channel_id=UC_x5XG1OV2P6uZZ5FSM9Ttw"/>
+ <id>yt:channel:_x5XG1OV2P6uZZ5FSM9Ttw</id>
+ <yt:channelId>_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+ <title>Google for Developers</title>
+ <link rel="alternate" href="https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw"/>
+ <author>
+  <name>Google for Developers</name>
+  <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+ </author>
+ <published>2007-08-23T00:34:43+00:00</published>
+ <entry>
+  <id>yt:video:eiRlCVtzlm4</id>
+  <yt:videoId>eiRlCVtzlm4</yt:videoId>
+  <yt:channelId>UC_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+  <title>Expose your site's actions to AI agents using WebMCP</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/eiRlCVtzlm4"/>
+  <author>
+   <name>Google for Developers</name>
+   <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+  </author>
+  <published>2026-07-22T23:00:37+00:00</published>
+  <updated>2026-07-22T23:11:48+00:00</updated>
+  <media:group>
+   <media:title>Expose your site's actions to AI agents using WebMCP</media:title>
+   <media:content url="https://www.youtube.com/v/eiRlCVtzlm4?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/eiRlCVtzlm4/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Instead of forcing agents to interpret your UI, use WebMCP to expose what it can actually do! 
+
+Resources: 
+Learn more about WebMCP → https://goo.gle/4wdG9Af 
+
+Subscribe to Google for Developers → https://goo.gle/developers 
+
+Speaker: Sayali Godbole</media:description>
+   <media:community>
+    <media:starRating count="9" average="5.00" min="1" max="5"/>
+    <media:statistics views="76"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:JRArFxEfyQU</id>
+  <yt:videoId>JRArFxEfyQU</yt:videoId>
+  <yt:channelId>UC_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+  <title>How are large language models trained?</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=JRArFxEfyQU"/>
+  <author>
+   <name>Google for Developers</name>
+   <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+  </author>
+  <published>2026-07-22T15:57:42+00:00</published>
+  <updated>2026-07-22T16:11:44+00:00</updated>
+  <media:group>
+   <media:title>How are large language models trained?</media:title>
+   <media:content url="https://www.youtube.com/v/JRArFxEfyQU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/JRArFxEfyQU/hqdefault.jpg" width="480" height="360"/>
+   <media:description>DeepMind’s Nikita Namjoshi breaks ​​down the two core phases of how large language models are trained: pre-training and post-training. Learn how next token prediction builds a model's foundation, and how supervised fine-tuning, reinforcement learning, and Autoraters refine it into a safe, helpful assistant.
+
+Subscribe to Google for Developers → https://goo.gle/developers  
+
+Speaker: Nikita Namjoshi 
+Products Mentioned:  Google AI, Gemini</media:description>
+   <media:community>
+    <media:starRating count="217" average="5.00" min="1" max="5"/>
+    <media:statistics views="2403"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:T_YzKVRlRsQ</id>
+  <yt:videoId>T_YzKVRlRsQ</yt:videoId>
+  <yt:channelId>UC_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+  <title>Emojis in the username really do cause havoc, huh?</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/T_YzKVRlRsQ"/>
+  <author>
+   <name>Google for Developers</name>
+   <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+  </author>
+  <published>2026-07-22T04:00:29+00:00</published>
+  <updated>2026-07-22T09:56:32+00:00</updated>
+  <media:group>
+   <media:title>Emojis in the username really do cause havoc, huh?</media:title>
+   <media:content url="https://www.youtube.com/v/T_YzKVRlRsQ?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/T_YzKVRlRsQ/hqdefault.jpg" width="480" height="360"/>
+   <media:description>So, your app works perfectly? Not for long when we introduce emojis in a username. 
+
+Subscribe to Google for Developers → https://goo.gle/developers 
+
+Speakers: Justine Lai, Bri Davis</media:description>
+   <media:community>
+    <media:starRating count="105" average="5.00" min="1" max="5"/>
+    <media:statistics views="8459"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:iK-JE0ZbCfg</id>
+  <yt:videoId>iK-JE0ZbCfg</yt:videoId>
+  <yt:channelId>UC_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+  <title>Access all Gemini models with the Interactions API</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/iK-JE0ZbCfg"/>
+  <author>
+   <name>Google for Developers</name>
+   <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+  </author>
+  <published>2026-07-20T23:00:10+00:00</published>
+  <updated>2026-07-21T08:18:27+00:00</updated>
+  <media:group>
+   <media:title>Access all Gemini models with the Interactions API</media:title>
+   <media:content url="https://www.youtube.com/v/iK-JE0ZbCfg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/iK-JE0ZbCfg/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Say goodbye to complex AI workflows. The new Gemini Interactions API is a single-interface gateway that gives your AI agents stateful memory and multimodal powers.
+
+Subscribe to Google for Developers → https://goo.gle/developers 
+
+Speakers: Thor Schaeff 
+Products Mentioned: Gemini, Google AI</media:description>
+   <media:community>
+    <media:starRating count="252" average="5.00" min="1" max="5"/>
+    <media:statistics views="6645"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:AaWdVp_py4Y</id>
+  <yt:videoId>AaWdVp_py4Y</yt:videoId>
+  <yt:channelId>UC_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+  <title>What’s going wrong with this Kotlin code?</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/AaWdVp_py4Y"/>
+  <author>
+   <name>Google for Developers</name>
+   <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+  </author>
+  <published>2026-07-20T13:00:13+00:00</published>
+  <updated>2026-07-21T14:59:25+00:00</updated>
+  <media:group>
+   <media:title>What’s going wrong with this Kotlin code?</media:title>
+   <media:content url="https://www.youtube.com/v/AaWdVp_py4Y?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/AaWdVp_py4Y/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Devs, this Kotlin challenge arises from a refactoring bug you might have seen. Here’s the setup: a teammate tidies up some code that builds job configurations. The build succeeds and everything looks fine. Then we check the list, and instead of the config object we expect, it holds something else. Watch the video and share what you think caused the bug!
+
+Subscribe to Google for Developers → https://goo.gle/developers 
+
+Speakers: Anaya Mehta</media:description>
+   <media:community>
+    <media:starRating count="123" average="5.00" min="1" max="5"/>
+    <media:statistics views="7976"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:iOK1-b_9Dlg</id>
+  <yt:videoId>iOK1-b_9Dlg</yt:videoId>
+  <yt:channelId>UC_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+  <title>Get started with the Interactions API</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=iOK1-b_9Dlg"/>
+  <author>
+   <name>Google for Developers</name>
+   <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+  </author>
+  <published>2026-07-17T23:00:34+00:00</published>
+  <updated>2026-07-20T22:25:44+00:00</updated>
+  <media:group>
+   <media:title>Get started with the Interactions API</media:title>
+   <media:content url="https://www.youtube.com/v/iOK1-b_9Dlg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/iOK1-b_9Dlg/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Interactions API has reached general availability and is now our primary API for interacting with Gemini models and agents.  Whether you're calling a model or running an agent, the Interactions API gets you there in a few lines of code.  
+
+Start building with the new API now → https://goo.gle/4fjN2Jg 
+
+Subscribe to Google for Developers → https://goo.gle/developers   
+
+Speaker: Thor Schaeff 
+Products Mentioned:  Google AI, Gemini</media:description>
+   <media:community>
+    <media:starRating count="178" average="5.00" min="1" max="5"/>
+    <media:statistics views="3948"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:8I7wr2hYFec</id>
+  <yt:videoId>8I7wr2hYFec</yt:videoId>
+  <yt:channelId>UC_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+  <title>Antigravity Arcade: From prompt to game in minutes</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=8I7wr2hYFec"/>
+  <author>
+   <name>Google for Developers</name>
+   <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+  </author>
+  <published>2026-07-17T16:00:10+00:00</published>
+  <updated>2026-07-17T16:11:19+00:00</updated>
+  <media:group>
+   <media:title>Antigravity Arcade: From prompt to game in minutes</media:title>
+   <media:content url="https://www.youtube.com/v/8I7wr2hYFec?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/8I7wr2hYFec/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Explore how Antigravity and AI skills can generate web games in minutes with best practices skills and deployment workflows to an online games portal powered by Firebase and Google Cloud.
+
+Subscribe to Google for Developers → https://goo.gle/developers  
+
+Speaker: Tom Greenaway 
+Products Mentioned:  Google AI</media:description>
+   <media:community>
+    <media:starRating count="162" average="5.00" min="1" max="5"/>
+    <media:statistics views="5655"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:mgoNUC-tCAo</id>
+  <yt:videoId>mgoNUC-tCAo</yt:videoId>
+  <yt:channelId>UC_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+  <title>Wait, what are we launching?</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/mgoNUC-tCAo"/>
+  <author>
+   <name>Google for Developers</name>
+   <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+  </author>
+  <published>2026-07-17T04:00:14+00:00</published>
+  <updated>2026-07-17T21:45:53+00:00</updated>
+  <media:group>
+   <media:title>Wait, what are we launching?</media:title>
+   <media:content url="https://www.youtube.com/v/mgoNUC-tCAo?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/mgoNUC-tCAo/hqdefault.jpg" width="480" height="360"/>
+   <media:description>For a launch, it’s all about rolling with the quick turn around times. 
+
+Subscribe to Google for Developers → https://goo.gle/developers 
+
+Speakers: Chase Akumiah, Serena Cheng, Kadija Nabe</media:description>
+   <media:community>
+    <media:starRating count="438" average="5.00" min="1" max="5"/>
+    <media:statistics views="38645"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:wjy2q43TsTk</id>
+  <yt:videoId>wjy2q43TsTk</yt:videoId>
+  <yt:channelId>UC_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+  <title>What are the new features in Android Studio Quail 2?</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/wjy2q43TsTk"/>
+  <author>
+   <name>Google for Developers</name>
+   <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+  </author>
+  <published>2026-07-16T16:00:08+00:00</published>
+  <updated>2026-07-21T13:15:13+00:00</updated>
+  <media:group>
+   <media:title>What are the new features in Android Studio Quail 2?</media:title>
+   <media:content url="https://www.youtube.com/v/wjy2q43TsTk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/wjy2q43TsTk/hqdefault.jpg" width="480" height="360"/>
+   <media:description>It’s time to remove the manual friction from the debugging cycle. The latest updates in Android Studio Quail 2 are designed to bring essential development and troubleshooting tasks directly into a single, unified workspace.
+
+Subscribe to Google for Developers → https://goo.gle/developers 
+
+#GoogleDeveloperNews
+
+Speakers: Sayali Godbole 
+Products Mentioned: Android</media:description>
+   <media:community>
+    <media:starRating count="170" average="5.00" min="1" max="5"/>
+    <media:statistics views="9112"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:Q1TfKyOcosk</id>
+  <yt:videoId>Q1TfKyOcosk</yt:videoId>
+  <yt:channelId>UC_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+  <title>The harsh reality of coding 💻</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/Q1TfKyOcosk"/>
+  <author>
+   <name>Google for Developers</name>
+   <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+  </author>
+  <published>2026-07-15T04:00:40+00:00</published>
+  <updated>2026-07-16T08:19:15+00:00</updated>
+  <media:group>
+   <media:title>The harsh reality of coding 💻</media:title>
+   <media:content url="https://www.youtube.com/v/Q1TfKyOcosk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/Q1TfKyOcosk/hqdefault.jpg" width="480" height="360"/>
+   <media:description>My code: &quot;I did exactly what you asked!&quot; 
+
+Me: 🤦‍♂️
+
+Subscribe to Google for Developers → https://goo.gle/developers</media:description>
+   <media:community>
+    <media:starRating count="225" average="5.00" min="1" max="5"/>
+    <media:statistics views="13582"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:Q3ryjp64wK8</id>
+  <yt:videoId>Q3ryjp64wK8</yt:videoId>
+  <yt:channelId>UC_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+  <title>What’s going wrong with this Kotlin code?</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/Q3ryjp64wK8"/>
+  <author>
+   <name>Google for Developers</name>
+   <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+  </author>
+  <published>2026-07-13T13:00:25+00:00</published>
+  <updated>2026-07-15T14:05:29+00:00</updated>
+  <media:group>
+   <media:title>What’s going wrong with this Kotlin code?</media:title>
+   <media:content url="https://www.youtube.com/v/Q3ryjp64wK8?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/Q3ryjp64wK8/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Here’s a Kotlin focused developer challenge: A system is supposed to catch duplicate requests by comparing IDs. Two IDs are clearly the same. The logs confirm it. The values match.
+However, the duplicate check fails, and the same request goes through twice. Watch the clip and share what you think is going on in the comments.
+
+Subscribe to Google for Developers → https://goo.gle/developers 
+
+Speakers: Anaya Mehta</media:description>
+   <media:community>
+    <media:starRating count="212" average="5.00" min="1" max="5"/>
+    <media:statistics views="16549"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:8ZCeXQyavog</id>
+  <yt:videoId>8ZCeXQyavog</yt:videoId>
+  <yt:channelId>UC_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+  <title>Whats your go-to prompting hack?</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/8ZCeXQyavog"/>
+  <author>
+   <name>Google for Developers</name>
+   <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+  </author>
+  <published>2026-07-10T19:00:32+00:00</published>
+  <updated>2026-07-14T02:02:31+00:00</updated>
+  <media:group>
+   <media:title>Whats your go-to prompting hack?</media:title>
+   <media:content url="https://www.youtube.com/v/8ZCeXQyavog?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/8ZCeXQyavog/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Here are some prompting tips that can save you time and yield a better product. 
+
+Resources: 
+Learn more → https://goo.gle/Build-With-AI
+
+Subscribe to Google for Developers → https://goo.gle/developers</media:description>
+   <media:community>
+    <media:starRating count="238" average="5.00" min="1" max="5"/>
+    <media:statistics views="9318"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:yGHi5V4sVkc</id>
+  <yt:videoId>yGHi5V4sVkc</yt:videoId>
+  <yt:channelId>UC_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+  <title>Build With AI 2026 Recap</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=yGHi5V4sVkc"/>
+  <author>
+   <name>Google for Developers</name>
+   <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+  </author>
+  <published>2026-07-10T16:22:10+00:00</published>
+  <updated>2026-07-22T18:52:19+00:00</updated>
+  <media:group>
+   <media:title>Build With AI 2026 Recap</media:title>
+   <media:content url="https://www.youtube.com/v/yGHi5V4sVkc?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/yGHi5V4sVkc/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Watch our Build with AI 2026 highlights and see how AI architecture brings together all types of developers. 
+
+Subscribe to Google for Developers → https://goo.gle/developers  
+
+Products Mentioned:  Google AI</media:description>
+   <media:community>
+    <media:starRating count="24" average="5.00" min="1" max="5"/>
+    <media:statistics views="801"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:ObomOeoP47Y</id>
+  <yt:videoId>ObomOeoP47Y</yt:videoId>
+  <yt:channelId>UC_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+  <title>How to vibe code Android apps</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/ObomOeoP47Y"/>
+  <author>
+   <name>Google for Developers</name>
+   <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+  </author>
+  <published>2026-07-09T16:13:57+00:00</published>
+  <updated>2026-07-12T22:33:31+00:00</updated>
+  <media:group>
+   <media:title>How to vibe code Android apps</media:title>
+   <media:content url="https://www.youtube.com/v/ObomOeoP47Y?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/ObomOeoP47Y/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Want to speed up your prototyping? Here is how to use AI Studio to build and deploy a native Android app using just prompts.
+
+Subscribe to Google for Developers → https://goo.gle/developers</media:description>
+   <media:community>
+    <media:starRating count="483" average="5.00" min="1" max="5"/>
+    <media:statistics views="10265"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:Q4l3D0fI5dY</id>
+  <yt:videoId>Q4l3D0fI5dY</yt:videoId>
+  <yt:channelId>UC_x5XG1OV2P6uZZ5FSM9Ttw</yt:channelId>
+  <title>Create clean LLM service interfaces with wrapper classes!</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/Q4l3D0fI5dY"/>
+  <author>
+   <name>Google for Developers</name>
+   <uri>https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw</uri>
+  </author>
+  <published>2026-07-08T23:00:31+00:00</published>
+  <updated>2026-07-13T12:46:37+00:00</updated>
+  <media:group>
+   <media:title>Create clean LLM service interfaces with wrapper classes!</media:title>
+   <media:content url="https://www.youtube.com/v/Q4l3D0fI5dY?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/Q4l3D0fI5dY/hqdefault.jpg" width="480" height="360"/>
+   <media:description>When you ask an agent to update a feature, it has to search your entire codebase, which can limit the effectiveness of your AI coding agents. The fix? Separation of concerns. 
+
+Subscribe to Google for Developers → https://goo.gle/developers 
+
+Speaker: Christy Yao</media:description>
+   <media:community>
+    <media:starRating count="1150" average="5.00" min="1" max="5"/>
+    <media:statistics views="31330"/>
+   </media:community>
+  </media:group>
+ </entry>
+</feed>

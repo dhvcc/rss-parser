@@ -4,23 +4,28 @@ from pydantic import Field
 
 from rss_parser.models import XMLBaseModel
 from rss_parser.models.atom.person import Person
+from rss_parser.models.atom.source import Source
 from rss_parser.models.types.date import DateTimeOrStr
 from rss_parser.models.types.only_list import OnlyList
 from rss_parser.models.types.tag import Tag
 
 
-class RequiredAtomEntryMixin(XMLBaseModel):
+class Entry(XMLBaseModel):
+    """https://validator.w3.org/feed/docs/atom.html#requiredEntryElements"""
+
+    # Required entry elements
+
     id: Tag[str]
     "Identifier for the entry."
 
     title: Tag[str]
     "The title of the entry."
 
-    updated: Tag[DateTimeOrStr]
-    "Indicates when the entry was updated."
+    updated: Optional[Tag[DateTimeOrStr]] = None
+    "Indicates when the entry was updated. Required by the spec, but omitted often enough in the wild that it's optional here."  # noqa: E501
 
+    # Recommended entry elements
 
-class RecommendedAtomEntryMixin(XMLBaseModel):
     authors: OnlyList[Tag[Person]] = Field(alias="author", default_factory=OnlyList)
     "Entry authors."
 
@@ -33,8 +38,8 @@ class RecommendedAtomEntryMixin(XMLBaseModel):
     summary: Optional[Tag[str]] = None
     "Conveys a short summary, abstract, or excerpt of the entry. Some feeds use this tag as the main content."
 
+    # Optional entry elements
 
-class OptionalAtomEntryMixin(XMLBaseModel):
     categories: OnlyList[Tag[dict]] = Field(alias="category", default_factory=OnlyList)
     "Specifies a categories that the entry belongs to."
 
@@ -47,9 +52,5 @@ class OptionalAtomEntryMixin(XMLBaseModel):
     published: Optional[Tag[DateTimeOrStr]] = None
     "Indicates when the entry was published."
 
-    source: Optional[Tag[str]] = None
+    source: Optional[Tag[Source]] = None
     "Contains metadata from the source feed if this entry is a copy."
-
-
-class Entry(RequiredAtomEntryMixin, RecommendedAtomEntryMixin, OptionalAtomEntryMixin, XMLBaseModel):
-    """https://validator.w3.org/feed/docs/atom.html"""

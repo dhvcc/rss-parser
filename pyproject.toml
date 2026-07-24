@@ -1,10 +1,11 @@
-[tool.poetry]
+[project]
 name = "rss-parser"
-version = "3.0.0"
+version = "4.0.0"
 description = "Typed pythonic RSS/Atom parser"
-authors = ["dhvcc <1337kwiz@gmail.com>"]
-license = "GPL-3.0"
+authors = [{ name = "dhvcc", email = "1337kwiz@gmail.com" }]
+license = { text = "GPL-3.0" }
 readme = "README.md"
+requires-python = ">=3.9"
 keywords = [
     "python",
     "python3",
@@ -31,28 +32,39 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
 ]
-packages = [{ include = "rss_parser" }, { include = "rss_parser/py.typed" }]
+dependencies = [
+    "pydantic>=2.7,<3.0",
+    "xmltodict>=0.13.0",
+    "typing-extensions>=4.6",
+]
 
-
-[tool.poetry.urls]
-"Homepage" = "https://dhvcc.github.io/rss-parser"
-"Source" = "https://github.com/dhvcc/rss-parser"
+[project.urls]
+Homepage = "https://dhvcc.github.io/rss-parser"
+Source = "https://github.com/dhvcc/rss-parser"
 "Bug Tracker" = "https://github.com/dhvcc/rss-parser/issues"
 
-[tool.poetry.dependencies]
-python = "^3.9"
-pydantic = "<3.0"
-xmltodict = "^0.13.0"
-types-xmltodict = "^0.14.0.20241009"
+[dependency-groups]
+dev = [
+    "ipython",
+    "black",
+    "pre-commit>=2.12.0",
+    "ruff",
+    "rich",
+    "pytest>=7.4.0",
+    "mypy",
+    "types-xmltodict>=0.14.0.20241009",
+    "hypothesis>=6.141.1",
+    "pytest-cov>=7.1.0",
+]
+docs = [
+    "mkdocs-material>=9.5",
+]
 
-[tool.poetry.group.dev.dependencies]
-ipython = "*"
-black = "*"
-pre-commit = "^2.12.0"
-ruff = "*"
-rich = "*"
-pytest = "^7.4.0"
-mypy = "*"
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["rss_parser"]
 
 [tool.pytest.ini_options]
 addopts = "--color=yes"
@@ -60,15 +72,21 @@ testpaths = ["tests"]
 log_cli = true
 log_level = "INFO"
 
+[tool.coverage.report]
+fail_under = 98
+show_missing = true
+
 
 [tool.black]
 line-length = 120
-target-version = ["py38"]
+target-version = ["py39"]
 
 [tool.ruff]
 line-length = 120
-target-version = "py38"
+target-version = "py39"
 respect-gitignore = true
+
+[tool.ruff.lint]
 select = [
     "PL",  # pylint
     "F",   # pyflakes
@@ -87,19 +105,18 @@ select = [
     "RUF", # ruff
 ]
 
-[tool.ruff.lint.pep8-naming]
-ignore-names = ["LegacyRSS"]
-
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.per-file-ignores]
 "tests/**.py" = [
-    "S101",   # Use of assert detected
-    "ARG001", # Unused function argument
-    "S311",   # Allow use of random
-    "S301",   # Allow use of pickle
+    "S101",    # Use of assert detected
+    "ARG001",  # Unused function argument
+    "PLR2004", # Magic values in assertions are fine
+]
+"scripts/**.py" = [
+    "E402", # sys.path setup before imports
 ]
 "**/__init__.py" = ["F401"]
 "rss_parser/models/atom/**" = ["A003"]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

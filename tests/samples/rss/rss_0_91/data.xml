@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="0.91">
+  <channel>
+    <title>Scripting Nonsense</title>
+    <link>http://scripting-nonsense.example.com</link>
+    <description>Daily nonsense about scripting</description>
+    <language>en-us</language>
+    <copyright>Copyright 1999, Example Corp.</copyright>
+    <managingEditor>editor@scripting-nonsense.example.com</managingEditor>
+    <webMaster>webmaster@scripting-nonsense.example.com</webMaster>
+    <image>
+      <title>Scripting Nonsense</title>
+      <url>http://scripting-nonsense.example.com/logo.gif</url>
+      <link>http://scripting-nonsense.example.com</link>
+      <width>88</width>
+      <height>31</height>
+      <description>The finest nonsense on the web</description>
+    </image>
+    <skipHours>
+      <hour>0</hour>
+      <hour>1</hour>
+      <hour>2</hour>
+    </skipHours>
+    <skipDays>
+      <day>Sunday</day>
+    </skipDays>
+    <item>
+      <title>A title-only item is fine in 0.91</title>
+      <link>http://scripting-nonsense.example.com/1999/06/07#a1</link>
+    </item>
+    <item>
+      <description>A description-only item is fine too</description>
+    </item>
+    <item>
+      <title>An item with everything 0.91 allows</title>
+      <link>http://scripting-nonsense.example.com/1999/06/07#a2</link>
+      <description>Some detailed description of the nonsense at hand</description>
+    </item>
+  </channel>
+</rss>

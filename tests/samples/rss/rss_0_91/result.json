@@ -1,0 +1,176 @@
+{
+  "@version": {
+    "content": "0.91",
+    "attributes": {}
+  },
+  "channel": {
+    "content": {
+      "title": {
+        "content": "Scripting Nonsense",
+        "attributes": {}
+      },
+      "link": {
+        "content": "http://scripting-nonsense.example.com",
+        "attributes": {}
+      },
+      "description": {
+        "content": "Daily nonsense about scripting",
+        "attributes": {}
+      },
+      "item": [
+        {
+          "content": {
+            "title": {
+              "content": "A title-only item is fine in 0.91",
+              "attributes": {}
+            },
+            "link": [
+              {
+                "content": "http://scripting-nonsense.example.com/1999/06/07#a1",
+                "attributes": {}
+              }
+            ],
+            "description": null,
+            "author": null,
+            "category": [],
+            "comments": null,
+            "enclosure": [],
+            "guid": null,
+            "pubDate": null,
+            "source": null
+          },
+          "attributes": {}
+        },
+        {
+          "content": {
+            "title": null,
+            "link": [],
+            "description": {
+              "content": "A description-only item is fine too",
+              "attributes": {}
+            },
+            "author": null,
+            "category": [],
+            "comments": null,
+            "enclosure": [],
+            "guid": null,
+            "pubDate": null,
+            "source": null
+          },
+          "attributes": {}
+        },
+        {
+          "content": {
+            "title": {
+              "content": "An item with everything 0.91 allows",
+              "attributes": {}
+            },
+            "link": [
+              {
+                "content": "http://scripting-nonsense.example.com/1999/06/07#a2",
+                "attributes": {}
+              }
+            ],
+            "description": {
+              "content": "Some detailed description of the nonsense at hand",
+              "attributes": {}
+            },
+            "author": null,
+            "category": [],
+            "comments": null,
+            "enclosure": [],
+            "guid": null,
+            "pubDate": null,
+            "source": null
+          },
+          "attributes": {}
+        }
+      ],
+      "language": {
+        "content": "en-us",
+        "attributes": {}
+      },
+      "copyright": {
+        "content": "Copyright 1999, Example Corp.",
+        "attributes": {}
+      },
+      "managingEditor": {
+        "content": "editor@scripting-nonsense.example.com",
+        "attributes": {}
+      },
+      "webMaster": {
+        "content": "webmaster@scripting-nonsense.example.com",
+        "attributes": {}
+      },
+      "pubDate": null,
+      "lastBuildDate": null,
+      "category": [],
+      "generator": null,
+      "docs": null,
+      "cloud": null,
+      "ttl": null,
+      "image": {
+        "content": {
+          "url": {
+            "content": "http://scripting-nonsense.example.com/logo.gif",
+            "attributes": {}
+          },
+          "title": {
+            "content": "Scripting Nonsense",
+            "attributes": {}
+          },
+          "link": {
+            "content": "http://scripting-nonsense.example.com",
+            "attributes": {}
+          },
+          "width": {
+            "content": 88,
+            "attributes": {}
+          },
+          "height": {
+            "content": 31,
+            "attributes": {}
+          },
+          "description": {
+            "content": "The finest nonsense on the web",
+            "attributes": {}
+          }
+        },
+        "attributes": {}
+      },
+      "rating": null,
+      "textInput": null,
+      "skipHours": {
+        "content": {
+          "hour": [
+            {
+              "content": 0,
+              "attributes": {}
+            },
+            {
+              "content": 1,
+              "attributes": {}
+            },
+            {
+              "content": 2,
+              "attributes": {}
+            }
+          ]
+        },
+        "attributes": {}
+      },
+      "skipDays": {
+        "content": {
+          "day": [
+            {
+              "content": "Sunday",
+              "attributes": {}
+            }
+          ]
+        },
+        "attributes": {}
+      }
+    },
+    "attributes": {}
+  }
+}

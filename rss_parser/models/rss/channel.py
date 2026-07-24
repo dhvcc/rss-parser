@@ -1,18 +1,29 @@
-from typing import Optional
+from typing import Generic, Optional
 
 from pydantic import Field
+from typing_extensions import TypeVar
 
 from rss_parser.models import XMLBaseModel
 from rss_parser.models.rss.image import Image
 from rss_parser.models.rss.item import Item
+from rss_parser.models.rss.skip import SkipDays, SkipHours
 from rss_parser.models.rss.text_input import TextInput
 from rss_parser.models.types.date import DateTimeOrStr
 from rss_parser.models.types.only_list import OnlyList
 from rss_parser.models.types.tag import Tag
 
+ItemT = TypeVar("ItemT", bound=XMLBaseModel, default=Item)
 
-class RequiredChannelElementsMixin(XMLBaseModel):
-    """https://www.rssboard.org/rss-specification#requiredChannelElements."""
+
+class Channel(XMLBaseModel, Generic[ItemT]):
+    """
+    https://www.rssboard.org/rss-specification#requiredChannelElements
+
+    Generic over the item type, so a custom item schema is one parametrization away:
+    ``Channel[MyItem]``.
+    """
+
+    # Required channel elements
 
     title: Tag[str]  # GoUpstate.com News Headlines
     "The name of the channel. It's how people refer to your service. If you have an HTML website that contains the same information as your RSS file, the title of your channel should be the same as the title of your website."  # noqa
@@ -23,11 +34,10 @@ class RequiredChannelElementsMixin(XMLBaseModel):
     description: Tag[str]  # The latest news from GoUpstate.com, a Spartanburg Herald-Journal Web site.
     "Phrase or sentence describing the channel."
 
+    # Optional channel elements
+    # https://www.rssboard.org/rss-specification#optionalChannelElements
 
-class OptionalChannelElementsMixin(XMLBaseModel):
-    """https://www.rssboard.org/rss-specification#optionalChannelElements."""
-
-    items: OnlyList[Tag[Item]] = Field(alias="item", default_factory=OnlyList)
+    items: OnlyList[Tag[ItemT]] = Field(alias="item", default_factory=OnlyList)
 
     language: Optional[Tag[str]] = None  # en-us
     "The language the channel is written in. This allows aggregators to group all Italian language sites, for example, on a single page."  # noqa
@@ -35,6 +45,7 @@ class OptionalChannelElementsMixin(XMLBaseModel):
     copyright: Optional[Tag[str]] = None  # Copyright 2002, Spartanburg Herald-Journal
     "Copyright notice for content in the channel."
 
+    managing_editor: Optional[Tag[str]] = None  # geo@herald.com (George Matesky)
     "Email address for person responsible for editorial content."
 
     web_master: Optional[Tag[str]] = None  # betty@herald.com (Betty Guernsey)
@@ -47,7 +58,7 @@ class OptionalChannelElementsMixin(XMLBaseModel):
     "The last time the content of the channel changed."
 
     categories: OnlyList[Tag[str]] = Field(alias="category", default_factory=OnlyList)
-    "Specify one or more categories that the channel belongs to. Follows the same rules as the <item.py>-level category element."  # noqa
+    "Specify one or more categories that the channel belongs to. Follows the same rules as the <item>-level category element."  # noqa
 
     generator: Optional[Tag[str]] = None  # MightyInHouse Content System v2.3
     "A string indicating the program used to generate the channel."
@@ -56,26 +67,22 @@ class OptionalChannelElementsMixin(XMLBaseModel):
     "A URL that points to the documentation for the format used in the RSS file. It's probably a pointer to this page. It's for people who might stumble across an RSS file on a Web server 25 years from now and wonder what it is."  # noqa
 
     cloud: Optional[Tag[str]] = None  # <cloud domain="rpc.sys.com" protocol="soap"/>
-    "Allows processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS feeds."  # noqa
+    "Allows processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS feeds. The tag is attribute-only - see `.attributes`."  # noqa
 
-    ttl: Optional[Tag[str]] = None  # 60
+    ttl: Optional[Tag[int]] = None  # 60
     "ttl stands for time to live. It's a number of minutes that indicates how long a channel can be cached before refreshing from the source."  # noqa
 
     image: Optional[Tag[Image]] = None
     "Specifies a GIF, JPEG or PNG image that can be displayed with the channel."
 
-    rating: Optional[Tag[TextInput]] = None
+    rating: Optional[Tag[str]] = None
     "The PICS rating for the channel."
 
-    text_input: Optional[Tag[str]] = None
+    text_input: Optional[Tag[TextInput]] = None
     "Specifies a text input box that can be displayed with the channel."
 
-    skip_hours: Optional[Tag[str]] = None
+    skip_hours: Optional[Tag[SkipHours]] = None
     "A hint for aggregators telling them which hours they can skip. This element contains up to 24 <hour> sub-elements whose value is a number between 0 and 23, representing a time in GMT, when aggregators, if they support the feature, may not read the channel on hours listed in the <skipHours> element. The hour beginning at midnight is hour zero."  # noqa
 
-    skip_days: Optional[Tag[str]] = None
+    skip_days: Optional[Tag[SkipDays]] = None
     "A hint for aggregators telling them which days they can skip. This element contains up to seven <day> sub-elements whose value is Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday. Aggregators may not read the channel during days listed in the <skipDays> element."  # noqa
-
-
-class Channel(RequiredChannelElementsMixin, OptionalChannelElementsMixin, XMLBaseModel):
-    pass

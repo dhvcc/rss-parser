@@ -1,0 +1,65 @@
+site_name: rss-parser
+site_description: Typed pythonic RSS/Atom parser
+site_url: https://dhvcc.github.io/rss-parser/
+repo_url: https://github.com/dhvcc/rss-parser
+repo_name: dhvcc/rss-parser
+edit_uri: edit/master/docs/
+
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - content.code.copy
+    - content.action.edit
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Guide:
+      - Parsing feeds: parsing.md
+      - Customizing the schema: extending.md
+      - Podcasts (iTunes): podcasts.md
+      - How XML is handled: xml.md
+  - Migration: migration.md
+  - Contributing: contributing.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/dhvcc
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/rss-parser/

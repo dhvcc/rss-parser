@@ -1,6 +1,7 @@
 name: Lint and test
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 0 1 * *"
   push:
@@ -9,6 +10,8 @@ on:
       - "README.md"
       - "pre-commit-config.yaml"
       - "LICENSE"
+      - "docs/**"
+      - "mkdocs.yml"
 
 jobs:
   test:
@@ -23,29 +26,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
 
-      - name: Install poetry
-        run: pipx install poetry
-
-      - name: Set up Python ${{ matrix.python-version }} on ${{ matrix.os }}
-        id: setup-python
-        uses: actions/setup-python@v5.6.0
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
         with:
+          enable-cache: true
           python-version: ${{ matrix.python-version }}
-          cache-dependency-path: pyproject.toml
-          cache: poetry
 
       - name: Install dependencies
-        if: steps.setup-python.outputs.cache-hit != 'true'
-        run: poetry install
+        run: uv sync --locked
 
       - name: Lint code with black
-        run: poetry run black --check .
+        run: uv run black --check .
 
       - name: Lint code with ruff
-        run: poetry run ruff check .
+        run: uv run ruff check .
 
       - name: Lint code with mypy
-        run: poetry run mypy rss_parser
+        run: uv run mypy rss_parser
 
       - name: Test code with pytest
-        run: poetry run pytest --doctest-modules
+        run: uv run pytest --doctest-modules rss_parser tests --cov=rss_parser

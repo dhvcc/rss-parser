@@ -1,0 +1,139 @@
+{
+  "@version": {
+    "content": "2.0",
+    "attributes": {}
+  },
+  "channel": {
+    "content": {
+      "title": {
+        "content": "FeedForAll Sample Feed",
+        "attributes": {}
+      },
+      "link": {
+        "content": "http://www.feedforall.com/industry-solutions.htm",
+        "attributes": {}
+      },
+      "description": {
+        "content": "RSS is a fascinating technology. The uses for RSS are expanding daily. Take a closer look at how various industries are using the benefits of RSS in their businesses.",
+        "attributes": {}
+      },
+      "item": [
+        {
+          "content": {
+            "title": {
+              "content": "RSS Solutions for Restaurants",
+              "attributes": {}
+            },
+            "link": [
+              {
+                "content": "http://www.feedforall.com/restaurant.htm",
+                "attributes": {}
+              }
+            ],
+            "description": {
+              "content": "<b>FeedForAll </b>helps Restaurant's communicate with customers. Let your customers know the latest specials or events.<br>\n<br>\nRSS feed uses include:<br>\n<i><font color=\"#FF0000\">Daily Specials <br>\nEntertainment <br>\nCalendar of Events </i></font>",
+              "attributes": {}
+            },
+            "author": null,
+            "category": [
+              {
+                "content": "Computers/Software/Internet/Site Management/Content Management",
+                "attributes": {
+                  "domain": "www.dmoz.com"
+                }
+              }
+            ],
+            "comments": {
+              "content": "http://www.feedforall.com/forum",
+              "attributes": {}
+            },
+            "enclosure": [],
+            "guid": null,
+            "pubDate": {
+              "content": "2004-10-19T11:09:11-04:00",
+              "attributes": {}
+            },
+            "source": null
+          },
+          "attributes": {}
+        }
+      ],
+      "language": {
+        "content": "en-us",
+        "attributes": {}
+      },
+      "copyright": {
+        "content": "Copyright 2004 NotePage, Inc.",
+        "attributes": {}
+      },
+      "managingEditor": {
+        "content": "marketing@feedforall.com",
+        "attributes": {}
+      },
+      "webMaster": {
+        "content": "webmaster@feedforall.com",
+        "attributes": {}
+      },
+      "pubDate": {
+        "content": "2004-10-19T13:38:55-04:00",
+        "attributes": {}
+      },
+      "lastBuildDate": {
+        "content": "2004-10-19T13:39:14-04:00",
+        "attributes": {}
+      },
+      "category": [
+        {
+          "content": "Computers/Software/Internet/Site Management/Content Management",
+          "attributes": {
+            "domain": "www.dmoz.com"
+          }
+        }
+      ],
+      "generator": {
+        "content": "FeedForAll Beta1 (0.0.1.8)",
+        "attributes": {}
+      },
+      "docs": {
+        "content": "http://blogs.law.harvard.edu/tech/rss",
+        "attributes": {}
+      },
+      "cloud": null,
+      "ttl": null,
+      "image": {
+        "content": {
+          "url": {
+            "content": "http://www.feedforall.com/ffalogo48x48.gif",
+            "attributes": {}
+          },
+          "title": {
+            "content": "FeedForAll Sample Feed",
+            "attributes": {}
+          },
+          "link": {
+            "content": "http://www.feedforall.com/industry-solutions.htm",
+            "attributes": {}
+          },
+          "width": {
+            "content": 48,
+            "attributes": {}
+          },
+          "height": {
+            "content": 48,
+            "attributes": {}
+          },
+          "description": {
+            "content": "FeedForAll Sample Feed",
+            "attributes": {}
+          }
+        },
+        "attributes": {}
+      },
+      "rating": null,
+      "textInput": null,
+      "skipHours": null,
+      "skipDays": null
+    },
+    "attributes": {}
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "channel": {
+    "content": {
+      "title": {
+        "content": "Meerkat",
+        "attributes": {}
+      },
+      "link": {
+        "content": "http://meerkat.example.com",
+        "attributes": {}
+      },
+      "description": {
+        "content": "Meerkat: An Open Wire Service",
+        "attributes": {}
+      },
+      "image": {
+        "content": null,
+        "attributes": {
+          "rdf:resource": "http://meerkat.example.com/icons/meerkat-powered.jpg"
+        }
+      },
+      "textinput": {
+        "content": null,
+        "attributes": {
+          "rdf:resource": "http://meerkat.example.com"
+        }
+      },
+      "@rdf:about": "http://meerkat.example.com/?_fl=rss1.0",
+      "dc:publisher": "The Example Network",
+      "dc:creator": "Rael Example (rael@example.com)",
+      "dc:rights": "Copyright 2000 The Example Network",
+      "dc:date": "2000-01-01T12:00+00:00",
+      "syn:updatePeriod": "hourly",
+      "syn:updateFrequency": "2",
+      "syn:updateBase": "2000-01-01T12:00+00:00",
+      "items": {
+        "rdf:Seq": {
+          "rdf:li": [
+            {
+              "@rdf:resource": "http://c.example.com/rcs_id=1234"
+            },
+            {
+              "@rdf:resource": "http://c.example.com/rcs_id=1235"
+            }
+          ]
+        }
+      }
+    },
+    "attributes": {
+      "rdf:about": "http://meerkat.example.com/?_fl=rss1.0"
+    }
+  },
+  "item": [
+    {
+      "content": {
+        "title": {
+          "content": "XML: A Disruptive Technology",
+          "attributes": {}
+        },
+        "link": {
+          "content": "http://c.example.com/rcs_id=1234",
+          "attributes": {}
+        },
+        "description": {
+          "content": "XML is placing increasingly heavy loads on the existing technical infrastructure of the Internet.",
+          "attributes": {}
+        },
+        "@rdf:about": "http://c.example.com/rcs_id=1234",
+        "dc:creator": "Simon St.Example"
+      },
+      "attributes": {
+        "rdf:about": "http://c.example.com/rcs_id=1234"
+      }
+    },
+    {
+      "content": {
+        "title": {
+          "content": "A Second Item Without A Description",
+          "attributes": {}
+        },
+        "link": {
+          "content": "http://c.example.com/rcs_id=1235",
+          "attributes": {}
+        },
+        "description": null,
+        "@rdf:about": "http://c.example.com/rcs_id=1235"
+      },
+      "attributes": {
+        "rdf:about": "http://c.example.com/rcs_id=1235"
+      }
+    }
+  ],
+  "image": {
+    "content": {
+      "@rdf:about": "http://meerkat.example.com/icons/meerkat-powered.jpg",
+      "title": "Meerkat Powered!",
+      "url": "http://meerkat.example.com/icons/meerkat-powered.jpg",
+      "link": "http://meerkat.example.com"
+    },
+    "attributes": {
+      "rdf:about": "http://meerkat.example.com/icons/meerkat-powered.jpg"
+    }
+  },
+  "textinput": {
+    "content": {
+      "@rdf:about": "http://meerkat.example.com",
+      "title": "Search Meerkat",
+      "description": "Search Meerkat's RSS Database...",
+      "name": "s",
+      "link": "http://meerkat.example.com/"
+    },
+    "attributes": {
+      "rdf:about": "http://meerkat.example.com"
+    }
+  },
+  "@xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+  "@xmlns:syn": "http://purl.org/rss/1.0/modules/syndication/",
+  "@xmlns": "http://purl.org/rss/1.0/"
+}
