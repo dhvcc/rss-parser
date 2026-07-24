@@ -5,7 +5,7 @@ description = "Typed pythonic RSS/Atom parser"
 authors = [{ name = "dhvcc", email = "1337kwiz@gmail.com" }]
 license = { text = "GPL-3.0" }
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 keywords = [
     "python",
     "python3",
@@ -25,7 +25,6 @@ classifiers = [
     "Topic :: Text Processing :: Markup :: XML",
     "Typing :: Typed",
     "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
