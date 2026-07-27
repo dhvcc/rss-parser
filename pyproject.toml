@@ -78,11 +78,11 @@ show_missing = true
 
 [tool.black]
 line-length = 120
-target-version = ["py39"]
+target-version = ["py310"]
 
 [tool.ruff]
 line-length = 120
-target-version = "py39"
+target-version = "py310"
 respect-gitignore = true
 
 [tool.ruff.lint]
