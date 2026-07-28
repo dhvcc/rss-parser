@@ -49,7 +49,8 @@ from rss_parser import parse
 feed = parse(requests.get(url, timeout=10).text)
 ```
 
-`parse()` expects a `str`; decode bytes yourself (`response.content.decode("utf-8")`).
+`parse()` accepts `str` or `bytes` — pass `response.content` and the feed's own encoding
+declaration is honored, which matters for feeds that are not UTF-8.
 Polling, conditional GET, deduplication by `guid`/`id` and normalizing across RSS/Atom/RDF are
 covered in [Fetching feeds from a URL](https://dhvcc.github.io/rss-parser/fetching/).
 
@@ -62,7 +63,7 @@ from requests import get  # noqa
 rss_url = "https://rss.art19.com/apology-line"
 response = get(rss_url)
 
-feed = parse(response.text)  # detects RSS 2.0 / 0.9x, Atom 1.0 or RSS 1.0 (RDF)
+feed = parse(response.content)  # detects RSS 2.0 / 0.9x, Atom 1.0 or RSS 1.0 (RDF)
 
 print("Language", feed.channel.language)
 print("RSS", feed.version)

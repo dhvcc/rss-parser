@@ -32,22 +32,21 @@ feed = parse(response.text)
 print(feed.channel.title)
 ```
 
-!!! warning "Pass a `str`, decode bytes yourself"
-    `parse()` expects text. Handing it `bytes` does **not** decode them — the value is stringified,
-    so `b'<?xml ...'` becomes the literal text `"b'<?xml ...'"` and you get `InvalidXMLError`.
+!!! tip "Prefer `.content` over `.text` (since 4.2.0)"
+    `parse()` takes `str` **or** `bytes`. Passing bytes is the safer option: they go to the XML
+    parser untouched, so the feed's own `<?xml encoding="..."?>` declaration decides how it is
+    decoded.
 
     ```python
-    feed = parse(response.content.decode("utf-8"))   # explicit and safe
-    feed = parse(response.content)                   # InvalidXMLError
+    feed = parse(response.content)   # declaration wins - handles non-UTF-8 feeds
+    feed = parse(response.text)      # requests guesses from HTTP headers, often wrongly
     ```
 
-    `response.text` uses the charset the server advertised, which feed hosts often get wrong. When
-    it produces mojibake, decode by the feed's own declaration instead:
+    A `windows-1251` feed is the usual way to see the difference: `response.content` parses,
+    while decoding it yourself as UTF-8 raises `UnicodeDecodeError`.
 
-    ```python
-    response.encoding = response.apparent_encoding
-    feed = parse(response.text)
-    ```
+    On 4.1.0 and older, `bytes` were stringified into `"b'<?xml ...'"` and raised
+    `InvalidXMLError` — decode explicitly there.
 
 ## httpx (sync and async)
 

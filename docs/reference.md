@@ -22,8 +22,9 @@ feed = parse(xml, parsers={FeedType.RSS: PodcastParser})  # detection + typed it
 kind = detect_feed_type(xml)                             # detection only
 ```
 
-`parse()` needs no HTTP client, and it takes text — not `bytes`. Decode the response body
-yourself. See [Fetching feeds from a URL](fetching.md).
+`parse()` needs no HTTP client. It accepts `str` or `bytes`; bytes are handed to the XML parser
+untouched, so the document's `<?xml encoding="..."?>` declaration is honored — prefer them for
+feeds that are not UTF-8. See [Fetching feeds from a URL](fetching.md).
 
 ### Errors
 

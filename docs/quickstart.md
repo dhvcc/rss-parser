@@ -9,7 +9,7 @@ from requests import get  # noqa
 rss_url = "https://rss.art19.com/apology-line"
 response = get(rss_url)
 
-feed = parse(response.text)
+feed = parse(response.content)
 
 # Print out feed meta data
 print("Language", feed.channel.language)

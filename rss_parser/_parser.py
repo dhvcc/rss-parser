@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Any, ClassVar, Dict, Mapping, Optional, Type
+from typing import Any, ClassVar, Dict, Mapping, Optional, Type, Union
 from xml.parsers.expat import ExpatError
 
 from xmltodict import parse as _xml_to_dict
@@ -44,23 +44,28 @@ class BaseParser:
     root_key: ClassVar[Optional[str]] = None
 
     @staticmethod
-    def to_xml(data: str, *args, **kwargs) -> Dict[str, Any]:
+    def to_xml(data: Union[str, bytes], *args, **kwargs) -> Dict[str, Any]:
+        # bytes are passed through untouched so that the document's own <?xml encoding=...?>
+        # declaration is honored - decoding them here would force a guess and mangle any
+        # feed that is not UTF-8
+        if not isinstance(data, (str, bytes)):
+            data = str(data)
         try:
-            return _xml_to_dict(str(data), *args, **kwargs)
+            return _xml_to_dict(data, *args, **kwargs)
         except ExpatError as e:
             raise InvalidXMLError(f"data is not well-formed XML: {e}") from e
 
     @classmethod
     def parse(
         cls,
-        data: str,
+        data: Union[str, bytes],
         *,
         schema: Optional[Type[XMLBaseModel]] = None,
         root_key: Optional[str] = None,
     ) -> XMLBaseModel:
         """
         Parse XML data into schema.
-        :param data: string of XML data that needs to be parsed
+        :param data: XML data as str or bytes - bytes keep the document's own encoding declaration
         :param schema: override the parser's default schema
         :param root_key: override the parser's default root key
         :return: "schema" object
@@ -186,7 +191,7 @@ def _detect_feed_type_from_root(root: Mapping[str, Any]) -> FeedType:
     )
 
 
-def detect_feed_type(data: str) -> FeedType:
+def detect_feed_type(data: Union[str, bytes]) -> FeedType:
     """
     Detect the feed type from the XML root element.
 
@@ -196,7 +201,7 @@ def detect_feed_type(data: str) -> FeedType:
 
 
 def parse(
-    data: str,
+    data: Union[str, bytes],
     *,
     parsers: Optional[Mapping[FeedType, Type[BaseParser]]] = None,
 ) -> XMLBaseModel:
@@ -205,7 +210,7 @@ def parse(
 
     Returns an ``RSS``, ``Atom`` or ``RDF`` model depending on the detected type.
 
-    :param data: string of XML data that needs to be parsed
+    :param data: XML data as str or bytes - bytes keep the document's own encoding declaration
     :param parsers: optionally override the parser used for a feed type,
         e.g. ``parse(data, parsers={FeedType.RSS: PodcastParser})``
     :raises UnknownFeedTypeError: if the root element is not a known feed root
