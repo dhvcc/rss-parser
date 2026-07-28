@@ -33,8 +33,5 @@
     "For polling, deduplicate items by `item.guid` (fall back to `item.links[0]`) in RSS and by `entry.id` in Atom; `<guid isPermaLink=\"false\">` shows up as `item.guid.attributes[\"is_perma_link\"]`.",
     "Cross-format reading: RSS uses `feed.channel.items` with `item.pub_date`, Atom uses `feed.feed.entries` with `entry.published`/`entry.updated`, RSS 1.0 (RDF) uses `feed.items` with `item.attributes[\"rdf:about\"]`.",
     "Namespace prefixes are kept literally, never resolved against xmlns: alias fields exactly as they appear (`Field(alias=\"dc:creator\")`), or accept several spellings with pydantic's `AliasChoices`."
-  ],
-  "previousVersions": [
-    "v3.0.0"
   ]
 }

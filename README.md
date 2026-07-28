@@ -37,6 +37,19 @@ autocomplete, validation, and clear errors instead of digging through nested dic
 pip install rss-parser
 ```
 
+## For AI coding agents
+
+[`SKILL.md`](https://github.com/dhvcc/rss-parser/blob/master/SKILL.md) is an
+[Agent Skill](https://code.claude.com/docs/en/skills): the API model, recipes and the pitfalls that
+trip agents up, in one file. Install it into Claude Code, Cursor, Copilot, Codex and friends with:
+
+```bash
+npx skills add dhvcc/rss-parser
+```
+
+The library also ships [`context7.json`](https://github.com/dhvcc/rss-parser/blob/master/context7.json),
+so [Context7](https://context7.com/dhvcc/rss-parser) serves these docs with Python-specific rules.
+
 ## Parsing from a URL
 
 `rss-parser` does not fetch anything — it parses text you already have, so there is no
