@@ -42,6 +42,7 @@ nav:
       - Customizing the schema: extending.md
       - Podcasts (iTunes): podcasts.md
       - How XML is handled: xml.md
+      - Command line interface: cli.md
   - API reference: reference.md
   - Migration: migration.md
   - Contributing: contributing.md

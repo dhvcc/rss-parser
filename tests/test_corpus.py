@@ -16,18 +16,10 @@ from rss_parser import FeedType, PodcastParser, detect_feed_type, parse
 from rss_parser.models.atom import Atom
 from rss_parser.models.rdf import RDF
 from rss_parser.models.rss import RSS
-
-CORPUS_DIR = Path(__file__).parent / "corpus"
+from tests.conftest import iter_corpus
 
 MODEL_BY_TYPE = {"rss": RSS, "atom": Atom, "rdf": RDF}
 FEED_TYPE_BY_TYPE = {"rss": FeedType.RSS, "atom": FeedType.ATOM, "rdf": FeedType.RDF}
-
-
-def iter_corpus():
-    for kind_dir in sorted(d for d in CORPUS_DIR.iterdir() if d.is_dir()):
-        for feed_dir in sorted(kind_dir.iterdir()):
-            if (feed_dir / "data.xml").is_file():
-                yield kind_dir.name, feed_dir
 
 
 def load_feed(feed_dir: Path, expect: dict) -> str:

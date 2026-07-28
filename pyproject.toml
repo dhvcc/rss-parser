@@ -1,6 +1,6 @@
 [project]
 name = "rss-parser"
-version = "4.2.1"
+version = "4.3.0"
 description = "Typed pythonic RSS/Atom parser"
 authors = [{ name = "dhvcc", email = "1337kwiz@gmail.com" }]
 license = { text = "GPL-3.0" }
@@ -37,6 +37,9 @@ dependencies = [
     "typing-extensions>=4.6",
 ]
 
+[project.scripts]
+rss-parser = "rss_parser.cli:main"
+
 [project.urls]
 Homepage = "https://dhvcc.github.io/rss-parser"
 Source = "https://github.com/dhvcc/rss-parser"
@@ -70,6 +73,10 @@ addopts = "--color=yes"
 testpaths = ["tests"]
 log_cli = true
 log_level = "INFO"
+
+[tool.coverage.run]
+# pytest never imports __main__.py, so it would always be reported at 0%
+omit = ["rss_parser/__main__.py"]
 
 [tool.coverage.report]
 fail_under = 98

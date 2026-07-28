@@ -37,12 +37,14 @@ processed — verified against 4.x:
 
 ```python
 RSSParser.parse(feed_with_entity_declaration)
-# ValueError: entities are disabled
+# EntitiesDisabledError: entities are disabled
 ```
 
-Note that this is a bare `ValueError` from xmltodict, not `InvalidXMLError`; `except ValueError`
-catches both. There is no built-in limit on document size or nesting depth — cap the response
-size yourself before parsing feeds you do not control.
+`EntitiesDisabledError` subclasses `ValueError` but deliberately **not** `InvalidXMLError`, since
+such a document is well-formed XML and is refused rather than malformed. Before 4.3.0 this was a
+bare `ValueError` from xmltodict with the same message, so `except ValueError` keeps working.
+There is no built-in limit on document size or nesting depth — cap the response size yourself
+before parsing feeds you do not control.
 
 Out of scope, and deliberately so:
 

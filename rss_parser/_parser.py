@@ -13,8 +13,11 @@ from rss_parser.models.rss.itunes import Podcast
 
 # >>> FUTURE
 # TODO: May be support generator based approach for big rss feeds
-# TODO: Add cli to parse to json
 # TODO: Older Atom versions
+
+
+ENTITIES_DISABLED_MESSAGE = "entities are disabled"
+"The exact message xmltodict raises when a document declares DTD entities."
 
 
 class FeedType(str, Enum):
@@ -33,7 +36,25 @@ class UnknownFeedTypeError(ValueError):
 
 
 class InvalidXMLError(ValueError):
-    """Raised when the data is not well-formed XML. The original ExpatError is available as __cause__."""
+    """
+    Raised when the data is not well-formed XML. The original ExpatError is available as __cause__.
+
+    A document that is well-formed but declares DTD entities raises EntitiesDisabledError instead.
+    """
+
+
+class EntitiesDisabledError(ValueError):
+    """
+    Raised when the document declares DTD entities, which are refused before expansion.
+
+    Such a document is well-formed XML, so this is *not* an :class:`InvalidXMLError`;
+    both subclass ``ValueError``.
+
+    Note that xmltodict raises a bare ``ValueError`` from inside an expat callback, so the only
+    way to recognize it is by its message (``ENTITIES_DISABLED_MESSAGE``). If upstream ever
+    rewords it, the refusal degrades to a plain ``ValueError`` - the document is still rejected
+    and never expanded, but this class stops being raised. ``tests/test_errors.py`` pins it.
+    """
 
 
 @abstract_class_attributes("schema")
@@ -54,6 +75,12 @@ class BaseParser:
             return _xml_to_dict(data, *args, **kwargs)
         except ExpatError as e:
             raise InvalidXMLError(f"data is not well-formed XML: {e}") from e
+        except ValueError as e:
+            # xmltodict refuses DTD entities from inside an expat callback with a bare
+            # ValueError - give it a type, keeping the message byte-identical
+            if str(e) == ENTITIES_DISABLED_MESSAGE:
+                raise EntitiesDisabledError(ENTITIES_DISABLED_MESSAGE) from e
+            raise
 
     @classmethod
     def parse(

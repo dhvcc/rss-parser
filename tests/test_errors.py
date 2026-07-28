@@ -1,3 +1,4 @@
+from unittest.mock import Mock
 from xml.parsers.expat import ExpatError
 
 import pytest
@@ -5,10 +6,12 @@ from pydantic import ValidationError
 
 from rss_parser import (
     AtomParser,
+    EntitiesDisabledError,
     FeedType,
     InvalidXMLError,
     RSSParser,
     UnknownFeedTypeError,
+    _parser,
     detect_feed_type,
     parse,
 )
@@ -121,6 +124,31 @@ class TestEntitiesAreDisabled:
 
         with pytest.raises(ValueError, match="entities are disabled"):
             RSSParser.parse(data)
+
+
+class TestEntitiesDisabledError:
+    """The refusal has a real type since 4.3.0, without changing the message."""
+
+    DATA = TestEntitiesAreDisabled._feed('<!DOCTYPE rss [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>', "&xxe;")
+
+    def test_typed_error_is_raised(self):
+        with pytest.raises(EntitiesDisabledError) as exc_info:
+            RSSParser.parse(self.DATA)
+
+        assert str(exc_info.value) == "entities are disabled"
+
+    def test_it_is_a_value_error_but_not_an_invalid_xml_error(self):
+        """An entity-declaring document is well-formed, so InvalidXMLError would lie."""
+        assert issubclass(EntitiesDisabledError, ValueError)
+        assert not issubclass(EntitiesDisabledError, InvalidXMLError)
+
+    def test_other_value_errors_are_not_relabeled(self, monkeypatch):
+        monkeypatch.setattr(_parser, "_xml_to_dict", Mock(side_effect=ValueError("something else")))
+
+        with pytest.raises(ValueError, match="something else") as exc_info:
+            RSSParser.parse(self.DATA)
+
+        assert type(exc_info.value) is ValueError
 
 
 class TestUnknownFeedType:

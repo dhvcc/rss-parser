@@ -9,6 +9,7 @@ from rss_parser.models.atom.person import Person
 from rss_parser.models.types.date import DateTimeOrStr
 from rss_parser.models.types.only_list import OnlyList
 from rss_parser.models.types.tag import Tag
+from rss_parser.models.types.text_construct import TextConstruct
 
 EntryT = TypeVar("EntryT", bound=XMLBaseModel, default=Entry)
 
@@ -26,7 +27,7 @@ class Feed(XMLBaseModel, Generic[EntryT]):
     id: Tag[str]
     "Identifies the feed using a universally unique and permanent URI."
 
-    title: Tag[str]
+    title: Tag[TextConstruct]
     "Contains a human readable title for the feed."
 
     updated: Optional[Tag[DateTimeOrStr]] = None
@@ -61,8 +62,8 @@ class Feed(XMLBaseModel, Generic[EntryT]):
     "Identifies a larger image which provides visual identification for the feed. \
     Images should be twice as wide as they are tall."
 
-    rights: Optional[Tag[str]] = None
+    rights: Optional[Tag[TextConstruct]] = None
     "The copyright of the feed."
 
-    subtitle: Optional[Tag[str]] = None
+    subtitle: Optional[Tag[TextConstruct]] = None
     "Contains a human readable description or subtitle for the feed."

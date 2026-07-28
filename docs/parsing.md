@@ -78,6 +78,39 @@ and a `root_key` override for unusual documents:
 rss = RSSParser.parse(data, schema=MySchema, root_key="rss")
 ```
 
+## Atom text constructs
+
+`title`, `subtitle`, `rights`, `summary` and `content` are RFC 4287 *text constructs*: their
+`type` attribute may be `text` (the default), `html` or `xhtml`. Read it from `.attributes`:
+
+```python
+entry.content.attributes.get("type")  # None | "text" | "html" | "xhtml"
+```
+
+For `text` and `html` the content is a `str` — `html` arrives already unescaped, so
+`&lt;p&gt;` becomes `<p>`. For **`xhtml` the content is a `dict`**: the xmltodict mapping of the
+inline XHTML elements.
+
+```python
+entry.content.content
+# {"div": {"@xmlns": "http://www.w3.org/1999/xhtml", "p": "Hello", "ul": {"li": "one"}}}
+```
+
+!!! warning "xhtml content is not markup, and cannot be"
+    It is tempting to expect a markup string back. xmltodict cannot produce a faithful one:
+    it collapses every text run of an element into a single `#text` value and emits child
+    elements before it, so `<p>Read <a href="…">the docs</a> before shipping.</p>` would
+    re-serialize as `<p><a href="…">the docs</a>Read  before shipping.</p>`, and repeated
+    siblings (`<p>`, `<h2>`, `<p>`) would be regrouped by tag name. Silently reordered prose is
+    worse than a shape you can see is structural, so the mapping is handed over unchanged.
+
+    If you need real markup, keep the raw XML and pull the element out with an XML library that
+    preserves document order (`xml.etree.ElementTree`, `lxml`).
+
+Since text constructs may hold either type, their annotation is
+`Tag[TextConstruct]`, i.e. `Union[str, Dict[str, Any]]` — check with `isinstance` before
+treating one as text.
+
 ## RSS 1.0 (RDF) specifics
 
 RSS 1.0 predates RSS 2.0 and has a different shape: the items are *siblings* of the channel,
@@ -109,23 +142,29 @@ The full error contract:
 | Data is not well-formed XML | `InvalidXMLError` (the original `ExpatError` is `__cause__`) |
 | Well-formed XML, but not a known feed root | `UnknownFeedTypeError` (only from `parse()`/`detect_feed_type()`) |
 | Valid feed XML that violates the schema | pydantic `ValidationError` |
-| Document declares a DTD entity | `ValueError("entities are disabled")` from xmltodict |
+| Document declares a DTD entity | `EntitiesDisabledError`, message `entities are disabled` |
 
 Entity declarations are refused before expansion, so external-entity (XXE) and
 entity-expansion feeds never get processed — see
 [SECURITY.md](https://github.com/dhvcc/rss-parser/blob/master/SECURITY.md).
+`EntitiesDisabledError` is **not** an `InvalidXMLError`: an entity-declaring document is
+well-formed XML, it is simply refused. It was a bare `ValueError` from xmltodict before 4.3.0,
+so `except ValueError` handlers keep working.
 
-Both rss-parser errors subclass `ValueError`, so `except ValueError` catches everything
-except schema violations.
+Every rss-parser error subclasses `ValueError` — and so does pydantic's `ValidationError`, so a
+bare `except ValueError` catches *all four* rows above. Catch the specific classes when you need to
+tell "this is not a feed" from "this feed breaks the schema".
 
 ```python
-from rss_parser import parse, InvalidXMLError, UnknownFeedTypeError
+from rss_parser import parse, EntitiesDisabledError, InvalidXMLError, UnknownFeedTypeError
 from pydantic import ValidationError
 
 try:
     feed = parse(data)
 except InvalidXMLError:
     ...  # not XML
+except EntitiesDisabledError:
+    ...  # XML with a DTD entity declaration, refused before expansion
 except UnknownFeedTypeError:
     ...  # XML, but not a feed
 except ValidationError:

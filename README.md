@@ -50,6 +50,20 @@ npx skills add dhvcc/rss-parser
 The library also ships [`context7.json`](https://github.com/dhvcc/rss-parser/blob/master/context7.json),
 so [Context7](https://context7.com/dhvcc/rss-parser) serves these docs with Python-specific rules.
 
+## Command line
+
+Installing the package installs an `rss-parser` command — handy from a shell or an agent, with
+`validate` as the verb that has no substitute (nothing else knows the three feed schemas):
+
+```bash
+rss-parser validate feed.xml            # exit 0 ok, 1 rejected; errors on stderr
+rss-parser validate --json feed.xml     # {"valid": true, "feed_type": "rss", "items": 36}
+rss-parser items feed.xml | jq -r '.content.title.content'   # NDJSON, one item per line
+curl -sSL "$url" | rss-parser validate -                     # it never fetches for you
+```
+
+Full reference, exit codes and caveats: [Command line interface](https://dhvcc.github.io/rss-parser/cli/).
+
 ## Parsing from a URL
 
 `rss-parser` does not fetch anything — it parses text you already have, so there is no

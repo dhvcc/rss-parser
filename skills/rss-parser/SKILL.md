@@ -33,6 +33,12 @@ pydantic v1 era with a different API.
    `item.model_extra["dc:creator"]`.
 5. **There is no networking.** `parse()` takes the feed body; the caller owns the HTTP client.
 
+One Atom trap on top of those five: `title`/`subtitle`/`rights`/`summary`/`content` are text
+constructs, so with `type="xhtml"` the content is a **dict** (the xmltodict mapping of the inline
+XHTML), not a markup string — check `.attributes.get("type")` or `isinstance(..., str)` before
+treating one as text. xmltodict cannot preserve mixed-content order, so re-serializing it would
+silently reorder the prose.
+
 ## Parse a feed
 
 ```python
@@ -164,21 +170,42 @@ feed.json_plain(indent=2)
 
 ```python
 from pydantic import ValidationError
-from rss_parser import parse, InvalidXMLError, UnknownFeedTypeError
+from rss_parser import parse, EntitiesDisabledError, InvalidXMLError, UnknownFeedTypeError
 
 try:
     feed = parse(data)
-except InvalidXMLError:      # not well-formed XML; ExpatError is __cause__
+except InvalidXMLError:       # not well-formed XML; ExpatError is __cause__
     ...
-except UnknownFeedTypeError: # XML, but root is not <rss>/<feed>/<rdf:RDF>
+except EntitiesDisabledError: # well-formed, but declares DTD entities - refused
     ...
-except ValidationError:      # a feed that breaks the schema, with a path to the element
+except UnknownFeedTypeError:  # XML, but root is not <rss>/<feed>/<rdf:RDF>
+    ...
+except ValidationError:       # a feed that breaks the schema, with a path to the element
     ...
 ```
 
-Both library errors subclass `ValueError`. A document declaring DTD entities raises
-`ValueError("entities are disabled")` from xmltodict — XXE and entity-expansion feeds are refused
-before expansion, so no extra hardening is needed for untrusted feeds.
+Every library error subclasses `ValueError`. A document declaring DTD entities raises
+`EntitiesDisabledError("entities are disabled")` — not an `InvalidXMLError`, because the document
+is well-formed; it was a bare `ValueError` from xmltodict before 4.3.0. XXE and entity-expansion
+feeds are refused before expansion, so no extra hardening is needed for untrusted feeds.
+
+## Use the CLI from a shell
+
+```bash
+rss-parser validate feed.xml          # exit 0 ok, 1 rejected; errors on stderr
+rss-parser validate --json feed.xml   # {"valid": true, "feed_type": "rss", "items": 36}
+rss-parser validate --strict feed.xml # also rejects dates that did not parse
+rss-parser parse --indent 2 feed.xml  # the typed model as JSON
+rss-parser items feed.xml | jq -r '.content.title.content'   # NDJSON, one item per line
+rss-parser items --flat feed.xml | jq -r '.title'            # flattened items, lossy
+curl -sSL "$url" | rss-parser validate -                     # it never fetches for you
+```
+
+Exit codes: 0 ok, 1 feed rejected, 2 usage error, 141 stdout closed. `--json` writes a report only
+for 0 and 1; an exit-2 message goes to stderr with nothing on stdout.
+`validate` checks well-formedness, the root element and the required elements — it is not a spec
+conformance checker, and `--strict` only covers declared date fields (not `dc:date`, which lives in
+`model_extra`). Full reference: <https://dhvcc.github.io/rss-parser/cli/>
 
 ## Expectations worth setting with the caller
 

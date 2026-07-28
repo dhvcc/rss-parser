@@ -8,6 +8,7 @@ from rss_parser.models.atom.source import Source
 from rss_parser.models.types.date import DateTimeOrStr
 from rss_parser.models.types.only_list import OnlyList
 from rss_parser.models.types.tag import Tag
+from rss_parser.models.types.text_construct import TextConstruct
 
 
 class Entry(XMLBaseModel):
@@ -18,7 +19,7 @@ class Entry(XMLBaseModel):
     id: Tag[str]
     "Identifier for the entry."
 
-    title: Tag[str]
+    title: Tag[TextConstruct]
     "The title of the entry."
 
     updated: Optional[Tag[DateTimeOrStr]] = None
@@ -32,10 +33,10 @@ class Entry(XMLBaseModel):
     links: OnlyList[Tag[str]] = Field(alias="link", default_factory=OnlyList)
     "The URL of the entry."
 
-    content: Optional[Tag[str]] = None
+    content: Optional[Tag[TextConstruct]] = None
     "The main content of the entry."
 
-    summary: Optional[Tag[str]] = None
+    summary: Optional[Tag[TextConstruct]] = None
     "Conveys a short summary, abstract, or excerpt of the entry. Some feeds use this tag as the main content."
 
     # Optional entry elements
@@ -46,7 +47,7 @@ class Entry(XMLBaseModel):
     contributors: OnlyList[Tag[Person]] = Field(alias="contributor", default_factory=OnlyList)
     "Entry contributors."
 
-    rights: Optional[Tag[str]] = None
+    rights: Optional[Tag[TextConstruct]] = None
     "The copyright of the entry."
 
     published: Optional[Tag[DateTimeOrStr]] = None

@@ -33,9 +33,11 @@ feeds that are not UTF-8. See [Fetching feeds from a URL](fetching.md).
 | `InvalidXMLError` | data is not well-formed XML (`ExpatError` is `__cause__`) |
 | `UnknownFeedTypeError` | well-formed XML whose root is not `<rss>`, `<feed>` or `<rdf:RDF>` |
 | pydantic `ValidationError` | a feed that violates the schema |
-| `ValueError("entities are disabled")` | the document declares DTD entities |
+| `EntitiesDisabledError` | the document declares DTD entities (message: `entities are disabled`) |
 
-`InvalidXMLError` and `UnknownFeedTypeError` subclass `ValueError`. Details and examples in
+`InvalidXMLError`, `UnknownFeedTypeError` and `EntitiesDisabledError` subclass `ValueError`.
+`EntitiesDisabledError` is deliberately *not* an `InvalidXMLError`: such a document is well-formed,
+it is just refused. Details and examples in
 [Error handling](parsing.md#error-handling).
 
 ## Field types
@@ -45,6 +47,7 @@ feeds that are not UTF-8. See [Fetching feeds from a URL](fetching.md).
 | `Tag[T]` | one XML tag: `.content` is the typed text (`None` for self-closing tags), `.attributes` is a dict with `@` stripped and keys snake_cased. `str(tag)` gives the content and attribute access is forwarded to it |
 | `OnlyList[T]` | a repeatable tag; always a list, whether the tag appeared once, many times or not at all |
 | `DateTimeOrStr` | RFC 822 first, then ISO 8601/timestamp; unparseable values are kept as the raw string |
+| `TextConstruct` | an Atom text construct (`title`, `subtitle`, `rights`, `summary`, `content`): `str` for `type="text"`/`type="html"`, and the xmltodict `dict` of the child elements for `type="xhtml"`, which is not re-serialized to markup because xmltodict cannot preserve mixed-content order. See [Atom text constructs](parsing.md#atom-text-constructs) |
 | `XMLBaseModel` | base of every model: camelCase aliases, `extra="allow"`, plus `dict_plain()`/`json_plain()` |
 
 ## Serialization
