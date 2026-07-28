@@ -39,7 +39,7 @@ pip install rss-parser
 
 ## For AI coding agents
 
-[`SKILL.md`](https://github.com/dhvcc/rss-parser/blob/master/SKILL.md) is an
+[`skills/rss-parser/SKILL.md`](https://github.com/dhvcc/rss-parser/blob/master/skills/rss-parser/SKILL.md) is an
 [Agent Skill](https://code.claude.com/docs/en/skills): the API model, recipes and the pitfalls that
 trip agents up, in one file. Install it into Claude Code, Cursor, Copilot, Codex and friends with:
 
