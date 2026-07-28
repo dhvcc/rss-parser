@@ -34,6 +34,7 @@
     "`parse()` accepts `str` or `bytes` (bytes since 4.2.0). Prefer bytes, e.g. `parse(response.content)`: they reach the XML parser untouched so the document's `<?xml encoding=...?>` declaration is honored.",
     "For polling, deduplicate items by `item.guid` (fall back to `item.links[0]`) in RSS and by `entry.id` in Atom; `<guid isPermaLink=\"false\">` shows up as `item.guid.attributes[\"is_perma_link\"]`.",
     "Cross-format reading: RSS uses `feed.channel.items` with `item.pub_date`, Atom uses `feed.feed.entries` with `entry.published`/`entry.updated`, RSS 1.0 (RDF) uses `feed.items` with `item.attributes[\"rdf:about\"]`.",
-    "Namespace prefixes are kept literally, never resolved against xmlns: alias fields exactly as they appear (`Field(alias=\"dc:creator\")`), or accept several spellings with pydantic's `AliasChoices`."
+    "Namespace prefixes are kept literally, never resolved against xmlns: alias fields exactly as they appear (`Field(alias=\"dc:creator\")`), or accept several spellings with pydantic's `AliasChoices`.",
+    "Since 4.4.0, `to_json_feed(feed, *, feed_url=None)` maps an `RSS`/`Atom`/`RDF`/`Podcast` model to a JSON Feed 1.1 dict, returning `(document, JsonFeedReport)`; the CLI equivalent is `rss-parser jsonfeed` (also `rss-parser items --jsonfeed` for NDJSON item objects). It is lossy on purpose: an item with no derivable id is dropped rather than synthesized, there is no `itunes:*` mapping, and Atom `xhtml` content falls back to `<summary>` and finally an empty `content_text` because it cannot be safely re-serialized."
   ]
 }

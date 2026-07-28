@@ -59,6 +59,7 @@ Installing the package installs an `rss-parser` command — handy from a shell o
 rss-parser validate feed.xml            # exit 0 ok, 1 rejected; errors on stderr
 rss-parser validate --json feed.xml     # {"valid": true, "feed_type": "rss", "items": 36}
 rss-parser items feed.xml | jq -r '.content.title.content'   # NDJSON, one item per line
+rss-parser jsonfeed feed.xml            # JSON Feed 1.1 document (lossy - see the docs)
 curl -sSL "$url" | rss-parser validate -                     # it never fetches for you
 ```
 

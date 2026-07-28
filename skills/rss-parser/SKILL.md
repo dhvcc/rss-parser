@@ -198,8 +198,15 @@ rss-parser validate --strict feed.xml # also rejects dates that did not parse
 rss-parser parse --indent 2 feed.xml  # the typed model as JSON
 rss-parser items feed.xml | jq -r '.content.title.content'   # NDJSON, one item per line
 rss-parser items --flat feed.xml | jq -r '.title'            # flattened items, lossy
+rss-parser jsonfeed feed.xml                                 # JSON Feed 1.1 document, lossy
 curl -sSL "$url" | rss-parser validate -                     # it never fetches for you
 ```
+
+`jsonfeed` (also `to_json_feed(feed, *, feed_url=None)` as a library call) maps to
+[JSON Feed 1.1](https://www.jsonfeed.org/version/1.1/). It is lossy on purpose: an item with no
+derivable id is dropped (never synthesized) and reported on stderr, there is no `itunes:*`
+mapping, and Atom `xhtml` content falls back to `<summary>` and finally an empty `content_text`
+because it cannot be safely re-serialized.
 
 Exit codes: 0 ok, 1 feed rejected, 2 usage error, 141 stdout closed. `--json` writes a report only
 for 0 and 1; an exit-2 message goes to stderr with nothing on stdout.

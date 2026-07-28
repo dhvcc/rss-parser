@@ -26,6 +26,28 @@ kind = detect_feed_type(xml)                             # detection only
 untouched, so the document's `<?xml encoding="..."?>` declaration is honored — prefer them for
 feeds that are not UTF-8. See [Fetching feeds from a URL](fetching.md).
 
+### jsonfeed
+
+| Callable | Signature | Returns |
+| --- | --- | --- |
+| `to_json_feed` | `to_json_feed(feed, *, feed_url=None)` | `(dict, JsonFeedReport)` |
+
+Maps an `RSS`, `Atom`, `RDF` or `Podcast` model to a [JSON Feed 1.1](https://www.jsonfeed.org/version/1.1/)
+document. `JsonFeedReport` is a `NamedTuple` of `dropped_items`, `dropped_attachments` and
+`unparsed_dates` — counts of what the mapping had to drop or omit rather than fabricate.
+
+```python
+from rss_parser import parse, to_json_feed
+
+document, report = to_json_feed(parse(xml), feed_url="https://example.com/feed.xml")
+report.dropped_items  # items with no derivable id - never synthesized, so discarded per spec
+```
+
+This is lossy on purpose: items without a derivable id are dropped, `itunes:*` has no JSON Feed
+equivalent, and Atom `xhtml` content falls back to `<summary>` and finally an empty `content_text`
+because it cannot be safely re-serialized. See [the CLI's `jsonfeed` verb](cli.md#jsonfeed) for the
+full list of conformance decisions - the library function and the CLI share one mapper.
+
 ### Errors
 
 | Raised | When |

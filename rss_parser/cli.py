@@ -1,5 +1,5 @@
 """
-Command line interface for rss-parser: ``validate``, ``parse`` and ``items``.
+Command line interface for rss-parser: ``validate``, ``parse``, ``items`` and ``jsonfeed``.
 
 Nothing here fetches anything - feeds arrive on stdin or as a local file, which keeps the
 library's no-networking promise intact. See ``rss-parser --help`` or docs/cli.md.
@@ -30,6 +30,7 @@ from rss_parser._parser import (
     detect_feed_type,
 )
 from rss_parser._parser import parse as parse_feed
+from rss_parser.jsonfeed import JsonFeedReport, to_json_feed
 from rss_parser.models import XMLBaseModel
 from rss_parser.models.atom import Atom
 from rss_parser.models.rdf import RDF
@@ -53,6 +54,13 @@ VALIDATE_NON_GOALS = """
 validate checks well-formedness, the root element, and the elements the models require.
 It is not a spec conformance checker: an unparsable <pubDate>, a misspelled tag, a <link>
 that is not a URL or a channel with no items all pass. Use --strict for the dates.
+"""
+
+JSONFEED_NOTES = """
+Lossy on purpose: an item with no derivable id is dropped, because the spec requires one and
+this never synthesizes it. There is no itunes:* mapping - use `parse --parser podcast` for
+that. Atom xhtml content cannot be safely re-serialized (xmltodict reorders mixed content), so
+it falls back to <summary> and finally to an empty content_text.
 """
 
 
@@ -215,7 +223,52 @@ def _dump(feed: XMLBaseModel, args: argparse.Namespace) -> int:
     return EXIT_OK
 
 
+def _to_json_feed(feed: XMLBaseModel, feed_url: Optional[str] = None) -> Tuple[Dict[str, Any], JsonFeedReport]:
+    try:
+        return to_json_feed(feed, feed_url=feed_url)
+    except TypeError as exc:
+        raise UsageError("cannot map a custom --schema to JSON Feed; use `rss-parser parse` instead") from exc
+
+
+def _jsonfeed_summary(report: JsonFeedReport) -> Optional[str]:
+    """The stderr line for whatever ``to_json_feed`` dropped or omitted - never silent (decision 2)."""
+
+    def _plural(count: int, noun: str) -> str:
+        return f"{count} {noun}{'' if count == 1 else 's'}"
+
+    parts = []
+    if report.dropped_items:
+        parts.append(f"dropped {_plural(report.dropped_items, 'item')} without an id")
+    if report.dropped_attachments:
+        parts.append(f"dropped {_plural(report.dropped_attachments, 'attachment')} without a url or mime type")
+    if report.unparsed_dates:
+        parts.append(f"omitted {_plural(report.unparsed_dates, 'unparseable date')}")
+    return f"rss-parser: {', '.join(parts)}" if parts else None
+
+
+def _write_jsonfeed_summary(report: JsonFeedReport) -> None:
+    message = _jsonfeed_summary(report)
+    if message is not None:
+        sys.stderr.write(message + "\n")
+
+
+def _jsonfeed(feed: XMLBaseModel, args: argparse.Namespace) -> int:
+    document, report = _to_json_feed(feed, args.feed_url)
+    _write(json.dumps(document, indent=args.indent, ensure_ascii=args.ascii) + "\n")
+    _write_jsonfeed_summary(report)
+    return EXIT_OK
+
+
 def _items(feed: XMLBaseModel, args: argparse.Namespace) -> int:
+    if args.jsonfeed:
+        if args.flat:
+            raise UsageError("--flat and --jsonfeed are mutually exclusive")
+        document, report = _to_json_feed(feed)
+        for record in document["items"]:
+            _write(json.dumps(record, ensure_ascii=args.ascii) + "\n")
+        _write_jsonfeed_summary(report)
+        return EXIT_OK
+
     items = _feed_items(feed)
     if items is None:
         raise UsageError("cannot locate the items of a custom --schema; use `rss-parser parse` instead")
@@ -245,7 +298,11 @@ def _run(args: argparse.Namespace) -> int:
         sys.stderr.write("\n".join(lines) + "\n")
         return EXIT_REJECTED
 
-    return _dump(feed, args) if args.command == "parse" else _items(feed, args)
+    if args.command == "parse":
+        return _dump(feed, args)
+    if args.command == "jsonfeed":
+        return _jsonfeed(feed, args)
+    return _items(feed, args)
 
 
 def _build_parser() -> Tuple[argparse.ArgumentParser, Dict[str, argparse.ArgumentParser]]:
@@ -300,9 +357,29 @@ def _build_parser() -> Tuple[argparse.ArgumentParser, Dict[str, argparse.Argumen
         "instead of `.content.title.content`. Lossy: the wrapping tag's attributes are dropped and "
         "attribute-only tags such as <enclosure> come out as null",
     )
+    items.add_argument(
+        "--jsonfeed",
+        action="store_true",
+        help="emit JSON Feed 1.1 item objects instead, using the same mapper as `jsonfeed`. Mutually "
+        "exclusive with --flat. See `rss-parser jsonfeed --help` for what is lossy",
+    )
     items.add_argument("--ascii", action="store_true", help="escape non-ASCII characters")
 
-    return parser, {"validate": validate, "parse": dump, "items": items}
+    jsonfeed = subparsers.add_parser(
+        "jsonfeed",
+        parents=[common],
+        help="dump the feed as a JSON Feed 1.1 document",
+        description=JSONFEED_NOTES.strip(),
+    )
+    jsonfeed.add_argument("--indent", type=int, metavar="N", help="pretty-print with N spaces")
+    jsonfeed.add_argument("--ascii", action="store_true", help="escape non-ASCII characters")
+    jsonfeed.add_argument(
+        "--feed-url",
+        metavar="URL",
+        help="set the feed_url field. Unknowable from the document itself, so omitted unless given here",
+    )
+
+    return parser, {"validate": validate, "parse": dump, "items": items, "jsonfeed": jsonfeed}
 
 
 def _detach_stdout() -> None:  # pragma: no cover - would clobber the test runner's own stdout

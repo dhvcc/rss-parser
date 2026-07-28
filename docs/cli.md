@@ -1,12 +1,14 @@
 # Command line interface
 
-Installing the package also installs an `rss-parser` command. It is deliberately small: three
-verbs that expose what the library *knows* — the schemas of three feed specs — and nothing else.
+Installing the package also installs an `rss-parser` command. It is deliberately small: four
+verbs that expose what the library *knows* — the schemas of three feed specs, plus a JSON Feed
+1.1 mapping — and nothing else.
 
 ```bash
 rss-parser validate [FILE|-]   # exit code + errors      (--json, --strict)
 rss-parser parse    [FILE|-]   # faithful JSON of the model (--flat, --indent N, --ascii)
-rss-parser items    [FILE|-]   # NDJSON, one item per line  (--ascii)
+rss-parser items    [FILE|-]   # NDJSON, one item per line  (--ascii, --jsonfeed)
+rss-parser jsonfeed [FILE|-]   # JSON Feed 1.1 document   (--indent N, --ascii, --feed-url)
 ```
 
 `FILE` omitted or `-` reads stdin. `python -m rss_parser <verb>` takes the same arguments, with one
@@ -139,6 +141,48 @@ content at all and comes out as `{}`.
 This is the reason `items` exists rather than `xq '.rss.channel.item[]'`: xmltodict's shape is
 unstable, one `<item>` yields an object and two yield an array, so the `jq` filter breaks on
 single-item feeds. `OnlyList` means `rss-parser items` never does.
+
+`--jsonfeed` emits JSON Feed 1.1 item objects instead, one per line, using the same mapper as
+`jsonfeed` below — see that section for what is lossy. It is mutually exclusive with `--flat`.
+
+## `jsonfeed`
+
+Maps the feed to a [JSON Feed 1.1](https://www.jsonfeed.org/version/1.1/) document — also
+available as a library function, `rss_parser.to_json_feed(feed, *, feed_url=None)`, see
+[API reference](reference.md#jsonfeed).
+
+```bash
+rss-parser jsonfeed feed.xml
+rss-parser jsonfeed --feed-url https://example.com/feed.xml --indent 2 feed.xml
+```
+
+This is lossy on purpose, not by accident:
+
+- **An item with no derivable id is dropped.** The spec says "any item without an id must be
+  discarded", and an id is never synthesized — one derived from content would change when a typo
+  is fixed. The drop is never silent: a summary line goes to **stderr**, e.g.
+  `rss-parser: dropped 1 item without an id, omitted 2 unparseable dates` — exit code stays 0,
+  because the document written to stdout is still a valid JSON Feed.
+- **There is no `itunes:*` mapping.** Apple Podcasts fields have no JSON Feed equivalent; use
+  `rss-parser parse --parser podcast` for those instead.
+- **Atom `xhtml` content cannot be safely re-serialized.** xmltodict reorders mixed content at
+  parse time (see [Atom text constructs](parsing.md#atom-text-constructs)), so an `xhtml`
+  `<content>` falls back to `<summary>` when that is plain text or `html`, and finally to an empty
+  `content_text` when nothing usable is left.
+- **Dublin Core fills the gaps.** Item-level RSS `<author>` is nearly extinct in the wild, so
+  `dc:creator` becomes the author when it is absent (`<author>` wins when both are there), and RSS
+  1.0's `dc:subject` becomes `tags`. Both arrive through `model_extra`, and a Dublin Core term that
+  carries an `rdf:resource` instead of text is skipped rather than guessed at.
+- **`feed_url` is unknowable from the document itself** and is only set when `--feed-url` is given.
+- Dates are only emitted when the library produced a real `datetime`; a value that stayed a raw
+  string (including RSS 1.0's `dc:date`) is omitted and counted in the stderr summary instead of
+  guessed.
+
+| flag | default | meaning |
+| --- | --- | --- |
+| `--indent N` | none | pretty-print with N spaces |
+| `--ascii` | off | escape non-ASCII characters |
+| `--feed-url URL` | none | set the document's `feed_url` field |
 
 ## Options on every verb
 

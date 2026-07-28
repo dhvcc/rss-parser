@@ -572,3 +572,117 @@ class TestBrokenPipe:
         monkeypatch.setattr("rss_parser.cli._detach_stdout", lambda: None)
 
         assert main(["items", write_feed(tmp_path, RSS_2)]) == EXIT_SIGPIPE
+
+
+JSONFEED_RSS = RSS_2.replace("<item><title>One</title></item>", "<item><title>One</title><guid>g</guid></item>")
+
+DROPPED_ITEM_RSS = (
+    '<rss version="2.0"><channel><title>T</title><link>http://example.com</link><description>D</description>'
+    "<item><description>No title, no guid, no link</description></item>"
+    "<item><guid>g</guid><title>Kept</title></item></channel></rss>"
+)
+
+
+class TestJsonFeed:
+    def test_dumps_a_json_feed_document(self, tmp_path, capsys):
+        assert main(["jsonfeed", write_feed(tmp_path, JSONFEED_RSS)]) == EXIT_OK
+
+        document = json.loads(capsys.readouterr().out)
+        assert document["version"] == "https://jsonfeed.org/version/1.1"
+        assert document["items"][0]["title"] == "One"
+
+    def test_indent_pretty_prints(self, tmp_path, capsys):
+        main(["jsonfeed", "--indent", "2", write_feed(tmp_path, JSONFEED_RSS)])
+
+        out = capsys.readouterr().out
+        assert out.startswith("{\n  ")
+        assert json.loads(out)
+
+    def test_ascii_escapes_non_ascii(self, tmp_path, capsys):
+        data = JSONFEED_RSS.replace("<title>T</title>", "<title>Привет</title>", 1)
+
+        main(["jsonfeed", "--ascii", write_feed(tmp_path, data)])
+
+        assert "\\u041f" in capsys.readouterr().out
+
+    def test_feed_url_is_omitted_by_default(self, tmp_path, capsys):
+        main(["jsonfeed", write_feed(tmp_path, JSONFEED_RSS)])
+
+        assert "feed_url" not in json.loads(capsys.readouterr().out)
+
+    def test_feed_url_flag_sets_it(self, tmp_path, capsys):
+        main(["jsonfeed", "--feed-url", "https://example.com/f.xml", write_feed(tmp_path, JSONFEED_RSS)])
+
+        assert json.loads(capsys.readouterr().out)["feed_url"] == "https://example.com/f.xml"
+
+    def test_a_dropped_item_is_reported_on_stderr_and_exit_is_still_zero(self, tmp_path, capsys):
+        exit_code = main(["jsonfeed", write_feed(tmp_path, DROPPED_ITEM_RSS)])
+
+        captured = capsys.readouterr()
+        assert exit_code == EXIT_OK
+        assert len(json.loads(captured.out)["items"]) == 1
+        assert captured.err == "rss-parser: dropped 1 item without an id\n"
+
+    def test_dropped_attachments_and_unparsed_dates_are_both_reported(self, tmp_path, capsys):
+        data = JSONFEED_RSS.replace(
+            "<guid>g</guid>",
+            '<guid>g</guid><enclosure url="http://x/a.mp3"/><pubDate>not a date</pubDate>',
+        )
+
+        exit_code = main(["jsonfeed", write_feed(tmp_path, data)])
+
+        captured = capsys.readouterr()
+        assert exit_code == EXIT_OK
+        assert captured.err == (
+            "rss-parser: dropped 1 attachment without a url or mime type, omitted 1 unparseable date\n"
+        )
+
+    def test_a_rejected_feed_exits_1(self, tmp_path, capsys):
+        assert main(["jsonfeed", write_feed(tmp_path, "<html/>")]) == EXIT_REJECTED
+
+        captured = capsys.readouterr()
+        assert captured.out == ""
+
+    def test_a_custom_schema_root_is_a_usage_error(self, tmp_path, monkeypatch, capsys):
+        (tmp_path / "flat_schema.py").write_text(
+            "from rss_parser.models import XMLBaseModel\n"
+            "from rss_parser.models.types.tag import Tag\n\n\n"
+            "class Flat(XMLBaseModel):\n"
+            "    channel: Tag[dict]\n",
+            encoding="utf-8",
+        )
+        monkeypatch.chdir(tmp_path)
+
+        exit_code = main(["jsonfeed", "--schema", "flat_schema:Flat", write_feed(tmp_path, JSONFEED_RSS)])
+
+        assert exit_code == EXIT_USAGE
+        assert "cannot map a custom --schema to JSON Feed" in capsys.readouterr().err
+
+
+class TestItemsJsonFeed:
+    def test_emits_json_feed_item_objects(self, tmp_path, capsys):
+        assert main(["items", "--jsonfeed", write_feed(tmp_path, JSONFEED_RSS)]) == EXIT_OK
+
+        record = json.loads(capsys.readouterr().out)
+        assert record["title"] == "One"
+        assert record["content_text"] == ""
+
+    def test_atom_entries_too(self, tmp_path, capsys):
+        main(["items", "--jsonfeed", write_feed(tmp_path, ATOM)])
+
+        record = json.loads(capsys.readouterr().out)
+        assert record["id"] == "urn:1"
+
+    def test_a_dropped_item_is_reported_on_stderr(self, tmp_path, capsys):
+        exit_code = main(["items", "--jsonfeed", write_feed(tmp_path, DROPPED_ITEM_RSS)])
+
+        captured = capsys.readouterr()
+        assert exit_code == EXIT_OK
+        assert len(captured.out.splitlines()) == 1
+        assert captured.err == "rss-parser: dropped 1 item without an id\n"
+
+    def test_flat_and_jsonfeed_are_mutually_exclusive(self, tmp_path, capsys):
+        exit_code = main(["items", "--flat", "--jsonfeed", write_feed(tmp_path, RSS_2)])
+
+        assert exit_code == EXIT_USAGE
+        assert "--flat and --jsonfeed are mutually exclusive" in capsys.readouterr().err
