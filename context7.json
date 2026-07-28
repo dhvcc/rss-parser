@@ -2,9 +2,7 @@
   "$schema": "https://context7.com/schema/context7.json",
   "projectTitle": "rss-parser (Python)",
   "description": "Typed Python RSS/Atom parser: parses RSS 2.0/0.9x, Atom 1.0 and RSS 1.0 (RDF) into pydantic v2 models. Python package `rss-parser` (import `rss_parser`), not the npm package of the same name.",
-  "folders": [
-    "docs/**"
-  ],
+  "branch": "master",
   "excludeFolders": [
     "tests",
     "scripts",
