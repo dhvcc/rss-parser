@@ -1,0 +1,37 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "rss-parser (Python)",
+  "description": "Typed Python RSS/Atom parser: parses RSS 2.0/0.9x, Atom 1.0 and RSS 1.0 (RDF) into pydantic v2 models. Python package `rss-parser` (import `rss_parser`), not the npm package of the same name.",
+  "folders": [
+    "docs/**"
+  ],
+  "excludeFolders": [
+    "tests",
+    "scripts",
+    ".github",
+    ".vscode"
+  ],
+  "excludeFiles": [
+    "LICENSE",
+    "contributing.md"
+  ],
+  "rules": [
+    "This is the Python package `rss-parser` (import `rss_parser`), not the JavaScript/npm package with the same name. Code samples must be Python.",
+    "Requires Python 3.10+ and pydantic v2 (>=2.7). Versions 3.x and below are pydantic v1 era and have a different API - see the migration guide.",
+    "Use `from rss_parser import parse` for automatic feed-type detection; it returns an `RSS`, `Atom` or `RDF` model based on the XML root element. Use `RSSParser`, `AtomParser`, `RDFParser` or `PodcastParser` when the feed type is known.",
+    "Every XML tag is wrapped in `Tag[T]`: text in `.content`, XML attributes in `.attributes` (the `@` prefix is stripped and keys are snake_cased).",
+    "`str(tag)` returns the content and attribute access is forwarded to it, so `feed.channel.title` and `item.title.upper()` work without touching `.content`.",
+    "Repeatable tags are always lists via `OnlyList`, and the fields are plural: `channel.items`, `item.links`, `item.categories`, `item.enclosures`.",
+    "Self-closing tags such as `<enclosure url=... />` have `content=None`; read their data from `.attributes`, e.g. `item.enclosures[0].attributes[\"url\"]`.",
+    "Extend the schema by subclassing and parametrizing generics: `class MyItem(Item)` then `RSSParser.parse(data, schema=RSS[Channel[MyItem]])`. Namespaced tags need an explicit alias, e.g. `Field(alias=\"dc:creator\")`.",
+    "Undeclared tags are never dropped - they are available in `model_extra`, e.g. `rss.channel.content.model_extra[\"itunes:author\"]`.",
+    "For podcasts use `PodcastParser` (or the `ITunesChannelMixin`/`ITunesItemMixin` mixins) to get typed `itunes:*` fields instead of writing a custom schema.",
+    "`model_dump()` keeps the content/attributes structure; `dict_plain()` and `json_plain()` flatten every Tag to its plain content value.",
+    "Errors: malformed XML raises `InvalidXMLError`, an unknown root element raises `UnknownFeedTypeError` (both subclass `ValueError`), and schema violations raise pydantic's `ValidationError`.",
+    "A document declaring DTD entities raises `ValueError(\"entities are disabled\")` from xmltodict, so XXE and entity-expansion feeds are rejected before expansion.",
+    "Feed text is returned as-is: HTML inside `<description>`/`<content>` (often CDATA) is not sanitized, so escape it before rendering."
+  ],
+  "previousVersions": [
+    "v3.0.0"
+  ]
+}

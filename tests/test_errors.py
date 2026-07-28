@@ -39,6 +39,35 @@ class TestInvalidXML:
         assert issubclass(UnknownFeedTypeError, ValueError)
 
 
+class TestEntitiesAreDisabled:
+    """xmltodict runs with disable_entities=True - the guarantee documented in SECURITY.md."""
+
+    @staticmethod
+    def _feed(doctype: str, title: str) -> str:
+        return (
+            f'<?xml version="1.0"?>{doctype}'
+            f'<rss version="2.0"><channel><title>{title}</title><link>L</link>'
+            f"<description>D</description></channel></rss>"
+        )
+
+    def test_external_entity_is_refused(self):
+        """XXE: a SYSTEM entity must never be resolved."""
+        data = self._feed('<!DOCTYPE rss [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>', "&xxe;")
+
+        with pytest.raises(ValueError, match="entities are disabled"):
+            RSSParser.parse(data)
+
+    def test_entity_expansion_is_refused(self):
+        """Billion laughs: expansion is refused at declaration time, before it can blow up."""
+        entities = '<!ENTITY a0 "AAAAAAAAAA">' + "".join(
+            f'<!ENTITY a{i} "' + f"&a{i - 1};" * 10 + '">' for i in range(1, 5)
+        )
+        data = self._feed(f"<!DOCTYPE rss [{entities}]>", "&a4;")
+
+        with pytest.raises(ValueError, match="entities are disabled"):
+            RSSParser.parse(data)
+
+
 class TestUnknownFeedType:
     def test_well_formed_non_feed_xml(self):
         with pytest.raises(UnknownFeedTypeError, match="html"):

@@ -17,6 +17,20 @@ autocomplete, validation, and clear errors instead of digging through nested dic
 
 **[Documentation](https://dhvcc.github.io/rss-parser)**
 
+## At a glance
+
+|  |  |
+| --- | --- |
+| **Ecosystem** | Python 3.10+ — installed with `pip install rss-parser`, imported as `rss_parser`. This is **not** the npm package of the same name; there is no JavaScript/Node.js distribution. |
+| **Feed formats** | RSS 2.0, RSS 0.91/0.92, Atom 1.0, RSS 1.0 (RDF), plus typed Apple Podcasts (`itunes:*`) extensions |
+| **Runtime dependencies** | [pydantic](https://docs.pydantic.dev) v2 (>=2.7), [xmltodict](https://github.com/martinblech/xmltodict), typing-extensions |
+| **Repository** | [github.com/dhvcc/rss-parser](https://github.com/dhvcc/rss-parser) |
+| **Documentation** | [dhvcc.github.io/rss-parser](https://dhvcc.github.io/rss-parser) |
+| **Package** | [pypi.org/project/rss-parser](https://pypi.org/project/rss-parser) |
+| **License** | [GPL-3.0](https://github.com/dhvcc/rss-parser/blob/master/LICENSE) |
+| **Issues** | [github.com/dhvcc/rss-parser/issues](https://github.com/dhvcc/rss-parser/issues) |
+| **Security** | Report vulnerabilities privately — see [SECURITY.md](https://github.com/dhvcc/rss-parser/blob/master/SECURITY.md). Do not open a public issue. |
+
 ## Installation
 
 ```bash

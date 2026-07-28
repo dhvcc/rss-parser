@@ -109,6 +109,11 @@ The full error contract:
 | Data is not well-formed XML | `InvalidXMLError` (the original `ExpatError` is `__cause__`) |
 | Well-formed XML, but not a known feed root | `UnknownFeedTypeError` (only from `parse()`/`detect_feed_type()`) |
 | Valid feed XML that violates the schema | pydantic `ValidationError` |
+| Document declares a DTD entity | `ValueError("entities are disabled")` from xmltodict |
+
+Entity declarations are refused before expansion, so external-entity (XXE) and
+entity-expansion feeds never get processed — see
+[SECURITY.md](https://github.com/dhvcc/rss-parser/blob/master/SECURITY.md).
 
 Both rss-parser errors subclass `ValueError`, so `except ValueError` catches everything
 except schema violations.

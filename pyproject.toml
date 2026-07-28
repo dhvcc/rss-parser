@@ -1,6 +1,6 @@
 [project]
 name = "rss-parser"
-version = "4.0.0"
+version = "4.1.0"
 description = "Typed pythonic RSS/Atom parser"
 authors = [{ name = "dhvcc", email = "1337kwiz@gmail.com" }]
 license = { text = "GPL-3.0" }
