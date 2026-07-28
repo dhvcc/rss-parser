@@ -38,9 +38,11 @@ nav:
   - Quickstart: quickstart.md
   - Guide:
       - Parsing feeds: parsing.md
+      - Fetching feeds from a URL: fetching.md
       - Customizing the schema: extending.md
       - Podcasts (iTunes): podcasts.md
       - How XML is handled: xml.md
+  - API reference: reference.md
   - Migration: migration.md
   - Contributing: contributing.md
 

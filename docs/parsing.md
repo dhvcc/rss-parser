@@ -100,7 +100,7 @@ they are available via `model_extra`:
 rdf.channel.content.model_extra["dc:publisher"]
 ```
 
-## Strictness and errors
+## Error handling
 
 The full error contract:
 

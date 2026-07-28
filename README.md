@@ -37,6 +37,22 @@ autocomplete, validation, and clear errors instead of digging through nested dic
 pip install rss-parser
 ```
 
+## Parsing from a URL
+
+`rss-parser` does not fetch anything — it parses text you already have, so there is no
+`parseURL`/`parseString` (that is the npm package). Bring your own HTTP client:
+
+```python
+import requests
+from rss_parser import parse
+
+feed = parse(requests.get(url, timeout=10).text)
+```
+
+`parse()` expects a `str`; decode bytes yourself (`response.content.decode("utf-8")`).
+Polling, conditional GET, deduplication by `guid`/`id` and normalizing across RSS/Atom/RDF are
+covered in [Fetching feeds from a URL](https://dhvcc.github.io/rss-parser/fetching/).
+
 ## Quickstart
 
 ```python

@@ -84,6 +84,66 @@ class MediaItem(MediaRSSMixin, Item):
 rss = RSSParser.parse(data, schema=RSS[Channel[MediaItem]])
 ```
 
+## XML namespace conflicts
+
+`xmltodict` keeps tag names exactly as they appear in the document, prefix included, and
+`rss-parser` never resolves prefixes against their `xmlns` declaration. That has three practical
+consequences.
+
+**The prefix is part of the key.** `<dc:creator>` is the key `dc:creator`, so the alias must
+match it literally. A feed that binds the same namespace to a different prefix (`<dcterms:creator>`)
+needs a second field, or a validator that normalizes before validation:
+
+```python
+from pydantic import Field, model_validator
+from rss_parser.models.rss import Item
+from rss_parser.models.types import Tag
+
+
+class MyItem(Item):
+    dc_creator: Optional[Tag[str]] = Field(alias="dc:creator", default=None)
+
+    @model_validator(mode="before")
+    @classmethod
+    def unify_creator_prefixes(cls, data):
+        if isinstance(data, dict) and "dc:creator" not in data:
+            for key in ("dcterms:creator", "creator"):
+                if key in data:
+                    data = {**data, "dc:creator": data[key]}
+                    break
+        return data
+```
+
+**Same local name, different namespaces, no collision.** `<content:encoded>` and Atom's
+`<content>` are different keys (`content:encoded` and `content`), so both can live on one model:
+
+```python
+class MyItem(Item):
+    content_encoded: Optional[Tag[str]] = Field(alias="content:encoded", default=None)
+```
+
+**A field can only carry one alias.** If two feeds use different tags for the same thing, declare
+both fields and pick at read time, or use `AliasChoices`:
+
+```python
+from pydantic import AliasChoices
+
+
+class MyItem(Item):
+    creator: Optional[Tag[str]] = Field(
+        validation_alias=AliasChoices("dc:creator", "dcterms:creator", "author"),
+        default=None,
+    )
+```
+
+!!! warning "`validation_alias` replaces the generated alias"
+    Setting `validation_alias` overrides the camelCase alias generator for that field, so include
+    every spelling you want to accept — the python field name is not matched automatically unless
+    you list it.
+
+Undeclared namespaced tags are still readable without any of this — they sit in `model_extra`
+under their literal key, e.g. `item.model_extra["media:content"]`.
+
 ## Field types cheat sheet
 
 | XML shape | Field declaration |

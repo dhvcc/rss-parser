@@ -27,7 +27,12 @@
     "`model_dump()` keeps the content/attributes structure; `dict_plain()` and `json_plain()` flatten every Tag to its plain content value.",
     "Errors: malformed XML raises `InvalidXMLError`, an unknown root element raises `UnknownFeedTypeError` (both subclass `ValueError`), and schema violations raise pydantic's `ValidationError`.",
     "A document declaring DTD entities raises `ValueError(\"entities are disabled\")` from xmltodict, so XXE and entity-expansion feeds are rejected before expansion.",
-    "Feed text is returned as-is: HTML inside `<description>`/`<content>` (often CDATA) is not sanitized, so escape it before rendering."
+    "Feed text is returned as-is: HTML inside `<description>`/`<content>` (often CDATA) is not sanitized, so escape it before rendering.",
+    "There is no `parseURL`/`parseString` and no HTTP client inside: `parse()` takes feed text you already fetched, e.g. `parse(requests.get(url, timeout=10).text)`.",
+    "`parse()` requires `str`, not `bytes` - bytes are stringified and raise `InvalidXMLError`. Decode first: `parse(response.content.decode(\"utf-8\"))`.",
+    "For polling, deduplicate items by `item.guid` (fall back to `item.links[0]`) in RSS and by `entry.id` in Atom; `<guid isPermaLink=\"false\">` shows up as `item.guid.attributes[\"is_perma_link\"]`.",
+    "Cross-format reading: RSS uses `feed.channel.items` with `item.pub_date`, Atom uses `feed.feed.entries` with `entry.published`/`entry.updated`, RSS 1.0 (RDF) uses `feed.items` with `item.attributes[\"rdf:about\"]`.",
+    "Namespace prefixes are kept literally, never resolved against xmlns: alias fields exactly as they appear (`Field(alias=\"dc:creator\")`), or accept several spellings with pydantic's `AliasChoices`."
   ],
   "previousVersions": [
     "v3.0.0"
