@@ -70,8 +70,8 @@ class XMLBaseModel(BaseModel):
     def json_plain(
         self,
         *,
-        indent: Optional[Union[int, str]] = None,
-        separators: Optional[Tuple[str, str]] = None,
+        indent: int | str | None = None,
+        separators: tuple[str, str] | None = None,
         sort_keys: bool = False,
         ensure_ascii: bool = False,
         **kwargs,

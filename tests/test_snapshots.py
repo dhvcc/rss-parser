@@ -1,6 +1,12 @@
 import pytest
 
-from tests.conftest import PARSERS_BY_KIND, dump_for_snapshot, iter_samples, read_sample, read_snapshot
+from tests.conftest import (
+    PARSERS_BY_KIND,
+    dump_for_snapshot,
+    iter_samples,
+    read_sample,
+    read_snapshot,
+)
 
 SAMPLES = list(iter_samples())
 

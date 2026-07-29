@@ -1,4 +1,4 @@
-from typing import Generic, Optional
+from typing import Generic
 
 from pydantic import Field
 from typing_extensions import TypeVar
@@ -25,8 +25,8 @@ class RDF(XMLBaseModel, Generic[RDFChannelT, RDFItemT]):
     channel: Tag[RDFChannelT]
     items: OnlyList[Tag[RDFItemT]] = Field(alias="item", default_factory=OnlyList)
 
-    image: Optional[Tag[dict]] = None
+    image: Tag[dict] | None = None
     "The channel image, if any."
 
-    text_input: Optional[Tag[dict]] = Field(alias="textinput", default=None)
+    text_input: Tag[dict] | None = Field(alias="textinput", default=None)
     "The channel textinput, if any."

@@ -13,10 +13,11 @@ added later is covered automatically.
 
 import json
 import math
+from collections.abc import Iterator
 from datetime import datetime
-from functools import lru_cache
+from functools import cache
 from pathlib import Path
-from typing import Any, Iterator, List, Tuple
+from typing import Any
 
 import pytest
 
@@ -26,7 +27,7 @@ from rss_parser.models.atom import Atom
 from rss_parser.models.rss import RSS
 from tests.conftest import PARSERS_BY_KIND, iter_corpus, iter_samples
 
-FEEDS: List[Tuple[str, str, Path]] = [("samples", kind, feed_dir) for kind, feed_dir in iter_samples()] + [
+FEEDS: list[tuple[str, str, Path]] = [("samples", kind, feed_dir) for kind, feed_dir in iter_samples()] + [
     ("corpus", kind, feed_dir) for kind, feed_dir in iter_corpus()
 ]
 FEED_IDS = [f"{source}/{kind}/{feed_dir.name}" for source, kind, feed_dir in FEEDS]
@@ -82,7 +83,7 @@ def get_source_items(feed) -> list:
     return feed.items  # RDF
 
 
-@lru_cache(maxsize=None)
+@cache
 def _load(source: str, kind: str, feed_dir: Path):
     """Parse a feed and run the default (no feed_url) jsonfeed mapping, once per feed."""
     data = (feed_dir / "data.xml").read_bytes()  # let the parser honor the doc's own <?xml encoding?>

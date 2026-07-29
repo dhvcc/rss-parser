@@ -1,5 +1,6 @@
+from collections.abc import Mapping
 from enum import Enum
-from typing import Any, ClassVar, Dict, Mapping, Optional, Type, Union
+from typing import Any, ClassVar
 from xml.parsers.expat import ExpatError
 
 from xmltodict import parse as _xml_to_dict
@@ -61,11 +62,11 @@ class EntitiesDisabledError(ValueError):
 class BaseParser:
     """Parser for rss/atom/rdf files."""
 
-    schema: ClassVar[Type[XMLBaseModel]]
-    root_key: ClassVar[Optional[str]] = None
+    schema: ClassVar[type[XMLBaseModel]]
+    root_key: ClassVar[str | None] = None
 
     @staticmethod
-    def to_xml(data: Union[str, bytes], *args, **kwargs) -> Dict[str, Any]:
+    def to_xml(data: str | bytes, *args, **kwargs) -> dict[str, Any]:
         # bytes are passed through untouched so that the document's own <?xml encoding=...?>
         # declaration is honored - decoding them here would force a guess and mangle any
         # feed that is not UTF-8
@@ -85,10 +86,10 @@ class BaseParser:
     @classmethod
     def parse(
         cls,
-        data: Union[str, bytes],
+        data: str | bytes,
         *,
-        schema: Optional[Type[XMLBaseModel]] = None,
-        root_key: Optional[str] = None,
+        schema: type[XMLBaseModel] | None = None,
+        root_key: str | None = None,
     ) -> XMLBaseModel:
         """
         Parse XML data into schema.
@@ -104,8 +105,8 @@ class BaseParser:
         cls,
         root: Mapping[str, Any],
         *,
-        schema: Optional[Type[XMLBaseModel]] = None,
-        root_key: Optional[str] = None,
+        schema: type[XMLBaseModel] | None = None,
+        root_key: str | None = None,
     ) -> XMLBaseModel:
         """Parse an already xmltodict-converted mapping into schema."""
         schema = schema if schema else cls.schema
@@ -146,8 +147,8 @@ class AtomParser(BaseParser):
         cls,
         root: Mapping[str, Any],
         *,
-        schema: Optional[Type[XMLBaseModel]] = None,
-        root_key: Optional[str] = None,
+        schema: type[XMLBaseModel] | None = None,
+        root_key: str | None = None,
     ) -> XMLBaseModel:
         if root_key is None:
             # The Atom namespace may be bound to a prefix (e.g. <atom:feed>) - in that case
@@ -175,8 +176,8 @@ class RDFParser(BaseParser):
         cls,
         root: Mapping[str, Any],
         *,
-        schema: Optional[Type[XMLBaseModel]] = None,
-        root_key: Optional[str] = None,
+        schema: type[XMLBaseModel] | None = None,
+        root_key: str | None = None,
     ) -> XMLBaseModel:
         if root_key is None:
             # The rdf namespace prefix is not guaranteed to be "rdf" - find the actual root key
@@ -193,7 +194,7 @@ class PodcastParser(RSSParser):
     schema = Podcast
 
 
-DEFAULT_PARSERS: Dict[FeedType, Type[BaseParser]] = {
+DEFAULT_PARSERS: dict[FeedType, type[BaseParser]] = {
     FeedType.RSS: RSSParser,
     FeedType.ATOM: AtomParser,
     FeedType.RDF: RDFParser,
@@ -218,7 +219,7 @@ def _detect_feed_type_from_root(root: Mapping[str, Any]) -> FeedType:
     )
 
 
-def detect_feed_type(data: Union[str, bytes]) -> FeedType:
+def detect_feed_type(data: str | bytes) -> FeedType:
     """
     Detect the feed type from the XML root element.
 
@@ -228,9 +229,9 @@ def detect_feed_type(data: Union[str, bytes]) -> FeedType:
 
 
 def parse(
-    data: Union[str, bytes],
+    data: str | bytes,
     *,
-    parsers: Optional[Mapping[FeedType, Type[BaseParser]]] = None,
+    parsers: Mapping[FeedType, type[BaseParser]] | None = None,
 ) -> XMLBaseModel:
     """
     Parse any supported feed, detecting the feed type from the XML root element.
@@ -242,7 +243,7 @@ def parse(
         e.g. ``parse(data, parsers={FeedType.RSS: PodcastParser})``
     :raises UnknownFeedTypeError: if the root element is not a known feed root
     """
-    parser_map: Dict[FeedType, Type[BaseParser]] = {**DEFAULT_PARSERS, **(parsers or {})}
+    parser_map: dict[FeedType, type[BaseParser]] = {**DEFAULT_PARSERS, **(parsers or {})}
     root = BaseParser.to_xml(data)
     feed_type = _detect_feed_type_from_root(root)
     return parser_map[feed_type].parse_dict(root)

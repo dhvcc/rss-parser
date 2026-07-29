@@ -1,5 +1,3 @@
-from typing import Optional
-
 from pydantic import Field
 
 from rss_parser import RSSParser
@@ -23,7 +21,7 @@ PODCAST_XML = """<?xml version="1.0"?>
 
 
 class DurationItem(Item):
-    itunes_duration: Optional[Tag[str]] = Field(alias="itunes:duration", default=None)
+    itunes_duration: Tag[str] | None = Field(alias="itunes:duration", default=None)
 
 
 class TestGenericSchemas:
@@ -36,7 +34,7 @@ class TestGenericSchemas:
 
     def test_custom_channel_subclass(self):
         class MyChannel(Channel[DurationItem]):
-            itunes_author: Optional[Tag[str]] = Field(alias="itunes:author", default=None)
+            itunes_author: Tag[str] | None = Field(alias="itunes:author", default=None)
 
         rss = RSSParser.parse(PODCAST_XML, schema=RSS[MyChannel])
 

@@ -1,5 +1,3 @@
-from typing import Optional
-
 from pydantic import Field
 
 from rss_parser.models import XMLBaseModel
@@ -22,7 +20,7 @@ class Entry(XMLBaseModel):
     title: Tag[TextConstruct]
     "The title of the entry."
 
-    updated: Optional[Tag[DateTimeOrStr]] = None
+    updated: Tag[DateTimeOrStr] | None = None
     "Indicates when the entry was updated. Required by the spec, but omitted often enough in the wild that it's optional here."  # noqa: E501
 
     # Recommended entry elements
@@ -33,10 +31,10 @@ class Entry(XMLBaseModel):
     links: OnlyList[Tag[str]] = Field(alias="link", default_factory=OnlyList)
     "The URL of the entry."
 
-    content: Optional[Tag[TextConstruct]] = None
+    content: Tag[TextConstruct] | None = None
     "The main content of the entry."
 
-    summary: Optional[Tag[TextConstruct]] = None
+    summary: Tag[TextConstruct] | None = None
     "Conveys a short summary, abstract, or excerpt of the entry. Some feeds use this tag as the main content."
 
     # Optional entry elements
@@ -47,11 +45,11 @@ class Entry(XMLBaseModel):
     contributors: OnlyList[Tag[Person]] = Field(alias="contributor", default_factory=OnlyList)
     "Entry contributors."
 
-    rights: Optional[Tag[TextConstruct]] = None
+    rights: Tag[TextConstruct] | None = None
     "The copyright of the entry."
 
-    published: Optional[Tag[DateTimeOrStr]] = None
+    published: Tag[DateTimeOrStr] | None = None
     "Indicates when the entry was published."
 
-    source: Optional[Tag[Source]] = None
+    source: Tag[Source] | None = None
     "Contains metadata from the source feed if this entry is a copy."

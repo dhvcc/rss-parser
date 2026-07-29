@@ -193,7 +193,7 @@ class TestValidateFailures:
 
         error = json.loads(capsys.readouterr().out)["error"]
         assert error["code"] == "internal_error"
-        assert "unexpected ValueError: something odd" == error["message"]
+        assert error["message"] == "unexpected ValueError: something odd"
 
     def test_json_writes_nothing_on_a_usage_error(self, capsys):
         assert main(["validate", "--json", "https://example.com/feed.xml"]) == EXIT_USAGE

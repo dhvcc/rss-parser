@@ -1,6 +1,6 @@
 import json
+from collections.abc import Iterator
 from pathlib import Path
-from typing import Dict, Iterator, Tuple, Type
 
 from rss_parser import AtomParser, BaseParser, PodcastParser, RDFParser, RSSParser
 
@@ -12,7 +12,7 @@ CORPUS_DIR = Path(__file__).parent.resolve() / "corpus"
 
 # Samples are grouped by feed kind: tests/samples/<kind>/<name>/data.xml + result.json.
 # Adding a new sample dir is enough for it to be picked up by the snapshot tests.
-PARSERS_BY_KIND: Dict[str, Type[BaseParser]] = {
+PARSERS_BY_KIND: dict[str, type[BaseParser]] = {
     "rss": RSSParser,
     "atom": AtomParser,
     "rdf": RDFParser,
@@ -20,7 +20,7 @@ PARSERS_BY_KIND: Dict[str, Type[BaseParser]] = {
 }
 
 
-def iter_samples() -> Iterator[Tuple[str, Path]]:
+def iter_samples() -> Iterator[tuple[str, Path]]:
     """Yield (kind, sample_dir) for every sample that has a data.xml."""
     for kind_dir in sorted(SAMPLES_DIR.iterdir()):
         if not kind_dir.is_dir():
@@ -30,7 +30,7 @@ def iter_samples() -> Iterator[Tuple[str, Path]]:
                 yield kind_dir.name, sample_dir
 
 
-def iter_corpus() -> Iterator[Tuple[str, Path]]:
+def iter_corpus() -> Iterator[tuple[str, Path]]:
     """Yield (kind, feed_dir) for every corpus feed that has a data.xml."""
     for kind_dir in sorted(d for d in CORPUS_DIR.iterdir() if d.is_dir()):
         for feed_dir in sorted(kind_dir.iterdir()):

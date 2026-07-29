@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from datetime import datetime
 from email.utils import parsedate_to_datetime
-from typing import Union
 
 from pydantic import GetCoreSchemaHandler, TypeAdapter, ValidationError
 from pydantic_core import core_schema
@@ -29,7 +28,7 @@ class DateTimeOrStr(datetime):
         return f"DateTimeOrStr({super().__repr__()})"
 
 
-def validate_dt_or_str(value: Union[str, datetime], _info=None):
+def validate_dt_or_str(value: str | datetime, _info=None):
     if isinstance(value, datetime):
         return value
     # Try to parse standard (RFC 822)

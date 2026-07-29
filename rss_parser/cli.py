@@ -11,9 +11,10 @@ import argparse
 import json
 import os
 import sys
+from collections.abc import Iterator, Sequence
 from importlib import import_module
 from pathlib import Path
-from typing import Any, Dict, Iterator, List, Optional, Sequence, Tuple, Type
+from typing import Any
 
 from pydantic import ValidationError
 
@@ -43,7 +44,7 @@ EXIT_REJECTED = 1
 EXIT_USAGE = 2
 EXIT_SIGPIPE = 141  # 128 + SIGPIPE, so `set -o pipefail` can tell `| head` from a bad feed
 
-PARSERS: Dict[str, Type[BaseParser]] = {
+PARSERS: dict[str, type[BaseParser]] = {
     "rss": RSSParser,
     "atom": AtomParser,
     "rdf": RDFParser,
@@ -83,7 +84,7 @@ def _read_input(source: str, command: str) -> bytes:
         raise UsageError(f"{source}: {e.strerror}") from e
 
 
-def _load_schema(spec: str) -> Type[XMLBaseModel]:
+def _load_schema(spec: str) -> type[XMLBaseModel]:
     """Import a custom ``XMLBaseModel`` subclass from a ``module.path:ClassName`` spec."""
     module_name, separator, attribute = spec.partition(":")
     if not (module_name and separator and attribute):
@@ -103,7 +104,7 @@ def _load_schema(spec: str) -> Type[XMLBaseModel]:
     return schema
 
 
-def _parse(data: bytes, parser_name: str, schema: Optional[Type[XMLBaseModel]]) -> XMLBaseModel:
+def _parse(data: bytes, parser_name: str, schema: type[XMLBaseModel] | None) -> XMLBaseModel:
     if parser_name == "auto":
         if schema is None:
             return parse_feed(data)
@@ -113,7 +114,7 @@ def _parse(data: bytes, parser_name: str, schema: Optional[Type[XMLBaseModel]]) 
     return parser.parse(data, schema=schema)
 
 
-def _feed_items(feed: XMLBaseModel) -> Optional[List[Tag]]:
+def _feed_items(feed: XMLBaseModel) -> list[Tag] | None:
     """
     The items of a known feed model, or None for a custom --schema we know nothing about.
 
@@ -129,7 +130,7 @@ def _feed_items(feed: XMLBaseModel) -> Optional[List[Tag]]:
     return None
 
 
-def _classify(exc: ValueError) -> Tuple[str, str, List[Dict[str, Any]]]:
+def _classify(exc: ValueError) -> tuple[str, str, list[dict[str, Any]]]:
     """Map a library error onto a --json ``error.code``, a message and its details."""
     if isinstance(exc, ValidationError):  # most specific first - it is a ValueError too
         details = [
@@ -152,7 +153,7 @@ def _is_date_tag(tag: Tag) -> bool:
     return DateTimeOrStr in getattr(type(tag).model_fields["content"].annotation, "__args__", ())
 
 
-def _iter_tags(value: Any, path: str) -> Iterator[Tuple[str, Tag]]:
+def _iter_tags(value: Any, path: str) -> Iterator[tuple[str, Tag]]:
     if isinstance(value, Tag):
         yield path, value
         yield from _iter_tags(value.content, path)
@@ -164,7 +165,7 @@ def _iter_tags(value: Any, path: str) -> Iterator[Tuple[str, Tag]]:
             yield from _iter_tags(item, f"{path}[{index}]")
 
 
-def _unparsed_dates(feed: XMLBaseModel) -> List[Dict[str, Any]]:
+def _unparsed_dates(feed: XMLBaseModel) -> list[dict[str, Any]]:
     """Every date field whose value stayed a string because it parsed as neither RFC 822 nor ISO 8601."""
     return [
         {"loc": path, "value": tag.content}
@@ -173,8 +174,8 @@ def _unparsed_dates(feed: XMLBaseModel) -> List[Dict[str, Any]]:
     ]
 
 
-def _validate(data: bytes, args: argparse.Namespace, schema: Optional[Type[XMLBaseModel]]) -> int:
-    report: Dict[str, Any] = {"valid": False, "feed_type": None}
+def _validate(data: bytes, args: argparse.Namespace, schema: type[XMLBaseModel] | None) -> int:
+    report: dict[str, Any] = {"valid": False, "feed_type": None}
     try:
         report["feed_type"] = detect_feed_type(data).value
         feed = _parse(data, args.parser, schema)
@@ -199,7 +200,7 @@ def _validate(data: bytes, args: argparse.Namespace, schema: Optional[Type[XMLBa
     return EXIT_OK
 
 
-def _report(report: Dict[str, Any], as_json: bool, message: str, details: Sequence[Dict[str, Any]]) -> int:
+def _report(report: dict[str, Any], as_json: bool, message: str, details: Sequence[dict[str, Any]]) -> int:
     """Write a rejection either as a JSON report on stdout or as human text on stderr."""
     if as_json:
         _write(json.dumps(report, ensure_ascii=False) + "\n")
@@ -223,14 +224,14 @@ def _dump(feed: XMLBaseModel, args: argparse.Namespace) -> int:
     return EXIT_OK
 
 
-def _to_json_feed(feed: XMLBaseModel, feed_url: Optional[str] = None) -> Tuple[Dict[str, Any], JsonFeedReport]:
+def _to_json_feed(feed: XMLBaseModel, feed_url: str | None = None) -> tuple[dict[str, Any], JsonFeedReport]:
     try:
         return to_json_feed(feed, feed_url=feed_url)
     except TypeError as exc:
         raise UsageError("cannot map a custom --schema to JSON Feed; use `rss-parser parse` instead") from exc
 
 
-def _jsonfeed_summary(report: JsonFeedReport) -> Optional[str]:
+def _jsonfeed_summary(report: JsonFeedReport) -> str | None:
     """The stderr line for whatever ``to_json_feed`` dropped or omitted - never silent (decision 2)."""
 
     def _plural(count: int, noun: str) -> str:
@@ -305,7 +306,7 @@ def _run(args: argparse.Namespace) -> int:
     return _items(feed, args)
 
 
-def _build_parser() -> Tuple[argparse.ArgumentParser, Dict[str, argparse.ArgumentParser]]:
+def _build_parser() -> tuple[argparse.ArgumentParser, dict[str, argparse.ArgumentParser]]:
     """Build the parser plus a map of the subparsers, so errors can show the right usage."""
     common = argparse.ArgumentParser(add_help=False)
     common.add_argument("file", nargs="?", default="-", help="feed file, or - for stdin (the default)")
@@ -388,7 +389,7 @@ def _detach_stdout() -> None:  # pragma: no cover - would clobber the test runne
         os.dup2(os.open(os.devnull, os.O_WRONLY), sys.stdout.fileno())
 
 
-def main(argv: Optional[Sequence[str]] = None) -> int:
+def main(argv: Sequence[str] | None = None) -> int:
     """Entry point for the ``rss-parser`` console script. Returns the process exit code."""
     # On Windows a piped stdout defaults to the ANSI code page, which raises on non-ASCII feed
     # text; the explicit newline keeps NDJSON records \n-terminated everywhere. sys.stdout is None

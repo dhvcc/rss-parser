@@ -1,5 +1,3 @@
-from typing import Optional
-
 from rss_parser.models import XMLBaseModel
 from rss_parser.models.types.tag import Tag
 
@@ -8,8 +6,8 @@ class Person(XMLBaseModel):
     name: Tag[str]
     "Conveys a human-readable name for the person."
 
-    uri: Optional[Tag[str]] = None
+    uri: Tag[str] | None = None
     "Contains a home page for the person."
 
-    email: Optional[Tag[str]] = None
+    email: Tag[str] | None = None
     "Contains an email address for the person."

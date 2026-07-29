@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
-from typing import Any, Dict, Generic, Optional, TypeVar, Union
+from typing import Any, Generic, TypeVar
 
 from pydantic import BaseModel, Field, model_validator
 
@@ -51,8 +51,8 @@ class Tag(BaseModel, Generic[T]):
     """
 
     # Optional in case of self-closing tags
-    content: Optional[T] = None
-    attributes: Dict[str, Any] = Field(default_factory=dict)
+    content: T | None = None
+    attributes: dict[str, Any] = Field(default_factory=dict)
 
     def __getattr__(self, item):
         """Forward attribute access to the tag's content for simplicity."""
@@ -80,7 +80,7 @@ class Tag(BaseModel, Generic[T]):
 
     @model_validator(mode="before")
     @classmethod
-    def pre_convert(cls, value: Union[T, dict, "Tag[T]"]) -> Union["Tag[T]", Dict[str, Any]]:
+    def pre_convert(cls, value: T | dict | Tag[T]) -> Tag[T] | dict[str, Any]:
         """Used to split tag's text with other xml attributes."""
         if isinstance(value, cls):
             return value

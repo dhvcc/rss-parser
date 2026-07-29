@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from typing import Annotated, Any, Dict, Mapping, Union
+from collections.abc import Mapping
+from typing import Annotated, Any
 
 from pydantic.functional_validators import BeforeValidator
 
@@ -23,7 +24,7 @@ def drop_attribute_keys(value: Any) -> Any:
     return value
 
 
-TextConstruct = Annotated[Union[str, Dict[str, Any]], BeforeValidator(drop_attribute_keys)]
+TextConstruct = Annotated[str | dict[str, Any], BeforeValidator(drop_attribute_keys)]
 """
 An Atom text construct: ``str`` for ``type="text"`` (the default) and ``type="html"``, and the
 xmltodict mapping of the child elements for ``type="xhtml"``. Read ``.attributes["type"]`` to tell

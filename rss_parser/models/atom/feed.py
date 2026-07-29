@@ -1,4 +1,4 @@
-from typing import Generic, Optional
+from typing import Generic
 
 from pydantic import Field
 from typing_extensions import TypeVar
@@ -30,7 +30,7 @@ class Feed(XMLBaseModel, Generic[EntryT]):
     title: Tag[TextConstruct]
     "Contains a human readable title for the feed."
 
-    updated: Optional[Tag[DateTimeOrStr]] = None
+    updated: Tag[DateTimeOrStr] | None = None
     "Indicates the last time the feed was modified in a significant way. Required by the spec, but omitted by major real-world publishers (e.g. YouTube), so it's optional here."  # noqa: E501
 
     # Recommended feed elements
@@ -52,18 +52,18 @@ class Feed(XMLBaseModel, Generic[EntryT]):
     contributors: OnlyList[Tag[Person]] = Field(alias="contributor", default_factory=OnlyList)
     "Feed contributors."
 
-    generator: Optional[Tag[str]] = None
+    generator: Tag[str] | None = None
     "Identifies the software used to generate the feed, for debugging and other purposes."
 
-    icon: Optional[Tag[str]] = None
+    icon: Tag[str] | None = None
     "Identifies a small image which provides iconic visual identification for the feed. Icons should be square."
 
-    logo: Optional[Tag[str]] = None
+    logo: Tag[str] | None = None
     "Identifies a larger image which provides visual identification for the feed. \
     Images should be twice as wide as they are tall."
 
-    rights: Optional[Tag[TextConstruct]] = None
+    rights: Tag[TextConstruct] | None = None
     "The copyright of the feed."
 
-    subtitle: Optional[Tag[TextConstruct]] = None
+    subtitle: Tag[TextConstruct] | None = None
     "Contains a human readable description or subtitle for the feed."

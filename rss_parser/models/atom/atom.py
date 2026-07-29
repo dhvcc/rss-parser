@@ -1,4 +1,4 @@
-from typing import Generic, Optional
+from typing import Generic
 
 from pydantic import Field
 from typing_extensions import TypeVar
@@ -17,5 +17,5 @@ class Atom(XMLBaseModel, Generic[FeedT]):
     Generic over the feed type: ``Atom[Feed[MyEntry]]`` or ``Atom[MyFeed]``.
     """
 
-    version: Optional[Tag[str]] = Field(alias="@version", default=None)
+    version: Tag[str] | None = Field(alias="@version", default=None)
     feed: Tag[FeedT]

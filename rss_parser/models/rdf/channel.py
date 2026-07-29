@@ -1,5 +1,3 @@
-from typing import Optional
-
 from pydantic import Field
 
 from rss_parser.models import XMLBaseModel
@@ -24,8 +22,8 @@ class RDFChannel(XMLBaseModel):
     description: Tag[str]
     "A brief description of the channel's content, function, source, etc."
 
-    image: Optional[Tag[dict]] = None
+    image: Tag[dict] | None = None
     "An rdf:resource reference to the channel image, if any."
 
-    text_input: Optional[Tag[dict]] = Field(alias="textinput", default=None)
+    text_input: Tag[dict] | None = Field(alias="textinput", default=None)
     "An rdf:resource reference to the channel textinput, if any."

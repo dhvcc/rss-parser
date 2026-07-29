@@ -1,4 +1,4 @@
-from typing import Generic, Optional
+from typing import Generic
 
 from pydantic import Field
 from typing_extensions import TypeVar
@@ -17,5 +17,5 @@ class RSS(XMLBaseModel, Generic[ChannelT]):
     Generic over the channel type: ``RSS[Channel[MyItem]]`` or ``RSS[MyChannel]``.
     """
 
-    version: Optional[Tag[str]] = Field(alias="@version", default=None)
+    version: Tag[str] | None = Field(alias="@version", default=None)
     channel: Tag[ChannelT]

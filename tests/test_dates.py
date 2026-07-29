@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from rss_parser import RSSParser
 from rss_parser.models.types.date import validate_dt_or_str
@@ -18,17 +18,17 @@ class TestDateParsing:
     def test_rfc_822(self):
         parsed = parse_pub_date("Sat, 07 Sep 2002 00:00:01 GMT")
 
-        assert parsed == datetime(2002, 9, 7, 0, 0, 1, tzinfo=timezone.utc)
+        assert parsed == datetime(2002, 9, 7, 0, 0, 1, tzinfo=UTC)
 
     def test_rfc_822_with_two_digit_year(self):
         parsed = parse_pub_date("Sat, 07 Sep 02 00:00:01 GMT")
 
-        assert parsed == datetime(2002, 9, 7, 0, 0, 1, tzinfo=timezone.utc)
+        assert parsed == datetime(2002, 9, 7, 0, 0, 1, tzinfo=UTC)
 
     def test_iso_8601(self):
         parsed = parse_pub_date("2002-09-07T00:00:01+00:00")
 
-        assert parsed == datetime(2002, 9, 7, 0, 0, 1, tzinfo=timezone.utc)
+        assert parsed == datetime(2002, 9, 7, 0, 0, 1, tzinfo=UTC)
 
     def test_unparseable_date_is_kept_as_string(self):
         """Dates in the wild are too messy to reject a whole feed over one of them."""
@@ -37,5 +37,5 @@ class TestDateParsing:
         assert parsed == "someday, probably"
 
     def test_datetime_instance_passes_through(self):
-        now = datetime(2020, 1, 1, tzinfo=timezone.utc)
+        now = datetime(2020, 1, 1, tzinfo=UTC)
         assert validate_dt_or_str(now) is now

@@ -1,5 +1,3 @@
-from typing import Optional
-
 from rss_parser.models import XMLBaseModel
 from rss_parser.models.types.tag import Tag
 
@@ -18,5 +16,5 @@ class RDFItem(XMLBaseModel):
     link: Tag[str]
     "The item's URL."
 
-    description: Optional[Tag[str]] = None
+    description: Tag[str] | None = None
     "A brief description/abstract of the item."

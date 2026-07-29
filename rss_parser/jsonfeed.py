@@ -14,7 +14,7 @@ docs/cli.md for the full list of conformance decisions:
 from __future__ import annotations
 
 from datetime import datetime
-from typing import Any, Dict, List, NamedTuple, Optional, Tuple
+from typing import Any, NamedTuple
 
 from rss_parser.models.atom.atom import Atom
 from rss_parser.models.atom.entry import Entry
@@ -52,7 +52,7 @@ class _Report:
         return JsonFeedReport(self.dropped_items, self.dropped_attachments, self.unparsed_dates)
 
 
-def to_json_feed(feed: Any, *, feed_url: Optional[str] = None) -> Tuple[Dict[str, Any], JsonFeedReport]:
+def to_json_feed(feed: Any, *, feed_url: str | None = None) -> tuple[dict[str, Any], JsonFeedReport]:
     """
     Map an ``RSS``, ``Atom``, ``RDF`` or ``Podcast`` model to a JSON Feed 1.1 document.
 
@@ -77,7 +77,7 @@ def to_json_feed(feed: Any, *, feed_url: Optional[str] = None) -> Tuple[Dict[str
     return document, report.result()
 
 
-def _plain(tag: Optional[Tag]) -> Optional[str]:
+def _plain(tag: Tag | None) -> str | None:
     """
     The tag's content as plain text, or ``None`` when there is none.
 
@@ -89,7 +89,7 @@ def _plain(tag: Optional[Tag]) -> Optional[str]:
     return tag.content if isinstance(tag.content, str) else None
 
 
-def _int_or_none(value: Any) -> Optional[int]:
+def _int_or_none(value: Any) -> int | None:
     """``int(value)``, or ``None`` for anything that is not one - e.g. ``length=""`` (github-49)."""
     try:
         return int(value)
@@ -97,7 +97,7 @@ def _int_or_none(value: Any) -> Optional[int]:
         return None
 
 
-def _date(tag: Optional[Tag], report: _Report) -> Optional[str]:
+def _date(tag: Tag | None, report: _Report) -> str | None:
     """
     A declared ``DateTimeOrStr`` field as an RFC 3339-ish string, or ``None``.
 
@@ -113,7 +113,7 @@ def _date(tag: Optional[Tag], report: _Report) -> Optional[str]:
     return None
 
 
-def _extra_date(raw: Any, report: _Report) -> Optional[str]:
+def _extra_date(raw: Any, report: _Report) -> str | None:
     """Like :func:`_date`, but for a raw string living in ``model_extra`` (RDF's ``dc:date``)."""
     if raw is None:
         return None
@@ -127,20 +127,20 @@ def _extra_date(raw: Any, report: _Report) -> Optional[str]:
 class _ItemFields(NamedTuple):
     """Everything about one item except its id - bundled so ``_finalize_item`` takes two args."""
 
-    url: Optional[str]
-    title: Optional[str]
-    content: Dict[str, str]
-    summary: Optional[str]
-    date_published: Optional[str]
-    date_modified: Optional[str]
-    authors: Optional[List[Dict[str, str]]]
-    tags: Optional[List[str]]
-    attachments: List[Dict[str, Any]]
+    url: str | None
+    title: str | None
+    content: dict[str, str]
+    summary: str | None
+    date_published: str | None
+    date_modified: str | None
+    authors: list[dict[str, str]] | None
+    tags: list[str] | None
+    attachments: list[dict[str, Any]]
 
 
-def _finalize_item(item_id: str, fields: _ItemFields) -> Dict[str, Any]:
+def _finalize_item(item_id: str, fields: _ItemFields) -> dict[str, Any]:
     """Assemble one JSON Feed item in the field order the contract specifies. ``item_id`` is truthy - callers drop id-less items themselves and count them."""  # noqa: E501
-    record: Dict[str, Any] = {"id": item_id}
+    record: dict[str, Any] = {"id": item_id}
     if fields.url:
         record["url"] = fields.url
     if fields.title:
@@ -164,15 +164,15 @@ def _finalize_item(item_id: str, fields: _ItemFields) -> Dict[str, Any]:
 class _FeedMeta(NamedTuple):
     """Feed-level metadata, bundled so ``_document`` takes two args."""
 
-    title: Optional[str]
-    home_page_url: Optional[str]
-    feed_url: Optional[str]
-    description: Optional[str]
-    language: Optional[str]
+    title: str | None
+    home_page_url: str | None
+    feed_url: str | None
+    description: str | None
+    language: str | None
 
 
-def _document(meta: _FeedMeta, items: List[Dict[str, Any]]) -> Dict[str, Any]:
-    document: Dict[str, Any] = {"version": JSON_FEED_VERSION, "title": meta.title or ""}
+def _document(meta: _FeedMeta, items: list[dict[str, Any]]) -> dict[str, Any]:
+    document: dict[str, Any] = {"version": JSON_FEED_VERSION, "title": meta.title or ""}
     if meta.home_page_url:
         document["home_page_url"] = meta.home_page_url
     if meta.feed_url:
@@ -189,7 +189,7 @@ def _document(meta: _FeedMeta, items: List[Dict[str, Any]]) -> Dict[str, Any]:
 # --- RSS (and Podcast) --------------------------------------------------------------------
 
 
-def _rss_item_id(item: Item) -> Optional[str]:
+def _rss_item_id(item: Item) -> str | None:
     """``<guid>`` first, then the first ``<link>`` - never synthesized (decision 1)."""
     if item.guid is not None and item.guid.content:
         return item.guid.content
@@ -199,7 +199,7 @@ def _rss_item_id(item: Item) -> Optional[str]:
     return None
 
 
-def _rss_attachments(item: Item, report: _Report) -> List[Dict[str, Any]]:
+def _rss_attachments(item: Item, report: _Report) -> list[dict[str, Any]]:
     attachments = []
     for enclosure in item.enclosures:
         url = enclosure.attributes.get("url")
@@ -207,7 +207,7 @@ def _rss_attachments(item: Item, report: _Report) -> List[Dict[str, Any]]:
         if not url or not mime_type:
             report.dropped_attachments += 1
             continue
-        attachment: Dict[str, Any] = {"url": url, "mime_type": mime_type}
+        attachment: dict[str, Any] = {"url": url, "mime_type": mime_type}
         size = _int_or_none(enclosure.attributes.get("length"))
         if size is not None:
             attachment["size_in_bytes"] = size
@@ -215,7 +215,7 @@ def _rss_attachments(item: Item, report: _Report) -> List[Dict[str, Any]]:
     return attachments
 
 
-def _dc_creator(model) -> Optional[str]:
+def _dc_creator(model) -> str | None:
     """
     Dublin Core is how most feeds actually name a person: RSS ``<author>`` is item-level and
     nearly extinct, while ``dc:creator`` carries the byline on Slashdot, Hacker News and NPR.
@@ -225,11 +225,11 @@ def _dc_creator(model) -> Optional[str]:
     return value if isinstance(value, str) and value else None
 
 
-def _authors_from_name(name: Optional[str]) -> Optional[List[Dict[str, str]]]:
+def _authors_from_name(name: str | None) -> list[dict[str, str]] | None:
     return [{"name": name}] if name else None
 
 
-def _rss_authors(item: Item) -> Optional[List[Dict[str, str]]]:
+def _rss_authors(item: Item) -> list[dict[str, str]] | None:
     """
     RSS ``<author>`` is defined as an email address, but publishers put names there - either
     way it goes in ``name``, since JSON Feed's author object has no email member (decision 7).
@@ -239,13 +239,13 @@ def _rss_authors(item: Item) -> Optional[List[Dict[str, str]]]:
     return _authors_from_name(author or _dc_creator(item))
 
 
-def _rss_tags(categories) -> Optional[List[str]]:
+def _rss_tags(categories) -> list[str] | None:
     """Plain strings - the ``domain`` attribute is dropped (decision 8)."""
     tags = [category.content for category in categories if category.content]
     return tags or None
 
 
-def _extra_tags(value) -> Optional[List[str]]:
+def _extra_tags(value) -> list[str] | None:
     """``dc:subject`` is how RSS 1.0 categorises: one string, or a list when repeated."""
     if isinstance(value, str):
         return [value] if value else None
@@ -255,7 +255,7 @@ def _extra_tags(value) -> Optional[List[str]]:
     return None
 
 
-def _rss_item(item_tag: Tag, report: _Report) -> Optional[Dict[str, Any]]:
+def _rss_item(item_tag: Tag, report: _Report) -> dict[str, Any] | None:
     item = item_tag.content
     if item is None:
         return None
@@ -282,7 +282,7 @@ def _rss_item(item_tag: Tag, report: _Report) -> Optional[Dict[str, Any]]:
     )
 
 
-def _map_rss(feed: RSS, report: _Report, feed_url: Optional[str]) -> Dict[str, Any]:
+def _map_rss(feed: RSS, report: _Report, feed_url: str | None) -> dict[str, Any]:
     channel = feed.channel.content
     if channel is None:
         return _document(_FeedMeta(None, None, feed_url, None, None), [])
@@ -306,7 +306,7 @@ def _map_rss(feed: RSS, report: _Report, feed_url: Optional[str]) -> Dict[str, A
 # --- Atom ----------------------------------------------------------------------------------
 
 
-def _atom_construct(tag: Optional[Tag]) -> Optional[Dict[str, str]]:
+def _atom_construct(tag: Tag | None) -> dict[str, str] | None:
     """
     Route an Atom text construct on its ``type`` (decision 4): absent/``text`` -> ``content_text``,
     ``html`` -> ``content_html``. ``xhtml`` content is a mapping, so ``_plain`` already returns
@@ -320,7 +320,7 @@ def _atom_construct(tag: Optional[Tag]) -> Optional[Dict[str, str]]:
     return {"content_text": text}
 
 
-def _atom_link(links, rel: str) -> Optional[str]:
+def _atom_link(links, rel: str) -> str | None:
     for link in links:
         if link.attributes.get("rel") == rel:
             href = link.attributes.get("href")
@@ -329,7 +329,7 @@ def _atom_link(links, rel: str) -> Optional[str]:
     return None
 
 
-def _atom_attachments(links, report: _Report) -> List[Dict[str, Any]]:
+def _atom_attachments(links, report: _Report) -> list[dict[str, Any]]:
     """``<link rel="enclosure">`` is Atom's equivalent of an RSS ``<enclosure>``."""
     attachments = []
     for link in links:
@@ -340,7 +340,7 @@ def _atom_attachments(links, report: _Report) -> List[Dict[str, Any]]:
         if not url or not mime_type:
             report.dropped_attachments += 1
             continue
-        attachment: Dict[str, Any] = {"url": url, "mime_type": mime_type}
+        attachment: dict[str, Any] = {"url": url, "mime_type": mime_type}
         size = _int_or_none(link.attributes.get("length"))
         if size is not None:
             attachment["size_in_bytes"] = size
@@ -348,14 +348,14 @@ def _atom_attachments(links, report: _Report) -> List[Dict[str, Any]]:
     return attachments
 
 
-def _atom_authors(authors) -> Optional[List[Dict[str, str]]]:
+def _atom_authors(authors) -> list[dict[str, str]] | None:
     """``Person.name`` -> ``name``, ``Person.uri`` -> ``url`` (decision 7)."""
     result = []
     for author_tag in authors:
         person = author_tag.content
         if person is None:
             continue
-        author: Dict[str, str] = {}
+        author: dict[str, str] = {}
         if person.name is not None and person.name.content:
             author["name"] = person.name.content
         if person.uri is not None and person.uri.content:
@@ -365,12 +365,12 @@ def _atom_authors(authors) -> Optional[List[Dict[str, str]]]:
     return result or None
 
 
-def _atom_tags(categories) -> Optional[List[str]]:
+def _atom_tags(categories) -> list[str] | None:
     tags = [category.attributes.get("term") for category in categories if category.attributes.get("term")]
     return tags or None
 
 
-def _atom_content_and_summary(entry: Entry) -> Tuple[Dict[str, str], Optional[str]]:
+def _atom_content_and_summary(entry: Entry) -> tuple[dict[str, str], str | None]:
     """
     ``<content>`` is the primary source; ``<summary>`` is used as a fallback only when
     ``<content>`` is absent or unusable (decisions 3, 4, 14). When ``<content>`` *is* usable,
@@ -385,7 +385,7 @@ def _atom_content_and_summary(entry: Entry) -> Tuple[Dict[str, str], Optional[st
     return {"content_text": ""}, None
 
 
-def _atom_entry(entry_tag: Tag, report: _Report) -> Optional[Dict[str, Any]]:
+def _atom_entry(entry_tag: Tag, report: _Report) -> dict[str, Any] | None:
     entry = entry_tag.content
     if entry is None:
         return None
@@ -410,7 +410,7 @@ def _atom_entry(entry_tag: Tag, report: _Report) -> Optional[Dict[str, Any]]:
     )
 
 
-def _map_atom(atom: Atom, report: _Report, feed_url: Optional[str]) -> Dict[str, Any]:
+def _map_atom(atom: Atom, report: _Report, feed_url: str | None) -> dict[str, Any]:
     feed = atom.feed.content
     if feed is None:
         return _document(_FeedMeta(None, None, feed_url, None, None), [])
@@ -434,7 +434,7 @@ def _map_atom(atom: Atom, report: _Report, feed_url: Optional[str]) -> Dict[str,
 # --- RDF (RSS 1.0) ---------------------------------------------------------------------------
 
 
-def _rdf_item_id(item_tag: Tag) -> Optional[str]:
+def _rdf_item_id(item_tag: Tag) -> str | None:
     """``rdf:about`` lives on the wrapping tag's attributes, not on the item model itself."""
     about = item_tag.attributes.get("rdf:about")
     if about:
@@ -445,7 +445,7 @@ def _rdf_item_id(item_tag: Tag) -> Optional[str]:
     return None
 
 
-def _rdf_item(item_tag: Tag, report: _Report) -> Optional[Dict[str, Any]]:
+def _rdf_item(item_tag: Tag, report: _Report) -> dict[str, Any] | None:
     item = item_tag.content
     if item is None:
         return None
@@ -473,7 +473,7 @@ def _rdf_item(item_tag: Tag, report: _Report) -> Optional[Dict[str, Any]]:
     )
 
 
-def _map_rdf(rdf: RDF, report: _Report, feed_url: Optional[str]) -> Dict[str, Any]:
+def _map_rdf(rdf: RDF, report: _Report, feed_url: str | None) -> dict[str, Any]:
     channel = rdf.channel.content
     items = []
     for item_tag in rdf.items:
