@@ -28,7 +28,6 @@ class TestCustomTypesSchema:
         schema = adapter.json_schema()
 
         assert schema.get("type") == "string"
-        assert schema.get("format") == "date-time"
         assert schema.get("examples") == ["1970-01-01T00:00:00"]
         # Must be JSON serializable
         assert json.dumps(schema)

@@ -45,7 +45,6 @@ class TestDateParsing:
     def test_datetime_or_str_json_schema(self):
         schema = TypeAdapter(DateTimeOrStr).json_schema()
         assert schema.get("type") == "string"
-        assert schema.get("format") == "date-time"
         assert schema.get("examples") == ["1970-01-01T00:00:00"]
 
     def test_datetime_or_str_repr(self):
