@@ -1,7 +1,9 @@
 from datetime import datetime, timezone
 
+from pydantic import TypeAdapter
+
 from rss_parser import RSSParser
-from rss_parser.models.types.date import validate_dt_or_str
+from rss_parser.models.types.date import DateTimeOrStr, validate_dt_or_str
 
 ITEM_TEMPLATE = (
     "<rss version='2.0'><channel><title>T</title><link>L</link><description>D</description>"
@@ -39,3 +41,12 @@ class TestDateParsing:
     def test_datetime_instance_passes_through(self):
         now = datetime(2020, 1, 1, tzinfo=timezone.utc)
         assert validate_dt_or_str(now) is now
+
+    def test_datetime_or_str_json_schema(self):
+        schema = TypeAdapter(DateTimeOrStr).json_schema()
+        assert schema.get("type") == "string"
+        assert schema.get("examples") == ["1970-01-01T00:00:00"]
+
+    def test_datetime_or_str_repr(self):
+        dt = DateTimeOrStr(2020, 1, 1)
+        assert repr(dt).startswith("DateTimeOrStr(")

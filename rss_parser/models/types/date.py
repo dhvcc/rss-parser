@@ -2,9 +2,10 @@ from __future__ import annotations
 
 from datetime import datetime
 from email.utils import parsedate_to_datetime
-from typing import Union
+from typing import Any, Union
 
-from pydantic import GetCoreSchemaHandler, TypeAdapter, ValidationError
+from pydantic import GetCoreSchemaHandler, GetJsonSchemaHandler, TypeAdapter, ValidationError
+from pydantic.json_schema import JsonSchemaValue
 from pydantic_core import core_schema
 
 datetime_adapter = TypeAdapter(datetime)
@@ -12,20 +13,23 @@ datetime_adapter = TypeAdapter(datetime)
 
 class DateTimeOrStr(datetime):
     @classmethod
-    def __get_pydantic_core_schema__(cls, _source_type, _handler: GetCoreSchemaHandler):
+    def __get_pydantic_core_schema__(cls, _source_type: Any, _handler: GetCoreSchemaHandler) -> core_schema.CoreSchema:
         return core_schema.no_info_plain_validator_function(cls.validate)
 
     @classmethod
-    def __get_pydantic_json_schema__(cls, field_schema):
-        field_schema.update(
-            examples=[datetime(1970, 1, 1, 0, 0, 0)],
-        )
+    def __get_pydantic_json_schema__(
+        cls, _core_schema: core_schema.CoreSchema, handler: GetJsonSchemaHandler
+    ) -> JsonSchemaValue:
+        return {
+            "type": "string",
+            "examples": ["1970-01-01T00:00:00"],
+        }
 
     @classmethod
-    def validate(cls, value):
+    def validate(cls, value: Any) -> Union[datetime, str]:
         return validate_dt_or_str(value)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"DateTimeOrStr({super().__repr__()})"
 
 
